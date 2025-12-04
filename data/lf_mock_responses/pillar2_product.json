@@ -1,0 +1,41 @@
+{
+  "pillar": "2_product_performance",
+  "location": "Chakan, Pune",
+  "quarter": "Q2 FY25-26",
+  "data": {
+    "typology_performance": {
+      "1BHK": {
+        "absorption_rate_monthly": 0.03,
+        "demand_level": "moderate",
+        "optimal_size_range_sqft": [
+          450,
+          550
+        ]
+      },
+      "2BHK": {
+        "absorption_rate_monthly": 0.05,
+        "demand_level": "high",
+        "optimal_size_range_sqft": [
+          650,
+          750
+        ]
+      },
+      "3BHK": {
+        "absorption_rate_monthly": 0.02,
+        "demand_level": "low",
+        "optimal_size_range_sqft": [
+          950,
+          1100
+        ]
+      }
+    },
+    "efficiency_metrics": {
+      "carpet_to_saleable_ratio": 0.7,
+      "optimal_unit_mix": {
+        "1BHK": 0.25,
+        "2BHK": 0.5,
+        "3BHK": 0.25
+      }
+    }
+  }
+}

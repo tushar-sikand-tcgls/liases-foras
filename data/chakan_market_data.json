@@ -1,0 +1,86 @@
+{
+  "location": {
+    "city": "Pune",
+    "microMarket": "Chakan",
+    "quarter": "Q2 FY25-26",
+    "dataVersion": "Q3_FY25"
+  },
+  "market_summary": {
+    "total_projects": 20,
+    "active_developers": 18,
+    "months_inventory": 54,
+    "sales_velocity_percent": 1.7,
+    "total_unsold_units": 1750,
+    "total_unsold_sqft": 1076995
+  },
+  "pricing": {
+    "saleable_psf": 3551,
+    "carpet_psf": 5012,
+    "new_launch_saleable_psf": 3189,
+    "new_launch_carpet_psf": 4309,
+    "trend": "stable",
+    "mom_change_percent": 1.2
+  },
+  "sales": {
+    "annual_units": 831,
+    "annual_sqft": 454592,
+    "quarterly_units": 97,
+    "quarterly_sqft": 62198,
+    "monthly_units_avg": 69
+  },
+  "inventory": {
+    "unsold_units": 1750,
+    "unsold_sqft": 1076995,
+    "new_supply_units": 280,
+    "new_supply_sqft": 181000
+  },
+  "absorption_rates": {
+    "1BHK": 0.03,
+    "2BHK": 0.05,
+    "3BHK": 0.02
+  },
+  "top_projects": [
+    {
+      "name": "Sara City",
+      "project_id": "P_CHAKAN_001",
+      "developer": "Sara Builders & Developers"
+    },
+    {
+      "name": "Pradnyesh Shriniwas",
+      "project_id": "P_CHAKAN_002",
+      "developer": "JJ Mauli Developers"
+    },
+    {
+      "name": "Sara Nilaay",
+      "project_id": "P_CHAKAN_003",
+      "developer": "Sara Builders & Developers"
+    }
+  ],
+  "top_developers": [
+    {
+      "name": "Sara Builders & Developers",
+      "developer_id": "D_001",
+      "apf_score": 0.92,
+      "marketability_index": 0.88
+    },
+    {
+      "name": "JJ Mauli Developers",
+      "developer_id": "D_002",
+      "apf_score": 0.85,
+      "marketability_index": 0.8
+    },
+    {
+      "name": "Gurudatta Builders",
+      "developer_id": "D_003",
+      "apf_score": 0.78,
+      "marketability_index": 0.75
+    }
+  ],
+  "market_insights": {
+    "demand_score": 78,
+    "supply_pressure": "medium",
+    "price_momentum": "positive",
+    "competitive_intensity": "medium",
+    "opportunity_score": 78
+  }
+}

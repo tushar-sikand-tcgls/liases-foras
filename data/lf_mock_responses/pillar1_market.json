@@ -1,0 +1,29 @@
+{
+  "pillar": "1_market_intelligence",
+  "location": "Chakan, Pune",
+  "quarter": "Q2 FY25-26",
+  "dataVersion": "Q3_FY25",
+  "data": {
+    "prices": {
+      "saleable_psf": 3551,
+      "carpet_psf": 5012,
+      "trend": "stable",
+      "mom_change_percent": 1.2
+    },
+    "absorption": {
+      "monthly_units": 69,
+      "absorption_rate_percent": 1.7,
+      "velocity_trend": "moderate"
+    },
+    "micromarket_eval": {
+      "demand_score": 78,
+      "supply_pressure": "medium",
+      "price_momentum": "positive"
+    },
+    "competitive_intensity": {
+      "total_projects": 20,
+      "active_developers": 18,
+      "intensity_level": "medium"
+    }
+  }
+}

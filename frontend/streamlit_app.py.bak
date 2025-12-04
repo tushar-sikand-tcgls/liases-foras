@@ -1,0 +1,694 @@
+"""
+Streamlit Chat Interface for Liases Foras Real Estate Analytics
+"""
+import streamlit as st
+import requests
+from typing import Dict, List
+import json
+
+# Configuration
+API_BASE_URL = "http://localhost:8000"
+
+# Page config
+st.set_page_config(
+    page_title="LF Real Estate Analytics",
+    page_icon="🏢",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Custom CSS
+st.markdown("""
+<style>
+    .main-header {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #1E88E5;
+        margin-bottom: 0.5rem;
+    }
+    .sub-header {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 2rem;
+    }
+    .metric-card {
+        background-color: #f0f2f6;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin: 0.5rem 0;
+    }
+    .success-box {
+        background-color: #d4edda;
+        border-left: 4px solid #28a745;
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Initialize session state
+if 'messages' not in st.session_state:
+    st.session_state.messages = []
+
+
+# =============================================================================
+# HELPER FUNCTIONS - Define before they're used
+# =============================================================================
+
+def process_query(prompt: str, location: str) -> Dict:
+    """Process user query and call appropriate API endpoint"""
+
+    prompt_lower = prompt.lower()
+
+    try:
+        # Product mix optimization
+        if any(keyword in prompt_lower for keyword in ["product mix", "optimal mix", "distribute units", "1bhk", "2bhk", "3bhk"]):
+            response = requests.post(
+                f"{API_BASE_URL}/api/mcp/query",
+                json={
+                    "queryType": "optimization",
+                    "layer": 3,
+                    "capability": "optimize_product_mix",
+                    "parameters": {
+                        "location": location,
+                        "totalUnits": 100,
+                        "totalArea": 70000,
+                        "totalProjectCost": 294000000,
+                        "projectDuration_months": 36
+                    },
+                    "context": {
+                        "lfDataVersion": "Q3_FY25"
+                    }
+                }
+            )
+
+            if response.status_code == 200:
+                result = response.json()
+                display_optimization_result(result)
+                return result
+            else:
+                st.error(f"API Error: {response.status_code}")
+                return {"error": response.text}
+
+        # IRR calculation
+        elif any(keyword in prompt_lower for keyword in ["irr", "payback", "calculate", "50 cr", "investment"]):
+            # Extract cash flows from prompt or use defaults
+            response = requests.post(
+                f"{API_BASE_URL}/api/mcp/query",
+                json={
+                    "queryType": "calculation",
+                    "layer": 2,
+                    "capability": "calculate_irr",
+                    "parameters": {
+                        "cashFlows": [125000000, 150000000, 175000000, 200000000, 225000000],
+                        "initialInvestment": 500000000,
+                        "discountRate": 0.12
+                    }
+                }
+            )
+
+            if response.status_code == 200:
+                result = response.json()
+                display_irr_result(result)
+                return result
+            else:
+                st.error(f"API Error: {response.status_code}")
+                return {"error": response.text}
+
+        # Sensitivity analysis
+        elif any(keyword in prompt_lower for keyword in ["sensitivity", "scenario", "best case", "worst case", "absorption rate", "compare"]):
+            response = requests.post(
+                f"{API_BASE_URL}/api/mcp/query",
+                json={
+                    "queryType": "calculation",
+                    "layer": 2,
+                    "capability": "calculate_sensitivity_analysis",
+                    "parameters": {
+                        "cashFlows": [125000000, 150000000, 175000000, 200000000, 225000000],
+                        "initialInvestment": 500000000,
+                        "absorptionRange": [0.7, 1.3],
+                        "priceRange": [0.9, 1.1]
+                    }
+                }
+            )
+
+            if response.status_code == 200:
+                result = response.json()
+                display_sensitivity_result(result)
+                return result
+            else:
+                st.error(f"API Error: {response.status_code}")
+                return {"error": response.text}
+
+        # Market opportunity
+        elif any(keyword in prompt_lower for keyword in ["opportunity", "market", "demand", "unit type", "highest demand", "score"]):
+            response = requests.post(
+                f"{API_BASE_URL}/api/mcp/query",
+                json={
+                    "queryType": "optimization",
+                    "layer": 3,
+                    "capability": "market_opportunity_scoring",
+                    "parameters": {
+                        "location": location,
+                        "unitTypes": ["1BHK", "2BHK", "3BHK"]
+                    }
+                }
+            )
+
+            if response.status_code == 200:
+                result = response.json()
+                display_market_opportunity(result)
+                return result
+
+        # Default response
+        else:
+            st.markdown("### 💡 I can help you with:")
+            st.markdown("- **Product Mix Optimization**: Find optimal unit mix to maximize IRR")
+            st.markdown("- **Financial Calculations**: NPV, IRR, Payback Period")
+            st.markdown("- **Market Analysis**: Opportunity scoring, demand trends")
+            st.markdown("- **Sensitivity Analysis**: Risk assessment across scenarios")
+            st.markdown("\\nTry asking:")
+            st.code("What's the optimal product mix for a 100-unit project in Chakan?")
+            st.code("Calculate IRR for my project")
+            st.code("Run sensitivity analysis on IRR")
+            return {"type": "help"}
+
+    except Exception as e:
+        st.error(f"Error: {e}")
+        return {"error": str(e)}
+
+
+def display_optimization_result(result: Dict):
+    """Display product mix optimization results"""
+    st.markdown("### 🎯 Optimal Product Mix")
+
+    data = result['result']
+    mix = data['optimal_mix']
+
+    # Display mix as columns
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric("1BHK", f"{mix['1BHK']*100:.1f}%",
+                 delta=f"{data['units_breakdown']['1BHK']} units")
+    with col2:
+        st.metric("2BHK", f"{mix['2BHK']*100:.1f}%",
+                 delta=f"{data['units_breakdown']['2BHK']} units")
+    with col3:
+        st.metric("3BHK", f"{mix['3BHK']*100:.1f}%",
+                 delta=f"{data['units_breakdown']['3BHK']} units")
+
+    # Display scenarios
+    st.markdown("### 📊 Scenarios")
+    for scenario in data['scenarios']:
+        with st.expander(f"{scenario['scenarioName']} - IRR: {scenario['irr_percent']}%"):
+            st.markdown(f"**NPV:** ₹{scenario['npv_crore']} Cr")
+            st.markdown(f"**Revenue:** ₹{scenario['revenue_crore']} Cr")
+            st.markdown(f"**Duration:** {scenario['duration_months']} months")
+            st.json(scenario['mix'])
+
+    # Display provenance
+    with st.expander("🔍 Provenance & Data Lineage"):
+        st.json(result['provenance'])
+        st.markdown(f"**Execution Time:** {result['executionTime_ms']:.2f} ms")
+
+
+def display_irr_result(result: Dict):
+    """Display IRR calculation results"""
+    st.markdown("### 💰 Internal Rate of Return (IRR)")
+
+    irr_value = result['result']['value']
+    st.metric("IRR", f"{irr_value:.2f}%", delta="Target: 20-28%")
+
+    st.markdown("---")
+    st.markdown("### 📋 Calculation Details")
+    st.json(result['result'])
+
+    with st.expander("🔍 Provenance"):
+        st.json(result['provenance'])
+
+
+def display_sensitivity_result(result: Dict):
+    """Display sensitivity analysis results"""
+    st.markdown("### 📈 Sensitivity Analysis")
+
+    data = result['result']
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.markdown("**Base Case**")
+        st.metric("IRR", f"{data['baseCase']['irr_percent']}%")
+        st.metric("NPV", f"₹{data['baseCase']['npv_inr']/10000000:.2f} Cr")
+
+    with col2:
+        st.markdown("**Optimistic**")
+        st.metric("IRR", f"{data['optimisticCase']['irr_percent']}%")
+        st.metric("NPV", f"₹{data['optimisticCase']['npv_inr']/10000000:.2f} Cr")
+
+    with col3:
+        st.markdown("**Stress**")
+        st.metric("IRR", f"{data['stressCase']['irr_percent']}%")
+        st.metric("NPV", f"₹{data['stressCase']['npv_inr']/10000000:.2f} Cr")
+
+    with st.expander("🔍 Sensitivity Ranges"):
+        st.json(data['sensitivity_ranges'])
+
+
+def display_market_opportunity(result: Dict):
+    """Display market opportunity scoring"""
+    st.markdown("### 🎯 Market Opportunity Score")
+
+    data = result['result']
+
+    # OPPS Score
+    opps = data['oppsScore']
+    st.metric("OPPS Score", f"{opps}/100",
+             delta=f"{data['demandTrend'].upper()} demand")
+
+    # Competitive Intensity
+    st.markdown(f"**Competitive Intensity:** {data['competitiveIntensity']}")
+    st.markdown(f"**Opportunity:** {data['opportunity']}")
+
+    # Recommended Mix
+    st.markdown("### 📊 Recommended Mix")
+    mix = data['recommendedMix']
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric("1BHK", f"{mix['1BHK']*100:.0f}%")
+    with col2:
+        st.metric("2BHK", f"{mix['2BHK']*100:.0f}%")
+    with col3:
+        st.metric("3BHK", f"{mix['3BHK']*100:.0f}%")
+
+
+# =============================================================================
+# MAIN APP UI
+# =============================================================================
+
+# Sidebar
+with st.sidebar:
+    st.markdown("### 🏢 LF Analytics")
+    st.markdown("**Version:** 2.0")
+    st.markdown("**Architecture:** 4-Layer Dimensional KG")
+    st.markdown("---")
+
+    # Location filter
+    st.markdown("### 📍 Location")
+    location = st.selectbox(
+        "Select Location",
+        ["Chakan, Pune", "Other (coming soon)"]
+    )
+
+    # Load projects
+    try:
+        response = requests.get(f"{API_BASE_URL}/api/projects")
+        if response.status_code == 200:
+            projects = response.json()
+            st.markdown("### 🏗️ Projects")
+            selected_project = st.selectbox(
+                "Select Project",
+                [p['projectName'] for p in projects],
+                key="project_selector"
+            )
+
+            # Display project info
+            project = next((p for p in projects if p['projectName'] == selected_project), None)
+            if project:
+                st.markdown(f"**Units:** {project['totalUnits']}")
+                st.markdown(f"**Expected IRR:** {project['expectedIRR']:.1f}%")
+                st.markdown(f"**Developer:** {project['developer']}")
+        else:
+            st.error("Could not load projects")
+    except Exception as e:
+        st.error(f"API connection error: {e}")
+        st.info("Make sure the FastAPI server is running on http://localhost:8000")
+
+    st.markdown("---")
+    st.markdown("### 💡 Quick Actions")
+
+    if st.button("📊 Optimal Product Mix"):
+        st.session_state.messages.append({
+            "role": "user",
+            "content": f"What's the optimal product mix for a 100-unit project in {location}?"
+        })
+        st.rerun()
+
+    if st.button("💰 Calculate IRR"):
+        st.session_state.messages.append({
+            "role": "user",
+            "content": "Calculate IRR for cash flows of 12.5, 15, 17.5, 20, 22.5 Cr over 5 years with 50 Cr investment"
+        })
+        st.rerun()
+
+    if st.button("📈 Sensitivity Analysis"):
+        st.session_state.messages.append({
+            "role": "user",
+            "content": "Run sensitivity analysis on IRR for different absorption rates"
+        })
+        st.rerun()
+
+# Main content
+st.markdown('<div class="main-header">🏢 Liases Foras Real Estate Analytics</div>', unsafe_allow_html=True)
+st.markdown('<div class="sub-header">Four-Layer Dimensional Knowledge Graph with MCP API</div>', unsafe_allow_html=True)
+
+# Suggested Questions Section
+if len(st.session_state.messages) == 0:
+    st.markdown("### 💡 Try These Questions")
+    st.markdown("Click any question below to explore the platform's capabilities:")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("**🎯 Product Mix & Optimization**")
+        if st.button("What's the optimal product mix for 100 units in Chakan?", key="q1", use_container_width=True):
+            st.session_state.messages.append({
+                "role": "user",
+                "content": "What's the optimal product mix for a 100-unit project in Chakan?"
+            })
+            st.rerun()
+
+        if st.button("How should I distribute units between 1BHK, 2BHK, and 3BHK?", key="q2", use_container_width=True):
+            st.session_state.messages.append({
+                "role": "user",
+                "content": "What's the optimal product mix for a 100-unit project in Chakan?"
+            })
+            st.rerun()
+
+        st.markdown("**💰 Financial Analysis**")
+        if st.button("Calculate IRR for my 50 Cr project", key="q3", use_container_width=True):
+            st.session_state.messages.append({
+                "role": "user",
+                "content": "Calculate IRR for cash flows of 12.5, 15, 17.5, 20, 22.5 Cr over 5 years with 50 Cr investment"
+            })
+            st.rerun()
+
+        if st.button("What's the payback period for this investment?", key="q4", use_container_width=True):
+            st.session_state.messages.append({
+                "role": "user",
+                "content": "Calculate IRR for cash flows of 12.5, 15, 17.5, 20, 22.5 Cr over 5 years with 50 Cr investment"
+            })
+            st.rerun()
+
+    with col2:
+        st.markdown("**📊 Market Intelligence**")
+        if st.button("What's the market opportunity score for Chakan?", key="q5", use_container_width=True):
+            st.session_state.messages.append({
+                "role": "user",
+                "content": "What's the market opportunity score for Chakan?"
+            })
+            st.rerun()
+
+        if st.button("Which unit type has highest demand in this market?", key="q6", use_container_width=True):
+            st.session_state.messages.append({
+                "role": "user",
+                "content": "What's the market opportunity score for Chakan?"
+            })
+            st.rerun()
+
+        st.markdown("**⚠️ Risk Assessment**")
+        if st.button("How sensitive is IRR to absorption rate changes?", key="q7", use_container_width=True):
+            st.session_state.messages.append({
+                "role": "user",
+                "content": "Run sensitivity analysis on IRR for different absorption rates"
+            })
+            st.rerun()
+
+        if st.button("Compare best case vs worst case scenarios", key="q8", use_container_width=True):
+            st.session_state.messages.append({
+                "role": "user",
+                "content": "Run sensitivity analysis on IRR for different absorption rates"
+            })
+            st.rerun()
+
+    st.markdown("---")
+    st.info("💬 **Or type your own question below!** Ask about pricing, absorption rates, developer performance, or any financial metric.")
+    st.markdown("")
+
+# Check if last message is unanswered (user message without assistant response)
+if len(st.session_state.messages) > 0 and st.session_state.messages[-1]["role"] == "user":
+    # Process the last user message
+    last_user_message = st.session_state.messages[-1]["content"]
+
+    # Display user message
+    with st.chat_message("user"):
+        st.markdown(last_user_message)
+
+    # Process and display assistant response
+    with st.chat_message("assistant"):
+        with st.spinner("Analyzing..."):
+            response_content = process_query(last_user_message, location)
+            st.session_state.messages.append({"role": "assistant", "content": response_content})
+            st.rerun()
+
+# Display chat messages (only complete conversations)
+for i, message in enumerate(st.session_state.messages):
+    # Skip the last message if it's being processed above
+    if i == len(st.session_state.messages) - 1 and message["role"] == "user":
+        continue
+
+    with st.chat_message(message["role"]):
+        if isinstance(message["content"], dict):
+            # Display structured content
+            st.json(message["content"])
+        else:
+            st.markdown(message["content"])
+
+# Chat input
+if prompt := st.chat_input("Ask about product mix, IRR, market trends..."):
+    # Add user message
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    st.rerun()
+
+
+def process_query(prompt: str, location: str) -> Dict:
+    """Process user query and call appropriate API endpoint"""
+
+    prompt_lower = prompt.lower()
+
+    try:
+        # Product mix optimization
+        if any(keyword in prompt_lower for keyword in ["product mix", "optimal mix", "distribute units", "1bhk", "2bhk", "3bhk"]):
+            response = requests.post(
+                f"{API_BASE_URL}/api/mcp/query",
+                json={
+                    "queryType": "optimization",
+                    "layer": 3,
+                    "capability": "optimize_product_mix",
+                    "parameters": {
+                        "location": location,
+                        "totalUnits": 100,
+                        "totalArea": 70000,
+                        "totalProjectCost": 500000000,
+                        "projectDuration_months": 36
+                    },
+                    "context": {
+                        "lfDataVersion": "Q3_FY25"
+                    }
+                }
+            )
+
+            if response.status_code == 200:
+                result = response.json()
+                display_optimization_result(result)
+                return result
+            else:
+                st.error(f"API Error: {response.status_code}")
+                return {"error": response.text}
+
+        # IRR calculation
+        elif any(keyword in prompt_lower for keyword in ["irr", "payback", "calculate", "50 cr", "investment"]):
+            # Extract cash flows from prompt or use defaults
+            response = requests.post(
+                f"{API_BASE_URL}/api/mcp/query",
+                json={
+                    "queryType": "calculation",
+                    "layer": 2,
+                    "capability": "calculate_irr",
+                    "parameters": {
+                        "cashFlows": [125000000, 150000000, 175000000, 200000000, 225000000],
+                        "initialInvestment": 500000000,
+                        "discountRate": 0.12
+                    }
+                }
+            )
+
+            if response.status_code == 200:
+                result = response.json()
+                display_irr_result(result)
+                return result
+            else:
+                st.error(f"API Error: {response.status_code}")
+                return {"error": response.text}
+
+        # Sensitivity analysis
+        elif any(keyword in prompt_lower for keyword in ["sensitivity", "scenario", "best case", "worst case", "absorption rate", "compare"]):
+            response = requests.post(
+                f"{API_BASE_URL}/api/mcp/query",
+                json={
+                    "queryType": "calculation",
+                    "layer": 2,
+                    "capability": "calculate_sensitivity_analysis",
+                    "parameters": {
+                        "cashFlows": [125000000, 150000000, 175000000, 200000000, 225000000],
+                        "initialInvestment": 500000000,
+                        "absorptionRange": [0.7, 1.3],
+                        "priceRange": [0.9, 1.1]
+                    }
+                }
+            )
+
+            if response.status_code == 200:
+                result = response.json()
+                display_sensitivity_result(result)
+                return result
+            else:
+                st.error(f"API Error: {response.status_code}")
+                return {"error": response.text}
+
+        # Market opportunity
+        elif any(keyword in prompt_lower for keyword in ["opportunity", "market", "demand", "unit type", "highest demand", "score"]):
+            response = requests.post(
+                f"{API_BASE_URL}/api/mcp/query",
+                json={
+                    "queryType": "optimization",
+                    "layer": 3,
+                    "capability": "market_opportunity_scoring",
+                    "parameters": {
+                        "location": location,
+                        "unitTypes": ["1BHK", "2BHK", "3BHK"]
+                    }
+                }
+            )
+
+            if response.status_code == 200:
+                result = response.json()
+                display_market_opportunity(result)
+                return result
+
+        # Default response
+        else:
+            st.markdown("### 💡 I can help you with:")
+            st.markdown("- **Product Mix Optimization**: Find optimal unit mix to maximize IRR")
+            st.markdown("- **Financial Calculations**: NPV, IRR, Payback Period")
+            st.markdown("- **Market Analysis**: Opportunity scoring, demand trends")
+            st.markdown("- **Sensitivity Analysis**: Risk assessment across scenarios")
+            st.markdown("\nTry asking:")
+            st.code("What's the optimal product mix for a 100-unit project in Chakan?")
+            st.code("Calculate IRR for my project")
+            st.code("Run sensitivity analysis on IRR")
+            return {"type": "help"}
+
+    except Exception as e:
+        st.error(f"Error: {e}")
+        return {"error": str(e)}
+
+
+def display_optimization_result(result: Dict):
+    """Display product mix optimization results"""
+    st.markdown("### 🎯 Optimal Product Mix")
+
+    data = result['result']
+    mix = data['optimal_mix']
+
+    # Display mix as columns
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric("1BHK", f"{mix['1BHK']*100:.1f}%",
+                 delta=f"{data['units_breakdown']['1BHK']} units")
+    with col2:
+        st.metric("2BHK", f"{mix['2BHK']*100:.1f}%",
+                 delta=f"{data['units_breakdown']['2BHK']} units")
+    with col3:
+        st.metric("3BHK", f"{mix['3BHK']*100:.1f}%",
+                 delta=f"{data['units_breakdown']['3BHK']} units")
+
+    # Display scenarios
+    st.markdown("### 📊 Scenarios")
+    for scenario in data['scenarios']:
+        with st.expander(f"{scenario['scenarioName']} - IRR: {scenario['irr_percent']}%"):
+            st.markdown(f"**NPV:** ₹{scenario['npv_crore']} Cr")
+            st.markdown(f"**Revenue:** ₹{scenario['revenue_crore']} Cr")
+            st.markdown(f"**Duration:** {scenario['duration_months']} months")
+            st.json(scenario['mix'])
+
+    # Display provenance
+    with st.expander("🔍 Provenance & Data Lineage"):
+        st.json(result['provenance'])
+        st.markdown(f"**Execution Time:** {result['executionTime_ms']:.2f} ms")
+
+
+def display_irr_result(result: Dict):
+    """Display IRR calculation results"""
+    st.markdown("### 💰 Internal Rate of Return (IRR)")
+
+    irr_value = result['result']['value']
+    st.metric("IRR", f"{irr_value:.2f}%", delta="Target: 20-28%")
+
+    st.markdown("---")
+    st.markdown("### 📋 Calculation Details")
+    st.json(result['result'])
+
+    with st.expander("🔍 Provenance"):
+        st.json(result['provenance'])
+
+
+def display_sensitivity_result(result: Dict):
+    """Display sensitivity analysis results"""
+    st.markdown("### 📈 Sensitivity Analysis")
+
+    data = result['result']
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.markdown("**Base Case**")
+        st.metric("IRR", f"{data['baseCase']['irr_percent']}%")
+        st.metric("NPV", f"₹{data['baseCase']['npv_inr']/10000000:.2f} Cr")
+
+    with col2:
+        st.markdown("**Optimistic**")
+        st.metric("IRR", f"{data['optimisticCase']['irr_percent']}%")
+        st.metric("NPV", f"₹{data['optimisticCase']['npv_inr']/10000000:.2f} Cr")
+
+    with col3:
+        st.markdown("**Stress**")
+        st.metric("IRR", f"{data['stressCase']['irr_percent']}%")
+        st.metric("NPV", f"₹{data['stressCase']['npv_inr']/10000000:.2f} Cr")
+
+    with st.expander("🔍 Sensitivity Ranges"):
+        st.json(data['sensitivity_ranges'])
+
+
+def display_market_opportunity(result: Dict):
+    """Display market opportunity scoring"""
+    st.markdown("### 🎯 Market Opportunity Score")
+
+    data = result['result']
+
+    # OPPS Score
+    opps = data['oppsScore']
+    st.metric("OPPS Score", f"{opps}/100",
+             delta=f"{data['demandTrend'].upper()} demand")
+
+    # Competitive Intensity
+    st.markdown(f"**Competitive Intensity:** {data['competitiveIntensity']}")
+    st.markdown(f"**Opportunity:** {data['opportunity']}")
+
+    # Recommended Mix
+    st.markdown("### 📊 Recommended Mix")
+    mix = data['recommendedMix']
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric("1BHK", f"{mix['1BHK']*100:.0f}%")
+    with col2:
+        st.metric("2BHK", f"{mix['2BHK']*100:.0f}%")
+    with col3:
+        st.metric("3BHK", f"{mix['3BHK']*100:.0f}%")
+
+
+# Footer
+st.markdown("---")
+st.markdown("""
+<div style="text-align: center; color: #666; font-size: 0.9rem;">
+    🏢 Liases Foras × Sirrus.AI | Four-Layer Dimensional Knowledge Graph | v2.0<br/>
+    Powered by FastAPI, Neo4j, and MCP API
+</div>
+""", unsafe_allow_html=True)

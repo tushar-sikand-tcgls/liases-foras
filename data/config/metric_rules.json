@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Rules for evaluating L1 and L2 metrics into Excellent/Okay/Bad categories",
+    "updated": "2025-11-30",
+    "note": "All rules are NON-LLM threshold-based evaluations"
+  },
+  
+  "L1_metrics": {
+    "soldPct": {
+      "metric_name": "Sold Percentage",
+      "unit": "fraction",
+      "dimension": "Dimensionless",
+      "thresholds": {
+        "Excellent": {"min": 0.80, "max": 1.0, "description": ">= 80% sold"},
+        "Okay": {"min": 0.50, "max": 0.80, "description": "50-80% sold"},
+        "Bad": {"min": 0, "max": 0.50, "description": "< 50% sold"}
+      }
+    },
+    "monthlySalesVelocity": {
+      "metric_name": "Monthly Sales Velocity",
+      "unit": "fraction/month",
+      "dimension": "Fraction/T",
+      "thresholds": {
+        "Excellent": {"min": 0.05, "max": 1.0, "description": ">= 5% per month"},
+        "Okay": {"min": 0.02, "max": 0.05, "description": "2-5% per month"},
+        "Bad": {"min": 0, "max": 0.02, "description": "< 2% per month"}
+      }
+    },
+    "currentPricePSF": {
+      "metric_name": "Current Price PSF",
+      "unit": "INR/sqft",
+      "dimension": "C/L²",
+      "thresholds": {
+        "Excellent": {"min": 5000, "max": 100000, "description": ">= ₹5000/sqft"},
+        "Okay": {"min": 3000, "max": 5000, "description": "₹3000-5000/sqft"},
+        "Bad": {"min": 0, "max": 3000, "description": "< ₹3000/sqft"}
+      }
+    }
+  },
+  
+  "L2_metrics": {
+    "npvCr": {
+      "metric_name": "Net Present Value",
+      "unit": "INR Crore",
+      "dimension": "C",
+      "thresholds": {
+        "Excellent": {"min": 100, "max": 1000000, "description": "> ₹100 Cr NPV"},
+        "Okay": {"min": 0, "max": 100, "description": "0 to ₹100 Cr NPV"},
+        "Bad": {"min": -1000000, "max": 0, "description": "Negative NPV"}
+      }
+    },
+    "irrPct": {
+      "metric_name": "Internal Rate of Return",
+      "unit": "%",
+      "dimension": "Fraction/T",
+      "thresholds": {
+        "Excellent": {"min": 18, "max": 100, "description": ">= 18% IRR"},
+        "Okay": {"min": 12, "max": 18, "description": "12-18% IRR"},
+        "Bad": {"min": -100, "max": 12, "description": "< 12% IRR"}
+      }
+    },
+    "roiPct": {
+      "metric_name": "Return on Investment",
+      "unit": "%",
+      "dimension": "Dimensionless",
+      "thresholds": {
+        "Excellent": {"min": 50, "max": 1000, "description": ">= 50% ROI"},
+        "Okay": {"min": 20, "max": 50, "description": "20-50% ROI"},
+        "Bad": {"min": -1000, "max": 20, "description": "< 20% ROI"}
+      }
+    },
+    "paybackPeriodYears": {
+      "metric_name": "Payback Period",
+      "unit": "years",
+      "dimension": "T",
+      "thresholds": {
+        "Excellent": {"min": 0, "max": 5, "description": "<= 5 years"},
+        "Okay": {"min": 5, "max": 10, "description": "5-10 years"},
+        "Bad": {"min": 10, "max": 100, "description": "> 10 years"}
+      }
+    },
+    "profitabilityIndex": {
+      "metric_name": "Profitability Index",
+      "unit": "ratio",
+      "dimension": "Dimensionless",
+      "thresholds": {
+        "Excellent": {"min": 1.5, "max": 10, "description": ">= 1.5"},
+        "Okay": {"min": 1.0, "max": 1.5, "description": "1.0 to 1.5"},
+        "Bad": {"min": 0, "max": 1.0, "description": "< 1.0"}
+      }
+    },
+    "absorptionRatePctPerYear": {
+      "metric_name": "Absorption Rate",
+      "unit": "%/year",
+      "dimension": "Fraction/T",
+      "thresholds": {
+        "Excellent": {"min": 40, "max": 100, "description": ">= 40% per year"},
+        "Okay": {"min": 20, "max": 40, "description": "20-40% per year"},
+        "Bad": {"min": 0, "max": 20, "description": "< 20% per year"}
+      }
+    }
+  }
+}

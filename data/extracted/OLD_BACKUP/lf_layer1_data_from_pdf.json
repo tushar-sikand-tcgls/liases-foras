@@ -1,0 +1,960 @@
+{
+  "metadata": {
+    "source_file": "/Users/tusharsikand/Documents/Projects/liases-foras/GetMicromarketPdf.pdf",
+    "extraction_timestamp": "2025-11-29T22:59:03.005537",
+    "data_layer": "L1",
+    "extraction_priority": {
+      "page_2": {
+        "weight": 10,
+        "description": "Top 10 Projects - L0 foundation"
+      },
+      "page_5": {
+        "weight": 9,
+        "description": "Unit Type Analysis - L1 metrics"
+      },
+      "page_8": {
+        "weight": 8,
+        "description": "Quarterly Market Summary - Time series"
+      }
+    },
+    "extraction_summary": {
+      "total_projects_extracted": 10,
+      "total_unit_types_extracted": 4,
+      "total_quarters_extracted": 14
+    }
+  },
+  "page_2_projects": [
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "project_name": "3306",
+      "developer_name": "Sara City",
+      "location": "Sara\nBuilders &\nDevelopers\n(Sara Group)",
+      "dimensions_L0": {
+        "U": {
+          "total_supply_units": null,
+          "annual_sales_units": null,
+          "sold_pct": null,
+          "unsold_pct": 3018.0
+        },
+        "L2": {
+          "project_size": 1109.0,
+          "unit_saleable_size_sqft": 0.89
+        },
+        "T": {
+          "launch_date": "11%",
+          "possession_date": "527"
+        },
+        "CF": {
+          "annual_sales_value_cr": 106.0,
+          "launch_price_psf": 411.0,
+          "current_price_psf": 2200.0
+        }
+      },
+      "metrics_L1": {
+        "monthly_sales_velocity": 3996.0,
+        "months_inventory": 0.0347,
+        "rera_registered": "Y"
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-29T22:59:03.161988"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "project_name": "134282",
+      "developer_name": "Pradnyesh\nShriniwas",
+      "location": "JJ Mauli\nDevelopers",
+      "dimensions_L0": {
+        "U": {
+          "total_supply_units": null,
+          "annual_sales_units": null,
+          "sold_pct": null,
+          "unsold_pct": 278.0
+        },
+        "L2": {
+          "project_size": 278.0,
+          "unit_saleable_size_sqft": 0.58
+        },
+        "T": {
+          "launch_date": "42%",
+          "possession_date": "87"
+        },
+        "CF": {
+          "annual_sales_value_cr": 24.0,
+          "launch_price_psf": 562.0,
+          "current_price_psf": 3400.0
+        }
+      },
+      "metrics_L1": {
+        "monthly_sales_velocity": 3745.0,
+        "months_inventory": 0.0891,
+        "rera_registered": "Y"
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-29T22:59:03.162005"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "project_name": "139616",
+      "developer_name": "Sara Nilaay",
+      "location": "Sara\nBuilders &\nDevelopers\n(Sara Group)",
+      "dimensions_L0": {
+        "U": {
+          "total_supply_units": null,
+          "annual_sales_units": null,
+          "sold_pct": null,
+          "unsold_pct": 298.0
+        },
+        "L2": {
+          "project_size": 298.0,
+          "unit_saleable_size_sqft": 0.31
+        },
+        "T": {
+          "launch_date": "69%",
+          "possession_date": "32"
+        },
+        "CF": {
+          "annual_sales_value_cr": 6.0,
+          "launch_price_psf": 395.0,
+          "current_price_psf": 4285.0
+        }
+      },
+      "metrics_L1": {
+        "monthly_sales_velocity": 4569.0,
+        "months_inventory": 0.0195,
+        "rera_registered": "Y"
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-29T22:59:03.162011"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "project_name": "147800",
+      "developer_name": "Sara\nAbhiruchi\nTower",
+      "location": "Sara\nBuilders &\nDevelopers\n(Sara Group)",
+      "dimensions_L0": {
+        "U": {
+          "total_supply_units": null,
+          "annual_sales_units": null,
+          "sold_pct": null,
+          "unsold_pct": 280.0
+        },
+        "L2": {
+          "project_size": 280.0,
+          "unit_saleable_size_sqft": 0.11
+        },
+        "T": {
+          "launch_date": "89%",
+          "possession_date": "32"
+        },
+        "CF": {
+          "annual_sales_value_cr": 7.0,
+          "launch_price_psf": 635.0,
+          "current_price_psf": 3189.0
+        }
+      },
+      "metrics_L1": {
+        "monthly_sales_velocity": 3189.0,
+        "months_inventory": 0.1143,
+        "rera_registered": "Y"
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-29T22:59:03.162017"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "project_name": "137562",
+      "developer_name": "The Urbana",
+      "location": "Intercontinent\nInfrastructure\nLimited",
+      "dimensions_L0": {
+        "U": {
+          "total_supply_units": null,
+          "annual_sales_units": null,
+          "sold_pct": null,
+          "unsold_pct": 168.0
+        },
+        "L2": {
+          "project_size": 168.0,
+          "unit_saleable_size_sqft": 0.96
+        },
+        "T": {
+          "launch_date": "4%",
+          "possession_date": "29"
+        },
+        "CF": {
+          "annual_sales_value_cr": 7.0,
+          "launch_price_psf": 550.0,
+          "current_price_psf": 3696.0
+        }
+      },
+      "metrics_L1": {
+        "monthly_sales_velocity": 3725.0,
+        "months_inventory": 0.042,
+        "rera_registered": "Y"
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-29T22:59:03.162022"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "project_name": "141108",
+      "developer_name": "Gulmohar\nCity",
+      "location": "Gurudatta\nBuilders And\nDevelopers",
+      "dimensions_L0": {
+        "U": {
+          "total_supply_units": null,
+          "annual_sales_units": null,
+          "sold_pct": null,
+          "unsold_pct": 150.0
+        },
+        "L2": {
+          "project_size": 150.0,
+          "unit_saleable_size_sqft": 0.27
+        },
+        "T": {
+          "launch_date": "73%",
+          "possession_date": "28"
+        },
+        "CF": {
+          "annual_sales_value_cr": 8.0,
+          "launch_price_psf": 531.0,
+          "current_price_psf": 4352.0
+        }
+      },
+      "metrics_L1": {
+        "monthly_sales_velocity": 4330.0,
+        "months_inventory": 0.023700000000000002,
+        "rera_registered": "Y"
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-29T22:59:03.162026"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "project_name": "138347",
+      "developer_name": "Siddhivinayak\nResidency",
+      "location": "Kate\nBuilders",
+      "dimensions_L0": {
+        "U": {
+          "total_supply_units": null,
+          "annual_sales_units": null,
+          "sold_pct": null,
+          "unsold_pct": 156.0
+        },
+        "L2": {
+          "project_size": 156.0,
+          "unit_saleable_size_sqft": 0.64
+        },
+        "T": {
+          "launch_date": "36%",
+          "possession_date": "24"
+        },
+        "CF": {
+          "annual_sales_value_cr": 7.0,
+          "launch_price_psf": 573.0,
+          "current_price_psf": 4046.0
+        }
+      },
+      "metrics_L1": {
+        "monthly_sales_velocity": 4094.0,
+        "months_inventory": 0.0321,
+        "rera_registered": "Y"
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-29T22:59:03.162031"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "project_name": "137971",
+      "developer_name": "Sarangi\nParadise",
+      "location": "Sai Propking\nReality",
+      "dimensions_L0": {
+        "U": {
+          "total_supply_units": null,
+          "annual_sales_units": null,
+          "sold_pct": null,
+          "unsold_pct": 56.0
+        },
+        "L2": {
+          "project_size": 56.0,
+          "unit_saleable_size_sqft": 0.93
+        },
+        "T": {
+          "launch_date": "7%",
+          "possession_date": "19"
+        },
+        "CF": {
+          "annual_sales_value_cr": 5.0,
+          "launch_price_psf": 568.0,
+          "current_price_psf": 3884.0
+        }
+      },
+      "metrics_L1": {
+        "monthly_sales_velocity": 4000.0,
+        "months_inventory": 0.0464,
+        "rera_registered": "Y"
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-29T22:59:03.162035"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "project_name": "143163",
+      "developer_name": "Kalpavruksh\nHeights",
+      "location": "Swami\nSamarth\nBuildcon",
+      "dimensions_L0": {
+        "U": {
+          "total_supply_units": null,
+          "annual_sales_units": null,
+          "sold_pct": null,
+          "unsold_pct": 48.0
+        },
+        "L2": {
+          "project_size": 48.0,
+          "unit_saleable_size_sqft": 0.4
+        },
+        "T": {
+          "launch_date": "60%",
+          "possession_date": "15"
+        },
+        "CF": {
+          "annual_sales_value_cr": 4.0,
+          "launch_price_psf": 762.0,
+          "current_price_psf": 2996.0
+        }
+      },
+      "metrics_L1": {
+        "monthly_sales_velocity": 2996.0,
+        "months_inventory": 0.0208,
+        "rera_registered": "Y"
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-29T22:59:03.162039"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "project_name": "35269",
+      "developer_name": "Shubhan\nKaroti",
+      "location": "Creative\nVentures",
+      "dimensions_L0": {
+        "U": {
+          "total_supply_units": null,
+          "annual_sales_units": null,
+          "sold_pct": null,
+          "unsold_pct": 48.0
+        },
+        "L2": {
+          "project_size": 24.0,
+          "unit_saleable_size_sqft": 0.96
+        },
+        "T": {
+          "launch_date": "4%",
+          "possession_date": "11"
+        },
+        "CF": {
+          "annual_sales_value_cr": 2.0,
+          "launch_price_psf": 385.0,
+          "current_price_psf": 3200.0
+        }
+      },
+      "metrics_L1": {
+        "monthly_sales_velocity": 2808.0,
+        "months_inventory": 0.0086,
+        "rera_registered": "Y"
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-29T22:59:03.162044"
+    }
+  ],
+  "page_5_unit_types": [
+    {
+      "layer": "L1",
+      "node_type": "UnitType_L1",
+      "flat_type": "1/2RK",
+      "dimensions_L0": {
+        "L2": {
+          "saleable_min_size_sqft": 260.0,
+          "saleable_max_size_sqft": 400.0
+        },
+        "CF": {
+          "min_cost": 7.0,
+          "max_cost": 13.0
+        },
+        "U": {
+          "annual_sales_units": 5.0,
+          "unsold_units": 4.0,
+          "total_supply": 16.0
+        }
+      },
+      "metrics_L1": {
+        "wt_avg_saleable_price_psf": 9.0,
+        "wt_avg_carpet_price_psf": 2812.0,
+        "product_efficiency_pct": 4017.0,
+        "months_inventory": 10.0,
+        "sales_velocity": 0.0066
+      },
+      "priority_weight": 9,
+      "extraction_timestamp": "2025-11-29T22:59:03.281968"
+    },
+    {
+      "layer": "L1",
+      "node_type": "UnitType_L1",
+      "flat_type": "1BHK",
+      "dimensions_L0": {
+        "L2": {
+          "saleable_min_size_sqft": 350.0,
+          "saleable_max_size_sqft": 863.0
+        },
+        "CF": {
+          "min_cost": 10.0,
+          "max_cost": 30.0
+        },
+        "U": {
+          "annual_sales_units": 672.0,
+          "unsold_units": 1315.0,
+          "total_supply": 3261.0
+        }
+      },
+      "metrics_L1": {
+        "wt_avg_saleable_price_psf": 1987.0,
+        "wt_avg_carpet_price_psf": 3557.0,
+        "product_efficiency_pct": 5038.0,
+        "months_inventory": 23.0,
+        "sales_velocity": 0.024300000000000002
+      },
+      "priority_weight": 9,
+      "extraction_timestamp": "2025-11-29T22:59:03.281982"
+    },
+    {
+      "layer": "L1",
+      "node_type": "UnitType_L1",
+      "flat_type": "1.5/2BHK",
+      "dimensions_L0": {
+        "L2": {
+          "saleable_min_size_sqft": 557.0,
+          "saleable_max_size_sqft": 1138.0
+        },
+        "CF": {
+          "min_cost": 17.0,
+          "max_cost": 41.0
+        },
+        "U": {
+          "annual_sales_units": 154.0,
+          "unsold_units": 431.0,
+          "total_supply": 963.0
+        }
+      },
+      "metrics_L1": {
+        "wt_avg_saleable_price_psf": 585.0,
+        "wt_avg_carpet_price_psf": 3538.0,
+        "product_efficiency_pct": 4959.0,
+        "months_inventory": 34.0,
+        "sales_velocity": 0.025
+      },
+      "priority_weight": 9,
+      "extraction_timestamp": "2025-11-29T22:59:03.281987"
+    },
+    {
+      "layer": "L1",
+      "node_type": "UnitType_L1",
+      "flat_type": "Total",
+      "dimensions_L0": {
+        "L2": {
+          "saleable_min_size_sqft": null,
+          "saleable_max_size_sqft": null
+        },
+        "CF": {
+          "min_cost": null,
+          "max_cost": null
+        },
+        "U": {
+          "annual_sales_units": 831.0,
+          "unsold_units": 1750.0,
+          "total_supply": 4240.0
+        }
+      },
+      "metrics_L1": {
+        "wt_avg_saleable_price_psf": 2581.0,
+        "wt_avg_carpet_price_psf": null,
+        "product_efficiency_pct": null,
+        "months_inventory": null,
+        "sales_velocity": null
+      },
+      "priority_weight": 9,
+      "extraction_timestamp": "2025-11-29T22:59:03.281990"
+    }
+  ],
+  "page_8_quarterly_summary": [
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Marketable Supply (Unit)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 1731.0,
+          "quarterly_sales_units": 1699.0,
+          "annual_sales_units": 1723.0,
+          "unsold_stock_units": 2078.0
+        },
+        "L2": {
+          "marketable_supply_sqft": 1847.0,
+          "quarterly_sales_sqft": -0.11,
+          "unsold_stock_sqft": 0.07
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370640"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Marketable Supply (mn Sq.Ft)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 0.98,
+          "quarterly_sales_units": 0.98,
+          "annual_sales_units": 1.03,
+          "unsold_stock_units": 1.25
+        },
+        "L2": {
+          "marketable_supply_sqft": 1.14,
+          "quarterly_sales_sqft": -0.09,
+          "unsold_stock_sqft": 0.16
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370654"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Sales (Units)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 163.0,
+          "quarterly_sales_units": 246.0,
+          "annual_sales_units": 171.0,
+          "unsold_stock_units": 317.0
+        },
+        "L2": {
+          "marketable_supply_sqft": 97.0,
+          "quarterly_sales_sqft": -0.69,
+          "unsold_stock_sqft": -0.4
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370659"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Sales (mn Sq.Ft)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 0.09,
+          "quarterly_sales_units": 0.12,
+          "annual_sales_units": 0.09,
+          "unsold_stock_units": 0.18
+        },
+        "L2": {
+          "marketable_supply_sqft": 0.06,
+          "quarterly_sales_sqft": -0.65,
+          "unsold_stock_sqft": -0.28
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370662"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Value of Stock Sold (Rs.Cr)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 33.39,
+          "quarterly_sales_units": 47.35,
+          "annual_sales_units": 39.18,
+          "unsold_stock_units": 70.2
+        },
+        "L2": {
+          "marketable_supply_sqft": 23.93,
+          "quarterly_sales_sqft": -0.66,
+          "unsold_stock_sqft": -0.28
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370665"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Unsold Stock (Units)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 1568.0,
+          "quarterly_sales_units": 1453.0,
+          "annual_sales_units": 1552.0,
+          "unsold_stock_units": 1761.0
+        },
+        "L2": {
+          "marketable_supply_sqft": 1750.0,
+          "quarterly_sales_sqft": -0.01,
+          "unsold_stock_sqft": 0.12
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370668"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Unsold Stock (mn Sq.Ft)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 0.89,
+          "quarterly_sales_units": 0.86,
+          "annual_sales_units": 0.94,
+          "unsold_stock_units": 1.07
+        },
+        "L2": {
+          "marketable_supply_sqft": 1.08,
+          "quarterly_sales_sqft": 0.01,
+          "unsold_stock_sqft": 0.21
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370671"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Unsold Stock Value (Rs.Cr)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 333.44,
+          "quarterly_sales_units": 312.5,
+          "annual_sales_units": 335.41,
+          "unsold_stock_units": 381.24
+        },
+        "L2": {
+          "marketable_supply_sqft": 382.4,
+          "quarterly_sales_sqft": 0.0,
+          "unsold_stock_sqft": 0.15
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370674"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Wt Avg Price (PSF)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 3735.0,
+          "quarterly_sales_units": 3627.0,
+          "annual_sales_units": 3575.0,
+          "unsold_stock_units": 3575.0
+        },
+        "L2": {
+          "marketable_supply_sqft": 3551.0,
+          "quarterly_sales_sqft": -0.01,
+          "unsold_stock_sqft": -0.05
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370676"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Cost of Flat (Rs.lac)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 21.27,
+          "quarterly_sales_units": 21.51,
+          "annual_sales_units": 21.61,
+          "unsold_stock_units": 21.65
+        },
+        "L2": {
+          "marketable_supply_sqft": 21.85,
+          "quarterly_sales_sqft": 0.01,
+          "unsold_stock_sqft": 0.03
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370679"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Sales Velocity (%)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 1.14,
+          "quarterly_sales_units": 1.09,
+          "annual_sales_units": 1.005,
+          "unsold_stock_units": 1.0
+        },
+        "L2": {
+          "marketable_supply_sqft": 1.67,
+          "quarterly_sales_sqft": 0.67,
+          "unsold_stock_sqft": 0.46
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370682"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Months Inventory",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 29.0,
+          "quarterly_sales_units": 18.0,
+          "annual_sales_units": 27.0,
+          "unsold_stock_units": 17.0
+        },
+        "L2": {
+          "marketable_supply_sqft": 54.0,
+          "quarterly_sales_sqft": 2.18,
+          "unsold_stock_sqft": 0.86
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370685"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Newsupply (Units)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 150.0,
+          "quarterly_sales_units": 0.0,
+          "annual_sales_units": 0.0,
+          "unsold_stock_units": 268.0
+        },
+        "L2": {
+          "marketable_supply_sqft": 280.0,
+          "quarterly_sales_sqft": 0.04,
+          "unsold_stock_sqft": 0.87
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370687"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarter_label": "Newsupply (mn Sq.Ft)",
+      "dimensions_L0": {
+        "U": {
+          "marketable_supply_units": 0.1,
+          "quarterly_sales_units": 0.0,
+          "annual_sales_units": 0.0,
+          "unsold_stock_units": 0.17
+        },
+        "L2": {
+          "marketable_supply_sqft": 0.18,
+          "quarterly_sales_sqft": 0.08,
+          "unsold_stock_sqft": 0.79
+        },
+        "CF": {
+          "wt_avg_price_saleable_psf": null,
+          "wt_avg_price_carpet_psf": null,
+          "unsold_stock_value_cr": null
+        }
+      },
+      "metrics_L1": {
+        "sales_velocity_pct": null,
+        "months_inventory": null
+      },
+      "metrics_L2": {
+        "qoq_change_pct": null,
+        "yoy_change_pct": null
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-29T22:59:03.370691"
+    }
+  ]
+}

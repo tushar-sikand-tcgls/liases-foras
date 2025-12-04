@@ -1,0 +1,202 @@
+[
+  {
+    "projectId": "P_CHAKAN_001",
+    "projectName": "Sara City",
+    "developer": {
+      "developerId": "D_001",
+      "developerName": "Sara Builders & Developers",
+      "apfScore": 0.92,
+      "marketabilityIndex": 0.88
+    },
+    "location": {
+      "city": "Pune",
+      "microMarket": "Chakan",
+      "pincode": "410501"
+    },
+    "totalUnits": 100,
+    "totalLandArea_sqft": 70000,
+    "totalSaleableArea_sqft": 60000,
+    "totalCarpetArea_sqft": 42000,
+    "projectDuration_months": 36,
+    "totalProjectCost_inr": 294000000,
+    "launchDate": "2025-06-01",
+    "completionDate": "2028-06-01",
+    "units": [
+      {
+        "unitType": "1BHK",
+        "count": 30,
+        "areaPerUnit_sqft": 500,
+        "saleablePerUnit_sqft": 600,
+        "pricePerUnit_inr": 3000000
+      },
+      {
+        "unitType": "2BHK",
+        "count": 50,
+        "areaPerUnit_sqft": 700,
+        "saleablePerUnit_sqft": 840,
+        "pricePerUnit_inr": 4200000
+      },
+      {
+        "unitType": "3BHK",
+        "count": 20,
+        "areaPerUnit_sqft": 1000,
+        "saleablePerUnit_sqft": 1200,
+        "pricePerUnit_inr": 6000000
+      }
+    ],
+    "marketData": {
+      "absorptionRate_1BHK": 0.03,
+      "absorptionRate_2BHK": 0.05,
+      "absorptionRate_3BHK": 0.02,
+      "priceAppreciation_annual": 0.08,
+      "competitiveIntensity": "medium",
+      "demandScore": 78
+    },
+    "financials": {
+      "initialInvestment": 294000000,
+      "annualCashFlows": [
+        125000000,
+        150000000,
+        175000000,
+        200000000,
+        225000000
+      ],
+      "discountRate": 0.12,
+      "expectedIRR": 0.24,
+      "expectedNPV": 305000000
+    }
+  },
+  {
+    "projectId": "P_CHAKAN_002",
+    "projectName": "Pradnyesh Shriniwas",
+    "developer": {
+      "developerId": "D_002",
+      "developerName": "JJ Mauli Developers",
+      "apfScore": 0.85,
+      "marketabilityIndex": 0.8
+    },
+    "location": {
+      "city": "Pune",
+      "microMarket": "Chakan",
+      "pincode": "410501"
+    },
+    "totalUnits": 80,
+    "totalLandArea_sqft": 55000,
+    "totalSaleableArea_sqft": 48000,
+    "totalCarpetArea_sqft": 33600,
+    "projectDuration_months": 30,
+    "totalProjectCost_inr": 207000000,
+    "launchDate": "2025-09-01",
+    "completionDate": "2028-03-01",
+    "units": [
+      {
+        "unitType": "1BHK",
+        "count": 40,
+        "areaPerUnit_sqft": 480,
+        "saleablePerUnit_sqft": 580,
+        "pricePerUnit_inr": 2900000
+      },
+      {
+        "unitType": "2BHK",
+        "count": 30,
+        "areaPerUnit_sqft": 680,
+        "saleablePerUnit_sqft": 820,
+        "pricePerUnit_inr": 4100000
+      },
+      {
+        "unitType": "3BHK",
+        "count": 10,
+        "areaPerUnit_sqft": 950,
+        "saleablePerUnit_sqft": 1140,
+        "pricePerUnit_inr": 5700000
+      }
+    ],
+    "marketData": {
+      "absorptionRate_1BHK": 0.03,
+      "absorptionRate_2BHK": 0.05,
+      "absorptionRate_3BHK": 0.02,
+      "priceAppreciation_annual": 0.08,
+      "competitiveIntensity": "medium",
+      "demandScore": 75
+    },
+    "financials": {
+      "initialInvestment": 207000000,
+      "annualCashFlows": [
+        100000000,
+        120000000,
+        140000000,
+        160000000
+      ],
+      "discountRate": 0.12,
+      "expectedIRR": 0.22,
+      "expectedNPV": 215000000
+    }
+  },
+  {
+    "projectId": "P_CHAKAN_003",
+    "projectName": "Sara Nilaay",
+    "developer": {
+      "developerId": "D_001",
+      "developerName": "Sara Builders & Developers",
+      "apfScore": 0.92,
+      "marketabilityIndex": 0.88
+    },
+    "location": {
+      "city": "Pune",
+      "microMarket": "Chakan",
+      "pincode": "410501"
+    },
+    "totalUnits": 120,
+    "totalLandArea_sqft": 90000,
+    "totalSaleableArea_sqft": 78000,
+    "totalCarpetArea_sqft": 54600,
+    "projectDuration_months": 42,
+    "totalProjectCost_inr": 390000000,
+    "launchDate": "2025-03-01",
+    "completionDate": "2028-09-01",
+    "units": [
+      {
+        "unitType": "1BHK",
+        "count": 20,
+        "areaPerUnit_sqft": 520,
+        "saleablePerUnit_sqft": 630,
+        "pricePerUnit_inr": 3150000
+      },
+      {
+        "unitType": "2BHK",
+        "count": 70,
+        "areaPerUnit_sqft": 720,
+        "saleablePerUnit_sqft": 870,
+        "pricePerUnit_inr": 4350000
+      },
+      {
+        "unitType": "3BHK",
+        "count": 30,
+        "areaPerUnit_sqft": 1050,
+        "saleablePerUnit_sqft": 1260,
+        "pricePerUnit_inr": 6300000
+      }
+    ],
+    "marketData": {
+      "absorptionRate_1BHK": 0.03,
+      "absorptionRate_2BHK": 0.05,
+      "absorptionRate_3BHK": 0.02,
+      "priceAppreciation_annual": 0.08,
+      "competitiveIntensity": "medium",
+      "demandScore": 82
+    },
+    "financials": {
+      "initialInvestment": 390000000,
+      "annualCashFlows": [
+        160000000,
+        195000000,
+        230000000,
+        265000000,
+        300000000
+      ],
+      "discountRate": 0.12,
+      "expectedIRR": 0.26,
+      "expectedNPV": 410000000
+    }
+  }
+]

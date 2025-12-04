@@ -1,0 +1,116 @@
+{
+  "Net Present Value": {
+    "definition": "The difference between the present value of cash inflows and outflows over a period of time, discounted at a specified rate.",
+    "example": "If a project requires ₹100 Cr investment and generates ₹150 Cr in present value terms, the NPV is ₹50 Cr (positive NPV indicates value creation).",
+    "good_threshold": "> 0 Crore",
+    "bad_threshold": "< 0 Crore"
+  },
+  "Internal Rate of Return": {
+    "definition": "The discount rate that makes the Net Present Value (NPV) of all cash flows equal to zero. It represents the project's expected rate of return.",
+    "example": "If a project has an IRR of 18%, it means the investment is expected to grow at 18% per year. Compare this to your cost of capital (typically 10-12%).",
+    "good_threshold": "> 15%",
+    "bad_threshold": "< 10% or negative"
+  },
+  "IRR": {
+    "definition": "Internal Rate of Return - the discount rate that makes NPV = 0.",
+    "example": "An IRR of 18% means the project returns 18% annually. Negative IRR indicates the project destroys value.",
+    "good_threshold": "> 15%",
+    "bad_threshold": "< 10% or negative"
+  },
+  "NPV": {
+    "definition": "Net Present Value - present value of cash inflows minus outflows.",
+    "example": "NPV of ₹50 Cr means the project creates ₹50 Crore of value in today's terms.",
+    "good_threshold": "> 0 Crore",
+    "bad_threshold": "< 0 Crore"
+  },
+  "Profitability Index": {
+    "definition": "The ratio of the present value of future cash flows to the initial investment. Also called Benefit-Cost Ratio.",
+    "example": "A PI of 1.5 means for every ₹1 invested, you get ₹1.50 in present value terms. PI > 1 indicates value creation.",
+    "good_threshold": "> 1.2",
+    "bad_threshold": "< 1.0"
+  },
+  "Payback Period": {
+    "definition": "The time required for cumulative cash inflows to equal the initial investment.",
+    "example": "If you invest ₹100 Cr and get ₹25 Cr/year, the payback period is 4 years. Shorter is better for risk reduction.",
+    "good_threshold": "< 5 years",
+    "bad_threshold": "> 10 years"
+  },
+  "Absorption Rate": {
+    "definition": "The rate at which available units are sold in a specific market during a given time period, typically expressed as percentage per year.",
+    "example": "An absorption rate of 30%/year means 30% of total units are being sold annually. Higher rates indicate strong demand.",
+    "good_threshold": "> 25%/year",
+    "bad_threshold": "< 10%/year"
+  },
+  "Sales Velocity": {
+    "definition": "The speed at which units are being sold, typically measured in units per month or percentage per month.",
+    "example": "A sales velocity of 2.5 units/month in a 100-unit project means it will take 40 months to sell out at current pace.",
+    "good_threshold": "> 2%/month",
+    "bad_threshold": "< 0.5%/month"
+  },
+  "Return on Investment": {
+    "definition": "The ratio of net profit to the cost of investment, expressed as a percentage. Shows how much profit is generated relative to the investment.",
+    "example": "ROI of 80% means for every ₹100 invested, you earn ₹80 in profit. This is total return, not annualized.",
+    "good_threshold": "> 50%",
+    "bad_threshold": "< 20% or negative"
+  },
+  "ROI": {
+    "definition": "Return on Investment - ratio of profit to investment cost.",
+    "example": "ROI of 80% means ₹80 profit on ₹100 investment.",
+    "good_threshold": "> 50%",
+    "bad_threshold": "< 20% or negative"
+  },
+  "Price per Sqft": {
+    "definition": "The cost per square foot of saleable area. A key metric for pricing and market comparison.",
+    "example": "₹5,000/sqft means a 1,000 sqft apartment costs ₹50 Lakhs. PSF varies by location, amenities, and market conditions.",
+    "good_threshold": "Market competitive",
+    "bad_threshold": "> 20% above market"
+  },
+  "PSF": {
+    "definition": "Price per Square Foot - the cost per sqft of saleable area.",
+    "example": "₹5,000 PSF × 1,000 sqft = ₹50 Lakhs apartment price.",
+    "good_threshold": "Market competitive",
+    "bad_threshold": "> 20% above market"
+  },
+  "Units": {
+    "definition": "The total number of residential or commercial units in a project. Fundamental measure of project scale.",
+    "example": "A project with 150 units of 2BHK apartments. Total supply determines sales timeline and revenue potential.",
+    "good_threshold": "N/A",
+    "bad_threshold": "N/A"
+  },
+  "Area": {
+    "definition": "Land area of the project, typically measured in acres or square meters.",
+    "example": "A 5-acre project with density of 30 units/acre can have up to 150 total units.",
+    "good_threshold": "N/A",
+    "bad_threshold": "N/A"
+  },
+  "Time": {
+    "definition": "Duration of the project lifecycle, from launch to completion and sellout.",
+    "example": "A 5-year project duration includes construction time (3 years) and sales period (2 years).",
+    "good_threshold": "< 7 years",
+    "bad_threshold": "> 10 years"
+  },
+  "Cash": {
+    "definition": "Cash flow - the amount of money moving in and out of the project. Includes revenue (inflow) and costs (outflow).",
+    "example": "Total revenue of ₹150 Crore (cash inflow) vs total cost of ₹100 Crore (cash outflow) = ₹50 Cr net cash.",
+    "good_threshold": "Positive cash flow",
+    "bad_threshold": "Negative cash flow"
+  },
+  "Unit Saleable Size": {
+    "definition": "The average saleable area per unit, measured in square feet per unit (sqft/unit or L²/U).",
+    "example": "Average unit size of 450 sqft/unit means each apartment has 450 sqft of saleable area. Smaller units = more affordable.",
+    "good_threshold": "Market appropriate",
+    "bad_threshold": "Mismatch with target segment"
+  },
+  "Percentage Sold": {
+    "definition": "The proportion of total units that have been sold, expressed as a percentage.",
+    "example": "If 120 out of 150 units are sold, percentage sold = 80%. Higher indicates strong market acceptance.",
+    "good_threshold": "> 70%",
+    "bad_threshold": "< 40%"
+  },
+  "Percentage Unsold": {
+    "definition": "The proportion of total units that remain unsold, expressed as a percentage.",
+    "example": "If 30 out of 150 units are unsold, percentage unsold = 20%. Lower is better for project completion.",
+    "good_threshold": "< 30%",
+    "bad_threshold": "> 60%"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "queryType": "optimization",
+  "layer": 3,
+  "capability": "optimize_product_mix",
+  "parameters": {
+    "location": "Chakan, Pune",
+    "totalUnits": 100,
+    "totalArea": 70000,
+    "totalProjectCost": 294000000,
+    "projectDuration_months": 36
+  }
+}

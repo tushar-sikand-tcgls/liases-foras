@@ -1,0 +1,27 @@
+{
+  "pillar": "3_developer_performance",
+  "developers": [
+    {
+      "name": "Sara Builders & Developers",
+      "developer_id": "D_001",
+      "apf_score": 0.92,
+      "marketability_index": 0.88
+    },
+    {
+      "name": "JJ Mauli Developers",
+      "developer_id": "D_002",
+      "apf_score": 0.85,
+      "marketability_index": 0.8
+    },
+    {
+      "name": "Gurudatta Builders",
+      "developer_id": "D_003",
+      "apf_score": 0.78,
+      "marketability_index": 0.75
+    }
+  ],
+  "metrics": {
+    "apf_definition": "Architect Performance Factor - measures delivery efficiency",
+    "marketability_definition": "Market positioning and brand strength"
+  }
+}

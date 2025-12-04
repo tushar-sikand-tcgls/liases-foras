@@ -1,0 +1,21 @@
+{
+  "pillar": "4_financial",
+  "location": "Chakan, Pune",
+  "benchmarks": {
+    "typical_irr_range": [
+      0.2,
+      0.28
+    ],
+    "typical_payback_period_months": [
+      24,
+      36
+    ],
+    "discount_rate_standard": 0.12,
+    "price_appreciation_annual": 0.08
+  },
+  "feasibility_thresholds": {
+    "min_irr_percent": 18,
+    "min_profitability_index": 1.0,
+    "max_payback_period_months": 48
+  }
+}

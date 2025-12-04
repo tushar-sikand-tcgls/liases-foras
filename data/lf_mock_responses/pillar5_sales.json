@@ -1,0 +1,21 @@
+{
+  "pillar": "5_sales_operations",
+  "location": "Chakan, Pune",
+  "sales_patterns": {
+    "peak_sales_months": [
+      "March",
+      "April",
+      "October",
+      "November"
+    ],
+    "average_sales_cycle_days": 45,
+    "customer_segments": {
+      "end_users": 0.65,
+      "investors": 0.35
+    }
+  },
+  "distribution_strategies": {
+    "direct_sales": 0.6,
+    "channel_partners": 0.4
+  }
+}

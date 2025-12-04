@@ -1,0 +1,2192 @@
+{
+  "metadata": {
+    "source_file": "/Users/tusharsikand/Documents/Projects/liases-foras/GetMicromarketPdf.pdf",
+    "extraction_timestamp": "2025-11-30T15:27:07.044011",
+    "architecture_version": "v3.0.0",
+    "data_layer": "L1",
+    "description": "L1 attributes with dimensional tags (U, L², T, C)",
+    "extraction_priority": {
+      "page_2": {
+        "weight": 10,
+        "description": "Top 10 Projects"
+      },
+      "page_5": {
+        "weight": 9,
+        "description": "Unit Type Analysis"
+      },
+      "page_8": {
+        "weight": 8,
+        "description": "Quarterly Market Summary"
+      }
+    },
+    "extraction_summary": {
+      "total_projects_extracted": 10,
+      "total_unit_types_extracted": 4,
+      "total_quarters_extracted": 14
+    }
+  },
+  "page_2_projects": [
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "projectId": 3306.0,
+      "projectName": "Sara City",
+      "developerName": "Sara\nBuilders &\nDevelopers\n(Sara Group)",
+      "location": "Chakan",
+      "l1_attributes": {
+        "totalSupplyUnits": {
+          "value": 1109.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 527.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "projectSizeAcres": {
+          "value": 3018.0,
+          "dimension": "L²",
+          "unit": "acres",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unitSaleableSizeSqft": {
+          "value": 411.0,
+          "dimension": "L²/U",
+          "unit": "sqft/unit",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "launchDate": {
+          "value": "Nov 2007",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "possessionDate": {
+          "value": "Dec 2027",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesValueCr": {
+          "value": 106.0,
+          "dimension": "C",
+          "unit": "INR Cr",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "launchPricePSF": {
+          "value": 2200.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "currentPricePSF": {
+          "value": 3996.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "monthlySalesVelocity": {
+          "value": 0.0347,
+          "dimension": "Fraction/T",
+          "unit": "fraction/month",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "soldPct": {
+          "value": 0.89,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unsoldPct": {
+          "value": 0.11,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "reraRegistered": {
+          "value": "Y",
+          "dimension": "String",
+          "unit": "text",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        }
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-30T15:27:07.197071"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "projectId": 134282.0,
+      "projectName": "Pradnyesh\nShriniwas",
+      "developerName": "JJ Mauli\nDevelopers",
+      "location": "Chakan",
+      "l1_attributes": {
+        "totalSupplyUnits": {
+          "value": 278.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 87.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "projectSizeAcres": {
+          "value": 278.0,
+          "dimension": "L²",
+          "unit": "acres",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unitSaleableSizeSqft": {
+          "value": 562.0,
+          "dimension": "L²/U",
+          "unit": "sqft/unit",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "launchDate": {
+          "value": "Apr 2023",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "possessionDate": {
+          "value": "May 2027",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesValueCr": {
+          "value": 24.0,
+          "dimension": "C",
+          "unit": "INR Cr",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "launchPricePSF": {
+          "value": 3400.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "currentPricePSF": {
+          "value": 3745.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "monthlySalesVelocity": {
+          "value": 0.0891,
+          "dimension": "Fraction/T",
+          "unit": "fraction/month",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "soldPct": {
+          "value": 0.58,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unsoldPct": {
+          "value": 0.42,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "reraRegistered": {
+          "value": "Y",
+          "dimension": "String",
+          "unit": "text",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        }
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-30T15:27:07.197089"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "projectId": 139616.0,
+      "projectName": "Sara Nilaay",
+      "developerName": "Sara\nBuilders &\nDevelopers\n(Sara Group)",
+      "location": "Talegaon",
+      "l1_attributes": {
+        "totalSupplyUnits": {
+          "value": 298.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 32.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "projectSizeAcres": {
+          "value": 298.0,
+          "dimension": "L²",
+          "unit": "acres",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unitSaleableSizeSqft": {
+          "value": 395.0,
+          "dimension": "L²/U",
+          "unit": "sqft/unit",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "launchDate": {
+          "value": "May 2024",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "possessionDate": {
+          "value": "Dec 2028",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesValueCr": {
+          "value": 6.0,
+          "dimension": "C",
+          "unit": "INR Cr",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "launchPricePSF": {
+          "value": 4285.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "currentPricePSF": {
+          "value": 4569.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "monthlySalesVelocity": {
+          "value": 0.0195,
+          "dimension": "Fraction/T",
+          "unit": "fraction/month",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "soldPct": {
+          "value": 0.31,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unsoldPct": {
+          "value": 0.69,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "reraRegistered": {
+          "value": "Y",
+          "dimension": "String",
+          "unit": "text",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        }
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-30T15:27:07.197096"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "projectId": 147800.0,
+      "projectName": "Sara\nAbhiruchi\nTower",
+      "developerName": "Sara\nBuilders &\nDevelopers\n(Sara Group)",
+      "location": "Chakan",
+      "l1_attributes": {
+        "totalSupplyUnits": {
+          "value": 280.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 32.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "projectSizeAcres": {
+          "value": 280.0,
+          "dimension": "L²",
+          "unit": "acres",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unitSaleableSizeSqft": {
+          "value": 635.0,
+          "dimension": "L²/U",
+          "unit": "sqft/unit",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "launchDate": {
+          "value": "Aug 2025",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "possessionDate": {
+          "value": "Dec 2028",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesValueCr": {
+          "value": 7.0,
+          "dimension": "C",
+          "unit": "INR Cr",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "launchPricePSF": {
+          "value": 3189.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "currentPricePSF": {
+          "value": 3189.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "monthlySalesVelocity": {
+          "value": 0.1143,
+          "dimension": "Fraction/T",
+          "unit": "fraction/month",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "soldPct": {
+          "value": 0.11,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unsoldPct": {
+          "value": 0.89,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "reraRegistered": {
+          "value": "Y",
+          "dimension": "String",
+          "unit": "text",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        }
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-30T15:27:07.197102"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "projectId": 137562.0,
+      "projectName": "The Urbana",
+      "developerName": "Intercontinent\nInfrastructure\nLimited",
+      "location": "a\nChakan",
+      "l1_attributes": {
+        "totalSupplyUnits": {
+          "value": 168.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 29.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "projectSizeAcres": {
+          "value": 168.0,
+          "dimension": "L²",
+          "unit": "acres",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unitSaleableSizeSqft": {
+          "value": 550.0,
+          "dimension": "L²/U",
+          "unit": "sqft/unit",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "launchDate": {
+          "value": "Oct 2023",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "possessionDate": {
+          "value": "May 2026",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesValueCr": {
+          "value": 7.0,
+          "dimension": "C",
+          "unit": "INR Cr",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "launchPricePSF": {
+          "value": 3696.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "currentPricePSF": {
+          "value": 3725.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "monthlySalesVelocity": {
+          "value": 0.042,
+          "dimension": "Fraction/T",
+          "unit": "fraction/month",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "soldPct": {
+          "value": 0.96,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unsoldPct": {
+          "value": 0.04,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "reraRegistered": {
+          "value": "Y",
+          "dimension": "String",
+          "unit": "text",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        }
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-30T15:27:07.197106"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "projectId": 141108.0,
+      "projectName": "Gulmohar\nCity",
+      "developerName": "Gurudatta\nBuilders And\nDevelopers",
+      "location": "Chakan",
+      "l1_attributes": {
+        "totalSupplyUnits": {
+          "value": 150.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 28.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "projectSizeAcres": {
+          "value": 150.0,
+          "dimension": "L²",
+          "unit": "acres",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unitSaleableSizeSqft": {
+          "value": 531.0,
+          "dimension": "L²/U",
+          "unit": "sqft/unit",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "launchDate": {
+          "value": "Sep 2024",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "possessionDate": {
+          "value": "Dec 2028",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesValueCr": {
+          "value": 8.0,
+          "dimension": "C",
+          "unit": "INR Cr",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "launchPricePSF": {
+          "value": 4352.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "currentPricePSF": {
+          "value": 4330.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "monthlySalesVelocity": {
+          "value": 0.023700000000000002,
+          "dimension": "Fraction/T",
+          "unit": "fraction/month",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "soldPct": {
+          "value": 0.27,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unsoldPct": {
+          "value": 0.73,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "reraRegistered": {
+          "value": "Y",
+          "dimension": "String",
+          "unit": "text",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        }
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-30T15:27:07.197111"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "projectId": 138347.0,
+      "projectName": "Siddhivinayak\nResidency",
+      "developerName": "Kate\nBuilders",
+      "location": "Chakan",
+      "l1_attributes": {
+        "totalSupplyUnits": {
+          "value": 156.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 24.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "projectSizeAcres": {
+          "value": 156.0,
+          "dimension": "L²",
+          "unit": "acres",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unitSaleableSizeSqft": {
+          "value": 573.0,
+          "dimension": "L²/U",
+          "unit": "sqft/unit",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "launchDate": {
+          "value": "Jan 2024",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "possessionDate": {
+          "value": "Jun 2028",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesValueCr": {
+          "value": 7.0,
+          "dimension": "C",
+          "unit": "INR Cr",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "launchPricePSF": {
+          "value": 4046.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "currentPricePSF": {
+          "value": 4094.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "monthlySalesVelocity": {
+          "value": 0.0321,
+          "dimension": "Fraction/T",
+          "unit": "fraction/month",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "soldPct": {
+          "value": 0.64,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unsoldPct": {
+          "value": 0.36,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "reraRegistered": {
+          "value": "Y",
+          "dimension": "String",
+          "unit": "text",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        }
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-30T15:27:07.197116"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "projectId": 137971.0,
+      "projectName": "Sarangi\nParadise",
+      "developerName": "Sai Propking\nReality",
+      "location": "Chakan",
+      "l1_attributes": {
+        "totalSupplyUnits": {
+          "value": 56.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 19.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "projectSizeAcres": {
+          "value": 56.0,
+          "dimension": "L²",
+          "unit": "acres",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unitSaleableSizeSqft": {
+          "value": 568.0,
+          "dimension": "L²/U",
+          "unit": "sqft/unit",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "launchDate": {
+          "value": "Jan 2024",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "possessionDate": {
+          "value": "Dec 2025",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesValueCr": {
+          "value": 5.0,
+          "dimension": "C",
+          "unit": "INR Cr",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "launchPricePSF": {
+          "value": 3884.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "currentPricePSF": {
+          "value": 4000.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "monthlySalesVelocity": {
+          "value": 0.0464,
+          "dimension": "Fraction/T",
+          "unit": "fraction/month",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "soldPct": {
+          "value": 0.93,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unsoldPct": {
+          "value": 0.07,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "reraRegistered": {
+          "value": "Y",
+          "dimension": "String",
+          "unit": "text",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        }
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-30T15:27:07.197121"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "projectId": 143163.0,
+      "projectName": "Kalpavruksh\nHeights",
+      "developerName": "Swami\nSamarth\nBuildcon",
+      "location": "Chakan",
+      "l1_attributes": {
+        "totalSupplyUnits": {
+          "value": 48.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 15.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "projectSizeAcres": {
+          "value": 48.0,
+          "dimension": "L²",
+          "unit": "acres",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unitSaleableSizeSqft": {
+          "value": 762.0,
+          "dimension": "L²/U",
+          "unit": "sqft/unit",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "launchDate": {
+          "value": "Feb 2024",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "possessionDate": {
+          "value": "Dec 2026",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesValueCr": {
+          "value": 4.0,
+          "dimension": "C",
+          "unit": "INR Cr",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "launchPricePSF": {
+          "value": 2996.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "currentPricePSF": {
+          "value": 2996.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "monthlySalesVelocity": {
+          "value": 0.0208,
+          "dimension": "Fraction/T",
+          "unit": "fraction/month",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "soldPct": {
+          "value": 0.4,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unsoldPct": {
+          "value": 0.6,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "reraRegistered": {
+          "value": "Y",
+          "dimension": "String",
+          "unit": "text",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        }
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-30T15:27:07.197125"
+    },
+    {
+      "layer": "L1",
+      "node_type": "Project_L1",
+      "projectId": 35269.0,
+      "projectName": "Shubhan\nKaroti",
+      "developerName": "Creative\nVentures",
+      "location": "Chakan",
+      "l1_attributes": {
+        "totalSupplyUnits": {
+          "value": 24.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 11.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "projectSizeAcres": {
+          "value": 48.0,
+          "dimension": "L²",
+          "unit": "acres",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unitSaleableSizeSqft": {
+          "value": 385.0,
+          "dimension": "L²/U",
+          "unit": "sqft/unit",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "launchDate": {
+          "value": "May 2016",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "possessionDate": {
+          "value": "Mar 2027",
+          "dimension": "T",
+          "unit": "date",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "annualSalesValueCr": {
+          "value": 2.0,
+          "dimension": "C",
+          "unit": "INR Cr",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "launchPricePSF": {
+          "value": 3200.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "currentPricePSF": {
+          "value": 2808.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "monthlySalesVelocity": {
+          "value": 0.0086,
+          "dimension": "Fraction/T",
+          "unit": "fraction/month",
+          "source": "LF_PDF_Page2",
+          "isPure": false
+        },
+        "soldPct": {
+          "value": 0.96,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "unsoldPct": {
+          "value": 0.04,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        },
+        "reraRegistered": {
+          "value": "Y",
+          "dimension": "String",
+          "unit": "text",
+          "source": "LF_PDF_Page2",
+          "isPure": true
+        }
+      },
+      "priority_weight": 10,
+      "extraction_timestamp": "2025-11-30T15:27:07.197130"
+    }
+  ],
+  "page_5_unit_types": [
+    {
+      "layer": "L1",
+      "node_type": "UnitType_L1",
+      "flatType": "1/2RK",
+      "l1_attributes": {
+        "saleableMinSizeSqft": {
+          "value": 260.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "saleableMaxSizeSqft": {
+          "value": 400.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "minCostINR": {
+          "value": 7.0,
+          "dimension": "C",
+          "unit": "INR Lakh",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "maxCostINR": {
+          "value": 13.0,
+          "dimension": "C",
+          "unit": "INR Lakh",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 5.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "unsoldUnits": {
+          "value": 4.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "totalSupply": {
+          "value": 16.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "wtAvgSaleablePricePSF": {
+          "value": 9.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "wtAvgCarpetPricePSF": {
+          "value": 2812.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "productEfficiencyPct": {
+          "value": 4017.0,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "monthsInventory": {
+          "value": 10.0,
+          "dimension": "T",
+          "unit": "months",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "salesVelocity": {
+          "value": 0.0066,
+          "dimension": "U/T",
+          "unit": "units/month",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        }
+      },
+      "priority_weight": 9,
+      "extraction_timestamp": "2025-11-30T15:27:07.314246"
+    },
+    {
+      "layer": "L1",
+      "node_type": "UnitType_L1",
+      "flatType": "1BHK",
+      "l1_attributes": {
+        "saleableMinSizeSqft": {
+          "value": 350.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "saleableMaxSizeSqft": {
+          "value": 863.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "minCostINR": {
+          "value": 10.0,
+          "dimension": "C",
+          "unit": "INR Lakh",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "maxCostINR": {
+          "value": 30.0,
+          "dimension": "C",
+          "unit": "INR Lakh",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 672.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "unsoldUnits": {
+          "value": 1315.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "totalSupply": {
+          "value": 3261.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "wtAvgSaleablePricePSF": {
+          "value": 1987.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "wtAvgCarpetPricePSF": {
+          "value": 3557.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "productEfficiencyPct": {
+          "value": 5038.0,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "monthsInventory": {
+          "value": 23.0,
+          "dimension": "T",
+          "unit": "months",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "salesVelocity": {
+          "value": 0.024300000000000002,
+          "dimension": "U/T",
+          "unit": "units/month",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        }
+      },
+      "priority_weight": 9,
+      "extraction_timestamp": "2025-11-30T15:27:07.314262"
+    },
+    {
+      "layer": "L1",
+      "node_type": "UnitType_L1",
+      "flatType": "1.5/2BHK",
+      "l1_attributes": {
+        "saleableMinSizeSqft": {
+          "value": 557.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "saleableMaxSizeSqft": {
+          "value": 1138.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "minCostINR": {
+          "value": 17.0,
+          "dimension": "C",
+          "unit": "INR Lakh",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "maxCostINR": {
+          "value": 41.0,
+          "dimension": "C",
+          "unit": "INR Lakh",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 154.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "unsoldUnits": {
+          "value": 431.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "totalSupply": {
+          "value": 963.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "wtAvgSaleablePricePSF": {
+          "value": 585.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "wtAvgCarpetPricePSF": {
+          "value": 3538.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "productEfficiencyPct": {
+          "value": 4959.0,
+          "dimension": "Dimensionless",
+          "unit": "fraction",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "monthsInventory": {
+          "value": 34.0,
+          "dimension": "T",
+          "unit": "months",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        },
+        "salesVelocity": {
+          "value": 0.025,
+          "dimension": "U/T",
+          "unit": "units/month",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        }
+      },
+      "priority_weight": 9,
+      "extraction_timestamp": "2025-11-30T15:27:07.314268"
+    },
+    {
+      "layer": "L1",
+      "node_type": "UnitType_L1",
+      "flatType": "Total",
+      "l1_attributes": {
+        "annualSalesUnits": {
+          "value": 831.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "unsoldUnits": {
+          "value": 1750.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "totalSupply": {
+          "value": 4240.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page5",
+          "isPure": true
+        },
+        "wtAvgSaleablePricePSF": {
+          "value": 2581.0,
+          "dimension": "C/L²",
+          "unit": "INR/sqft",
+          "source": "LF_PDF_Page5",
+          "isPure": false
+        }
+      },
+      "priority_weight": 9,
+      "extraction_timestamp": "2025-11-30T15:27:07.314271"
+    }
+  ],
+  "page_8_quarterly_summary": [
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Marketable Supply (Unit)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 1731.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 1699.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 1723.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 2078.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 1847.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": -0.11,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": 0.07,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402823"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Marketable Supply (mn Sq.Ft)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 0.98,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 0.98,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 1.03,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 1.25,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 1.14,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": -0.09,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": 0.16,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402839"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Sales (Units)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 163.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 246.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 171.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 317.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 97.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": -0.69,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": -0.4,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402844"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Sales (mn Sq.Ft)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 0.09,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 0.12,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 0.09,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 0.18,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 0.06,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": -0.65,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": -0.28,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402847"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Value of Stock Sold (Rs.Cr)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 33.39,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 47.35,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 39.18,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 70.2,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 23.93,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": -0.66,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": -0.28,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402851"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Unsold Stock (Units)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 1568.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 1453.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 1552.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 1761.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 1750.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": -0.01,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": 0.12,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402854"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Unsold Stock (mn Sq.Ft)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 0.89,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 0.86,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 0.94,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 1.07,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 1.08,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": 0.01,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": 0.21,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402857"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Unsold Stock Value (Rs.Cr)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 333.44,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 312.5,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 335.41,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 381.24,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 382.4,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": 0.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": 0.15,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402861"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Wt Avg Price (PSF)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 3735.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 3627.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 3575.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 3575.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 3551.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": -0.01,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": -0.05,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402864"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Cost of Flat (Rs.lac)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 21.27,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 21.51,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 21.61,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 21.65,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 21.85,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": 0.01,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": 0.03,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402867"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Sales Velocity (%)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 1.14,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 1.09,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 1.005,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 1.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 1.67,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": 0.67,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": 0.46,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402871"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Months Inventory",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 29.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 18.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 27.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 17.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 54.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": 2.18,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": 0.86,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402874"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Newsupply (Units)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 150.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 0.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 0.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 268.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 280.0,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": 0.04,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": 0.87,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402877"
+    },
+    {
+      "layer": "L1",
+      "node_type": "QuarterlySummary_L1",
+      "quarterLabel": "Newsupply (mn Sq.Ft)",
+      "l1_attributes": {
+        "marketableSupplyUnits": {
+          "value": 0.1,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesUnits": {
+          "value": 0.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "annualSalesUnits": {
+          "value": 0.0,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockUnits": {
+          "value": 0.17,
+          "dimension": "U",
+          "unit": "count",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "marketableSupplySqft": {
+          "value": 0.18,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "quarterlySalesSqft": {
+          "value": 0.08,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        },
+        "unsoldStockSqft": {
+          "value": 0.79,
+          "dimension": "L²",
+          "unit": "sqft",
+          "source": "LF_PDF_Page8",
+          "isPure": true
+        }
+      },
+      "priority_weight": 8,
+      "extraction_timestamp": "2025-11-30T15:27:07.402881"
+    }
+  ]
+}

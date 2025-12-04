@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "source_file": "/Users/tusharsikand/Documents/Projects/liases-foras/docs/sample/Micromarket Report.html",
+    "total_projects": 10,
+    "extraction_method": "jqGrid table parsing (top20projectlist)"
+  },
+  "projects": [
+    {
+      "name": "Sara City",
+      "developer": "Sara Builders & Developers (Sara Group)",
+      "location": "Chakan",
+      "layer0": {
+        "U": {
+          "total_units": 1109.0,
+          "annual_sales_units": 527.0
+        },
+        "L2": {
+          "project_size": 3018.0,
+          "total_area_sqft": 550125.0,
+          "unit_size_sqft": 411.0
+        },
+        "T": {
+          "launch_date": "Nov 2007",
+          "possession_date": "Dec 2027"
+        },
+        "CF": {
+          "annual_sales_value_cr": 106.0,
+          "launch_price_psf": 2200.0,
+          "current_price_psf": 3996.0
+        }
+      }
+    },
+    {
+      "name": "Pradnyesh Shriniwas",
+      "developer": "JJ Mauli Developers",
+      "location": "Chakan",
+      "layer0": {
+        "U": {
+          "total_units": 278.0,
+          "annual_sales_units": 87.0
+        },
+        "L2": {
+          "project_size": 278.0,
+          "total_area_sqft": 195117.0,
+          "unit_size_sqft": 562.0
+        },
+        "T": {
+          "launch_date": "Apr 2023",
+          "possession_date": "May 2027"
+        },
+        "CF": {
+          "annual_sales_value_cr": 24.0,
+          "launch_price_psf": 3400.0,
+          "current_price_psf": 3745.0
+        }
+      }
+    },
+    {
+      "name": "Sara Nilaay",
+      "developer": "Sara Builders & Developers (Sara Group)",
+      "location": "Talegaon",
+      "layer0": {
+        "U": {
+          "total_units": 298.0,
+          "annual_sales_units": 32.0
+        },
+        "L2": {
+          "project_size": 298.0,
+          "total_area_sqft": 131152.0,
+          "unit_size_sqft": 395.0
+        },
+        "T": {
+          "launch_date": "May 2024",
+          "possession_date": "Dec 2028"
+        },
+        "CF": {
+          "annual_sales_value_cr": 6.0,
+          "launch_price_psf": 4285.0,
+          "current_price_psf": 4569.0
+        }
+      }
+    },
+    {
+      "name": "Sara Abhiruchi Tower",
+      "developer": "Sara Builders & Developers (Sara Group)",
+      "location": "Chakan",
+      "layer0": {
+        "U": {
+          "total_units": 280.0,
+          "annual_sales_units": 32.0
+        },
+        "L2": {
+          "project_size": 280.0,
+          "total_area_sqft": 180992.0,
+          "unit_size_sqft": 635.0
+        },
+        "T": {
+          "launch_date": "Aug 2025",
+          "possession_date": "Dec 2028"
+        },
+        "CF": {
+          "annual_sales_value_cr": 7.0,
+          "launch_price_psf": 3189.0,
+          "current_price_psf": 3189.0
+        }
+      }
+    },
+    {
+      "name": "The Urbana",
+      "developer": "Intercontinental Infrastructure Limited",
+      "location": "Chakan",
+      "layer0": {
+        "U": {
+          "total_units": 168.0,
+          "annual_sales_units": 29.0
+        },
+        "L2": {
+          "project_size": 168.0,
+          "total_area_sqft": 105840.0,
+          "unit_size_sqft": 550.0
+        },
+        "T": {
+          "launch_date": "Oct 2023",
+          "possession_date": "May 2026"
+        },
+        "CF": {
+          "annual_sales_value_cr": 7.0,
+          "launch_price_psf": 3696.0,
+          "current_price_psf": 3725.0
+        }
+      }
+    },
+    {
+      "name": "Gulmohar City",
+      "developer": "Gurudatta Builders And Developers",
+      "location": "Chakan",
+      "layer0": {
+        "U": {
+          "total_units": 150.0,
+          "annual_sales_units": 28.0
+        },
+        "L2": {
+          "project_size": 150.0,
+          "total_area_sqft": 101030.0,
+          "unit_size_sqft": 531.0
+        },
+        "T": {
+          "launch_date": "Sep 2024",
+          "possession_date": "Dec 2028"
+        },
+        "CF": {
+          "annual_sales_value_cr": 8.0,
+          "launch_price_psf": 4352.0,
+          "current_price_psf": 4330.0
+        }
+      }
+    },
+    {
+      "name": "Siddhivinayak Residency",
+      "developer": "Kate Builders",
+      "location": "Chakan",
+      "layer0": {
+        "U": {
+          "total_units": 156.0,
+          "annual_sales_units": 24.0
+        },
+        "L2": {
+          "project_size": 156.0,
+          "total_area_sqft": 100155.0,
+          "unit_size_sqft": 573.0
+        },
+        "T": {
+          "launch_date": "Jan 2024",
+          "possession_date": "Jun 2028"
+        },
+        "CF": {
+          "annual_sales_value_cr": 7.0,
+          "launch_price_psf": 4046.0,
+          "current_price_psf": 4094.0
+        }
+      }
+    },
+    {
+      "name": "Sarangi Paradise",
+      "developer": "Sai Propking Reality",
+      "location": "Chakan",
+      "layer0": {
+        "U": {
+          "total_units": 56.0,
+          "annual_sales_units": 19.0
+        },
+        "L2": {
+          "project_size": 56.0,
+          "total_area_sqft": 37800.0,
+          "unit_size_sqft": 568.0
+        },
+        "T": {
+          "launch_date": "Jan 2024",
+          "possession_date": "Dec 2025"
+        },
+        "CF": {
+          "annual_sales_value_cr": 5.0,
+          "launch_price_psf": 3884.0,
+          "current_price_psf": 4000.0
+        }
+      }
+    },
+    {
+      "name": "Kalpavruksh Heights",
+      "developer": "Swami Samarth Buildcon",
+      "location": "Chakan",
+      "layer0": {
+        "U": {
+          "total_units": 48.0,
+          "annual_sales_units": 15.0
+        },
+        "L2": {
+          "project_size": 48.0,
+          "total_area_sqft": 45960.0,
+          "unit_size_sqft": 762.0
+        },
+        "T": {
+          "launch_date": "Feb 2024",
+          "possession_date": "Dec 2026"
+        },
+        "CF": {
+          "annual_sales_value_cr": 4.0,
+          "launch_price_psf": 2996.0,
+          "current_price_psf": 2996.0
+        }
+      }
+    },
+    {
+      "name": "Shubhan Karoti",
+      "developer": "Creative Ventures",
+      "location": "Chakan",
+      "layer0": {
+        "U": {
+          "total_units": 24.0,
+          "annual_sales_units": 11.0
+        },
+        "L2": {
+          "project_size": 48.0,
+          "total_area_sqft": 12392.0,
+          "unit_size_sqft": 385.0
+        },
+        "T": {
+          "launch_date": "May 2016",
+          "possession_date": "Mar 2027"
+        },
+        "CF": {
+          "annual_sales_value_cr": 2.0,
+          "launch_price_psf": 3200.0,
+          "current_price_psf": 2808.0
+        }
+      }
+    }
+  ]
+}
