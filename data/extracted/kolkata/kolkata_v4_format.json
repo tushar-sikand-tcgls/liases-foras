@@ -1,0 +1,1237 @@
+{
+  "metadata": {
+    "dataVersion": "Q4_FY25",
+    "city": "Kolkata",
+    "region": "New Town",
+    "extractionDate": "2026-02-24T13:27:59.485168",
+    "schemaVersion": "v4_nested",
+    "source": "Kolkata_R&D_Excel_Direct_Transform",
+    "totalProjects": 5
+  },
+  "page_2_projects": [
+    {
+      "projectId": "127557",
+      "projectName": "Orbit Urban Park",
+      "location": {
+        "value": "New Town",
+        "unit": "text",
+        "dimension": "L",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Project location"
+      },
+      "developerName": {
+        "value": "Orbit Group (Kolkata)",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Developer name"
+      },
+      "launchDate": {
+        "value": "Nov 2023",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Project launch date"
+      },
+      "possessionDate": {
+        "value": "2027-03-02 00:00:00",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Expected possession date"
+      },
+      "totalSupplyUnits": {
+        "value": 103.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Total supply in units"
+      },
+      "totalSupplyArea": {
+        "value": 212458.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Total supply area"
+      },
+      "soldPercentage": {
+        "value": 90.0,
+        "unit": "percent",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Percentage sold"
+      },
+      "quarterlySalesUnits": {
+        "value": 1.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Quarterly sales in units"
+      },
+      "quarterlySalesArea": {
+        "value": 1930.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Quarterly sales area"
+      },
+      "annualSalesUnits": {
+        "value": 19.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Annual sales in units"
+      },
+      "annualSalesArea": {
+        "value": 37040.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Annual sales area"
+      },
+      "flatType": {
+        "value": "31/2BHK, 3BHK, 4BHK, Duplex",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Flat type configuration"
+      },
+      "averageCost": {
+        "value": 241.545,
+        "unit": "lacs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average cost (Range: 131.63-351.46 Lacs)"
+      },
+      "averageSaleableArea": {
+        "value": 3062.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average saleable area (Range: 1550.0-4574.0 sqft)"
+      },
+      "averageCarpetArea": {
+        "value": 1837.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average carpet area (Range: 930.0-2744.0 sqft)"
+      },
+      "saleableRate": {
+        "value": 8100.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Saleable rate per square foot"
+      },
+      "carpetRate": {
+        "value": 13500.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Carpet rate per square foot"
+      }
+    },
+    {
+      "projectId": "137420",
+      "projectName": "Meena Bliss",
+      "location": {
+        "value": "New Town",
+        "unit": "text",
+        "dimension": "L",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Project location"
+      },
+      "developerName": {
+        "value": "Yellowsand Realestate LLP",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Developer name"
+      },
+      "launchDate": {
+        "value": "Nov 2023",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Project launch date"
+      },
+      "possessionDate": {
+        "value": "2026-12-01 00:00:00",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Expected possession date"
+      },
+      "totalSupplyUnits": {
+        "value": 44.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Total supply in units"
+      },
+      "totalSupplyArea": {
+        "value": 37200.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Total supply area"
+      },
+      "soldPercentage": {
+        "value": 82.0,
+        "unit": "percent",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Percentage sold"
+      },
+      "quarterlySalesUnits": {
+        "value": 3.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Quarterly sales in units"
+      },
+      "quarterlySalesArea": {
+        "value": 2800.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Quarterly sales area"
+      },
+      "annualSalesUnits": {
+        "value": 15.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Annual sales in units"
+      },
+      "annualSalesArea": {
+        "value": 13200.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Annual sales area"
+      },
+      "flatType": {
+        "value": "2BHK, 3BHK",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Flat type configuration"
+      },
+      "averageCost": {
+        "value": 39.2,
+        "unit": "lacs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average cost (Range: 29.4-49.0 Lacs)"
+      },
+      "averageSaleableArea": {
+        "value": 800.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average saleable area (Range: 600.0-1000.0 sqft)"
+      },
+      "averageCarpetArea": {
+        "value": 576.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average carpet area (Range: 432.0-720.0 sqft)"
+      },
+      "saleableRate": {
+        "value": 4900.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Saleable rate per square foot"
+      },
+      "carpetRate": {
+        "value": 6806.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Carpet rate per square foot"
+      }
+    },
+    {
+      "projectId": "137595",
+      "projectName": "Sunrise Complex",
+      "location": {
+        "value": "New Town",
+        "unit": "text",
+        "dimension": "L",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Project location"
+      },
+      "developerName": {
+        "value": "M/S Veni Realtors LLP",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Developer name"
+      },
+      "launchDate": {
+        "value": "Nov 2023",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Project launch date"
+      },
+      "possessionDate": {
+        "value": "2028-01-01 00:00:00",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Expected possession date"
+      },
+      "totalSupplyUnits": {
+        "value": 36.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Total supply in units"
+      },
+      "totalSupplyArea": {
+        "value": 47376.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Total supply area"
+      },
+      "soldPercentage": {
+        "value": 86.0,
+        "unit": "percent",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Percentage sold"
+      },
+      "quarterlySalesUnits": {
+        "value": 3.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Quarterly sales in units"
+      },
+      "quarterlySalesArea": {
+        "value": 3380.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Quarterly sales area"
+      },
+      "annualSalesUnits": {
+        "value": 6.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Annual sales in units"
+      },
+      "annualSalesArea": {
+        "value": 7261.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Annual sales area"
+      },
+      "flatType": {
+        "value": "2BHK, 3BHK",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Flat type configuration"
+      },
+      "averageCost": {
+        "value": 68.305,
+        "unit": "lacs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average cost (Range: 54.5-82.11 Lacs)"
+      },
+      "averageSaleableArea": {
+        "value": 1306.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average saleable area (Range: 992.0-1620.0 sqft)"
+      },
+      "averageCarpetArea": {
+        "value": 849.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average carpet area (Range: 645.0-1053.0 sqft)"
+      },
+      "saleableRate": {
+        "value": 5200.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Saleable rate per square foot"
+      },
+      "carpetRate": {
+        "value": 8000.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Carpet rate per square foot"
+      }
+    },
+    {
+      "projectId": "140731",
+      "projectName": "Vinayak Amara",
+      "location": {
+        "value": "New Town",
+        "unit": "text",
+        "dimension": "L",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Project location"
+      },
+      "developerName": {
+        "value": "Vinayak Group",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Developer name"
+      },
+      "launchDate": {
+        "value": "Jul 2024",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Project launch date"
+      },
+      "possessionDate": {
+        "value": "2028-01-01 00:00:00",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Expected possession date"
+      },
+      "totalSupplyUnits": {
+        "value": 186.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Total supply in units"
+      },
+      "totalSupplyArea": {
+        "value": 353326.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Total supply area"
+      },
+      "soldPercentage": {
+        "value": 82.0,
+        "unit": "percent",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Percentage sold"
+      },
+      "quarterlySalesUnits": {
+        "value": 7.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Quarterly sales in units"
+      },
+      "quarterlySalesArea": {
+        "value": 13261.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Quarterly sales area"
+      },
+      "annualSalesUnits": {
+        "value": 117.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Annual sales in units"
+      },
+      "annualSalesArea": {
+        "value": 227128.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Annual sales area"
+      },
+      "flatType": {
+        "value": "3BHK, 4BHK",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Flat type configuration"
+      },
+      "averageCost": {
+        "value": 182.07,
+        "unit": "lacs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average cost (Range: 152.01-212.13 Lacs)"
+      },
+      "averageSaleableArea": {
+        "value": 1959.5,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average saleable area (Range: 1556.0-2363.0 sqft)"
+      },
+      "averageCarpetArea": {
+        "value": 1254.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average carpet area (Range: 996.0-1512.0 sqft)"
+      },
+      "saleableRate": {
+        "value": 9000.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Saleable rate per square foot"
+      },
+      "carpetRate": {
+        "value": 14063.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Carpet rate per square foot"
+      }
+    },
+    {
+      "projectId": "148244",
+      "projectName": "Hive Urban Utopia",
+      "location": {
+        "value": "New Town",
+        "unit": "text",
+        "dimension": "L",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Project location"
+      },
+      "developerName": {
+        "value": "Hive Group",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Developer name"
+      },
+      "launchDate": {
+        "value": "Aug 2025",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Project launch date"
+      },
+      "possessionDate": {
+        "value": "2027-08-02 00:00:00",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Expected possession date"
+      },
+      "totalSupplyUnits": {
+        "value": 16.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Total supply in units"
+      },
+      "totalSupplyArea": {
+        "value": 19360.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Total supply area"
+      },
+      "soldPercentage": {
+        "value": 25.0,
+        "unit": "percent",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Percentage sold"
+      },
+      "quarterlySalesUnits": {
+        "value": 4.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Quarterly sales in units"
+      },
+      "quarterlySalesArea": {
+        "value": 4840.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Quarterly sales area"
+      },
+      "annualSalesUnits": {
+        "value": 4.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Annual sales in units"
+      },
+      "annualSalesArea": {
+        "value": 4840.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Annual sales area"
+      },
+      "flatType": {
+        "value": "3BHK",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Flat type configuration"
+      },
+      "averageCost": {
+        "value": 64.13,
+        "unit": "lacs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average cost (Range: 64.13-64.13 Lacs)"
+      },
+      "averageSaleableArea": {
+        "value": 1209.5,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average saleable area (Range: 1098.0-1321.0 sqft)"
+      },
+      "averageCarpetArea": {
+        "value": 859.0,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Average carpet area (Range: 780.0-938.0 sqft)"
+      },
+      "saleableRate": {
+        "value": 5300.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Saleable rate per square foot"
+      },
+      "carpetRate": {
+        "value": 7465.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_R&D_Excel",
+        "isPure": true,
+        "description": "Carpet rate per square foot"
+      }
+    }
+  ],
+  "enrichment_metadata": {
+    "transformationType": "direct_excel_to_v4",
+    "originalFile": "List_of_Comparables_Projects.xlsx",
+    "transformedAt": "2026-02-24T13:27:59.485185",
+    "dimensions": {
+      "U": "Units (count)",
+      "L\u00b2": "Area (square feet)",
+      "C": "Currency (Rs Lacs)",
+      "C/L\u00b2": "Price per area (Rs/sqft)",
+      "T": "Time (date)",
+      "I": "Information (text)",
+      "L": "Location"
+    }
+  }
+}

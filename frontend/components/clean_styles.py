@@ -1,31 +1,39 @@
 """
-Clean CSS Styles with Proper Color Palette
+Clean CSS Styles - ChatGPT-like Minimalist Black & White Theme
 """
 
-# Color Palette
+# Color Palette - Minimalist Black & White
 COLORS = {
     "white": "#FFFFFF",           # Background
-    "navy_blue": "#133D6E",       # Buttons, Widgets (Navy Dark Blue)
-    "light_orange": "#FFD700",    # Golden - Highlighting accents
-    "black": "#000000",           # Primary font
-    "gray": "#DDDDDD",            # Secondary font - mottos, slogans
-    "pink": "#FFB6C1",            # Error backgrounds
-    "light_green": "#90EE90",     # Success backgrounds
-    "navy_hover": "#0F2F52",      # Darker navy for hover states
+    "black": "#000000",           # Primary font, borders, lines
+    "light_gray": "#F7F7F8",      # Message backgrounds
+    "border_gray": "#E5E5E5",     # Borders
+    "text_gray": "#6B6B6B",       # Secondary text
+    "hover_gray": "#F0F0F0",      # Hover states
 }
 
 CLEAN_CSS_STYLES = f"""
 <style>
-    /* Global Styles */
+    /* Import ChatGPT-like font */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    /* Global Styles - ChatGPT-like */
+    * {{
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+        color: {COLORS['black']};
+    }}
+
     .stApp {{
         background-color: {COLORS['white']};
         padding-top: 0rem !important;
+        color: {COLORS['black']};
     }}
 
     /* Reduce top spacing */
     .main .block-container {{
         padding-top: 1rem !important;
         padding-bottom: 2rem !important;
+        max-width: 900px !important;  /* ChatGPT-like centered width */
     }}
 
     header {{
@@ -41,148 +49,176 @@ CLEAN_CSS_STYLES = f"""
     .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4 {{
         color: {COLORS['black']};
         margin-top: 0.5rem !important;
+        font-weight: 600;
     }}
 
     .stMarkdown p, .stMarkdown li {{
         color: {COLORS['black']};
+        font-size: 16px;
+        line-height: 1.6;
     }}
 
     /* Secondary text */
     .secondary-text {{
-        color: {COLORS['gray']};
-        font-style: italic;
+        color: {COLORS['text_gray']};
+        font-style: normal;
+        font-weight: 400;
     }}
 
-    /* Buttons with animations */
+    /* Minimal buttons - black outline */
     .stButton > button {{
-        background-color: {COLORS['navy_blue']};
-        color: {COLORS['white']};
-        border: none;
-        border-radius: 12px;
-        padding: 10px 20px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(19, 61, 110, 0.2);
+        background-color: {COLORS['white']};
+        color: {COLORS['black']};
+        border: 1px solid {COLORS['black']};
+        border-radius: 6px;
+        padding: 8px 16px;
+        font-weight: 500;
+        font-size: 14px;
+        transition: all 0.2s ease;
+        box-shadow: none;
     }}
 
     .stButton > button:hover {{
-        background-color: {COLORS['navy_hover']};
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(19, 61, 110, 0.4);
+        background-color: {COLORS['light_gray']};
+        border-color: {COLORS['black']};
+        transform: none;
+        box-shadow: none;
     }}
 
     .stButton > button:active {{
-        transform: translateY(0px);
-        box-shadow: 0 2px 6px rgba(19, 61, 110, 0.3);
+        transform: none;
+        box-shadow: none;
     }}
 
-    /* Text Input with rounded corners */
+    /* Text Input - minimal style */
     .stTextInput > div > div > input {{
         background-color: {COLORS['white']};
         color: {COLORS['black']};
-        border: 2px solid {COLORS['navy_blue']};
-        border-radius: 10px;
-        padding: 10px 15px;
-        transition: all 0.3s ease;
+        border: 1px solid {COLORS['border_gray']};
+        border-radius: 6px;
+        padding: 10px 12px;
+        font-size: 15px;
+        transition: all 0.2s ease;
     }}
 
     .stTextInput > div > div > input:focus {{
-        border-color: {COLORS['light_orange']};
-        box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        border-color: {COLORS['black']};
+        box-shadow: none;
+        outline: none;
     }}
 
-    /* Select Box */
+    /* Select Box - minimal */
     .stSelectbox > div > div {{
         background-color: {COLORS['white']};
-        border: 2px solid {COLORS['navy_blue']};
-        border-radius: 10px;
+        border: 1px solid {COLORS['border_gray']};
+        border-radius: 6px;
     }}
 
-    /* Expander with animations */
+    /* Chat Input - ChatGPT style */
+    .stChatInputContainer {{
+        border: 1px solid {COLORS['border_gray']} !important;
+        border-radius: 12px !important;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.05) !important;
+    }}
+
+    /* Expander - minimal */
     .streamlit-expanderHeader {{
-        background-color: {COLORS['navy_blue']};
-        color: {COLORS['white']};
-        border-radius: 12px;
-        transition: all 0.3s ease;
-        font-weight: 600;
-        padding: 12px 16px;
+        background-color: {COLORS['white']};
+        color: {COLORS['black']} !important;
+        border: 1px solid {COLORS['border_gray']};
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        font-weight: 500;
+        padding: 10px 14px;
     }}
 
     .streamlit-expanderHeader:hover {{
-        background-color: {COLORS['navy_hover']};
-        box-shadow: 0 2px 8px rgba(19, 61, 110, 0.3);
+        background-color: {COLORS['light_gray']};
+        box-shadow: none;
     }}
 
-    /* Success Message */
+    .streamlit-expanderHeader p {{
+        color: {COLORS['black']} !important;
+    }}
+
+    /* Success Message - minimal */
     .stSuccess {{
-        background-color: {COLORS['light_green']};
+        background-color: {COLORS['light_gray']};
         color: {COLORS['black']};
         padding: 12px;
-        border-radius: 10px;
-        border-left: 4px solid #28a745;
+        border-radius: 6px;
+        border-left: 3px solid {COLORS['black']};
     }}
 
-    /* Error Message */
+    /* Error Message - minimal */
     .stError {{
-        background-color: {COLORS['pink']};
+        background-color: {COLORS['light_gray']};
         color: {COLORS['black']};
         padding: 12px;
-        border-radius: 10px;
-        border-left: 4px solid #dc3545;
+        border-radius: 6px;
+        border-left: 3px solid {COLORS['black']};
     }}
 
-    /* Info Message */
+    /* Info Message - minimal */
     .stInfo {{
-        background-color: rgba(19, 61, 110, 0.1);
+        background-color: {COLORS['light_gray']};
         color: {COLORS['black']};
         padding: 12px;
-        border-radius: 10px;
-        border-left: 4px solid {COLORS['navy_blue']};
+        border-radius: 6px;
+        border-left: 3px solid {COLORS['black']};
     }}
 
-    /* Tabs with animations */
+    /* Tabs - minimal */
     .stTabs [data-baseweb="tab-list"] {{
-        gap: 10px;
+        gap: 0px;
+        border-bottom: 1px solid {COLORS['border_gray']};
     }}
 
     .stTabs [data-baseweb="tab"] {{
-        background-color: {COLORS['white']};
-        border: 2px solid {COLORS['navy_blue']};
-        color: {COLORS['navy_blue']};
-        border-radius: 10px 10px 0 0;
-        padding: 10px 20px;
-        transition: all 0.3s ease;
-        font-weight: 600;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid transparent;
+        color: {COLORS['text_gray']};
+        border-radius: 0;
+        padding: 10px 16px;
+        transition: all 0.2s ease;
+        font-weight: 500;
     }}
 
     .stTabs [data-baseweb="tab"]:hover {{
-        background-color: rgba(19, 61, 110, 0.05);
-        transform: translateY(-2px);
+        background-color: transparent;
+        color: {COLORS['black']};
+        transform: none;
     }}
 
     .stTabs [aria-selected="true"] {{
-        background-color: {COLORS['navy_blue']};
-        color: {COLORS['white']};
-        border-color: {COLORS['navy_blue']};
+        background-color: transparent;
+        color: {COLORS['black']};
+        border-bottom: 2px solid {COLORS['black']};
     }}
 
-    /* Metric with styling */
+    /* Metric - minimal */
+    [data-testid="stMetricLabel"] {{
+        color: {COLORS['black']} !important;
+        font-weight: 500;
+    }}
+
     [data-testid="stMetricValue"] {{
-        color: {COLORS['navy_blue']};
-        font-weight: 700;
+        color: {COLORS['black']};
+        font-weight: 600;
     }}
 
     [data-testid="stMetric"] {{
-        background-color: rgba(19, 61, 110, 0.05);
+        background-color: {COLORS['white']};
         padding: 12px;
-        border-radius: 10px;
-        border: 2px solid rgba(19, 61, 110, 0.1);
-        transition: all 0.3s ease;
+        border-radius: 6px;
+        border: 1px solid {COLORS['border_gray']};
+        transition: all 0.2s ease;
     }}
 
     [data-testid="stMetric"]:hover {{
-        border-color: {COLORS['navy_blue']};
-        box-shadow: 0 2px 8px rgba(19, 61, 110, 0.15);
+        border-color: {COLORS['black']};
+        box-shadow: none;
     }}
 
     /* Hide sidebar */
@@ -190,51 +226,136 @@ CLEAN_CSS_STYLES = f"""
         display: none;
     }}
 
-    /* Chat messages */
+    /* Chat messages - ChatGPT style (NO AVATARS/ICONS) */
     .stChatMessage {{
-        background-color: {COLORS['white']};
-        border: 1px solid {COLORS['gray']};
-        border-radius: 12px;
-        padding: 15px;
-        margin: 8px 0;
-        transition: all 0.3s ease;
+        background-color: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 16px 0 !important;
+        margin: 0 !important;
+        transition: none !important;
+    }}
+
+    /* Hide only the avatar column (first child with fixed width) */
+    .stChatMessage > div:first-child {{
+        width: 0 !important;
+        min-width: 0 !important;
+        max-width: 0 !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }}
+
+    /* Ensure content is visible and takes full width */
+    .stChatMessage > div:last-child {{
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 1 !important;
+    }}
+
+    /* User messages - EVEN indexed (user messages appear as 2nd, 4th, 6th after suggested questions) */
+    div[data-testid="stChatMessage"]:nth-child(even) {{
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: flex-start !important;
+    }}
+
+    div[data-testid="stChatMessage"]:nth-child(even) > div:last-child {{
+        display: flex !important;
+        justify-content: flex-end !important;
+        width: 100% !important;
+    }}
+
+    div[data-testid="stChatMessage"]:nth-child(even) > div:last-child > div {{
+        background-color: {COLORS['light_gray']} !important;
+        border-radius: 18px !important;
+        padding: 9px 16px 19px 16px !important;
+        max-width: 70% !important;
+        margin-left: auto !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        min-height: 44px !important;
+    }}
+
+    div[data-testid="stChatMessage"]:nth-child(even) > div:last-child > div > div {{
+        display: flex !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        margin-top: 5px !important;
+    }}
+
+    div[data-testid="stChatMessage"]:nth-child(even) p {{
+        margin: 0 !important;
+        padding: 0 !important;
+        color: {COLORS['black']} !important;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+    }}
+
+    /* Assistant messages - ODD indexed (assistant responses appear as 3rd, 5th, 7th...) */
+    div[data-testid="stChatMessage"]:nth-child(odd) {{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+    }}
+
+    div[data-testid="stChatMessage"]:nth-child(odd) > div:last-child {{
+        display: block !important;
+        width: 100% !important;
+        max-width: 800px !important;
+        margin: 0 auto !important;
+    }}
+
+    div[data-testid="stChatMessage"]:nth-child(odd) > div:last-child > div {{
+        background-color: {COLORS['white']} !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+    }}
+
+    div[data-testid="stChatMessage"]:nth-child(odd) p {{
+        color: {COLORS['black']} !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        margin: 0.5em 0 !important;
     }}
 
     .stChatMessage:hover {{
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: none !important;
     }}
 
-    /* Accent border for highlights */
+    /* Accent border - black */
     .accent-border {{
-        border-left: 4px solid {COLORS['light_orange']};
+        border-left: 3px solid {COLORS['black']};
         padding-left: 12px;
-        border-radius: 0 8px 8px 0;
+        border-radius: 0;
     }}
 
-    /* Clean container */
+    /* Clean container - minimal */
     .clean-container {{
         background-color: {COLORS['white']};
-        border: 2px solid rgba(19, 61, 110, 0.2);
-        border-radius: 12px;
-        padding: 20px;
+        border: 1px solid {COLORS['border_gray']};
+        border-radius: 6px;
+        padding: 16px;
         margin: 12px 0;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
     }}
 
     .clean-container:hover {{
-        border-color: {COLORS['navy_blue']};
-        box-shadow: 0 4px 12px rgba(19, 61, 110, 0.1);
+        border-color: {COLORS['black']};
+        box-shadow: none;
     }}
 
-    /* Column dividers with golden lines */
+    /* Column dividers - black lines instead of yellow */
     [data-testid="column"] {{
-        animation: fadeIn 0.5s ease-in;
+        animation: none;
         position: relative;
     }}
 
-    /* Add golden border to right side of left columns */
+    /* Black border instead of golden */
     [data-testid="column"]:first-child {{
-        border-right: 2px solid {COLORS['light_orange']};
+        border-right: 1px solid {COLORS['border_gray']};
         padding-right: 20px;
     }}
 
@@ -242,24 +363,22 @@ CLEAN_CSS_STYLES = f"""
         padding-left: 20px;
     }}
 
-    /* Horizontal dividers */
+    /* Horizontal dividers - black instead of yellow */
     hr {{
         border: none;
-        border-top: 2px solid {COLORS['light_orange']};
+        border-top: 1px solid {COLORS['border_gray']};
         margin: 1.5rem 0;
     }}
 
+    /* Remove animations */
     @keyframes fadeIn {{
-        from {{ opacity: 0; transform: translateY(10px); }}
+        from {{ opacity: 1; transform: translateY(0); }}
         to {{ opacity: 1; transform: translateY(0); }}
     }}
 
-    /* Font Awesome Icons - Monochrome Theme Blue */
+    /* No icons needed */
     .fa, .fas, .far, .fal, .fab {{
-        color: #667eea;  /* Theme blue for all icons */
+        display: none !important;
     }}
 </style>
-
-<!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 """

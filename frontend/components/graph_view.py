@@ -23,9 +23,14 @@ def convert_to_json_serializable(obj):
         return obj
 
 
-def load_mock_graph_data() -> Dict:
-    """Load graph data from FastAPI knowledge graph endpoint"""
-    api_url = "http://localhost:8000/api/knowledge-graph/visualization"
+def load_mock_graph_data(city: str = "Pune") -> Dict:
+    """
+    Load graph data from FastAPI knowledge graph endpoint
+
+    Args:
+        city: City name for location-aware data (default: "Pune")
+    """
+    api_url = f"http://localhost:8000/api/knowledge-graph/visualization?city={city}"
 
     try:
         import requests
@@ -291,18 +296,40 @@ def render_graph_visualization(graph_data: Dict):
                     width: 2
                 }},
                 physics: {{
-                    stabilization: {{ iterations: 200 }},
+                    enabled: true,
+                    stabilization: {{
+                        enabled: true,
+                        iterations: 1000,
+                        updateInterval: 25,
+                        onlyDynamicEdges: false,
+                        fit: true
+                    }},
                     barnesHut: {{
-                        gravitationalConstant: -8000,
-                        springConstant: 0.04,
-                        springLength: 150
-                    }}
+                        gravitationalConstant: -4000,
+                        centralGravity: 0.3,
+                        springLength: 200,
+                        springConstant: 0.02,
+                        damping: 0.5,
+                        avoidOverlap: 0.8
+                    }},
+                    maxVelocity: 15,
+                    minVelocity: 0.1,
+                    solver: 'barnesHut',
+                    timestep: 0.3
                 }},
                 interaction: {{
                     hover: true,
                     tooltipDelay: 100,
                     navigationButtons: true,
-                    keyboard: true
+                    keyboard: true,
+                    dragNodes: true,
+                    dragView: true,
+                    zoomView: true
+                }},
+                layout: {{
+                    improvedLayout: true,
+                    clusterThreshold: 150,
+                    hierarchical: false
                 }}
             }};
 
@@ -341,14 +368,19 @@ def render_graph_visualization(graph_data: Dict):
     st.components.v1.html(html_code, height=650, scrolling=False)
 
 
-def render_knowledge_graph_view():
-    """Main function to render knowledge graph visualization"""
+def render_knowledge_graph_view(city: str = "Pune"):
+    """
+    Main function to render knowledge graph visualization
+
+    Args:
+        city: City name for location-aware data (default: "Pune")
+    """
 
     # Header with reload button
     col_title, col_reload = st.columns([4, 1])
 
     with col_title:
-        st.markdown("### Knowledge Graph Visualization")
+        st.markdown(f"### Knowledge Graph Visualization - {city}")
         st.markdown("Explore the relationships between Projects, Developers, and Locations")
 
     with col_reload:
@@ -378,15 +410,16 @@ def render_knowledge_graph_view():
 
     st.markdown("---")
 
-    # Load graph data from FastAPI endpoint (NO NEO4J)
+    # Load graph data from FastAPI endpoint (NO NEO4J) with city parameter
     try:
-        with st.spinner("Loading knowledge graph from API..."):
+        with st.spinner(f"Loading knowledge graph from API for {city}..."):
             import requests
-            response = requests.get("http://localhost:8000/api/knowledge-graph/visualization", timeout=10)
+            response = requests.get(f"http://localhost:8000/api/knowledge-graph/visualization?city={city}", timeout=10)
 
             if response.status_code == 200:
                 graph_data = response.json()
-                st.success("✅ Knowledge graph loaded from v4 nested JSON")
+                project_count = graph_data.get('stats', {}).get('l1_projects', 0)
+                st.success(f"✅ Knowledge graph loaded: {project_count} projects from {city}")
             else:
                 st.error(f"API error: {response.status_code}")
                 return
@@ -407,19 +440,24 @@ def render_knowledge_graph_view():
         st.markdown("**Layer-wise Architecture Legend:**")
 
         # Layer colors
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
         with col1:
-            st.markdown("⚪ **L0: Dimensions** - Gray nodes (#9E9E9E)")
+            st.markdown("⚫ **L0: Dimensions** - Dark Gray (size 100)")
             st.markdown("Base dimensional units: U, L², T, C")
-        with col2:
-            st.markdown("🔵 **Projects (L1)** - Blue nodes (#2196F3)")
+            st.markdown("")
+            st.markdown("🟠 **Projects** - Dark Orange (size 70)")
             st.markdown("Core metadata: name, developer, location, dates, RERA")
-        with col3:
-            st.markdown("🟢 **L1 Attributes** - Green nodes (#4CAF50)")
+        with col2:
+            st.markdown("🟢 **L1 Attributes** - Light Green (size 12)")
             st.markdown("Numeric values with dimensional relationships")
-        with col4:
-            st.markdown("🟡 **L2 Metrics** - Yellow nodes (#FFC107)")
+            st.markdown("")
+            st.markdown("🟣 **L1 Enrichments** - Light Purple (size 8)")
+            st.markdown("Unit mix breakdowns and price range distributions")
+        with col3:
+            st.markdown("🟠 **L2 Metrics** - Orange (size 25)")
             st.markdown("Calculated financials: NPV, IRR, ROI, Payback")
+            st.markdown("")
+            st.markdown("**Visual Hierarchy:** Dimensions (100) > Projects (70) > Metrics (25) > Attributes (12) > Enrichments (8)")
 
         # Instructions
         with st.expander("How to use"):
@@ -437,14 +475,14 @@ def render_knowledge_graph_view():
 
             **Layer Architecture (L0 → L1 → L2):**
             - **L0 (Gray):** Dimension definitions - The fundamental vocabulary (U=Units, L²=Area, T=Time, C=Cash Flow)
-            - **Projects (Blue):** Core project metadata - Name, developer, location, launch/possession dates, RERA status
+            - **Projects (Yellow):** Core project metadata - Name, developer, location, launch/possession dates, RERA status
             - **L1 Attributes (Green):** Raw numeric data from PDF - Values with dimensional relationships (IS, NUMERATOR, DENOMINATOR, INVERSE_OF)
-            - **L2 Metrics (Yellow):** Financial metrics calculated from L1 (NON-LLM) - NPV, IRR, ROI, Payback Period, Absorption Rate
+            - **L2 Metrics (Orange):** Financial metrics calculated from L1 (NON-LLM) - NPV, IRR, ROI, Payback Period, Absorption Rate
 
             **Relationships:**
-            - L1 Attributes → Projects (HAS_L1_ATTRIBUTE) - Green nodes linked to blue project nodes
+            - L1 Attributes → Projects (HAS_L1_ATTRIBUTE) - Green nodes linked to yellow project nodes
             - L1 Attributes → L0 Dimensions (IS/NUMERATOR/DENOMINATOR/INVERSE_OF) - Explicit dimensional relationships
-            - L2 Metrics → Projects (HAS_L2_METRIC) - Yellow nodes linked to blue project nodes
+            - L2 Metrics → Projects (HAS_L2_METRIC) - Orange nodes linked to yellow project nodes
             - L2 Metrics → L0 Dimensions (IS/NUMERATOR/DENOMINATOR) - Based on calculated dimension
 
             **Data Expandable Sections (Above Graph):**

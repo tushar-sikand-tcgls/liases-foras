@@ -22,10 +22,14 @@ from components.clean_styles import CLEAN_CSS_STYLES, COLORS
 from components.searchable_tree_selector import render_searchable_tree_selector, render_breadcrumb
 from components.content_tabs import render_content_tabs
 from components.graph_view import render_knowledge_graph_view
+from components.quarterly_market_panel import render_quarterly_market_panel
+from components.typing_animation import StreamingDisplay
+from components.map_renderer import detect_chart_type, render_chart_from_detection
+from components.chart_renderer import check_and_render_charts, render_chart_from_spec
 from services.weather_service import WeatherService
 
 # Configuration
-API_BASE_URL = "http://localhost:8000"
+API_BASE_URL = "http://localhost:8000"  # Updated to match backend server port
 USE_DYNAMIC_RENDERER = True
 
 # SECURITY FIX: Load Google Maps API key from environment variable
@@ -47,13 +51,34 @@ if not GOOGLE_MAPS_API_KEY:
 # Apply clean CSS styles
 st.markdown(CLEAN_CSS_STYLES, unsafe_allow_html=True)
 
+# Custom CSS for smaller action buttons (copy/export)
+st.markdown("""
+<style>
+    /* Smaller action buttons for copy/export */
+    button[kind="secondary"] {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.875rem !important;
+        min-height: 2rem !important;
+    }
+
+    /* Make download button smaller too */
+    .stDownloadButton button {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.875rem !important;
+        min-height: 2rem !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # Initialize session state
 if 'messages' not in st.session_state:
     st.session_state.messages = []
 if 'selected_location' not in st.session_state:
     st.session_state.selected_location = None
 if 'show_graph' not in st.session_state:
-    st.session_state.show_graph = False
+    st.session_state.show_graph = True
+if 'show_market_trends' not in st.session_state:
+    st.session_state.show_market_trends = False
 if 'location_data_cache' not in st.session_state:
     st.session_state.location_data_cache = {}
 if 'current_location_key' not in st.session_state:
@@ -62,6 +87,8 @@ if 'loading_states' not in st.session_state:
     st.session_state.loading_states = {}  # Track what's currently loading
 if 'display_mode' not in st.session_state:
     st.session_state.display_mode = 'bullets'  # Default display mode for query results
+if 'rendered_message_count' not in st.session_state:
+    st.session_state.rendered_message_count = 0  # Track how many messages have been fully rendered
 
 # Initialize Dynamic Renderer
 if USE_DYNAMIC_RENDERER:
@@ -459,14 +486,20 @@ def process_query(prompt: str, location: str, admin_mode: bool = False) -> Dict:
                 "state": state
             }
 
+        # Use ATLAS Hybrid Router endpoint (Interactions API with intelligent routing)
+        # This endpoint uses:
+        # 1. Interactions API V2 (for File Search on qualitative queries)
+        # 2. Direct generateContent API (for Knowledge Graph on quantitative queries)
+        # 3. Intelligent intent classification for optimal routing
+        # Target: <2s average performance
         response = requests.post(
-            f"{API_BASE_URL}/api/qa/question",
+            f"{API_BASE_URL}/api/atlas/hybrid/query",
             json={
                 "question": prompt,
-                "project_id": None,  # Will use first project (Sara City by default)
-                "location_context": location_context,  # Pass location context
-                "admin_mode": admin_mode  # Pass admin mode flag (ADMIN: prefix)
-            }
+                "project_id": None,
+                "location_context": location_context
+            },
+            timeout=90  # Increased from 60 to 90 seconds for complex Gemini Interactions API queries
         )
 
         if response.status_code == 200:
@@ -494,9 +527,26 @@ def process_query(prompt: str, location: str, admin_mode: bool = False) -> Dict:
 # MAIN APP UI
 # =============================================================================
 
-# Header
-st.title("🗺️ SIRRUS.AI ATLAS")
-st.markdown('<p class="secondary-text">Advanced Territorial Location Analytics & Strategy</p>', unsafe_allow_html=True)
+# Header with navigation
+# Only show QA button in development/testing environments (not production)
+ENABLE_QA_AUTOMATION = os.getenv("ENABLE_QA_AUTOMATION", "false").lower() == "true"
+
+if ENABLE_QA_AUTOMATION:
+    col_title, col_spacer, col_qa = st.columns([6, 3, 1])
+
+    with col_title:
+        st.title("🗺️ SIRRUS.AI ATLAS")
+        st.markdown('<p class="secondary-text">Advanced Territorial Location Analytics & Strategy</p>', unsafe_allow_html=True)
+
+    with col_qa:
+        st.markdown("<br>", unsafe_allow_html=True)  # Add spacing to align with title
+        if st.button("🤖 QA", key="qa_nav_button", help="QA Automation Testing", use_container_width=True):
+            st.switch_page("pages/_qa_automation.py")
+else:
+    # Production mode - no QA button
+    st.title("🗺️ SIRRUS.AI ATLAS")
+    st.markdown('<p class="secondary-text">Advanced Territorial Location Analytics & Strategy</p>', unsafe_allow_html=True)
+
 st.markdown("---")
 
 
@@ -546,7 +596,7 @@ else:
     state, city, region, project = st.session_state.selected_location
 
     # Breadcrumb and action buttons
-    col_bread, col_graph, col_clear = st.columns([4, 1, 1])
+    col_bread, col_graph, col_trends, col_clear = st.columns([3, 1, 1, 1])
 
     with col_bread:
         render_breadcrumb(state, city, region, project)
@@ -555,6 +605,14 @@ else:
         graph_btn_label = "Hide Graph" if st.session_state.show_graph else "View Graph"
         if st.button(graph_btn_label, key="toggle_graph"):
             st.session_state.show_graph = not st.session_state.show_graph
+            st.session_state.show_market_trends = False  # Hide market trends when showing graph
+            st.rerun()
+
+    with col_trends:
+        trends_btn_label = "Hide Trends" if st.session_state.show_market_trends else "Market Trends"
+        if st.button(trends_btn_label, key="toggle_market_trends"):
+            st.session_state.show_market_trends = not st.session_state.show_market_trends
+            st.session_state.show_graph = False  # Hide graph when showing market trends
             st.rerun()
 
     with col_clear:
@@ -562,13 +620,19 @@ else:
             st.session_state.selected_location = None
             st.session_state.messages = []
             st.session_state.show_graph = False
+            st.session_state.show_market_trends = False
             st.rerun()
 
     st.markdown("---")
 
     # Show knowledge graph if toggled
     if st.session_state.show_graph:
-        render_knowledge_graph_view()
+        render_knowledge_graph_view(city=city)
+        st.markdown("---")
+
+    # Show quarterly market trends if toggled
+    if st.session_state.show_market_trends:
+        render_quarterly_market_panel()
         st.markdown("---")
 
     # Two-column layout with dynamic width adjustment
@@ -643,61 +707,23 @@ else:
                 pass  # Silently fail if can't fetch projects
 
         # Suggested questions (only show if no messages)
-        if len(st.session_state.messages) == 0:
-            st.write("**Suggested Questions:**")
+        # Suggested questions removed per user request
 
-            col1, col2 = st.columns(2)
-
-            with col1:
-                st.write("**📊 Project-Specific Queries**")
-                if st.button("What is the project size of Sara City?", key="q1", use_container_width=True):
-                    st.session_state.messages.append({
-                        "role": "user",
-                        "content": "What is the project size of Sara City?"
-                    })
-                    st.rerun()
-
-                if st.button("How many units in Sara City?", key="q2", use_container_width=True):
-                    st.session_state.messages.append({
-                        "role": "user",
-                        "content": "How many total units in Sara City"
-                    })
-                    st.rerun()
-
-                if st.button("Show me Sara City data", key="q3", use_container_width=True):
-                    st.session_state.messages.append({
-                        "role": "user",
-                        "content": "Show me Sara City project data"
-                    })
-                    st.rerun()
-
-            with col2:
-                st.write(f"**📈 Regional Statistics**")
-                if st.button(f"Average project size in {region}", key="q4", use_container_width=True):
-                    st.session_state.messages.append({
-                        "role": "user",
-                        "content": f"What is the average project size"
-                    })
-                    st.rerun()
-
-                if st.button(f"Total project size", key="q5", use_container_width=True):
-                    st.session_state.messages.append({
-                        "role": "user",
-                        "content": f"What is the total project size"
-                    })
-                    st.rerun()
-
-                if st.button(f"Standard deviation in {region}", key="q6", use_container_width=True):
-                    st.session_state.messages.append({
-                        "role": "user",
-                        "content": f"Find the standard deviation in project size"
-                    })
-                    st.rerun()
-
-            st.markdown("---")
+        # Check if we're currently processing a query (last message is user without response yet)
+        is_processing = (
+            len(st.session_state.messages) > 0 and
+            st.session_state.messages[-1]["role"] == "user"
+        )
 
         # Chat message display
         for idx, message in enumerate(st.session_state.messages):
+            # Determine if this is a NEW message (not yet rendered before)
+            # A message is "new" if it's beyond the previously rendered count
+            is_new_message = (idx >= st.session_state.rendered_message_count)
+
+            # Add custom CSS class for user/assistant styling
+            message_class = "user-message-wrapper" if message["role"] == "user" else "assistant-message-wrapper"
+
             with st.chat_message(message["role"]):
                 if isinstance(message["content"], dict):
                 # Check if dict has "answer" field with HTML content (STRING, not dict)
@@ -751,33 +777,51 @@ else:
                                 unique_key = f"export_{answer_id}"
                                 copy_key = f"copy_{answer_id}"
 
-                                # Add action buttons above the answer
-                                col1, col2, col3 = st.columns([8, 1, 1])
-                                with col2:
-                                    # Copy button using Streamlit's code block with copy functionality
-                                    if st.button("📋", key=copy_key, help="Copy to clipboard"):
-                                        # Store in session state for copying
-                                        st.session_state[f'copy_text_{answer_id}'] = plain_text
-                                        st.code(plain_text, language=None)
-                                with col3:
-                                    # Export to .md button
-                                    import datetime
-                                    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-                                    md_filename = f"answer_{timestamp}.md"
+                                # Add action buttons above the answer (only if not currently processing)
+                                if not is_processing:
+                                    col1, col2, col3 = st.columns([8, 1, 1])
+                                    with col2:
+                                        # Copy button using Font Awesome icon
+                                        if st.button("📄", key=copy_key, help="Copy to clipboard", use_container_width=False):
+                                            # Store in session state for copying
+                                            st.session_state[f'copy_text_{answer_id}'] = plain_text
+                                            st.code(plain_text, language=None)
+                                    with col3:
+                                        # Export to .md button
+                                        import datetime
+                                        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                                        md_filename = f"answer_{timestamp}.md"
 
-                                    # Convert HTML to markdown-friendly format
-                                    md_content = f"# Real Estate Analytics Answer\n\n"
-                                    md_content += f"**Generated:** {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
-                                    md_content += f"---\n\n{plain_text}\n"
+                                        # Convert HTML to markdown-friendly format
+                                        md_content = f"# Real Estate Analytics Answer\n\n"
+                                        md_content += f"**Generated:** {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+                                        md_content += f"---\n\n{plain_text}\n"
 
-                                    st.download_button(
-                                        label="📥",
-                                        data=md_content,
-                                        file_name=md_filename,
-                                        mime="text/markdown",
-                                        help="Export answer to Markdown file",
-                                        key=unique_key
-                                    )
+                                        st.download_button(
+                                            label="💾",
+                                            data=md_content,
+                                            file_name=md_filename,
+                                            mime="text/markdown",
+                                            help="Export answer to Markdown file",
+                                            key=unique_key,
+                                            use_container_width=False
+                                        )
+
+                            # CHART DETECTION: Check if answer contains Chart.js JSON
+                            from components.map_renderer import detect_and_render_chart_json
+
+                            # Try to detect and render chart JSON first
+                            chart_rendered = False
+                            if isinstance(answer, str):
+                                chart_rendered = detect_and_render_chart_json(answer)
+
+                            # If chart was rendered, remove the JSON from the text display
+                            if chart_rendered:
+                                import re
+                                json_pattern = r'\{[\s\S]*?"type"\s*:\s*"(?:bar|line|pie)"[\s\S]*?"data"\s*:[\s\S]*?\}'
+                                cleaned_answer = re.sub(json_pattern, '', answer, flags=re.MULTILINE)
+                                cleaned_answer = re.sub(r'Here is a chart.*?:', '', cleaned_answer, flags=re.IGNORECASE)
+                                answer = cleaned_answer.strip()
 
                             # Use st.components for complex HTML instead of markdown
                             if ("<table" in answer or "<tr" in answer):
@@ -789,13 +833,29 @@ else:
                                 # Wrap answer with hidden div for clipboard access
                                 answer_with_id = f'<div id="{answer_id}" style="display:none;">{plain_text}</div>{answer}'
                                 st.components.v1.html(answer_with_id, height=height, scrolling=True)
-                            else:
-                                st.write(answer)
+                            elif answer:  # Only display if there's content left
+                                # Use typing animation ONLY for NEW messages
+                                animation_mode = "words" if is_new_message else "instant"
+                                streaming_display = StreamingDisplay(mode=animation_mode, words_per_update=3, show_thinking=False)
+                                streaming_display.show(answer, unsafe_allow_html=True)
                         else:
-                            st.write(answer)
+                            # Use typing animation ONLY for NEW messages
+                            animation_mode = "words" if is_new_message else "instant"
+                            streaming_display = StreamingDisplay(mode=animation_mode, words_per_update=3, show_thinking=False)
+                            streaming_display.show(answer, unsafe_allow_html=True)
                     else:
+                        # Check if this is an error response
+                        if message["content"].get("status") == "error":
+                            # Display error message prominently
+                            error_msg = message["content"].get("error", "An error occurred")
+                            st.error(f"❌ {error_msg}")
+
+                            # Show suggestion if available
+                            if "suggestion" in message["content"]:
+                                st.info(f"💡 {message['content']['suggestion']}")
+
                         # Check if this is a query result from our semantic matcher
-                        if message["content"].get("status") == "success" and "answer" in message["content"]:
+                        elif message["content"].get("status") == "success" and "answer" in message["content"]:
                             # Use simple transformer to convert JSON to clean text
                             from components.answer_transformer import transform_answer
 
@@ -806,11 +866,158 @@ else:
                             text_output, table_data = transform_answer(message["content"], display_mode)
 
                             if table_data is not None:
-                                # Display as table
+                                # Display as table (no animation for tables)
                                 st.table(table_data)
                             elif text_output:
-                                # Display as markdown text (allow HTML for collapsible details)
-                                st.markdown(text_output, unsafe_allow_html=True)
+                                # Display with typing animation ONLY for NEW messages
+                                animation_mode = "words" if is_new_message else "instant"
+                                streaming_display = StreamingDisplay(mode=animation_mode, words_per_update=3, show_thinking=False)
+                                streaming_display.show(text_output, unsafe_allow_html=True)
+
+                                # NEW: Check for backend-generated chart specifications
+                                # If the API response includes a chart_spec, render it
+                                if "chart_spec" in message["content"] and message["content"]["chart_spec"]:
+                                    check_and_render_charts(message["content"])
+
+                                # CHART DETECTION: Check if question warrants a visualization
+                                # Get the user's original question from previous message
+                                if idx > 0 and message["role"] == "assistant":
+                                    user_message = st.session_state.messages[idx - 1]
+                                    if user_message["role"] == "user":
+                                        user_question = user_message["content"]
+
+                                        # Detect if chart should be displayed
+                                        chart_config = detect_chart_type(user_question)
+
+                                        if chart_config and chart_config["chart_type"] == "heat_map":
+                                            # Display heat-map for spatial comparison questions
+                                            st.markdown("---")  # Visual separator
+                                            st.markdown("#### 📊 Visualization")
+                                            from components.map_renderer import display_heat_map_in_chat
+                                            display_heat_map_in_chat(
+                                                metric=chart_config["metric"],
+                                                region=chart_config["config"].get("region"),
+                                                backend_url=API_BASE_URL
+                                            )
+
+                                        # PROJECT PROFILE FEATURES: Check for location or project overview queries
+                                        from components.project_profile import (
+                                            detect_location_query,
+                                            detect_project_overview_query,
+                                            render_google_map,
+                                            render_metadata_card,
+                                            render_key_stats,
+                                            render_suggested_questions
+                                        )
+
+                                        # Helper function to extract project name from question or answer
+                                        def extract_project_name(question_text, answer_text):
+                                            """Extract project name from question or answer text"""
+                                            import re
+                                            # Try to match common project names from the answer
+                                            projects_pattern = r'(Sara City|Gulmohar City|Shubhan Karoli|The Urbana|Kolte Patil iTowers Exente|Nirman Viva|Dream Space|K Raheja Corp Anantnag Varna|Kumar Properties Vivante|Rohan Builders Jharoka)'
+                                            match = re.search(projects_pattern, answer_text, re.IGNORECASE)
+                                            if match:
+                                                return match.group(1)
+                                            # Try question
+                                            match = re.search(projects_pattern, question_text, re.IGNORECASE)
+                                            if match:
+                                                return match.group(1)
+                                            return None
+
+                                        # Check if this is a location or overview query
+                                        is_location = detect_location_query(user_question)
+                                        is_overview = detect_project_overview_query(user_question)
+
+                                        if is_location or is_overview:
+                                            # Extract project name
+                                            answer_text = answer_content.get("answer", "")
+                                            project_name = extract_project_name(user_question, answer_text)
+
+                                            if project_name:
+                                                # Fetch full project data via API
+                                                try:
+                                                    import requests
+                                                    # Query for all project data
+                                                    fetch_response = requests.post(
+                                                        f"{API_BASE_URL}/api/atlas/hybrid/query",
+                                                        json={"question": f"What is the project data for {project_name}"},
+                                                        timeout=10
+                                                    )
+                                                    if fetch_response.status_code == 200:
+                                                        fetch_result = fetch_response.json()
+                                                        project_data = fetch_result.get("kg_data", {})
+
+                                                        # If kg_data is empty, try alternative: query for specific fields
+                                                        if not project_data:
+                                                            # Build project data from multiple queries
+                                                            project_data = {}
+                                                            # Query coordinates
+                                                            coords_response = requests.post(
+                                                                f"{API_BASE_URL}/api/atlas/hybrid/query",
+                                                                json={"question": f"What are the coordinates of {project_name}"},
+                                                                timeout=5
+                                                            )
+                                                            # Extract from answer text (since kg_data may be empty)
+                                                            if coords_response.status_code == 200:
+                                                                coords_answer = coords_response.json().get("answer", "")
+                                                                import re
+                                                                # Extract latitude and longitude from answer
+                                                                lat_match = re.search(r'Latitude[:\s]+([0-9.]+)', coords_answer)
+                                                                lon_match = re.search(r'Longitude[:\s]+([0-9.]+)', coords_answer)
+                                                                if lat_match and lon_match:
+                                                                    project_data['latitude'] = {'value': float(lat_match.group(1))}
+                                                                    project_data['longitude'] = {'value': float(lon_match.group(1))}
+                                                                project_data['projectName'] = {'value': project_name}
+
+                                                        if is_location and project_data.get('latitude') and project_data.get('longitude'):
+                                                            # Location query -> Show Google Map
+                                                            lat_attr = project_data.get('latitude', {})
+                                                            lon_attr = project_data.get('longitude', {})
+
+                                                            latitude = lat_attr.get('value') if isinstance(lat_attr, dict) else lat_attr
+                                                            longitude = lon_attr.get('value') if isinstance(lon_attr, dict) else lon_attr
+
+                                                            if latitude and longitude:
+                                                                st.markdown("---")
+                                                                render_google_map(latitude, longitude, project_name)
+
+                                                        elif is_overview and project_data:
+                                                            # Project overview query -> Show comprehensive profile
+                                                            st.markdown("---")
+
+                                                            # Fetch all required fields if not present
+                                                            required_fields = ['developerName', 'location', 'launchDate', 'possessionDate',
+                                                                             'projectSizeUnits', 'totalSupplyUnits', 'currentPricePSF',
+                                                                             'soldPct', 'unsoldPct', 'annualSalesUnits']
+
+                                                            # For now, use what we have (coordinates)
+                                                            # TODO: Query backend for each missing field
+
+                                                            # 1. Metadata card (if we have enough data)
+                                                            if len(project_data) > 3:
+                                                                render_metadata_card(project_data)
+
+                                                            # 2. Google Map
+                                                            lat_attr = project_data.get('latitude', {})
+                                                            lon_attr = project_data.get('longitude', {})
+                                                            latitude = lat_attr.get('value') if isinstance(lat_attr, dict) else lat_attr
+                                                            longitude = lon_attr.get('value') if isinstance(lon_attr, dict) else lon_attr
+
+                                                            if latitude and longitude:
+                                                                render_google_map(latitude, longitude, project_name)
+
+                                                            # 3. Key stats (if we have the data)
+                                                            if project_data.get('projectSizeUnits'):
+                                                                render_key_stats(project_data)
+
+                                                            # 4. Suggested questions
+                                                            location_attr = project_data.get('location', {})
+                                                            location = location_attr.get('value') if isinstance(location_attr, dict) else location_attr
+                                                            render_suggested_questions(project_name, location or "the area")
+
+                                                except Exception as e:
+                                                    print(f"Error fetching project data: {e}")
                             else:
                                 # Fallback to JSON
                                 st.json(message["content"])
@@ -863,8 +1070,8 @@ else:
                             # Add action buttons
                             col1, col2, col3 = st.columns([8, 1, 1])
                             with col2:
-                                # Copy button using Streamlit's code block with copy functionality
-                                if st.button("📋", key=copy_key, help="Copy to clipboard"):
+                                # Copy button using smaller icon
+                                if st.button("📄", key=copy_key, help="Copy to clipboard", use_container_width=False):
                                     st.session_state[f'copy_text_{answer_id}'] = plain_text
                                     st.code(plain_text, language=None)
                             with col3:
@@ -875,13 +1082,33 @@ else:
                                 md_content += f"---\n\n{plain_text}\n"
 
                                 st.download_button(
-                                    label="📥",
+                                    label="💾",
                                     data=md_content,
                                     file_name=md_filename,
                                     mime="text/markdown",
                                     help="Export answer to Markdown file",
-                                    key=unique_key
+                                    key=unique_key,
+                                    use_container_width=False
                                 )
+
+                        # CHART DETECTION: Check if content contains Chart.js JSON
+                        from components.map_renderer import detect_and_render_chart_json
+
+                        # Try to detect and render chart JSON first
+                        chart_rendered = False
+                        if message["role"] == "assistant":
+                            chart_rendered = detect_and_render_chart_json(content)
+
+                        # If chart was rendered, remove the JSON from the text display
+                        if chart_rendered:
+                            # Extract text before and after the chart JSON
+                            import re
+                            json_pattern = r'\{[\s\S]*?"type"\s*:\s*"(?:bar|line|pie)"[\s\S]*?"data"\s*:[\s\S]*?\}'
+                            # Remove JSON from content for text display
+                            cleaned_content = re.sub(json_pattern, '', content, flags=re.MULTILINE)
+                            # Remove phrases like "Here is a chart" that precede the JSON
+                            cleaned_content = re.sub(r'Here is a chart.*?:', '', cleaned_content, flags=re.IGNORECASE)
+                            content = cleaned_content.strip()
 
                         # Use st.components for HTML rendering
                         if ("<table" in content or "<tr" in content):
@@ -889,10 +1116,14 @@ else:
                             height = min(600, max(300, row_count * 40))
                             content_with_id = f'<div id="{answer_id}" style="display:none;">{plain_text}</div>{content}'
                             st.components.v1.html(content_with_id, height=height, scrolling=True)
-                        else:
+                        elif content:  # Only display if there's content left after chart removal
                             st.write(content)
                     else:
                         st.write(content)
+
+        # Update rendered message count after displaying all messages
+        # This ensures new messages get animated on first display, then display instantly on reruns
+        st.session_state.rendered_message_count = len(st.session_state.messages)
 
         # Check if last message needs processing
         if len(st.session_state.messages) > 0 and st.session_state.messages[-1]["role"] == "user":
@@ -908,8 +1139,35 @@ else:
             print(f"[DEBUG] Processing user message: {last_user_message}")
             print(f"[DEBUG] Admin mode: {admin_mode}")
 
+            # Extract entities for dynamic analyzing message
+            def get_analyzing_message(query: str) -> str:
+                """Generate dynamic analyzing message based on query entities"""
+                import re
+
+                # Extract project names (capitalized words, often with spaces)
+                project_pattern = r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\b'
+                matches = re.findall(project_pattern, query)
+
+                # Filter out common words
+                common_words = {'What', 'Show', 'Tell', 'Give', 'Find', 'Get', 'The', 'Is', 'Are', 'Of', 'For', 'In', 'On', 'At'}
+                entities = [m for m in matches if m not in common_words]
+
+                if entities:
+                    # Use first entity found (usually project or location name)
+                    return f"Analyzing {entities[0]}..."
+                elif 'price' in query.lower() or 'pst' in query.lower():
+                    return "Analyzing pricing data..."
+                elif 'absorption' in query.lower():
+                    return "Analyzing absorption rates..."
+                elif 'project' in query.lower():
+                    return "Analyzing project data..."
+                else:
+                    return "Analyzing your query..."
+
+            analyzing_msg = get_analyzing_message(last_user_message)
+
             with st.chat_message("assistant"):
-                with st.spinner("Analyzing..."):
+                with st.spinner(analyzing_msg):
                     location_str = f"{region}, {city}"
                     response_content = process_query(last_user_message, location_str, admin_mode=admin_mode)
                     print(f"[DEBUG] Got response type: {type(response_content)}")

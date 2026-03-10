@@ -1,0 +1,35 @@
+
+================================================================================
+AUTO-HEALING TEST REPORT - Run: qwen_full_suite
+================================================================================
+
+SUMMARY:
+--------
+Total Tests: 121
+Passed: 0 (0.0%)
+Failed: 121 (100.0%)
+  - Inclusion failures: 0
+  - Similarity failures: 121
+
+BY TYPE:
+--------
+Objective:   0/100 passed (0.0%)
+Subjective:  0/19 passed (0.0%)
+Calculated:  0/2 passed (0.0%)
+
+AUTO-FIXES:
+-----------
+Auto-fixed: 0 test cases
+Needs review: 0 test cases
+
+TIMING:
+-------
+Duration: 122.9s
+Started: 2025-12-11 11:25:17
+Completed: 2025-12-11 11:27:20
+
+================================================================================
+
+Do you want another refinement cycle (further auto-fixing and regression run),
+or are you satisfied with the current test outcomes?
+

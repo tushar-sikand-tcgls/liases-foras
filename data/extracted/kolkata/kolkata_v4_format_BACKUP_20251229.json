@@ -1,0 +1,1245 @@
+{
+  "metadata": {
+    "source_file": "Kolkata_R&D_Combined_Final.pdf + LF-Layers_FULLY_ENRICHED_ALL_36.xlsx",
+    "extraction_timestamp": "2025-12-29T11:44:09.439132",
+    "architecture_version": "v4.0.0",
+    "data_layer": "L1",
+    "description": "Kolkata project data in v4 nested format with {value, unit, dimension, relationships}",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "total_projects": 880,
+    "converted_from": "flat_format"
+  },
+  "page_2_projects": [
+    {
+      "projectId": {
+        "value": 10001,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Siddha Galaxia",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Siddha Group",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "location": {
+        "value": "Kolkata",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "micromarketId": {
+        "value": "KOLKATA_0_2KM",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 450,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldUnits": {
+        "value": 382,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldUnits": {
+        "value": 68,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 45,
+        "unit": "count/year",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSaleableArea": {
+        "value": 382500,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldArea": {
+        "value": 57800,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unitSaleableSize": {
+        "value": 850,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 7200,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "currentPricePSF": {
+        "value": 8800,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesValue": {
+        "value": 33.66,
+        "unit": "\u20b9 Crores/year",
+        "dimension": "CF/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchDate": {
+        "value": "Nov 2020",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Dec 2026",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectAgeMonths": {
+        "value": 50,
+        "unit": "months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": true,
+        "unit": "Boolean",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectSize": {
+        "value": 450,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:44:09.439093",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      }
+    },
+    {
+      "projectId": {
+        "value": 10002,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Merlin Verve",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Merlin Group",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "location": {
+        "value": "Kolkata",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "micromarketId": {
+        "value": "KOLKATA_2_4KM",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 320,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldUnits": {
+        "value": 224,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldUnits": {
+        "value": 96,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 38,
+        "unit": "count/year",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSaleableArea": {
+        "value": 249600,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldArea": {
+        "value": 74880,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unitSaleableSize": {
+        "value": 780,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 6500,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "currentPricePSF": {
+        "value": 7400,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesValue": {
+        "value": 21.87,
+        "unit": "\u20b9 Crores/year",
+        "dimension": "CF/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchDate": {
+        "value": "Mar 2021",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Jun 2027",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectAgeMonths": {
+        "value": 46,
+        "unit": "months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": true,
+        "unit": "Boolean",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectSize": {
+        "value": 320,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:44:09.439107",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      }
+    },
+    {
+      "projectId": {
+        "value": 10003,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "PS Panache",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "PS Group",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "location": {
+        "value": "Kolkata",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "micromarketId": {
+        "value": "KOLKATA_4_6KM",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 280,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldUnits": {
+        "value": 196,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldUnits": {
+        "value": 84,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 32,
+        "unit": "count/year",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSaleableArea": {
+        "value": 201600,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldArea": {
+        "value": 60480,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unitSaleableSize": {
+        "value": 720,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 5800,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "currentPricePSF": {
+        "value": 6600,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesValue": {
+        "value": 15.12,
+        "unit": "\u20b9 Crores/year",
+        "dimension": "CF/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchDate": {
+        "value": "Jul 2021",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Sep 2027",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectAgeMonths": {
+        "value": 42,
+        "unit": "months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": true,
+        "unit": "Boolean",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectSize": {
+        "value": 280,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:44:09.439115",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      }
+    },
+    {
+      "projectId": {
+        "value": 10004,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Srijan Eternis",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Srijan Realty",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "location": {
+        "value": "Kolkata",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "micromarketId": {
+        "value": "KOLKATA_6_10KM",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 520,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldUnits": {
+        "value": 312,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldUnits": {
+        "value": 208,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 52,
+        "unit": "count/year",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSaleableArea": {
+        "value": 353600,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldArea": {
+        "value": 141440,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unitSaleableSize": {
+        "value": 680,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 5200,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "currentPricePSF": {
+        "value": 5900,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesValue": {
+        "value": 20.13,
+        "unit": "\u20b9 Crores/year",
+        "dimension": "CF/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchDate": {
+        "value": "Jan 2022",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Mar 2028",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectAgeMonths": {
+        "value": 36,
+        "unit": "months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": true,
+        "unit": "Boolean",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectSize": {
+        "value": 520,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:44:09.439121",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      }
+    },
+    {
+      "projectId": {
+        "value": 10005,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Ambuja Utalika",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Ambuja Neotia",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "location": {
+        "value": "Kolkata",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "micromarketId": {
+        "value": "KOLKATA_10_20KM",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 680,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldUnits": {
+        "value": 408,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldUnits": {
+        "value": 272,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 68,
+        "unit": "count/year",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSaleableArea": {
+        "value": 421600,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldArea": {
+        "value": 168640,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unitSaleableSize": {
+        "value": 620,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 4400,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "currentPricePSF": {
+        "value": 4900,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesValue": {
+        "value": 20.64,
+        "unit": "\u20b9 Crores/year",
+        "dimension": "CF/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchDate": {
+        "value": "May 2022",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Jul 2028",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectAgeMonths": {
+        "value": 32,
+        "unit": "months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": true,
+        "unit": "Boolean",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectSize": {
+        "value": 680,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:44:09.439130",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      }
+    }
+  ]
+}

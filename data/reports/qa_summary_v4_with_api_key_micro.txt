@@ -1,0 +1,35 @@
+
+================================================================================
+AUTO-HEALING TEST REPORT - Run: v4_with_api_key_micro
+================================================================================
+
+SUMMARY:
+--------
+Total Tests: 5
+Passed: 0 (0.0%)
+Failed: 5 (100.0%)
+  - Inclusion failures: 1
+  - Similarity failures: 4
+
+BY TYPE:
+--------
+Objective:   0/5 passed (0.0%)
+Subjective:  0/0 passed (0.0%)
+Calculated:  0/0 passed (0.0%)
+
+AUTO-FIXES:
+-----------
+Auto-fixed: 0 test cases
+Needs review: 0 test cases
+
+TIMING:
+-------
+Duration: 8.1s
+Started: 2025-12-11 09:12:55
+Completed: 2025-12-11 09:13:04
+
+================================================================================
+
+Do you want another refinement cycle (further auto-fixing and regression run),
+or are you satisfied with the current test outcomes?
+

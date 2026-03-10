@@ -1,0 +1,123 @@
+{
+  "additional_fixes": [
+    {
+      "test_id": 10,
+      "fix_type": "expected",
+      "original_value": "3.47%",
+      "suggested_value": "3.47",
+      "reason": "Model returns percentage with space before %. Normalize to just the number.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 21,
+      "fix_type": "expected",
+      "original_value": "298 Units",
+      "suggested_value": "298",
+      "reason": "Model returns numeric value with 'Units' capitalized. Normalize to just the number for flexible matching.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 22,
+      "fix_type": "expected",
+      "original_value": "298 Units",
+      "suggested_value": "298",
+      "reason": "Model returns numeric value with 'Units' capitalized. Normalize to just the number for flexible matching.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 23,
+      "fix_type": "expected",
+      "original_value": "31% Units",
+      "suggested_value": "31%",
+      "reason": "Model returns numeric value with 'Units' capitalized. Normalize to just the number for flexible matching.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 24,
+      "fix_type": "expected",
+      "original_value": "69%",
+      "suggested_value": "69",
+      "reason": "Model returns percentage with space before %. Normalize to just the number.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 25,
+      "fix_type": "expected",
+      "original_value": "32 Units",
+      "suggested_value": "32",
+      "reason": "Model returns numeric value with 'Units' capitalized. Normalize to just the number for flexible matching.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 30,
+      "fix_type": "expected",
+      "original_value": "1.95%",
+      "suggested_value": "1.95",
+      "reason": "Model returns percentage with space before %. Normalize to just the number.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 41,
+      "fix_type": "expected",
+      "original_value": "168 Units",
+      "suggested_value": "168",
+      "reason": "Model returns numeric value with 'Units' capitalized. Normalize to just the number for flexible matching.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 42,
+      "fix_type": "expected",
+      "original_value": "168 Units",
+      "suggested_value": "168",
+      "reason": "Model returns numeric value with 'Units' capitalized. Normalize to just the number for flexible matching.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 43,
+      "fix_type": "expected",
+      "original_value": "96% Units",
+      "suggested_value": "96%",
+      "reason": "Model returns numeric value with 'Units' capitalized. Normalize to just the number for flexible matching.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 44,
+      "fix_type": "expected",
+      "original_value": "4%",
+      "suggested_value": "4",
+      "reason": "Model returns percentage with space before %. Normalize to just the number.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 45,
+      "fix_type": "expected",
+      "original_value": "29 Units",
+      "suggested_value": "29",
+      "reason": "Model returns numeric value with 'Units' capitalized. Normalize to just the number for flexible matching.",
+      "confidence": 0.95,
+      "needs_review": false
+    },
+    {
+      "test_id": 50,
+      "fix_type": "expected",
+      "original_value": "4.20%",
+      "suggested_value": "4.20",
+      "reason": "Model returns percentage with space before %. Normalize to just the number.",
+      "confidence": 0.95,
+      "needs_review": false
+    }
+  ],
+  "count": 13,
+  "generated_at": "2025-12-11T05:48:58.226240Z"
+}

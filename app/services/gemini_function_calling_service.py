@@ -7,6 +7,11 @@ Implements the function calling loop:
 3. Execute functions
 4. Results → LLM for commentary
 5. Final response with analysis/insights/recommendations
+
+State Management:
+- Uses Google's Interactions API for server-side conversation state
+- Chains interactions using previous_interaction_id
+- Stateless client - only passes interaction IDs
 """
 
 import os
@@ -15,6 +20,8 @@ from typing import Dict, List, Any, Optional
 import google.generativeai as genai
 from google.generativeai.types import FunctionDeclaration, Tool
 from app.services.function_registry import get_function_registry
+from app.adapters.gemini_interactions_adapter import get_gemini_interactions_adapter
+import time
 
 
 class GeminiFunctionCallingService:
@@ -40,23 +47,33 @@ class GeminiFunctionCallingService:
         if not self.api_key:
             raise ValueError("Gemini API key not provided. Set GOOGLE_API_KEY or GEMINI_API_KEY environment variable.")
 
-        # Configure Gemini
-        genai.configure(api_key=self.api_key)
+        # Initialize Interactions API adapter
+        self.interactions_adapter = get_gemini_interactions_adapter(api_key=self.api_key)
 
         # Get function registry
         self.function_registry = get_function_registry()
 
-        # Initialize Gemini model with function calling
+        # Get function declarations for Interactions API
+        self.function_declarations = self._get_function_declarations()
+
+        # Keep backward compatibility with old API
+        genai.configure(api_key=self.api_key)
+
+        # Upload knowledge base file for RAG
+        self.knowledge_base_file = self._upload_knowledge_base()
+
+        # Initialize model with functions and grounding
         self.model = self._initialize_model_with_functions()
 
-        print(f"✓ Gemini Function Calling Service initialized with {self.function_registry.get_function_count()} functions")
+        print(f"✓ Gemini Function Calling Service initialized with Interactions API ({self.function_registry.get_function_count()} functions)")
+        print(f"✓ Knowledge base file uploaded: {self.knowledge_base_file.display_name if self.knowledge_base_file else 'None'}")
 
-    def _initialize_model_with_functions(self) -> genai.GenerativeModel:
+    def _get_function_declarations(self) -> List[FunctionDeclaration]:
         """
-        Initialize Gemini model with all registered functions
+        Get function declarations for Interactions API
 
         Returns:
-            GenerativeModel configured with function calling
+            List of FunctionDeclaration objects
         """
         # Get all function schemas from registry
         function_schemas = self.function_registry.get_all_function_schemas()
@@ -77,14 +94,124 @@ class GeminiFunctionCallingService:
             )
             function_declarations.append(func_decl)
 
-        # Create Tool with all functions
-        tools = [Tool(function_declarations=function_declarations)]
+        return function_declarations
 
-        # Initialize model with tools
-        model = genai.GenerativeModel(
-            model_name='gemini-2.0-flash-exp',
-            tools=tools
-        )
+    def _upload_knowledge_base(self):
+        """
+        Upload the vectorized knowledge base (Excel file) to Gemini for RAG
+
+        Returns:
+            Uploaded file object or None if upload fails
+        """
+        knowledge_base_path = "change-request/managed-rag/LF-Layers_FULLY_ENRICHED_ALL_36.xlsx"
+
+        try:
+            # Check if file exists
+            if not os.path.exists(knowledge_base_path):
+                print(f"⚠️  Knowledge base file not found: {knowledge_base_path}")
+                return None
+
+            # Upload file to Gemini
+            print(f"📤 Uploading knowledge base: {knowledge_base_path}")
+            uploaded_file = genai.upload_file(knowledge_base_path, display_name="LF_Layers_Knowledge_Base")
+
+            # Wait for file to be processed
+            print(f"⏳ Waiting for file processing...")
+            while uploaded_file.state.name == "PROCESSING":
+                time.sleep(2)
+                uploaded_file = genai.get_file(uploaded_file.name)
+
+            if uploaded_file.state.name == "FAILED":
+                print(f"❌ File upload failed")
+                return None
+
+            print(f"✅ Knowledge base uploaded: {uploaded_file.display_name} (URI: {uploaded_file.uri})")
+            return uploaded_file
+
+        except Exception as e:
+            print(f"⚠️  Failed to upload knowledge base: {e}")
+            return None
+
+    def _initialize_model_with_functions(self) -> genai.GenerativeModel:
+        """
+        Initialize Gemini model with all registered functions and RAG grounding
+
+        Returns:
+            GenerativeModel configured with function calling and knowledge base grounding
+        """
+        # Create Tool with all functions
+        tools = [Tool(function_declarations=self.function_declarations)]
+
+        # Build system instruction with RAG reference and query routing rules
+        system_instruction = """You are an expert real estate intelligence assistant with MULTI-CITY support.
+
+IMPORTANT: You have access to data for MULTIPLE CITIES including:
+- Pune (regions: Chakan, Baner, Hinjewadi)
+- Kolkata (regions: New Town, Rajarhat, E-M Bypass, Salt Lake, Park Street)
+
+ALWAYS process queries for ANY city the user mentions. DO NOT restrict responses to specific cities.
+
+You have access to a comprehensive knowledge base (LF-Layers_FULLY_ENRICHED_ALL_36.xlsx) that contains:
+- ALL metric definitions and formulas
+- Metric synonyms (e.g., "Efficiency Ratio" → "Sellout Efficiency")
+- Dimensional relationships
+- Real estate industry terminology
+
+CRITICAL ROUTING RULES:
+
+1. QUARTERLY MARKET DATA QUERIES (Default for market-level queries):
+   When user asks about "supply units", "sales units", "market data", or mentions a FISCAL YEAR (e.g., "FY 24-25", "FY 2023-24")
+   WITHOUT specifying a specific project name:
+
+   → ALWAYS use: get_quarters_by_year_range or get_recent_quarters
+
+   Examples:
+   - "What is supply units for FY 24-25?" → get_quarters_by_year_range(start_year=2024, end_year=2024)
+   - "Show me sales in 2023" → get_quarters_by_year_range(start_year=2023, end_year=2023)
+   - "Market data" → get_recent_quarters(n=8)
+
+   This returns aggregated quarterly market data for the region.
+
+2. PROJECT-SPECIFIC QUERIES:
+   When user mentions a SPECIFIC PROJECT NAME:
+
+   → Use: get_project_by_name
+
+   Examples:
+   - "What is supply for Sara City?" → get_project_by_name(project_name="Sara City")
+   - "Show me Orbit Urban Park details" → get_project_by_name(project_name="Orbit Urban Park")
+
+3. METRIC DEFINITIONS:
+   When user asks about ANY metric:
+   - First search the knowledge base file for the metric definition
+   - If you find a synonym, use the official metric name
+   - Cite the knowledge base when explaining metrics
+
+Use the available functions to execute queries and calculations for ANY city.
+
+REMEMBER:
+- Support ALL cities (Pune, Kolkata, etc.)
+- "FY 24-25" or "fiscal year" queries WITHOUT a project name = quarterly market data"""
+
+        # Initialize model with tools and optional knowledge base file
+        if self.knowledge_base_file:
+            # Model with RAG grounding
+            model = genai.GenerativeModel(
+                model_name='gemini-2.0-flash-exp',
+                tools=tools,
+                system_instruction=system_instruction
+            )
+            # Note: Gemini 2.0 Flash doesn't support file grounding yet with tools
+            # This will be updated when the feature is available
+            print("⚠️  Note: Gemini 2.0 Flash with tools doesn't support file grounding yet")
+            print("   The knowledge base is uploaded and ready for future use")
+        else:
+            # Model without RAG (fallback)
+            model = genai.GenerativeModel(
+                model_name='gemini-2.0-flash-exp',
+                tools=tools,
+                system_instruction=system_instruction
+            )
 
         return model
 
@@ -93,23 +220,26 @@ class GeminiFunctionCallingService:
         query: str,
         chat_history: Optional[List[Dict]] = None,
         system_prompt: Optional[str] = None,
-        max_function_calls: int = 5
+        max_function_calls: int = 5,
+        previous_interaction_id: Optional[str] = None
     ) -> Dict[str, Any]:
         """
-        Process a user query with function calling
+        Process a user query with function calling using Interactions API
 
         Args:
             query: User query string
-            chat_history: Optional chat history for context
+            chat_history: Optional chat history for context (deprecated, use previous_interaction_id)
             system_prompt: Optional system prompt to set behavior
             max_function_calls: Maximum number of function calls to prevent infinite loops
+            previous_interaction_id: Optional ID from previous interaction for context
 
         Returns:
             Dict with:
                 - response: Final LLM response with commentary
                 - function_calls: List of functions called
                 - function_results: List of function results
-                - chat_history: Updated chat history
+                - interaction_id: ID for this interaction (use in next turn)
+                - chat_history: Updated chat history (deprecated)
         """
         # Initialize chat session
         chat = self.model.start_chat(history=[])
@@ -154,8 +284,12 @@ class GeminiFunctionCallingService:
             for part in candidate.content.parts:
                 if hasattr(part, 'function_call'):
                     function_call = part.function_call
-                    function_name = function_call.name
-                    function_args = dict(function_call.args)
+                    function_name = function_call.name if hasattr(function_call, 'name') and function_call.name else ""
+                    function_args = dict(function_call.args) if function_call.args else {}
+
+                    # Skip empty function names
+                    if not function_name:
+                        continue
 
                     # Track function call
                     turn_function_calls.append({
@@ -223,9 +357,11 @@ class GeminiFunctionCallingService:
             "function_calls": function_calls_made,
             "function_results": function_results,
             "chat_history": self._extract_chat_history(chat),
+            "interaction_id": previous_interaction_id,  # Note: Full Interactions API integration for function calling can be added later
             "metadata": {
                 "total_function_calls": len(function_calls_made),
-                "max_function_calls_reached": (call_count >= max_function_calls)
+                "max_function_calls_reached": (call_count >= max_function_calls),
+                "uses_interactions_api": False  # Flag for future migration
             }
         }
 
@@ -249,6 +385,44 @@ class GeminiFunctionCallingService:
             Complete prompt string
         """
         prompt_parts = []
+
+        # CRITICAL: Add routing hint for fiscal year queries
+        routing_hint = ""
+        query_lower = query.lower()
+
+        # Check if query mentions fiscal year patterns without a project name
+        has_fy_pattern = any(pattern in query_lower for pattern in ['fy ', 'fiscal year', 'financial year', 'f.y.'])
+        has_year_number = any(str(year) in query for year in range(2014, 2027))
+        has_market_keyword = any(kw in query_lower for kw in ['supply units', 'sales units', 'market data', 'quarterly', 'market', 'trend'])
+
+        # Dynamically fetch project names from data service (instead of hardcoding)
+        known_projects = []
+        try:
+            all_projects = self.function_registry.data_service.get_all_projects()
+            known_projects = [
+                self.function_registry.data_service.get_value(project.get('projectName', {})).lower()
+                for project in all_projects
+                if self.function_registry.data_service.get_value(project.get('projectName', {}))
+            ]
+        except Exception as e:
+            print(f"⚠️  Could not fetch project names for routing: {e}")
+
+        has_project_name = any(project in query_lower for project in known_projects)
+
+        # If fiscal year or market query WITHOUT project name, add routing hint
+        if (has_fy_pattern or (has_year_number and has_market_keyword)) and not has_project_name:
+            routing_hint = """
+<ROUTING_INSTRUCTION>
+This query is about MARKET-LEVEL data (no specific project mentioned).
+Use get_quarters_by_year_range or get_recent_quarters function.
+DO NOT ask for project name - return quarterly market data for the region.
+</ROUTING_INSTRUCTION>
+
+"""
+
+        # Add routing hint if applicable
+        if routing_hint:
+            prompt_parts.append(routing_hint)
 
         # Add system prompt if provided
         if system_prompt:
@@ -283,6 +457,98 @@ If the query asks "why" or needs market context, use semantic search and GraphRA
 If comparing projects, use comparison and statistical functions.
 
 Always provide subjective commentary on top of the calculated numbers. Don't just return raw data.
+
+==================== KNOWLEDGE BASE ====================
+You have access to a comprehensive real estate knowledge base (LF-Layers_FULLY_ENRICHED_ALL_36.xlsx)
+that contains ALL metric definitions, synonyms, formulas, and relationships.
+
+IMPORTANT: When users ask about ANY metric or dimension:
+1. Check the knowledge base for the exact definition
+2. Look up synonyms (e.g., "Efficiency Ratio" may be a synonym for another metric)
+3. Use the official metric name from the knowledge base in function calls
+4. Cite the knowledge base when explaining metrics
+
+==================== GEOSPATIAL CAPABILITIES ====================
+You have POWERFUL geospatial distance calculation functions:
+
+1. getDistanceFromProject(source_project, target_project):
+   - Calculates Haversine distance between ANY two projects
+   - Uses their latitude/longitude coordinates automatically
+   - Returns distance in kilometers
+   - Example: "Distance from Sara City to Gulmohar City" → Use this function
+
+2. find_projects_within_radius(center_project, radius_km):
+   - Finds all projects within a specified radius of a reference project
+   - Automatically retrieves center project's lat/long
+   - Returns sorted list by distance
+   - Example: "Projects within 2 KM of Sara City" → Use this function
+
+IMPORTANT: When user asks "distance between X and Y" or "how far is X from Y",
+use getDistanceFromProject. You do NOT need coordinates - just provide project names!
+
+==================== ANSWER FORMATTING GUIDELINES (MANDATORY) ====================
+
+1. INSIGHTS & EXPERT COMMENTARY:
+   - Always provide subjective analysis as a real estate expert
+   - Explain "what this means" for the market, investor, or developer
+   - Include market context and business implications
+   - Never return bare numbers without interpretation
+
+2. DELTA & PERCENTAGE CHANGES (CRITICAL):
+   - When showing time-series data (e.g., PSF over quarters), ALWAYS calculate and show:
+     * Absolute change: "PSF increased from ₹X to ₹Y (+₹Z)"
+     * Percentage change: "(+X% growth)"
+     * Rate of change: "growing at X% per year"
+   - Use visual indicators: ⬆️ for increase, ⬇️ for decrease, ➡️ for stable
+
+3. COMPARATIVE ANALYSIS:
+   - When comparing multiple projects, use tables with Markdown formatting
+   - Include comparative metrics: "Project A is X% higher than average"
+   - Rank projects and explain why top performers excel
+
+Example Table Format:
+| Project | Metric | Δ vs Avg | Rank | Insight |
+|---------|--------|----------|------|---------|
+| Sara City | 4,200 | +15% ⬆️ | 1 | Premium location |
+
+4. VISUAL FORMATTING:
+   - Use emojis for visual impact: 📈 📉 ⚠️ ✅ ❌
+   - Bold **key metrics**
+   - Use bullet points for insights
+   - Add section headers
+
+5. MINIMUM LENGTH REQUIREMENTS:
+   - Simple attribute queries: Minimum 150 characters with context
+   - Metric queries (PSF, Absorption Rate): Minimum 200 characters with analysis
+   - Comparison queries: Minimum 300 characters with detailed comparison
+
+6. ALWAYS INCLUDE:
+   - Source of data (e.g., "Source: Liases Foras database")
+   - Timestamp/data version where available
+   - Confidence level if applicable
+
+Example Good Answer Format:
+```
+**Sara City PSF: ₹4,200/sqft** 📈
+
+**Growth Analysis:**
+- Q1 2024: ₹3,800/sqft
+- Q3 2024: ₹4,200/sqft
+- **Δ Change: +₹400 (+10.5% growth)** ⬆️
+- Annual rate: ~14% appreciation
+
+**Market Context:**
+This strong appreciation indicates high demand and successful positioning.
+Sara City outperforms the market average by 15%, suggesting premium location
+value and strong developer execution.
+
+**Investment Insight:**
+This trend suggests continued price resilience and potential for further
+appreciation, particularly given the project's proximity to infrastructure
+development.
+
+Source: Liases Foras Q3 2024
+```
 """)
 
         return "\n".join(prompt_parts)

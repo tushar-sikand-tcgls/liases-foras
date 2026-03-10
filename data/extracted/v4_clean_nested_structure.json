@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source_file": "/Users/tusharsikand/Documents/Projects/liases-foras/GetMicromarketPdf.pdf",
-    "extraction_timestamp": "2025-12-01T08:35:43.632332",
+    "extraction_timestamp": "2026-02-25T13:23:05.234230",
     "architecture_version": "v4.0.0",
     "data_layer": "L1",
     "description": "Nested {value, unit, dimension} with explicit relationships",
@@ -79,7 +79,7 @@
         "isPure": true
       },
       "extractionTimestamp": {
-        "value": "2025-12-01T08:35:43.787439",
+        "value": "2026-02-25T13:23:05.390286",
         "unit": "ISO-8601",
         "dimension": "None",
         "relationships": [],
@@ -570,7 +570,7 @@
         "isPure": true
       },
       "extractionTimestamp": {
-        "value": "2025-12-01T08:35:43.787581",
+        "value": "2026-02-25T13:23:05.390424",
         "unit": "ISO-8601",
         "dimension": "None",
         "relationships": [],
@@ -1064,7 +1064,7 @@
         "isPure": true
       },
       "extractionTimestamp": {
-        "value": "2025-12-01T08:35:43.787606",
+        "value": "2026-02-25T13:23:05.390443",
         "unit": "ISO-8601",
         "dimension": "None",
         "relationships": [],
@@ -1559,7 +1559,7 @@
         "isPure": true
       },
       "extractionTimestamp": {
-        "value": "2025-12-01T08:35:43.787624",
+        "value": "2026-02-25T13:23:05.390458",
         "unit": "ISO-8601",
         "dimension": "None",
         "relationships": [],
@@ -2054,7 +2054,7 @@
         "isPure": true
       },
       "extractionTimestamp": {
-        "value": "2025-12-01T08:35:43.787639",
+        "value": "2026-02-25T13:23:05.390472",
         "unit": "ISO-8601",
         "dimension": "None",
         "relationships": [],
@@ -2549,7 +2549,7 @@
         "isPure": true
       },
       "extractionTimestamp": {
-        "value": "2025-12-01T08:35:43.787653",
+        "value": "2026-02-25T13:23:05.390486",
         "unit": "ISO-8601",
         "dimension": "None",
         "relationships": [],
@@ -3044,7 +3044,7 @@
         "isPure": true
       },
       "extractionTimestamp": {
-        "value": "2025-12-01T08:35:43.787666",
+        "value": "2026-02-25T13:23:05.390500",
         "unit": "ISO-8601",
         "dimension": "None",
         "relationships": [],
@@ -3539,7 +3539,7 @@
         "isPure": true
       },
       "extractionTimestamp": {
-        "value": "2025-12-01T08:35:43.787679",
+        "value": "2026-02-25T13:23:05.390513",
         "unit": "ISO-8601",
         "dimension": "None",
         "relationships": [],
@@ -4033,7 +4033,7 @@
         "isPure": true
       },
       "extractionTimestamp": {
-        "value": "2025-12-01T08:35:43.787692",
+        "value": "2026-02-25T13:23:05.390526",
         "unit": "ISO-8601",
         "dimension": "None",
         "relationships": [],
@@ -4528,7 +4528,7 @@
         "isPure": true
       },
       "extractionTimestamp": {
-        "value": "2025-12-01T08:35:43.787706",
+        "value": "2026-02-25T13:23:05.390540",
         "unit": "ISO-8601",
         "dimension": "None",
         "relationships": [],

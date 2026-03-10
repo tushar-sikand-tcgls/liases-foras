@@ -1271,6 +1271,209 @@ class ContextService:
             print(f"Error fetching distances: {str(e)}")
             return {"error": str(e)}
 
+    def generate_location_map_with_poi(
+        self,
+        project_name: str,
+        latitude: float,
+        longitude: float,
+        city: str = "Pune",
+        zoom: int = 14,
+        map_size: str = "800x600"
+    ) -> Dict[str, Any]:
+        """
+        Generate a comprehensive Google Maps visualization showing a project location
+        with important nearby places marked.
+
+        Categories of POIs included:
+        - Project itself (red marker - primary)
+        - Hotels (blue markers)
+        - Petrol Pumps (green markers)
+        - Railway Station (purple markers)
+        - Airport (orange markers)
+        - Metro Station (yellow markers)
+        - Bus Stop (brown markers)
+        - Hospitals (pink markers)
+        - Schools (cyan markers)
+        - Shopping Malls (gray markers)
+
+        Args:
+            project_name: Name of the project
+            latitude: Project latitude
+            longitude: Project longitude
+            city: City name for context (default: "Pune")
+            zoom: Map zoom level 1-20 (default: 14)
+            map_size: Map dimensions as "WIDTHxHEIGHT" (default: "800x600")
+
+        Returns:
+            Dictionary with:
+            - static_map_url: URL to static map image with all markers
+            - embed_map_url: URL for interactive embedded map
+            - poi_details: List of all POIs found with details
+            - project_location: Project coordinates and name
+        """
+        if not self.google_api_key:
+            return {"error": "Google Maps API key not configured"}
+
+        print(f"[MAP] Generating location map for {project_name} with POIs...")
+
+        try:
+            # Define POI categories to search with their marker colors
+            poi_categories = {
+                "hotel": {"type": "lodging", "color": "blue", "label": "Hotel"},
+                "petrol_pump": {"type": "gas_station", "color": "green", "label": "Petrol Pump"},
+                "railway_station": {"type": "train_station", "color": "purple", "label": "Railway"},
+                "airport": {"type": "airport", "color": "orange", "label": "Airport"},
+                "metro_station": {"type": "subway_station", "color": "yellow", "label": "Metro"},
+                "bus_stop": {"type": "bus_station", "color": "brown", "label": "Bus Stop"},
+                "hospital": {"type": "hospital", "color": "pink", "label": "Hospital"},
+                "school": {"type": "school", "color": "lightblue", "label": "School"},
+                "shopping_mall": {"type": "shopping_mall", "color": "gray", "label": "Mall"}
+            }
+
+            # Find nearby POIs using Places API (New)
+            places_url = "https://places.googleapis.com/v1/places:searchNearby"
+            headers = {
+                "Content-Type": "application/json",
+                "X-Goog-Api-Key": self.google_api_key,
+                "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.types,places.location"
+            }
+
+            all_pois = []
+            marker_strings = []
+
+            # Add project location as primary red marker
+            project_marker = f"color:red|label:P|{latitude},{longitude}"
+            marker_strings.append(project_marker)
+
+            # Search for each POI category within 5km radius
+            for category_key, category_info in poi_categories.items():
+                payload = {
+                    "includedTypes": [category_info["type"]],
+                    "maxResultCount": 3,  # Get top 3 of each type
+                    "locationRestriction": {
+                        "circle": {
+                            "center": {
+                                "latitude": latitude,
+                                "longitude": longitude
+                            },
+                            "radius": 5000.0  # 5km radius
+                        }
+                    }
+                }
+
+                try:
+                    response = requests.post(places_url, json=payload, headers=headers, timeout=5)
+                    response.raise_for_status()
+                    data = response.json()
+
+                    places_found = data.get("places", [])
+
+                    for idx, place in enumerate(places_found[:3]):  # Top 3 per category
+                        place_name = place.get("displayName", {}).get("text", "Unknown")
+                        place_address = place.get("formattedAddress", "")
+                        place_location = place.get("location", {})
+                        place_lat = place_location.get("latitude")
+                        place_lng = place_location.get("longitude")
+
+                        if place_lat and place_lng:
+                            # Add to POI list
+                            all_pois.append({
+                                "name": place_name,
+                                "category": category_info["label"],
+                                "address": place_address,
+                                "latitude": place_lat,
+                                "longitude": place_lng,
+                                "distance_km": self._haversine_distance(latitude, longitude, place_lat, place_lng)
+                            })
+
+                            # Add marker to map (use first letter of category as label)
+                            label = category_info["label"][0]  # H for Hotel, P for Petrol, etc.
+                            marker = f"color:{category_info['color']}|label:{label}|{place_lat},{place_lng}"
+                            marker_strings.append(marker)
+
+                except Exception as e:
+                    print(f"[MAP] Error fetching {category_key}: {str(e)}")
+                    continue
+
+            # Sort POIs by distance
+            all_pois.sort(key=lambda x: x["distance_km"])
+
+            # Generate Static Map URL with all markers
+            base_url = "https://maps.googleapis.com/maps/api/staticmap"
+
+            # Build marker parameter (limited to 90 markers max by Google)
+            markers_param = "&".join([f"markers={m}" for m in marker_strings[:90]])
+
+            static_map_url = (
+                f"{base_url}?center={latitude},{longitude}"
+                f"&zoom={zoom}"
+                f"&size={map_size}"
+                f"&maptype=roadmap"
+                f"&{markers_param}"
+                f"&key={self.google_api_key}"
+            )
+
+            # Generate interactive embed URL
+            embed_map_url = (
+                f"https://www.google.com/maps/embed/v1/place"
+                f"?key={self.google_api_key}"
+                f"&q={urllib.parse.quote(project_name)}"
+                f"&center={latitude},{longitude}"
+                f"&zoom={zoom}"
+            )
+
+            print(f"[MAP] ✅ Generated map with {len(all_pois)} POIs for {project_name}")
+
+            return {
+                "static_map_url": static_map_url,
+                "embed_map_url": embed_map_url,
+                "project_location": {
+                    "name": project_name,
+                    "latitude": latitude,
+                    "longitude": longitude,
+                    "city": city
+                },
+                "poi_details": all_pois,
+                "poi_count": len(all_pois),
+                "marker_count": len(marker_strings),
+                "zoom_level": zoom,
+                "map_size": map_size
+            }
+
+        except Exception as e:
+            print(f"[MAP] Error generating map: {str(e)}")
+            return {"error": str(e)}
+
+    @staticmethod
+    def _haversine_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+        """
+        Calculate Haversine distance between two coordinates in kilometers
+
+        Args:
+            lat1, lon1: First coordinate
+            lat2, lon2: Second coordinate
+
+        Returns:
+            Distance in kilometers (rounded to 2 decimals)
+        """
+        import math
+
+        R = 6371.0  # Earth radius in km
+
+        lat1_rad = math.radians(lat1)
+        lon1_rad = math.radians(lon1)
+        lat2_rad = math.radians(lat2)
+        lon2_rad = math.radians(lon2)
+
+        dlat = lat2_rad - lat1_rad
+        dlon = lon2_rad - lon1_rad
+
+        a = math.sin(dlat / 2)**2 + math.cos(lat1_rad) * math.cos(lat2_rad) * math.sin(dlon / 2)**2
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+        distance = R * c
+        return round(distance, 2)
+
 
 # Singleton instance
 _context_service_instance: Optional[ContextService] = None

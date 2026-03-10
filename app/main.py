@@ -14,7 +14,16 @@ from app.services.context_service import get_context_service
 from app.services.document_vector_service import get_document_vector_service
 from app.services.data_refresh_service import get_data_refresh_service
 from app.services.orchestrator_service import get_orchestrator
-from app.services.sirrus_langchain_service import get_sirrus_service
+
+# Optional: SIRRUS LangChain Service (may have import issues with langchain-google-genai)
+try:
+    from app.services.sirrus_langchain_service import get_sirrus_service
+    SIRRUS_AVAILABLE = True
+except ImportError as e:
+    print(f"⚠️  SIRRUS LangChain service not available: {e}")
+    SIRRUS_AVAILABLE = False
+    get_sirrus_service = None
+
 from app.calculators.layer4 import Layer4Calculator
 from app.config import settings
 
@@ -67,6 +76,27 @@ try:
 except ImportError:
     pass  # ATLAS v4 not yet available
 
+# Hexagonal Architecture - LangGraph Orchestrator with Ports & Adapters
+try:
+    from app.api.hexagonal import router as hexagonal_router
+    app.include_router(hexagonal_router, tags=["Hexagonal Architecture"])
+except ImportError:
+    pass  # Hexagonal architecture not yet available
+
+# UltraThink Auto-Healing Testing System
+try:
+    from app.api.ultrathink import router as ultrathink_router
+    app.include_router(ultrathink_router, tags=["UltraThink Testing"])
+except ImportError:
+    pass  # UltraThink testing not yet available
+
+# ATLAS Hybrid Router - Interactions API with Intelligent Routing
+try:
+    from app.api.atlas_hybrid import router as atlas_hybrid_router
+    app.include_router(atlas_hybrid_router, prefix="/api/atlas/hybrid", tags=["ATLAS Hybrid Router"])
+except ImportError:
+    pass  # ATLAS Hybrid Router not yet available
+
 
 @app.get("/")
 def root():
@@ -102,21 +132,56 @@ def root():
     }
 
 
+@app.get("/api/cities")
+def get_cities():
+    """
+    Get list of available cities
+
+    Returns list of cities configured in CITY_DATA_CONFIG
+    """
+    from app.config import CITY_DATA_CONFIG
+
+    cities = []
+    for city_name, config in CITY_DATA_CONFIG.items():
+        cities.append({
+            "name": city_name,
+            "regions": config.get("regions", []),
+            "default_region": config.get("default_region"),
+            "data_file": config.get("data_file"),
+            "format": config.get("format")
+        })
+
+    return {
+        "cities": cities,
+        "total": len(cities)
+    }
+
+
 @app.get("/api/projects")
-def get_projects():
-    """Get all projects with nested structure"""
-    projects = data_service.get_all_projects()
+def get_projects(city: Optional[str] = Query(None, description="City name (e.g., 'Pune', 'Kolkata')")):
+    """
+    Get all projects with nested structure
+
+    Args:
+        city: Optional city name. If not provided, defaults to Pune.
+    """
+    from app.services.data_service import get_data_service
+
+    # Get city-specific data service
+    city_data_service = get_data_service(city) if city else data_service
+
+    projects = city_data_service.get_all_projects()
     return [{
-        "projectId": int(data_service.get_value(p.get('projectId', {})) or 0),
-        "projectName": data_service.get_value(p.get('projectName')),
-        "location": data_service.get_value(p.get('location')),
-        "microMarket": data_service.get_value(p.get('microMarket')),
-        "city": data_service.get_value(p.get('city')),
-        "totalSupplyUnits": int(data_service.get_value(p.get('totalSupplyUnits', {})) or 0),
-        "soldUnits": data_service.get_value(p.get('soldUnits')),
-        "unsoldUnits": data_service.get_value(p.get('unsoldUnits')),
-        "currentPricePSF": data_service.get_value(p.get('currentPricePSF')),
-        "developerName": data_service.get_value(p.get('developerName'))
+        "projectId": int(city_data_service.get_value(p.get('projectId', {})) or 0),
+        "projectName": city_data_service.get_value(p.get('projectName')),
+        "location": city_data_service.get_value(p.get('location')),
+        "microMarket": city_data_service.get_value(p.get('microMarket')),
+        "city": city or city_data_service.city,
+        "totalSupplyUnits": int(city_data_service.get_value(p.get('totalSupplyUnits', {})) or 0),
+        "soldUnits": city_data_service.get_value(p.get('soldUnits')),
+        "unsoldUnits": city_data_service.get_value(p.get('unsoldUnits')),
+        "currentPricePSF": city_data_service.get_value(p.get('currentPricePSF')),
+        "developerName": city_data_service.get_value(p.get('developerName'))
     } for p in projects]
 
 
@@ -165,24 +230,314 @@ def get_project(project_id: str):
 @app.post("/api/qa/question")
 def ask_question(request: QuestionRequest):
     """
-    Ask a question about a project using simple query handler (LEGACY)
+    Ask a question about a project with intelligent routing
 
-    Uses pattern matching and DataService (NOT Neo4j).
-    Supports common queries: average, PSF, ASP, top N, etc.
-
-    NOTE: For LLM-powered queries with analysis and insights, use /api/qa/question/v2
+    Routes through prompt_router to detect enriched Layer 1 attributes,
+    then falls back to simple query handler for other queries.
 
     Examples:
-    - "Calculate the average of all project sizes" → Returns actual average from DataService
-    - "What is the PSF?" → Calculates CF/L²
+    - "What is sellout time for sara city?" → Enriched Layer 1 calculation (2.1 years)
+    - "How long to sell remaining units?" → Months of Inventory calculation (2.79 months)
+    - "Calculate the average of all project sizes" → Simple aggregation
     - "Top 5 projects by revenue" → SQL-like filtering
     """
+    from app.services.v4_query_service import get_v4_service
     from app.services.simple_query_handler import SimpleQueryHandler
+    from app.services.prompt_router import prompt_router, LayerType
+    from app.services.enriched_calculator import get_enriched_calculator
+    from app.services.enriched_layers_service import get_enriched_layers_service
+    from app.services.dimension_validator import get_dimension_validator
+    from app.services.dynamic_formula_service import get_dynamic_formula_service
 
     try:
-        # Use simple query handler with DataService (NOT Neo4j)
+        # Try V4QueryService first (LangGraph orchestrator with proper entity resolution)
+        try:
+            v4_service = get_v4_service()
+            v4_result = v4_service.query(request.question)
+
+            # Convert V4 response format to /api/qa/question format for Streamlit compatibility
+            if v4_result and v4_result.get('answer'):
+                # V4 returns natural language answer as string
+                # Convert to dict format expected by Streamlit UI
+                answer_text = v4_result.get('answer', '')
+
+                return {
+                    "status": "success",
+                    "answer": {
+                        "status": "success",
+                        "query": request.question,
+                        "understanding": {
+                            "intent": v4_result.get('intent', 'unknown'),
+                            "subcategory": v4_result.get('subcategory', ''),
+                            "execution_path": v4_result.get('execution_path', [])
+                        },
+                        "result": {
+                            "type": "single",
+                            "text": answer_text,
+                            "value": answer_text,  # For backward compatibility
+                            "unit": ""
+                        },
+                        "calculation": {},
+                        "provenance": v4_result.get('provenance', {})
+                    },
+                    "query": request.question
+                }
+        except Exception as v4_error:
+            # If V4 fails, fall back to old logic
+            print(f"[WARNING] V4QueryService failed: {v4_error}. Falling back to old routing logic.")
+
+        # Fallback: Old logic with prompt_router
+        # Step 1: Analyze prompt with prompt_router
+        route_decision = prompt_router.analyze_prompt(request.question)
+
+        # Step 2: If Layer 1 with decent confidence, try enriched calculator
+        if route_decision.layer == LayerType.LAYER_1 and route_decision.confidence >= 0.3:
+            try:
+                # Use new dynamic formula service (Excel-driven, no hardcoded calculators)
+                dynamic_service = get_dynamic_formula_service()
+                capability_name = route_decision.capability
+
+                # Extract project name from query using SimpleQueryHandler's method
+                from app.services.simple_query_handler import SimpleQueryHandler
+                temp_handler = SimpleQueryHandler(data_service)
+                project_name = temp_handler._extract_project_name(request.question)
+
+                # Fall back to request.project_id if extraction failed
+                if not project_name:
+                    project_name = request.project_id
+
+                # Parse capability to attribute name
+                attr_name = capability_name.replace('calculate_', '').replace('_', ' ').title()
+
+                # Search for attribute in Excel-based dynamic service
+                attr = dynamic_service.get_attribute(attr_name)
+                if not attr:
+                    # Try fuzzy search
+                    search_result = dynamic_service.search_attribute(attr_name)
+                    if search_result:
+                        attr, confidence = search_result
+                        if confidence < 0.3:
+                            attr = None
+
+                # If attribute doesn't require calculation (Formula = "Direct extraction" in Excel)
+                if attr and not attr.requires_calculation:
+                    # This is a direct extraction attribute, not a calculated one
+                    # Fall back to data_service extraction instead of using calculator
+
+                    if not project_name:
+                        raise ValueError("Project name required for Layer 0 extraction")
+
+                    # Find project by name using data_service
+                    all_projects = data_service.get_all_projects()
+                    project_data = None
+
+                    # Normalize search term
+                    normalized_search = ' '.join(project_name.lower().replace('\n', ' ').split())
+
+                    for proj in all_projects:
+                        # Extract project name from v4 nested format
+                        proj_name_obj = proj.get('projectName', {})
+                        if isinstance(proj_name_obj, dict):
+                            proj_name = proj_name_obj.get('value', '')
+                        else:
+                            proj_name = proj_name_obj or ''
+
+                        # Normalize project name
+                        normalized_proj_name = ' '.join(proj_name.lower().replace('\n', ' ').split())
+
+                        if normalized_proj_name == normalized_search:
+                            project_data = proj
+                            break
+
+                    # Map attribute name to data field (camelCase conversion)
+                    field_mapping = {
+                        'Monthly Sales Velocity': 'monthlySalesVelocity',
+                        'Sales Velocity': 'monthlySalesVelocity',
+                    }
+
+                    field_name = field_mapping.get(attr.target_attribute, attr.target_attribute.replace(' ', ''))
+
+                    if not project_data:
+                        raise ValueError(f"Project '{project_name}' not found")
+
+                    # Extract the field value (handles both dict {value, unit} and direct values)
+                    field_value = project_data.get(field_name, {})
+                    if isinstance(field_value, dict):
+                        value = field_value.get('value')
+                        unit = field_value.get('unit', attr.unit)
+                    else:
+                        value = field_value
+                        unit = attr.unit
+
+                    if value is None:
+                        raise ValueError(f"Field '{field_name}' not found in project data")
+
+                    # Create calc_result in the same format as enriched calculator
+                    calc_result = {
+                        "status": "success",
+                        "attribute": attr.target_attribute,
+                        "value": value,
+                        "unit": unit,
+                        "dimension": attr.dimension,
+                        "formula": "Direct extraction from data service",
+                        "provenance": {
+                            "dataSource": "Liases Foras",
+                            "layer": attr.layer,
+                            "calculationMethod": "Direct extraction",
+                            "description": attr.description,
+                            "timestamp": "",
+                        }
+                    }
+                else:
+                    # Execute calculation using dynamic formula service (Excel-driven runtime evaluation)
+                    if not project_name:
+                        raise ValueError("Project name required for calculation")
+
+                    # Get project data
+                    all_projects = data_service.get_all_projects()
+                    project_data = None
+
+                    # Normalize search term
+                    normalized_search = ' '.join(project_name.lower().replace('\n', ' ').split())
+
+                    for proj in all_projects:
+                        # Extract project name from v4 nested format
+                        proj_name_obj = proj.get('projectName', {})
+                        if isinstance(proj_name_obj, dict):
+                            proj_name = proj_name_obj.get('value', '')
+                        else:
+                            proj_name = proj_name_obj or ''
+
+                        # Normalize project name
+                        normalized_proj_name = ' '.join(proj_name.lower().replace('\n', ' ').split())
+
+                        if normalized_proj_name == normalized_search:
+                            project_data = proj
+                            break
+
+                    if not project_data:
+                        raise ValueError(f"Project '{project_name}' not found")
+
+                    # Execute formula dynamically using Excel formula
+                    calc_result = dynamic_service.execute_formula(attr, project_data)
+
+                    if not calc_result:
+                        raise ValueError(f"Failed to calculate '{attr.target_attribute}'")
+
+                # DIMENSION VALIDATION: Check response matches query expectation
+                validator = get_dimension_validator()
+                is_valid, error_msg = validator.validate_response(
+                    query=request.question,
+                    response_value=calc_result["value"],
+                    response_unit=calc_result["unit"],
+                    response_dimension=calc_result.get("dimension")
+                )
+
+                if not is_valid:
+                    return {
+                        "status": "error",
+                        "error": error_msg,
+                        "query": request.question,
+                        "debug": {
+                            "expected_dimension": validator.extract_expected_dimension(request.question),
+                            "actual_dimension": calc_result.get("dimension"),
+                            "actual_value": f"{calc_result['value']} {calc_result['unit']}"
+                        }
+                    }
+
+                # Format for frontend (matching expected structure)
+                return {
+                    "status": "success",
+                    "answer": {
+                        "status": "success",
+                        "query": request.question,
+                        "understanding": {
+                            "layer": "LAYER_1",
+                            "dimension": calc_result["dimension"],
+                            "operation": capability_name,
+                            "confidence": route_decision.confidence,
+                            "routing": "enriched_layers"
+                        },
+                        "result": {
+                            "value": calc_result["value"],
+                            "unit": calc_result["unit"],
+                            "text": f"{round(calc_result['value'], 2)} {calc_result['unit']}",
+                            "metric": calc_result.get("attribute", "Unknown"),
+                            "dimension": calc_result["dimension"]
+                        },
+                        "calculation": {
+                            "formula": calc_result["formula"],
+                            "description": f"{calc_result.get('attribute', 'Calculation')}: {calc_result['formula']}",
+                            "fullPrecisionValue": calc_result["value"],
+                            "roundedValue": round(calc_result["value"], 2),
+                            "unit": calc_result["unit"]
+                        },
+                        "provenance": {
+                            "source": "Liases Foras",  # Source is LF data, even for calculated metrics
+                            "attribute": calc_result.get("attribute", "Unknown"),
+                            "formula": calc_result["formula"],
+                            "timestamp": calc_result.get("provenance", {}).get("timestamp", ""),
+                            "routing_confidence": route_decision.confidence,
+                            "routing_reason": route_decision.reason
+                        }
+                    },
+                    "query": request.question
+                }
+
+            except (ValueError, KeyError, AttributeError) as enriched_error:
+                # Enriched calculation failed for Layer 1 query
+                # DO NOT fall back to simple_query_handler for calculation queries
+                # Return error with helpful message
+                print(f"Enriched calculation failed: {enriched_error}")
+                return {
+                    "status": "error",
+                    "error": f"Calculation failed: {str(enriched_error)}. This is a Layer 1 calculated metric that requires enriched calculator.",
+                    "query": request.question,
+                    "debug": {
+                        "route_decision": {
+                            "layer": str(route_decision.layer),
+                            "confidence": route_decision.confidence,
+                            "capability": route_decision.capability
+                        },
+                        "enriched_error": str(enriched_error)
+                    }
+                }
+
+        # Step 3: Fall back to simple query handler (LEGACY) - ONLY for Layer 0 queries
+        # If we got here, prompt_router said it's NOT Layer 1, so safe to use simple_query_handler
         handler = SimpleQueryHandler(data_service)
         result = handler.handle_query(request.question)
+
+        # DIMENSION VALIDATION: Check simple_query_handler response
+        if result.status == "success":
+            validator = get_dimension_validator()
+
+            # Extract value, unit, dimension from result
+            # NOTE: dimension is a top-level attribute of QueryResult, not nested in result!
+            response_value = result.result.get("value")
+            response_unit = result.result.get("unit")
+            response_dimension = result.dimension  # Top-level attribute!
+
+            is_valid, error_msg = validator.validate_response(
+                query=request.question,
+                response_value=response_value,
+                response_unit=response_unit,
+                response_dimension=response_dimension
+            )
+
+            if not is_valid:
+                return {
+                    "status": "error",
+                    "error": error_msg,
+                    "query": request.question,
+                    "debug": {
+                        "handler": "simple_query_handler",
+                        "expected_dimension": validator.extract_expected_dimension(request.question),
+                        "actual_dimension": response_dimension,
+                        "actual_value": f"{response_value} {response_unit}",
+                        "suggestion": "The data you're looking for may not exist in the knowledge graph. Consider checking available fields."
+                    }
+                }
 
         # Format for frontend display
         if result.status == "success":
@@ -334,6 +689,14 @@ def ask_question_v3_sirrus(request: QuestionRequest):
     - Each insight traces back to Layer 1 metrics → Layer 0 dimensions
     - Confidence scores and limitations clearly stated
     """
+    # Check if SIRRUS service is available
+    if not SIRRUS_AVAILABLE or get_sirrus_service is None:
+        return {
+            "status": "error",
+            "error": "SIRRUS.AI service is not available due to import issues with langchain-google-genai. Please update the package or use /api/qa/question endpoint instead.",
+            "query": request.question
+        }
+
     try:
         # Get SIRRUS.AI LangChain service
         sirrus_service = get_sirrus_service()
@@ -587,13 +950,18 @@ def get_relationships_for_dimension(dimension: str):
 
 
 @app.get("/api/knowledge-graph/visualization")
-def get_graph_visualization(project_name: Optional[str] = None):
+def get_graph_visualization(project_name: Optional[str] = None, city: Optional[str] = None):
     """
     Get graph visualization data
 
     Args:
         project_name: Optional project name to focus on
+        city: Optional city name for location-aware data (default: Pune)
     """
+    # Switch to requested city if provided
+    if city and city != knowledge_graph_service.city:
+        knowledge_graph_service.set_city(city)
+
     return knowledge_graph_service.get_graph_visualization_data(project_name)
 
 
@@ -658,6 +1026,102 @@ def get_project_l2_metrics(project_id: str):
         "l2_metrics": l2_metrics,
         "note": "All metrics calculated using deterministic formulas (NON-LLM)"
     }
+
+
+# ==================================================================
+# MAP VISUALIZATION ENDPOINTS
+# ==================================================================
+
+@app.get("/api/maps/heat-map")
+def get_heat_map_data(
+    metric: str = Query("currentPricePSF", description="Metric to visualize (e.g., currentPricePSF, totalSupplyUnits)"),
+    region: Optional[str] = Query(None, description="Optional region filter (e.g., 'Chakan')")
+):
+    """
+    Get project data for heat-map visualization
+
+    Returns projects with latitude/longitude and selected metric for Plotly scatter_mapbox
+
+    Args:
+        metric: Attribute name to extract (default: currentPricePSF)
+        region: Optional region filter
+
+    Returns:
+        List of projects with:
+        - projectName
+        - latitude, longitude (from L0 geocoding)
+        - metric_value (extracted from specified attribute)
+        - metric_name (for display)
+        - location (for grouping)
+
+    Example:
+        GET /api/maps/heat-map?metric=currentPricePSF&region=Chakan
+    """
+    try:
+        # Get all projects
+        projects = data_service.get_all_projects()
+
+        # Filter by region if provided
+        if region:
+            normalized_region = region.strip().lower()
+            projects = [
+                p for p in projects
+                if normalized_region in (data_service.get_value(p.get('location', '')) or '').strip().lower()
+            ]
+
+        # Extract coordinates and metric for each project
+        result = []
+        for p in projects:
+            # Extract latitude and longitude from L0 attributes
+            lat_attr = p.get('latitude', {})
+            lon_attr = p.get('longitude', {})
+
+            # Get coordinates (already stored as L0 attributes from geocoding)
+            latitude = data_service.get_value(lat_attr)
+            longitude = data_service.get_value(lon_attr)
+
+            # Skip projects without coordinates
+            if latitude is None or longitude is None:
+                continue
+
+            # Extract metric value
+            metric_attr = p.get(metric, {})
+            metric_value = data_service.get_value(metric_attr)
+
+            # Skip projects without metric value
+            if metric_value is None:
+                continue
+
+            # Get metric unit for display
+            metric_unit = data_service.get_unit(metric_attr)
+
+            result.append({
+                "projectId": int(data_service.get_value(p.get('projectId', {})) or 0),
+                "projectName": data_service.get_value(p.get('projectName')),
+                "latitude": latitude,
+                "longitude": longitude,
+                "metric_value": metric_value,
+                "metric_name": metric,
+                "metric_unit": metric_unit,
+                "location": data_service.get_value(p.get('location')),
+                "microMarket": data_service.get_value(p.get('microMarket'))
+            })
+
+        return {
+            "status": "success",
+            "count": len(result),
+            "metric": metric,
+            "region": region,
+            "projects": result
+        }
+
+    except Exception as e:
+        return {
+            "status": "error",
+            "error": str(e),
+            "metric": metric,
+            "region": region
+        }
 
 
 @app.get("/api/health")

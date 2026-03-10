@@ -1596,7 +1596,7 @@ Just plain text with "metricName: value unit" on each line.
                     response += f"- **{metric_name}:** {value}\n"
                 response += "\n"
 
-        response += "*Source: Knowledge Graph*\n"
+        response += "*Source: Liases Foras*\n"
         response += "\n*Note: For detailed tables and visualizations, use the ADMIN: prefix before your question.*"
 
         return response

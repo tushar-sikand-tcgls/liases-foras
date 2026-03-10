@@ -155,7 +155,116 @@ class QueryRouter:
             lf_source = "Pillar_1.2"
 
         else:
-            raise ValueError(f"Unknown Layer 1 capability: {capability}")
+            # Try enriched Layer 1 calculator
+            try:
+                from app.services.enriched_calculator import get_enriched_calculator
+                from app.services.enriched_layers_service import get_enriched_layers_service
+
+                # Check if this is an enriched Layer 1 attribute
+                enriched_service = get_enriched_layers_service()
+                attr_name = capability.replace('calculate_', '').replace('_', ' ').title()
+                attr = enriched_service.get_attribute(attr_name)
+
+                if attr and not attr.requires_calculation:
+                    # This is Layer 0 (direct extraction), not Layer 1 calculation
+                    # Fall back to Layer 0 extraction from Neo4j
+                    from app.services.layer0 import Layer0Service
+
+                    layer0_service = Layer0Service()
+                    project_name = params.get("projectName") or request.context.get("project_name")
+
+                    if not project_name:
+                        raise ValueError("projectName required for Layer 0 extraction")
+
+                    # Map attribute name to Neo4j field
+                    field_mapping = {
+                        'Monthly Sales Velocity': 'monthlySalesVelocity',
+                        'Sales Velocity': 'monthlySalesVelocity',
+                    }
+
+                    field_name = field_mapping.get(attr.target_attribute, attr.target_attribute.replace(' ', ''))
+                    project_data = layer0_service.get_project_by_name(project_name)
+
+                    if not project_data:
+                        raise ValueError(f"Project '{project_name}' not found")
+
+                    # Extract the field value
+                    field_value = project_data.get(field_name, {})
+                    if isinstance(field_value, dict):
+                        value = field_value.get('value')
+                        unit = field_value.get('unit', attr.unit)
+                    else:
+                        value = field_value
+                        unit = attr.unit
+
+                    # Format as standard result
+                    result = {
+                        "metric": attr.target_attribute,
+                        "value": value,
+                        "unit": unit,
+                        "dimension": attr.dimension,
+                        "formula": "Direct extraction from Neo4j",
+                        "components": {}
+                    }
+
+                    # Create provenance for Layer 0 extraction
+                    provenance = {
+                        "metric": attr.target_attribute,
+                        "inputDimensions": ["Layer 0 - Neo4j"],
+                        "calculationMethod": "Direct extraction",
+                        "lfSource": "Liases Foras Knowledge Graph",
+                        "timestamp": datetime.now().isoformat(),
+                        "dataVersion": request.context.get("lfDataVersion", "Q3_FY25"),
+                        "layer": "Layer 0",
+                        "description": attr.description
+                    }
+
+                    lineage = {"layer0_direct": True}
+
+                    return result, provenance, lineage
+
+                elif attr and attr.requires_calculation:
+                    # Use enriched calculator
+                    calculator = get_enriched_calculator()
+                    project_name = params.get("projectName") or request.context.get("project_name")
+                    project_id = params.get("projectId") or request.context.get("project_id")
+
+                    if not project_name and not project_id:
+                        raise ValueError("projectName or projectId required for enriched calculations")
+
+                    calc_result = calculator.calculate(capability, project_name, project_id)
+
+                    # Format as standard result
+                    result = {
+                        "metric": attr.target_attribute,
+                        "value": calc_result["value"],
+                        "unit": calc_result["unit"],
+                        "dimension": calc_result["dimension"],
+                        "formula": calc_result["formula"],
+                        "components": {}  # Enriched calculations don't expose components
+                    }
+
+                    # Create provenance for enriched calculation
+                    provenance = {
+                        "metric": attr.target_attribute,
+                        "inputDimensions": ["Enriched Layer 1"],
+                        "calculationMethod": calc_result["formula"],
+                        "lfSource": "Enriched Layers",
+                        "timestamp": datetime.now().isoformat(),
+                        "dataVersion": request.context.get("lfDataVersion", "enriched_v3"),
+                        "layer": "Layer 1",
+                        "description": calc_result.get("provenance", {}).get("description", "")
+                    }
+
+                    lineage = {"layer1_inputs": {"enriched": True}}
+
+                    return result, provenance, lineage
+
+                else:
+                    raise ValueError(f"Unknown Layer 1 capability: {capability}")
+
+            except ImportError:
+                raise ValueError(f"Unknown Layer 1 capability: {capability}")
 
         provenance = self.layer1.create_provenance(
             metric_name=result["metric"],

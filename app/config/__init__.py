@@ -21,4 +21,20 @@ class Settings:
 
 settings = Settings()
 
-__all__ = ["defaults", "DefaultConfig", "settings"]
+# City Data Configuration (location-agnostic data mapping)
+CITY_DATA_CONFIG = {
+    "Pune": {
+        "data_file": "extracted/v4_clean_nested_structure.json",
+        "format": "v4_nested",
+        "regions": ["Chakan", "Baner", "Hinjewadi"],
+        "default_region": "Chakan"
+    },
+    "Kolkata": {
+        "data_file": "extracted/kolkata/kolkata_v4_enriched.json",  # Enriched: unitMixBreakdown + priceRangeDistribution (960KB)
+        "format": "v4_nested_enriched",
+        "regions": ["New Town", "Rajarhat", "E-M Bypass", "Salt Lake", "Park Street"],
+        "default_region": "New Town"
+    }
+}
+
+__all__ = ["defaults", "DefaultConfig", "settings", "CITY_DATA_CONFIG"]

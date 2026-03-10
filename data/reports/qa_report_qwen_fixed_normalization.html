@@ -1,0 +1,1784 @@
+
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
+    .container {
+        background: white;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+    .header {
+        border-bottom: 3px solid #4CAF50;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+    h1 {
+        color: #2c3e50;
+        margin: 0;
+    }
+    .run-id {
+        color: #7f8c8d;
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+    .metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+    }
+    .metric-card {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid #4CAF50;
+    }
+    .metric-card.failed {
+        border-left-color: #f44336;
+    }
+    .metric-value {
+        font-size: 2em;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+    .metric-label {
+        color: #7f8c8d;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .metric-delta {
+        font-size: 0.8em;
+        margin-top: 5px;
+    }
+    .metric-delta.positive {
+        color: #4CAF50;
+    }
+    .metric-delta.negative {
+        color: #f44336;
+    }
+    .section {
+        margin: 30px 0;
+    }
+    h2 {
+        color: #34495e;
+        border-bottom: 2px solid #ecf0f1;
+        padding-bottom: 10px;
+    }
+    .breakdown {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin: 20px 0;
+    }
+    .breakdown-item {
+        background: #ecf0f1;
+        padding: 15px;
+        border-radius: 6px;
+        text-align: center;
+    }
+    .failure-reasons {
+        background: #fff3cd;
+        border: 1px solid #ffc107;
+        border-radius: 6px;
+        padding: 20px;
+        margin: 20px 0;
+    }
+    .failure-reasons h3 {
+        margin-top: 0;
+        color: #856404;
+    }
+    .failure-reasons ul {
+        margin: 10px 0;
+        padding-left: 20px;
+    }
+    details {
+        margin: 20px 0;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    summary {
+        background: #f8f9fa;
+        padding: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        user-select: none;
+    }
+    summary:hover {
+        background: #e9ecef;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+    }
+    th {
+        background: #34495e;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        position: sticky;
+        top: 0;
+    }
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ecf0f1;
+    }
+    tr:hover {
+        background: #f8f9fa;
+    }
+    .status-pass {
+        background: #d4edda;
+        color: #155724;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        font-weight: bold;
+    }
+    .status-fail {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        font-weight: bold;
+    }
+    .status-fail-inclusion {
+        background: #fff3cd;
+        color: #856404;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        font-weight: bold;
+    }
+    .badge {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 0.75em;
+        font-weight: bold;
+    }
+    .badge-autofixed {
+        background: #d1ecf1;
+        color: #0c5460;
+    }
+    .badge-review {
+        background: #fff3cd;
+        color: #856404;
+    }
+    .prompt-cell {
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .cta-box {
+        background: #e3f2fd;
+        border: 2px solid #2196F3;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 30px 0;
+        text-align: center;
+    }
+    .cta-box h3 {
+        margin-top: 0;
+        color: #1976D2;
+    }
+    .footer {
+        text-align: center;
+        color: #7f8c8d;
+        font-size: 0.9em;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #ecf0f1;
+    }
+</style>
+
+
+<div class="container header">
+    <h1>🤖 QA Automation - Auto-Healing Test Report</h1>
+    <div class="run-id">Run ID: qwen_fixed_normalization | 2025-12-11 12:13:44</div>
+</div>
+
+
+<div class="container">
+    <h2>Executive Summary</h2>
+    <div class="metrics">
+        <div class="metric-card">
+            <div class="metric-label">Pass Rate</div>
+            <div class="metric-value">23.1%</div>
+            
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Total Tests</div>
+            <div class="metric-value">121</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Passed</div>
+            <div class="metric-value" style="color: #4CAF50;">28</div>
+        </div>
+        <div class="metric-card failed">
+            <div class="metric-label">Failed</div>
+            <div class="metric-value" style="color: #f44336;">93</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Auto-Fixed</div>
+            <div class="metric-value" style="color: #2196F3;">0</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Duration</div>
+            <div class="metric-value" style="font-size: 1.5em;">11s</div>
+        </div>
+    </div>
+
+    <h3>By Test Type</h3>
+    <div class="breakdown">
+        <div class="breakdown-item">
+            <strong>Objective</strong><br>
+            28/100 passed<br>
+            (28.0%)
+        </div>
+        <div class="breakdown-item">
+            <strong>Subjective</strong><br>
+            0/19 passed<br>
+            (0.0%)
+        </div>
+        <div class="breakdown-item">
+            <strong>Calculated</strong><br>
+            0/2 passed<br>
+            (0.0%)
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <h2>Failure Analysis</h2>
+
+    <div class="breakdown">
+        <div class="breakdown-item">
+            <strong>Inclusion Failures</strong><br>
+            82 tests<br>
+            (67.8%)
+        </div>
+        <div class="breakdown-item">
+            <strong>Similarity Failures</strong><br>
+            11 tests<br>
+            (9.1%)
+        </div>
+        <div class="breakdown-item">
+            <strong>Needs Review</strong><br>
+            0 tests<br>
+            (0.0%)
+        </div>
+    </div>
+
+    <div class="failure-reasons">
+        <h3>Top Failure Patterns</h3>
+        <ul>
+            <li><strong>Missing expected text:</strong> 82 cases - Model response doesn't contain required substring</li>
+            <li><strong>Below similarity threshold:</strong> 11 cases - Response semantically different from reference</li>
+            <li><strong>Auto-fixed:</strong> 0 cases - Automatically corrected prompts/expectations</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="container">
+    <details>
+        <summary>📋 Click to expand detailed test results (121 tests)</summary>
+        <div style="overflow-x: auto; max-height: 600px; overflow-y: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Prompt</th>
+                        <th>Status</th>
+                        <th>Similarity</th>
+                        <th>Expected Answer</th>
+                        <th>Actual Answer</th>
+                        <th>Flags</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td>1</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of Sara City?">What is the Project Size of Sara City?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.260</td>
+                <td title="3018 Units">3018 Units</td>
+                <td title="3018 Units">3018 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>2</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of Sara City?">What is the Total Supply (Units) of Sara City?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.442</td>
+                <td title="1109 Units">1109 Units</td>
+                <td title="1109 Units">1109 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>3</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of Sara City?">What is the Sold (%) - Total Supply of Sara City?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.297</td>
+                <td title="89% Units">89% Units</td>
+                <td title="89 %">89 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>4</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of Sara City?">What is the Unsold (%) of Sara City?</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.187</td>
+                <td title="11%">11%</td>
+                <td title="11 %">11 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>5</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of Sara City?">What is the Annual Sales (Units) of Sara City?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.394</td>
+                <td title="527 Units">527 Units</td>
+                <td title="527 Units/year">527 Units/year</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>6</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of Sara City?">What is the Annual Sales Value (Rs.Cr.) of Sara City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.083</td>
+                <td title="106.411 Cr">106.411 Cr</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>7</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of Sara City in Units?">What is the Unit Saleable Size (Sq.Ft.) of Sara City in U...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.017</td>
+                <td title="2200 units">2200 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>8</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of Sara City?">What is the Saleable Launch Price (Rs/Psf) of Sara City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.182</td>
+                <td title="3996 INR/ft²">3996 INR/ft²</td>
+                <td title="Nov 2007 Month">Nov 2007 Month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>9</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of Sara City?">What is the Saleable Price (Psf) of Sara City?</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.000</td>
+                <td title="4.69 INR/ft² (in thousands if <10)">4.69 INR/ft² (in thousands if <10)</td>
+                <td title=""></td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>10</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of Sara City?">What is the Monthly Sales Velocity of Sara City?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.323</td>
+                <td title="3.47%">3.47%</td>
+                <td title="3.47 %/month">3.47 %/month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>11</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of Pradnyesh Shrinivas?">What is the Project Size of Pradnyesh Shrinivas?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.438</td>
+                <td title="278 units">278 units</td>
+                <td title="278 Units">278 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>12</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of Pradnyesh Shrinivas?">What is the Total Supply (Units) of Pradnyesh Shrinivas?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.508</td>
+                <td title="278 units">278 units</td>
+                <td title="278 Units">278 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>13</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of Pradnyesh Shrinivas?">What is the Sold (%) - Total Supply of Pradnyesh Shrinivas?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.355</td>
+                <td title="58% units">58% units</td>
+                <td title="58 %">58 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>14</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of Pradnyesh Shrinivas?">What is the Unsold (%) of Pradnyesh Shrinivas?</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.220</td>
+                <td title="42%">42%</td>
+                <td title="42 %">42 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>15</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of Pradnyesh Shrinivas?">What is the Annual Sales (Units) of Pradnyesh Shrinivas?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.465</td>
+                <td title="87 units">87 units</td>
+                <td title="87 Units/year">87 Units/year</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>16</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of Pradnyesh Shrinivas?">What is the Annual Sales Value (Rs.Cr.) of Pradnyesh Shri...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.121</td>
+                <td title="24.562 Cr">24.562 Cr</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>17</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of Pradnyesh Shrinivas in Units?">What is the Unit Saleable Size (Sq.Ft.) of Pradnyesh Shri...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.041</td>
+                <td title="3400 units">3400 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>18</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of Pradnyesh Shrinivas?">What is the Saleable Launch Price (Rs/Psf) of Pradnyesh S...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.291</td>
+                <td title="3745 INR/ft²">3745 INR/ft²</td>
+                <td title="Apr 2023 Month">Apr 2023 Month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>19</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of Pradnyesh Shrinivas?">What is the Saleable Price (Psf) of Pradnyesh Shrinivas?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.014</td>
+                <td title="4.05 INR/ft² (in thousands if <10)">4.05 INR/ft² (in thousands if <10)</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>20</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of Pradnyesh Shrinivas?">What is the Monthly Sales Velocity of Pradnyesh Shrinivas?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.392</td>
+                <td title="8.91%">8.91%</td>
+                <td title="8.91 %/month">8.91 %/month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>21</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of Sara Nilaay?">What is the Project Size of Sara Nilaay?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.340</td>
+                <td title="298 Units">298 Units</td>
+                <td title="298 Units">298 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>22</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of Sara Nilaay?">What is the Total Supply (Units) of Sara Nilaay?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.393</td>
+                <td title="298 Units">298 Units</td>
+                <td title="298 Units">298 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>23</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of Sara Nilaay?">What is the Sold (%) - Total Supply of Sara Nilaay?</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.209</td>
+                <td title="31% Units">31% Units</td>
+                <td title="31 %">31 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>24</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of Sara Nilaay?">What is the Unsold (%) of Sara Nilaay?</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.125</td>
+                <td title="69%">69%</td>
+                <td title="69 %">69 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>25</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of Sara Nilaay?">What is the Annual Sales (Units) of Sara Nilaay?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.338</td>
+                <td title="32 Units">32 Units</td>
+                <td title="32 Units/year">32 Units/year</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>26</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of Sara Nilaay?">What is the Annual Sales Value (Rs.Cr.) of Sara Nilaay?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.069</td>
+                <td title="6.395 Cr">6.395 Cr</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>27</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of Sara Nilaay in Units?">What is the Unit Saleable Size (Sq.Ft.) of Sara Nilaay in...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.006</td>
+                <td title="4285 units">4285 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>28</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of Sara Nilaay?">What is the Saleable Launch Price (Rs/Psf) of Sara Nilaay?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.133</td>
+                <td title="4569 INR/ft²">4569 INR/ft²</td>
+                <td title="May 2024 Month">May 2024 Month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>29</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of Sara Nilaay?">What is the Saleable Price (Psf) of Sara Nilaay?</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.000</td>
+                <td title="4.62 INR/ft² (in thousands if <10)">4.62 INR/ft² (in thousands if <10)</td>
+                <td title=""></td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>30</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of Sara Nilaay?">What is the Monthly Sales Velocity of Sara Nilaay?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.315</td>
+                <td title="1.95%">1.95%</td>
+                <td title="1.95 %/month">1.95 %/month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>31</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of Sara Abhiruchi Tower in Units?">What is the Project Size of Sara Abhiruchi Tower in Units?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.240</td>
+                <td title="280 units">280 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>32</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of Sara Abhiruchi Tower?">What is the Total Supply (Units) of Sara Abhiruchi Tower?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.204</td>
+                <td title="280 units">280 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>33</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of Sara Abhiruchi Tower?">What is the Sold (%) - Total Supply of Sara Abhiruchi Tower?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.212</td>
+                <td title="11%">11%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>34</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of Sara Abhiruchi Tower?">What is the Unsold (%) of Sara Abhiruchi Tower?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.133</td>
+                <td title="89%">89%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>35</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of Sara Abhiruchi Tower?">What is the Annual Sales (Units) of Sara Abhiruchi Tower?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.206</td>
+                <td title="32 units">32 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>36</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of Sara Abhiruchi Tower?">What is the Annual Sales Value (Rs.Cr.) of Sara Abhiruchi...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.239</td>
+                <td title="7.635 Cr">7.635 Cr</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>37</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of Sara Abhiruchi Tower in Units?">What is the Unit Saleable Size (Sq.Ft.) of Sara Abhiruchi...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.162</td>
+                <td title="3189 units">3189 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>38</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of Sara Abhiruchi Tower?">What is the Saleable Launch Price (Rs/Psf) of Sara Abhiru...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.137</td>
+                <td title="3189 INR/ft²">3189 INR/ft²</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>39</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of Sara Abhiruchi Tower?">What is the Saleable Price (Psf) of Sara Abhiruchi Tower?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.138</td>
+                <td title="3.62 INR/ft² (in thousands if <10)">3.62 INR/ft² (in thousands if <10)</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>40</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of Sara Abhiruchi Tower?">What is the Monthly Sales Velocity of Sara Abhiruchi Tower?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.190</td>
+                <td title="11.43%">11.43%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>41</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of The Urbana?">What is the Project Size of The Urbana?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.399</td>
+                <td title="168 Units">168 Units</td>
+                <td title="168 Units">168 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>42</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of The Urbana?">What is the Total Supply (Units) of The Urbana?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.469</td>
+                <td title="168 Units">168 Units</td>
+                <td title="168 Units">168 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>43</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of The Urbana?">What is the Sold (%) - Total Supply of The Urbana?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.274</td>
+                <td title="96% Units">96% Units</td>
+                <td title="96 %">96 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>44</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of The Urbana?">What is the Unsold (%) of The Urbana?</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.173</td>
+                <td title="4%">4%</td>
+                <td title="4 %">4 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>45</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of The Urbana?">What is the Annual Sales (Units) of The Urbana?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.506</td>
+                <td title="29 Units">29 Units</td>
+                <td title="29 Units/year">29 Units/year</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>46</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of The Urbana?">What is the Annual Sales Value (Rs.Cr.) of The Urbana?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.114</td>
+                <td title="7.55 Cr">7.55 Cr</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>47</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of The Urbana in Units?">What is the Unit Saleable Size (Sq.Ft.) of The Urbana in ...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.041</td>
+                <td title="3696 units">3696 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>48</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of The Urbana?">What is the Saleable Launch Price (Rs/Psf) of The Urbana?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.155</td>
+                <td title="3725 INR/ft²">3725 INR/ft²</td>
+                <td title="Oct 2023 Month">Oct 2023 Month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>49</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of The Urbana?">What is the Saleable Price (Psf) of The Urbana?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.022</td>
+                <td title="3.79 INR/ft² (in thousands if <10)">3.79 INR/ft² (in thousands if <10)</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>50</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of The Urbana?">What is the Monthly Sales Velocity of The Urbana?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.326</td>
+                <td title="4.20%">4.20%</td>
+                <td title="4.2 %/month">4.2 %/month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>51</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of Gulmohar City in Units?">What is the Project Size of Gulmohar City in Units?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.287</td>
+                <td title="150 units">150 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>52</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of Gulmohar City?">What is the Total Supply (Units) of Gulmohar City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.259</td>
+                <td title="150 units">150 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>53</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of Gulmohar City?">What is the Sold (%) - Total Supply of Gulmohar City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.261</td>
+                <td title="27%">27%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>54</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of Gulmohar City?">What is the Unsold (%) of Gulmohar City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.177</td>
+                <td title="73%">73%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>55</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of Gulmohar City?">What is the Annual Sales (Units) of Gulmohar City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.273</td>
+                <td title="28 units">28 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>56</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of Gulmohar City?">What is the Annual Sales Value (Rs.Cr.) of Gulmohar City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.281</td>
+                <td title="8.531 Cr">8.531 Cr</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>57</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of Gulmohar City in Units?">What is the Unit Saleable Size (Sq.Ft.) of Gulmohar City ...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.239</td>
+                <td title="4352 units">4352 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>58</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of Gulmohar City?">What is the Saleable Launch Price (Rs/Psf) of Gulmohar City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.157</td>
+                <td title="4330 INR/ft²">4330 INR/ft²</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>59</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of Gulmohar City?">What is the Saleable Price (Psf) of Gulmohar City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.161</td>
+                <td title="4.41 INR/ft² (in thousands if <10)">4.41 INR/ft² (in thousands if <10)</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>60</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of Gulmohar City?">What is the Monthly Sales Velocity of Gulmohar City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.223</td>
+                <td title="2.37%">2.37%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>61</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of Siddhivinayak Kate Residency?">What is the Project Size of Siddhivinayak Kate Residency?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.367</td>
+                <td title="156 units">156 units</td>
+                <td title="156 Units">156 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>62</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of Siddhivinayak Kate Residency?">What is the Total Supply (Units) of Siddhivinayak Kate Re...</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.474</td>
+                <td title="156 units">156 units</td>
+                <td title="156 Units">156 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>63</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of Siddhivinayak Kate Residency?">What is the Sold (%) - Total Supply of Siddhivinayak Kate...</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.293</td>
+                <td title="64% units">64% units</td>
+                <td title="64 %">64 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>64</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of Siddhivinayak Kate Residency?">What is the Unsold (%) of Siddhivinayak Kate Residency?</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.201</td>
+                <td title="36%">36%</td>
+                <td title="36 %">36 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>65</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of Siddhivinayak Kate Residency?">What is the Annual Sales (Units) of Siddhivinayak Kate Re...</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.409</td>
+                <td title="24 units">24 units</td>
+                <td title="24 Units/year">24 Units/year</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>66</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of Siddhivinayak Kate Residency?">What is the Annual Sales Value (Rs.Cr.) of Siddhivinayak ...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.059</td>
+                <td title="7.573 Cr">7.573 Cr</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>67</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of Siddhivinayak Kate Residency in Units?">What is the Unit Saleable Size (Sq.Ft.) of Siddhivinayak ...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.012</td>
+                <td title="4046 units">4046 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>68</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of Siddhivinayak Kate Residency?">What is the Saleable Launch Price (Rs/Psf) of Siddhivinay...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.142</td>
+                <td title="4094 INR/ft²">4094 INR/ft²</td>
+                <td title="Jan 2024 Month">Jan 2024 Month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>69</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of Siddhivinayak Kate Residency?">What is the Saleable Price (Psf) of Siddhivinayak Kate Re...</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.000</td>
+                <td title="4.22 INR/ft² (in thousands if <10)">4.22 INR/ft² (in thousands if <10)</td>
+                <td title=""></td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>70</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of Siddhivinayak Kate Residency?">What is the Monthly Sales Velocity of Siddhivinayak Kate ...</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.319</td>
+                <td title="3.21%">3.21%</td>
+                <td title="3.21 %/month">3.21 %/month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>71</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of Sarangi Paradise in Units?">What is the Project Size of Sarangi Paradise in Units?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.282</td>
+                <td title="56 units">56 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>72</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of Sarangi Paradise?">What is the Total Supply (Units) of Sarangi Paradise?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.231</td>
+                <td title="56 units">56 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>73</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of Sarangi Paradise?">What is the Sold (%) - Total Supply of Sarangi Paradise?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.223</td>
+                <td title="93%">93%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>74</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of Sarangi Paradise?">What is the Unsold (%) of Sarangi Paradise?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.126</td>
+                <td title="7%">7%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>75</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of Sarangi Paradise?">What is the Annual Sales (Units) of Sarangi Paradise?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.232</td>
+                <td title="19 units">19 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>76</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of Sarangi Paradise?">What is the Annual Sales Value (Rs.Cr.) of Sarangi Paradise?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.244</td>
+                <td title="5.568 Cr">5.568 Cr</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>77</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of Sarangi Paradise in Units?">What is the Unit Saleable Size (Sq.Ft.) of Sarangi Paradi...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.168</td>
+                <td title="3884 units">3884 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>78</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of Sarangi Paradise?">What is the Saleable Launch Price (Rs/Psf) of Sarangi Par...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.120</td>
+                <td title="4000 INR/ft²">4000 INR/ft²</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>79</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of Sarangi Paradise?">What is the Saleable Price (Psf) of Sarangi Paradise?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.112</td>
+                <td title="4.16 INR/ft² (in thousands if <10)">4.16 INR/ft² (in thousands if <10)</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>80</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of Sarangi Paradise?">What is the Monthly Sales Velocity of Sarangi Paradise?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.181</td>
+                <td title="4.64%">4.64%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>81</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of Kalpavruksh Heights in Units?">What is the Project Size of Kalpavruksh Heights in Units?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.314</td>
+                <td title="48 units">48 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>82</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of Kalpavruksh Heights?">What is the Total Supply (Units) of Kalpavruksh Heights?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.243</td>
+                <td title="48 units">48 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>83</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of Kalpavruksh Heights?">What is the Sold (%) - Total Supply of Kalpavruksh Heights?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.239</td>
+                <td title="40%">40%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>84</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of Kalpavruksh Heights?">What is the Unsold (%) of Kalpavruksh Heights?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.160</td>
+                <td title="60%">60%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>85</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of Kalpavruksh Heights?">What is the Annual Sales (Units) of Kalpavruksh Heights?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.261</td>
+                <td title="15 units">15 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>86</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of Kalpavruksh Heights?">What is the Annual Sales Value (Rs.Cr.) of Kalpavruksh He...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.265</td>
+                <td title="4.762 Cr">4.762 Cr</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>87</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of Kalpavruksh Heights in Units?">What is the Unit Saleable Size (Sq.Ft.) of Kalpavruksh He...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.197</td>
+                <td title="2996 units">2996 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>88</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of Kalpavruksh Heights?">What is the Saleable Launch Price (Rs/Psf) of Kalpavruksh...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.158</td>
+                <td title="2996 INR/ft²">2996 INR/ft²</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>89</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of Kalpavruksh Heights?">What is the Saleable Price (Psf) of Kalpavruksh Heights?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.155</td>
+                <td title="3.07 INR/ft² (in thousands if <10)">3.07 INR/ft² (in thousands if <10)</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>90</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of Kalpavruksh Heights?">What is the Monthly Sales Velocity of Kalpavruksh Heights?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.212</td>
+                <td title="2.08%">2.08%</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>91</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of Shubhan Karoli?">What is the Project Size of Shubhan Karoli?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.288</td>
+                <td title="48 units">48 units</td>
+                <td title="48 Units">48 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>92</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of Shubhan Karoli?">What is the Total Supply (Units) of Shubhan Karoli?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.433</td>
+                <td title="24 units">24 units</td>
+                <td title="24 Units">24 Units</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>93</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of Shubhan Karoli?">What is the Sold (%) - Total Supply of Shubhan Karoli?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.310</td>
+                <td title="96% units">96% units</td>
+                <td title="96 %">96 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>94</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of Shubhan Karoli?">What is the Unsold (%) of Shubhan Karoli?</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.224</td>
+                <td title="4%">4%</td>
+                <td title="4 %">4 %</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>95</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of Shubhan Karoli?">What is the Annual Sales (Units) of Shubhan Karoli?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.440</td>
+                <td title="11 units">11 units</td>
+                <td title="11 Units/year">11 Units/year</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>96</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of Shubhan Karoli?">What is the Annual Sales Value (Rs.Cr.) of Shubhan Karoli?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.087</td>
+                <td title="2.385 Cr">2.385 Cr</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>97</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of Shubhan Karoli in Units?">What is the Unit Saleable Size (Sq.Ft.) of Shubhan Karoli...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.019</td>
+                <td title="3200 units">3200 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>98</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of Shubhan Karoli?">What is the Saleable Launch Price (Rs/Psf) of Shubhan Kar...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.106</td>
+                <td title="2808 INR/ft²">2808 INR/ft²</td>
+                <td title="May 2016 Month">May 2016 Month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>99</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of Shubhan Karoli?">What is the Saleable Price (Psf) of Shubhan Karoli?</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.000</td>
+                <td title="2.87 INR/ft² (in thousands if <10)">2.87 INR/ft² (in thousands if <10)</td>
+                <td title=""></td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>100</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of Shubhan Karoli?">What is the Monthly Sales Velocity of Shubhan Karoli?</td>
+                <td><span class="status-pass">PASS</span></td>
+                <td>0.318</td>
+                <td title="0.86%">0.86%</td>
+                <td title="0.86 %/month">0.86 %/month</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>101</td>
+                <td>Subjective (Project)</td>
+                <td class="prompt-cell" title="Tell me about Sara City.">Tell me about Sara City.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.164</td>
+                <td title="Sara City Sara Builders & Developers (Sara Group) Chakan">Sara City Sara Builders & Developers (Sa...</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>102</td>
+                <td>Subjective (Project)</td>
+                <td class="prompt-cell" title="Tell me about Pradnyesh Shrinivas.">Tell me about Pradnyesh Shrinivas.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.162</td>
+                <td title="Pradnyesh Shrinivas JJ Mauli Developers Chakan">Pradnyesh Shrinivas JJ Mauli Developers ...</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>103</td>
+                <td>Subjective (Project)</td>
+                <td class="prompt-cell" title="Tell me about Sara Nilaay.">Tell me about Sara Nilaay.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.189</td>
+                <td title="Sara Nilaay Sara Builders & Developers (Sara Group) Talegaon">Sara Nilaay Sara Builders & Developers (...</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>104</td>
+                <td>Subjective (Project)</td>
+                <td class="prompt-cell" title="Tell me about Sara Abhiruchi Tower.">Tell me about Sara Abhiruchi Tower.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.153</td>
+                <td title="Sara Abhiruchi Tower Sara Builders & Developers (Sara Group) Chakan">Sara Abhiruchi Tower Sara Builders & Dev...</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>105</td>
+                <td>Subjective (Project)</td>
+                <td class="prompt-cell" title="Tell me about The Urbana.">Tell me about The Urbana.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.160</td>
+                <td title="The Urbana Intercontinental Infrastructure Limited Chakan">The Urbana Intercontinental Infrastructu...</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>106</td>
+                <td>Subjective (Project)</td>
+                <td class="prompt-cell" title="Tell me about Gulmohar City.">Tell me about Gulmohar City.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.186</td>
+                <td title="Gulmohar City Gurudatta Builders And Developers Chakan">Gulmohar City Gurudatta Builders And Dev...</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>107</td>
+                <td>Subjective (Project)</td>
+                <td class="prompt-cell" title="Tell me about Siddhivinayak Kate Residency.">Tell me about Siddhivinayak Kate Residency.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.172</td>
+                <td title="Siddhivinayak Kate Residency Kate Builders Chakan">Siddhivinayak Kate Residency Kate Builde...</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>108</td>
+                <td>Subjective (Project)</td>
+                <td class="prompt-cell" title="Tell me about Sarangi Paradise.">Tell me about Sarangi Paradise.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.140</td>
+                <td title="Sarangi Paradise Sai Propping Realty Chakan">Sarangi Paradise Sai Propping Realty Cha...</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>109</td>
+                <td>Subjective (Project)</td>
+                <td class="prompt-cell" title="Tell me about Kalpavruksh Heights.">Tell me about Kalpavruksh Heights.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.181</td>
+                <td title="Kalpavruksh Heights Swami Samarth Buildcon Chakan">Kalpavruksh Heights Swami Samarth Buildc...</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>110</td>
+                <td>Subjective (Project)</td>
+                <td class="prompt-cell" title="Tell me about Shubhan Karoli.">Tell me about Shubhan Karoli.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.185</td>
+                <td title="Shubhan Karoli Creative Ventures Chakan">Shubhan Karoli Creative Ventures Chakan</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>111</td>
+                <td>Subjective (Developer)</td>
+                <td class="prompt-cell" title="Tell me about projects by Sara Builders & Developers (Sara Group).">Tell me about projects by Sara Builders & Developers (Sar...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.269</td>
+                <td title="3 project(s) Sara City Sara Nilaay Sara Abhiruchi Tower">3 project(s) Sara City Sara Nilaay Sara ...</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>112</td>
+                <td>Subjective (Developer)</td>
+                <td class="prompt-cell" title="Tell me about projects by JJ Mauli Developers.">Tell me about projects by JJ Mauli Developers.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.332</td>
+                <td title="1 project(s) Pradnyesh Shrinivas">1 project(s) Pradnyesh Shrinivas</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>113</td>
+                <td>Subjective (Developer)</td>
+                <td class="prompt-cell" title="Tell me about projects by Intercontinental Infrastructure Limited.">Tell me about projects by Intercontinental Infrastructure...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.269</td>
+                <td title="1 project(s) The Urbana">1 project(s) The Urbana</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>114</td>
+                <td>Subjective (Developer)</td>
+                <td class="prompt-cell" title="Tell me about projects by Gurudatta Builders And Developers.">Tell me about projects by Gurudatta Builders And Developers.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.347</td>
+                <td title="1 project(s) Gulmohar City">1 project(s) Gulmohar City</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>115</td>
+                <td>Subjective (Developer)</td>
+                <td class="prompt-cell" title="Tell me about projects by Kate Builders.">Tell me about projects by Kate Builders.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.317</td>
+                <td title="1 project(s) Siddhivinayak Kate Residency">1 project(s) Siddhivinayak Kate Residenc...</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>116</td>
+                <td>Subjective (Developer)</td>
+                <td class="prompt-cell" title="Tell me about projects by Sai Propping Realty.">Tell me about projects by Sai Propping Realty.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.323</td>
+                <td title="1 project(s) Sarangi Paradise">1 project(s) Sarangi Paradise</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>117</td>
+                <td>Subjective (Developer)</td>
+                <td class="prompt-cell" title="Tell me about projects by Swami Samarth Buildcon.">Tell me about projects by Swami Samarth Buildcon.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.307</td>
+                <td title="1 project(s) Kalpavruksh Heights">1 project(s) Kalpavruksh Heights</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>118</td>
+                <td>Subjective (Developer)</td>
+                <td class="prompt-cell" title="Tell me about projects by Creative Ventures.">Tell me about projects by Creative Ventures.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.334</td>
+                <td title="1 project(s) Shubhan Karoli">1 project(s) Shubhan Karoli</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>119</td>
+                <td>Subjective (Location)</td>
+                <td class="prompt-cell" title="Tell me about Chakan real estate market.">Tell me about Chakan real estate market.</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.229</td>
+                <td title="9 projects 2269 units">9 projects 2269 units</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>120</td>
+                <td>Calculated (Financial)</td>
+                <td class="prompt-cell" title="What is the average IRR for Chakan projects? (Consider adding specific project name)">What is the average IRR for Chakan projects? (Consider ad...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.190</td>
+                <td title="IRR estimated at">IRR estimated at</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>121</td>
+                <td>Calculated (Financial)</td>
+                <td class="prompt-cell" title="What is the average NPV for Chakan projects? (Consider adding specific project name)">What is the average NPV for Chakan projects? (Consider ad...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.278</td>
+                <td title="NPV averages">NPV averages</td>
+                <td title="ERROR: Missing attribute name or project data for calculation">ERROR: Missing attribute name or project...</td>
+                <td></td>
+            </tr>
+            
+                </tbody>
+            </table>
+        </div>
+    </details>
+</div>
+
+
+<div class="cta-box">
+    <h3>📩 Next Steps</h3>
+    <p>Do you want another refinement cycle (further auto-fixing and regression run),<br>
+    or are you satisfied with the current test outcomes?</p>
+</div>
+
+<div class="footer">
+    Generated by QA Automation - Auto-Healing Testing System<br>
+    2025-12-11 17:43:54 | Built with Hexagonal Architecture + LangGraph
+</div>

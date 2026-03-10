@@ -1,17 +1,26 @@
 """
 Data Service V4: Knowledge Graph Data Management
-Uses v4_clean_nested_structure.json with proper {value, unit, dimension, relationships} format
+Location-agnostic service that loads data based on city context
+Uses v4_nested format with {value, unit, dimension, relationships} structure
 """
 import json
 from pathlib import Path
 from typing import List, Optional, Dict, Any
-from app.config import settings
+from app.config import settings, CITY_DATA_CONFIG
 
 
 class DataServiceV4:
-    """Data service for v4 nested structure with explicit dimensional relationships"""
+    """Location-agnostic data service for v4 nested structure with explicit dimensional relationships"""
 
-    def __init__(self):
+    def __init__(self, city: str = "Pune"):
+        """
+        Initialize DataService for a specific city
+
+        Args:
+            city: City name (e.g., "Pune", "Kolkata"). Defaults to "Pune".
+                  Data file is determined from CITY_DATA_CONFIG mapping.
+        """
+        self.city = city
         self.projects: List[Dict] = []
         self.unit_types: List[Dict] = []
         self.quarterly_summaries: List[Dict] = []
@@ -19,16 +28,24 @@ class DataServiceV4:
         self._load_data()
 
     def _load_data(self):
-        """Load all data from v4 nested JSON"""
+        """Load all data from v4 nested JSON based on city configuration"""
         self._load_v4_nested_data()
         self._load_lf_data()
+        self._enrich_with_geocoding()
 
     def _load_v4_nested_data(self):
-        """Load projects from v4_clean_nested_structure.json"""
-        data_file = Path(settings.DATA_PATH) / "extracted" / "v4_clean_nested_structure.json"
+        """Load projects from city-specific v4 data file (location-agnostic)"""
+        # Get city-specific configuration
+        city_config = CITY_DATA_CONFIG.get(self.city)
+        if not city_config:
+            print(f"⚠️  Warning: No configuration found for city '{self.city}'. Using default (Pune).")
+            city_config = CITY_DATA_CONFIG.get("Pune")
+
+        data_file_path = city_config.get("data_file")
+        data_file = Path(settings.DATA_PATH) / data_file_path
 
         if not data_file.exists():
-            print(f"Warning: {data_file} not found")
+            print(f"⚠️  Warning: {data_file} not found for city '{self.city}'")
             return
 
         with open(data_file, 'r', encoding='utf-8') as f:
@@ -38,7 +55,7 @@ class DataServiceV4:
         self.unit_types = data.get('page_5_unit_types', [])
         self.quarterly_summaries = data.get('page_8_quarterly_summary', [])
 
-        print(f"✓ Loaded {len(self.projects)} projects from v4 nested format")
+        print(f"✓ Loaded {len(self.projects)} projects from v4 nested format ({self.city})")
         print(f"✓ Format: {{value, unit, dimension, relationships}}")
 
     def _load_lf_data(self):
@@ -59,6 +76,71 @@ class DataServiceV4:
                     self.lf_data[pillar] = json.load(f)
 
         print(f"✓ Loaded {len(self.lf_data)} LF pillar datasets")
+
+    def _enrich_with_geocoding(self):
+        """
+        Enrich each project with longitude and latitude from Google Maps Geocoding API
+        Adds 'longitude' and 'latitude' as L0 attributes in v4 nested format
+        """
+        try:
+            from app.services.context_service import ContextService
+            context_service = ContextService()
+
+            enriched_count = 0
+            skipped_count = 0
+
+            print(f"\n📍 Geocoding {len(self.projects)} projects...")
+
+            for project in self.projects:
+                # Extract project name and location (region) for geocoding
+                project_name = self.get_value(project.get('projectName', {}))
+                region = self.get_value(project.get('location', {}))  # 'location' field contains region (e.g., "Chakan")
+                city = self.city  # Use the city from instance initialization (e.g., "Pune", "Kolkata")
+
+                if not all([project_name, region]):
+                    print(f"  ⚠️  Skipping {project_name or 'Unknown'}: Missing location data")
+                    skipped_count += 1
+                    continue
+
+                # Build location string for geocoding
+                location_query = f"{project_name}, {region}, {city}"
+
+                # Get coordinates from Google Maps
+                coords = context_service._get_coordinates(location_query)
+
+                if coords:
+                    latitude, longitude = coords
+
+                    # Add as L0 attributes in v4 nested format
+                    project['latitude'] = {
+                        "value": latitude,
+                        "unit": "degrees",
+                        "dimension": "None",  # Dimensionless (angular measurement)
+                        "layer": "L0",
+                        "description": f"Latitude coordinate for {project_name}",
+                        "source": "Google Maps Geocoding API"
+                    }
+
+                    project['longitude'] = {
+                        "value": longitude,
+                        "unit": "degrees",
+                        "dimension": "None",  # Dimensionless (angular measurement)
+                        "layer": "L0",
+                        "description": f"Longitude coordinate for {project_name}",
+                        "source": "Google Maps Geocoding API"
+                    }
+
+                    enriched_count += 1
+                    print(f"  ✓ {project_name}: ({latitude:.6f}, {longitude:.6f})")
+                else:
+                    print(f"  ✗ {project_name}: Geocoding failed")
+                    skipped_count += 1
+
+            print(f"\n✓ Geocoding complete: {enriched_count} enriched, {skipped_count} skipped")
+
+        except Exception as e:
+            print(f"⚠️  Geocoding enrichment failed: {e}")
+            print(f"   Projects will load without lat/lon attributes")
 
     # ==================================================================
     # HELPER METHODS FOR NESTED STRUCTURE ACCESS
@@ -308,6 +390,176 @@ class DataServiceV4:
 
         return market_data
 
+    def find_projects_within_radius(self, center_project: str, radius_km: float) -> List[Dict[str, Any]]:
+        """
+        Find all projects within a given radius of a center project using Haversine formula
 
-# Global data service instance
-data_service = DataServiceV4()
+        Args:
+            center_project: Name of the center project
+            radius_km: Radius in kilometers
+
+        Returns:
+            List of projects within radius with distance information
+        """
+        import math
+
+        # Get center project
+        center_proj = self.get_project_by_name(center_project)
+        if not center_proj:
+            return []
+
+        # Get center coordinates
+        center_lat = self.get_value(center_proj.get('latitude'))
+        center_lon = self.get_value(center_proj.get('longitude'))
+
+        if not center_lat or not center_lon:
+            print(f"⚠️  Center project '{center_project}' has no coordinates")
+            return []
+
+        nearby_projects = []
+
+        # Check all projects
+        for project in self.projects:
+            project_name = self.get_value(project.get('projectName'))
+
+            if project_name == center_project:
+                continue  # Skip center project itself
+
+            # Get project coordinates
+            proj_lat = self.get_value(project.get('latitude'))
+            proj_lon = self.get_value(project.get('longitude'))
+
+            if not proj_lat or not proj_lon:
+                continue  # Skip projects without coordinates
+
+            # Calculate distance using Haversine formula
+            distance_km = self._calculate_distance(center_lat, center_lon, proj_lat, proj_lon)
+
+            if distance_km <= radius_km:
+                nearby_projects.append({
+                    'project': project_name,
+                    'distance_km': round(distance_km, 2),
+                    'latitude': proj_lat,
+                    'longitude': proj_lon
+                })
+
+        # Sort by distance
+        nearby_projects.sort(key=lambda x: x['distance_km'])
+
+        return nearby_projects
+
+    def find_projects_near(self, reference_project_name: str, radius_km: float) -> List[Dict]:
+        """
+        Adapter method for KnowledgeGraphPort interface compatibility.
+
+        Delegates to find_projects_within_radius() but returns data in the format
+        expected by the KG adapter (full project dicts with distance_km field).
+
+        Args:
+            reference_project_name: Name of the reference project
+            radius_km: Maximum distance from reference project (kilometers)
+
+        Returns:
+            List of nearby projects with distance information, sorted by distance (closest first).
+            Each project dict includes all original fields plus 'distance_km' field.
+
+        Raises:
+            ValueError: If reference project not found or has no coordinates
+        """
+        # Get the center project to verify it exists and has coordinates
+        center_proj = self.get_project_by_name(reference_project_name)
+        if not center_proj:
+            raise ValueError(f"Reference project '{reference_project_name}' not found")
+
+        center_lat = self.get_value(center_proj.get('latitude'))
+        center_lon = self.get_value(center_proj.get('longitude'))
+
+        if not center_lat or not center_lon:
+            raise ValueError(f"Reference project '{reference_project_name}' has no geographic coordinates")
+
+        # Get nearby projects (returns simplified format)
+        nearby = self.find_projects_within_radius(reference_project_name, radius_km)
+
+        # Transform to full project dicts with distance_km field
+        result = []
+        for item in nearby:
+            project_name = item['project']
+            distance_km = item['distance_km']
+
+            # Get full project dict
+            project = self.get_project_by_name(project_name)
+            if project:
+                # Add distance_km as an L0 attribute in v4 nested format
+                project_with_distance = project.copy()
+                project_with_distance['distance_km'] = distance_km  # Plain value for compatibility
+                result.append(project_with_distance)
+
+        return result
+
+    @staticmethod
+    def _calculate_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+        """
+        Calculate distance between two coordinates using Haversine formula
+
+        Args:
+            lat1: Latitude of point 1 (degrees)
+            lon1: Longitude of point 1 (degrees)
+            lat2: Latitude of point 2 (degrees)
+            lon2: Longitude of point 2 (degrees)
+
+        Returns:
+            Distance in kilometers
+        """
+        import math
+
+        # Earth radius in kilometers
+        R = 6371.0
+
+        # Convert degrees to radians
+        lat1_rad = math.radians(lat1)
+        lon1_rad = math.radians(lon1)
+        lat2_rad = math.radians(lat2)
+        lon2_rad = math.radians(lon2)
+
+        # Haversine formula
+        dlat = lat2_rad - lat1_rad
+        dlon = lon2_rad - lon1_rad
+
+        a = math.sin(dlat / 2)**2 + math.cos(lat1_rad) * math.cos(lat2_rad) * math.sin(dlon / 2)**2
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+        distance = R * c
+        return distance
+
+
+# Global data service instances (cached by city)
+_data_service_cache: Dict[str, DataServiceV4] = {}
+_default_city = "Pune"
+
+# Default data service instance for backward compatibility
+data_service = DataServiceV4(_default_city)
+
+
+def get_data_service(city: str = None) -> DataServiceV4:
+    """
+    Get or create a DataService instance for a specific city
+
+    Args:
+        city: City name (e.g., "Pune", "Kolkata"). If None, returns default (Pune).
+
+    Returns:
+        DataServiceV4 instance for the specified city (cached)
+    """
+    if city is None:
+        city = _default_city
+
+    # Return cached instance if exists
+    if city in _data_service_cache:
+        return _data_service_cache[city]
+
+    # Create new instance and cache it
+    print(f"📍 Creating new DataService instance for city: {city}")
+    service = DataServiceV4(city)
+    _data_service_cache[city] = service
+
+    return service

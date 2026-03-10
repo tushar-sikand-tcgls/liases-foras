@@ -1,0 +1,5888 @@
+{
+  "metadata": {
+    "dataVersion": "Q4_FY25_Comprehensive",
+    "city": "Kolkata",
+    "region": "New Town",
+    "extractionDate": "2026-02-25T07:06:48.651782",
+    "schemaVersion": "v4_nested_comprehensive",
+    "source": "Kolkata_R&D_Excel_All_57_Files",
+    "totalProjects": 5,
+    "totalFilesIntegrated": 59,
+    "filesIntegrated": [
+      "List_of_Comparables_Projects.xlsx",
+      "Project_and_Benchmark_Location_Price_Trend (0)",
+      "Project_and_Benchmark_Location_Price_Trend (1)",
+      "Project_and_Benchmark_Location_Price_Trend (2)",
+      "Project_and_Benchmark_Location_Price_Trend (3)",
+      "Project_and_Benchmark_Location_Price_Trend (4)",
+      "Project_and_Benchmark_Location_Price_Trend (5)",
+      "Project_and_Benchmark_Location_Price_Trend (6)",
+      "Project_and_Benchmark_Location_Price_Trend (7)",
+      "Project_and_Benchmark_Location_Price_Trend (8)",
+      "Project_and_Benchmark_Location_Price_Trend (9)",
+      "Project_and_Benchmark_Location_Price_Trend (10)",
+      "Project_and_Benchmark_Location_Price_Trend (11)",
+      "Project_and_Benchmark_Location_Price_Trend (12)",
+      "Saleable_Area_Price (0)",
+      "Saleable_Area_Price (1)",
+      "Saleable_Area_Price (2)",
+      "Saleable_Area_Price (3)",
+      "Saleable_Area_Price (4)",
+      "Saleable_Area_Price (5)",
+      "Saleable_Area_Price (6)",
+      "Saleable_Area_Price (7)",
+      "Carpet_Area_Price (0)",
+      "Carpet_Area_Price (1)",
+      "Carpet_Area_Price (2)",
+      "Carpet_Area_Price (3)",
+      "Carpet_Area_Price (4)",
+      "Carpet_Area_Price (5)",
+      "Carpet_Area_Price (6)",
+      "Annual_Sales_Data (0)",
+      "Annual_Sales_Data (1)",
+      "Annual_Sales_Data (2)",
+      "Quarterly_Sales (0)",
+      "Quarterly_Sales (1)",
+      "Quarterly_Sales (2)",
+      "Quarterly_Sales (0)",
+      "Construction_Stage_Sales (0)",
+      "Construction_Stage_Sales (1)",
+      "Months_Inventory_(Months)_Data (2).xlsx",
+      "Unsold_Stock (0)",
+      "Unsold_Stock (1)",
+      "Unsold_Stock (2)",
+      "Sales_Velocity_(%_Monthly_Sales)_Data (2).xlsx",
+      "Flat_Type_Analysis_Data (2).xlsx",
+      "Unit_Ticket_Size_Analysis_Data (1).xlsx",
+      "Distance_Range_Analysis_Data",
+      "Price_Range_Analysis",
+      "Unit_Size_Range_Analysis",
+      "Top_10_Project_Data_(ANNUALSALES) (5).xlsx",
+      "Top_10_Project_Data_(MARKETABLE_SUPPLY) (3).xlsx",
+      "Top_10_Project_Data_(MONTHINVENTORY) (3).xlsx",
+      "Top_10_Project_Data_(SALESVELOCITY) (5).xlsx",
+      "Possession_Wise_Marketable_Supply_&_Sales_Distribution_Data (2).xlsx",
+      "Quarterly_Sales_&_Marketable_Supply_Data (1).xlsx",
+      "ProjectDetailsFlatwise.xlsx",
+      "Project_Marketable_Wings.xlsx",
+      "Catchment_Projects (2).xlsx",
+      "Quarterly_Marker_Summary (3).xlsx",
+      "Yearly_Marker_Summary (2).xlsx"
+    ],
+    "description": "Comprehensive knowledge graph integrating all 57 Excel files"
+  },
+  "page_2_projects": [
+    {
+      "projectId": "127557",
+      "projectName": "Orbit Urban Park",
+      "location": {
+        "value": "New Town",
+        "unit": "text",
+        "dimension": "L",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Project location"
+      },
+      "developerName": {
+        "value": "Orbit Group (Kolkata)",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Developer name"
+      },
+      "launchDate": {
+        "value": "Nov 2023",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Project launch date"
+      },
+      "possessionDate": {
+        "value": "2027-03-02 00:00:00",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Expected possession date"
+      },
+      "totalSupplyUnits": {
+        "value": 103.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Total supply in units"
+      },
+      "totalSupplyArea": {
+        "value": 212458.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Total supply area"
+      },
+      "soldPercentage": {
+        "value": 90.0,
+        "unit": "percent",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Percentage sold"
+      },
+      "quarterlySalesUnits": {
+        "value": 1.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Quarterly sales in units"
+      },
+      "quarterlySalesArea": {
+        "value": 1930.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Quarterly sales area"
+      },
+      "annualSalesUnits": {
+        "value": 19.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Annual sales in units"
+      },
+      "annualSalesArea": {
+        "value": 37040.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Annual sales area"
+      },
+      "flatType": {
+        "value": "31/2BHK, 3BHK, 4BHK, Duplex",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Flat type configuration"
+      },
+      "averageCost": {
+        "value": 241.545,
+        "unit": "lacs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average cost (Range: 131.63-351.46 Lacs)"
+      },
+      "averageSaleableArea": {
+        "value": 3062.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average saleable area (Range: 1550.0-4574.0 sqft)"
+      },
+      "averageCarpetArea": {
+        "value": 1837.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average carpet area (Range: 930.0-2744.0 sqft)"
+      },
+      "saleableRate": {
+        "value": 8100.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Saleable rate per square foot"
+      },
+      "carpetRate": {
+        "value": 13500.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Carpet rate per square foot"
+      }
+    },
+    {
+      "projectId": "137420",
+      "projectName": "Meena Bliss",
+      "location": {
+        "value": "New Town",
+        "unit": "text",
+        "dimension": "L",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Project location"
+      },
+      "developerName": {
+        "value": "Yellowsand Realestate LLP",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Developer name"
+      },
+      "launchDate": {
+        "value": "Nov 2023",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Project launch date"
+      },
+      "possessionDate": {
+        "value": "2026-12-01 00:00:00",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Expected possession date"
+      },
+      "totalSupplyUnits": {
+        "value": 44.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Total supply in units"
+      },
+      "totalSupplyArea": {
+        "value": 37200.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Total supply area"
+      },
+      "soldPercentage": {
+        "value": 82.0,
+        "unit": "percent",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Percentage sold"
+      },
+      "quarterlySalesUnits": {
+        "value": 3.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Quarterly sales in units"
+      },
+      "quarterlySalesArea": {
+        "value": 2800.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Quarterly sales area"
+      },
+      "annualSalesUnits": {
+        "value": 15.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Annual sales in units"
+      },
+      "annualSalesArea": {
+        "value": 13200.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Annual sales area"
+      },
+      "flatType": {
+        "value": "2BHK, 3BHK",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Flat type configuration"
+      },
+      "averageCost": {
+        "value": 39.2,
+        "unit": "lacs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average cost (Range: 29.4-49.0 Lacs)"
+      },
+      "averageSaleableArea": {
+        "value": 800.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average saleable area (Range: 600.0-1000.0 sqft)"
+      },
+      "averageCarpetArea": {
+        "value": 576.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average carpet area (Range: 432.0-720.0 sqft)"
+      },
+      "saleableRate": {
+        "value": 4900.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Saleable rate per square foot"
+      },
+      "carpetRate": {
+        "value": 6806.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Carpet rate per square foot"
+      }
+    },
+    {
+      "projectId": "137595",
+      "projectName": "Sunrise Complex",
+      "location": {
+        "value": "New Town",
+        "unit": "text",
+        "dimension": "L",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Project location"
+      },
+      "developerName": {
+        "value": "M/S Veni Realtors LLP",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Developer name"
+      },
+      "launchDate": {
+        "value": "Nov 2023",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Project launch date"
+      },
+      "possessionDate": {
+        "value": "2028-01-01 00:00:00",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Expected possession date"
+      },
+      "totalSupplyUnits": {
+        "value": 36.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Total supply in units"
+      },
+      "totalSupplyArea": {
+        "value": 47376.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Total supply area"
+      },
+      "soldPercentage": {
+        "value": 86.0,
+        "unit": "percent",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Percentage sold"
+      },
+      "quarterlySalesUnits": {
+        "value": 3.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Quarterly sales in units"
+      },
+      "quarterlySalesArea": {
+        "value": 3380.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Quarterly sales area"
+      },
+      "annualSalesUnits": {
+        "value": 6.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Annual sales in units"
+      },
+      "annualSalesArea": {
+        "value": 7261.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Annual sales area"
+      },
+      "flatType": {
+        "value": "2BHK, 3BHK",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Flat type configuration"
+      },
+      "averageCost": {
+        "value": 68.305,
+        "unit": "lacs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average cost (Range: 54.5-82.11 Lacs)"
+      },
+      "averageSaleableArea": {
+        "value": 1306.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average saleable area (Range: 992.0-1620.0 sqft)"
+      },
+      "averageCarpetArea": {
+        "value": 849.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average carpet area (Range: 645.0-1053.0 sqft)"
+      },
+      "saleableRate": {
+        "value": 5200.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Saleable rate per square foot"
+      },
+      "carpetRate": {
+        "value": 8000.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Carpet rate per square foot"
+      }
+    },
+    {
+      "projectId": "140731",
+      "projectName": "Vinayak Amara",
+      "location": {
+        "value": "New Town",
+        "unit": "text",
+        "dimension": "L",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Project location"
+      },
+      "developerName": {
+        "value": "Vinayak Group",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Developer name"
+      },
+      "launchDate": {
+        "value": "Jul 2024",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Project launch date"
+      },
+      "possessionDate": {
+        "value": "2028-01-01 00:00:00",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Expected possession date"
+      },
+      "totalSupplyUnits": {
+        "value": 186.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Total supply in units"
+      },
+      "totalSupplyArea": {
+        "value": 353326.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Total supply area"
+      },
+      "soldPercentage": {
+        "value": 82.0,
+        "unit": "percent",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Percentage sold"
+      },
+      "quarterlySalesUnits": {
+        "value": 7.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Quarterly sales in units"
+      },
+      "quarterlySalesArea": {
+        "value": 13261.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Quarterly sales area"
+      },
+      "annualSalesUnits": {
+        "value": 117.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Annual sales in units"
+      },
+      "annualSalesArea": {
+        "value": 227128.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Annual sales area"
+      },
+      "flatType": {
+        "value": "3BHK, 4BHK",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Flat type configuration"
+      },
+      "averageCost": {
+        "value": 182.07,
+        "unit": "lacs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average cost (Range: 152.01-212.13 Lacs)"
+      },
+      "averageSaleableArea": {
+        "value": 1959.5,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average saleable area (Range: 1556.0-2363.0 sqft)"
+      },
+      "averageCarpetArea": {
+        "value": 1254.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average carpet area (Range: 996.0-1512.0 sqft)"
+      },
+      "saleableRate": {
+        "value": 9000.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Saleable rate per square foot"
+      },
+      "carpetRate": {
+        "value": 14063.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Carpet rate per square foot"
+      }
+    },
+    {
+      "projectId": "148244",
+      "projectName": "Hive Urban Utopia",
+      "location": {
+        "value": "New Town",
+        "unit": "text",
+        "dimension": "L",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Project location"
+      },
+      "developerName": {
+        "value": "Hive Group",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Developer name"
+      },
+      "launchDate": {
+        "value": "Aug 2025",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Project launch date"
+      },
+      "possessionDate": {
+        "value": "2027-08-02 00:00:00",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Expected possession date"
+      },
+      "totalSupplyUnits": {
+        "value": 16.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Total supply in units"
+      },
+      "totalSupplyArea": {
+        "value": 19360.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Total supply area"
+      },
+      "soldPercentage": {
+        "value": 25.0,
+        "unit": "percent",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Percentage sold"
+      },
+      "quarterlySalesUnits": {
+        "value": 4.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Quarterly sales in units"
+      },
+      "quarterlySalesArea": {
+        "value": 4840.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Quarterly sales area"
+      },
+      "annualSalesUnits": {
+        "value": 4.0,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Annual sales in units"
+      },
+      "annualSalesArea": {
+        "value": 4840.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Annual sales area"
+      },
+      "flatType": {
+        "value": "3BHK",
+        "unit": "text",
+        "dimension": "I",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "I"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Flat type configuration"
+      },
+      "averageCost": {
+        "value": 64.13,
+        "unit": "lacs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average cost (Range: 64.13-64.13 Lacs)"
+      },
+      "averageSaleableArea": {
+        "value": 1209.5,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average saleable area (Range: 1098.0-1321.0 sqft)"
+      },
+      "averageCarpetArea": {
+        "value": 859.0,
+        "unit": "sqft",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Average carpet area (Range: 780.0-938.0 sqft)"
+      },
+      "saleableRate": {
+        "value": 5300.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Saleable rate per square foot"
+      },
+      "carpetRate": {
+        "value": 7465.0,
+        "unit": "rs_per_sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C/L²"
+          }
+        ],
+        "source": "Kolkata_R&D_Comprehensive",
+        "isPure": true,
+        "description": "Carpet rate per square foot"
+      }
+    }
+  ],
+  "market_analysis": {
+    "possessionWiseDistribution": {
+      "value": [
+        {
+          "possessionPeriod": {
+            "value": "",
+            "unit": "text",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Possession time period"
+          },
+          "marketableSupply": {
+            "value": 124.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Sales"
+          },
+          "supplyArea": {
+            "value": 0.0,
+            "unit": "sqft",
+            "dimension": "L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Supply area"
+          }
+        },
+        {
+          "possessionPeriod": {
+            "value": "",
+            "unit": "text",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Possession time period"
+          },
+          "marketableSupply": {
+            "value": 1.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Sales"
+          },
+          "supplyArea": {
+            "value": 0.0,
+            "unit": "sqft",
+            "dimension": "L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Supply area"
+          }
+        },
+        {
+          "possessionPeriod": {
+            "value": "",
+            "unit": "text",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Possession time period"
+          },
+          "marketableSupply": {
+            "value": 71.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          },
+          "sales": {
+            "value": 15.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Sales"
+          },
+          "supplyArea": {
+            "value": 0.0,
+            "unit": "sqft",
+            "dimension": "L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Supply area"
+          }
+        },
+        {
+          "possessionPeriod": {
+            "value": "",
+            "unit": "text",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Possession time period"
+          },
+          "marketableSupply": {
+            "value": 173.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          },
+          "sales": {
+            "value": 67.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Sales"
+          },
+          "supplyArea": {
+            "value": 0.0,
+            "unit": "sqft",
+            "dimension": "L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Supply area"
+          }
+        },
+        {
+          "possessionPeriod": {
+            "value": "",
+            "unit": "text",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Possession time period"
+          },
+          "marketableSupply": {
+            "value": 2427.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          },
+          "sales": {
+            "value": 539.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Sales"
+          },
+          "supplyArea": {
+            "value": 0.0,
+            "unit": "sqft",
+            "dimension": "L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Supply area"
+          }
+        },
+        {
+          "possessionPeriod": {
+            "value": "",
+            "unit": "text",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Possession time period"
+          },
+          "marketableSupply": {
+            "value": 5880.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          },
+          "sales": {
+            "value": 865.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Sales"
+          },
+          "supplyArea": {
+            "value": 0.0,
+            "unit": "sqft",
+            "dimension": "L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Supply area"
+          }
+        },
+        {
+          "possessionPeriod": {
+            "value": "",
+            "unit": "text",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Possession time period"
+          },
+          "marketableSupply": {
+            "value": 6302.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          },
+          "sales": {
+            "value": 882.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Sales"
+          },
+          "supplyArea": {
+            "value": 0.0,
+            "unit": "sqft",
+            "dimension": "L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Supply area"
+          }
+        },
+        {
+          "possessionPeriod": {
+            "value": "",
+            "unit": "text",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Possession time period"
+          },
+          "marketableSupply": {
+            "value": 5208.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          },
+          "sales": {
+            "value": 707.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Sales"
+          },
+          "supplyArea": {
+            "value": 0.0,
+            "unit": "sqft",
+            "dimension": "L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Supply area"
+          }
+        },
+        {
+          "possessionPeriod": {
+            "value": "",
+            "unit": "text",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Possession time period"
+          },
+          "marketableSupply": {
+            "value": 3797.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          },
+          "sales": {
+            "value": 366.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Sales"
+          },
+          "supplyArea": {
+            "value": 0.0,
+            "unit": "sqft",
+            "dimension": "L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Supply area"
+          }
+        },
+        {
+          "possessionPeriod": {
+            "value": "",
+            "unit": "text",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Possession time period"
+          },
+          "marketableSupply": {
+            "value": 1396.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          },
+          "sales": {
+            "value": 222.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Sales"
+          },
+          "supplyArea": {
+            "value": 0.0,
+            "unit": "sqft",
+            "dimension": "L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Supply area"
+          }
+        },
+        {
+          "possessionPeriod": {
+            "value": "",
+            "unit": "text",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Possession time period"
+          },
+          "marketableSupply": {
+            "value": 206.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          },
+          "sales": {
+            "value": 40.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Sales"
+          },
+          "supplyArea": {
+            "value": 0.0,
+            "unit": "sqft",
+            "dimension": "L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Supply area"
+          }
+        }
+      ],
+      "unit": "list",
+      "dimension": "T",
+      "description": "Market supply distribution by possession period",
+      "source": "Possession_Wise_Marketable_Supply",
+      "isPure": false,
+      "relationships": [
+        {
+          "type": "DISTRIBUTED_BY",
+          "target": "possessionPeriod"
+        }
+      ]
+    },
+    "quarterlySupplySummary": {
+      "value": [
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 20573.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 20079.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 22158.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 21559.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 24895.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 25560.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 33811.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 34063.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 38407.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 38719.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 39486.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 37711.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 40690.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 41401.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 44369.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 50906.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 50654.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 48097.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 45831.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 44152.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 43287.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 42251.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 39449.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 34904.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 32910.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 31279.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 28493.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 28458.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 27400.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 25847.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 26275.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 26526.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 26859.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 29036.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 32137.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 32323.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 32620.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 32508.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 32392.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 31945.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 31607.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 28910.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 26539.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 27035.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "sales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarterly sales"
+          },
+          "marketableSupply": {
+            "value": 25585.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Marketable supply"
+          }
+        }
+      ],
+      "unit": "list",
+      "dimension": "U",
+      "description": "Quarterly supply and sales summary",
+      "source": "Quarterly_Sales_&_Marketable_Supply_Data",
+      "isPure": false,
+      "relationships": [
+        {
+          "type": "HAS_MANY",
+          "target": "T"
+        }
+      ]
+    },
+    "quarterlyMarketSummary": {
+      "value": [
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "quarter": {
+            "value": "",
+            "unit": "quarter",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Quarter"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Total market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        }
+      ],
+      "unit": "list",
+      "dimension": "U",
+      "description": "Quarterly market overview",
+      "source": "Quarterly_Marker_Summary",
+      "isPure": false,
+      "relationships": [
+        {
+          "type": "SUMMARIZES",
+          "target": "T"
+        }
+      ]
+    },
+    "yearlyMarketSummary": {
+      "value": [
+        {
+          "year": {
+            "value": "",
+            "unit": "year",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Year"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Annual market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "year": {
+            "value": "",
+            "unit": "year",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Year"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Annual market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "year": {
+            "value": "",
+            "unit": "year",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Year"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Annual market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "year": {
+            "value": "",
+            "unit": "year",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Year"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Annual market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "year": {
+            "value": "",
+            "unit": "year",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Year"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Annual market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "year": {
+            "value": "",
+            "unit": "year",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Year"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Annual market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "year": {
+            "value": "",
+            "unit": "year",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Year"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Annual market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "year": {
+            "value": "",
+            "unit": "year",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Year"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Annual market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "year": {
+            "value": "",
+            "unit": "year",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Year"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Annual market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "year": {
+            "value": "",
+            "unit": "year",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Year"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Annual market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        },
+        {
+          "year": {
+            "value": "",
+            "unit": "year",
+            "dimension": "T",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "T"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Year"
+          },
+          "totalSales": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Annual market sales"
+          },
+          "averagePrice": {
+            "value": 0.0,
+            "unit": "rs_per_sqft",
+            "dimension": "C/L²",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "C/L²"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "Average market price"
+          },
+          "newLaunches": {
+            "value": 0.0,
+            "unit": "count",
+            "dimension": "U",
+            "relationships": [
+              {
+                "type": "IS",
+                "target": "U"
+              }
+            ],
+            "source": "Kolkata_R&D_Comprehensive",
+            "isPure": true,
+            "description": "New project launches"
+          }
+        }
+      ],
+      "unit": "list",
+      "dimension": "U",
+      "description": "Yearly market overview",
+      "source": "Yearly_Marker_Summary",
+      "isPure": false,
+      "relationships": [
+        {
+          "type": "SUMMARIZES",
+          "target": "T"
+        }
+      ]
+    },
+    "flatTypeMarketSummary": {
+      "value": {
+        "1RK": {
+          "totalSales": 2.0,
+          "totalUnsold": 1.0,
+          "count": 1
+        },
+        "1BHK": {
+          "totalSales": 517.0,
+          "totalUnsold": 559.0,
+          "count": 1
+        },
+        "1 1/2 BHK": {
+          "totalSales": 38.0,
+          "totalUnsold": 41.0,
+          "count": 1
+        },
+        "2BHK": {
+          "totalSales": 4532.0,
+          "totalUnsold": 6094.0,
+          "count": 1
+        },
+        "2 1/2 BHK": {
+          "totalSales": 212.0,
+          "totalUnsold": 335.0,
+          "count": 1
+        },
+        "3BHK": {
+          "totalSales": 7889.0,
+          "totalUnsold": 10723.0,
+          "count": 1
+        },
+        "3 1/2 BHK": {
+          "totalSales": 71.0,
+          "totalUnsold": 131.0,
+          "count": 1
+        },
+        "4BHK": {
+          "totalSales": 1213.0,
+          "totalUnsold": 1490.0,
+          "count": 1
+        },
+        "4 1/2 BHK": {
+          "totalSales": 55.0,
+          "totalUnsold": 94.0,
+          "count": 1
+        },
+        "5BHK": {
+          "totalSales": 55.0,
+          "totalUnsold": 79.0,
+          "count": 1
+        },
+        "Villa 3BHK": {
+          "totalSales": 31.0,
+          "totalUnsold": 20.0,
+          "count": 1
+        },
+        "Villa 4BHK": {
+          "totalSales": 19.0,
+          "totalUnsold": 1.0,
+          "count": 1
+        },
+        "Villas": {
+          "totalSales": 159.0,
+          "totalUnsold": 490.0,
+          "count": 1
+        },
+        "Duplex 3BHK": {
+          "totalSales": 122.0,
+          "totalUnsold": 208.0,
+          "count": 1
+        },
+        "Duplex 4BHK": {
+          "totalSales": 11.0,
+          "totalUnsold": 75.0,
+          "count": 1
+        },
+        "Duplex 5BHK": {
+          "totalSales": 11.0,
+          "totalUnsold": 25.0,
+          "count": 1
+        },
+        "Duplex 6 BHK": {
+          "totalSales": 0.0,
+          "totalUnsold": 1.0,
+          "count": 1
+        },
+        "Duplex": {
+          "totalSales": 10.0,
+          "totalUnsold": 133.0,
+          "count": 1
+        },
+        "Bungalow A": {
+          "totalSales": 17.0,
+          "totalUnsold": 0.0,
+          "count": 1
+        },
+        "Bungalow": {
+          "totalSales": 390.0,
+          "totalUnsold": 864.0,
+          "count": 1
+        },
+        "Independent Bungalow": {
+          "totalSales": 0.0,
+          "totalUnsold": 18.0,
+          "count": 1
+        },
+        "Row House3BHK": {
+          "totalSales": 28.0,
+          "totalUnsold": 137.0,
+          "count": 1
+        },
+        "Row House4BHK": {
+          "totalSales": 4.0,
+          "totalUnsold": 9.0,
+          "count": 1
+        },
+        "Row House": {
+          "totalSales": 0.0,
+          "totalUnsold": 241.0,
+          "count": 1
+        },
+        "Penthouse 3BHK": {
+          "totalSales": 7.0,
+          "totalUnsold": 71.0,
+          "count": 1
+        },
+        "Penthouse": {
+          "totalSales": 2.0,
+          "totalUnsold": 13.0,
+          "count": 1
+        },
+        "Services Apt": {
+          "totalSales": 0.0,
+          "totalUnsold": 1.0,
+          "count": 1
+        },
+        "Studio Apt": {
+          "totalSales": 7.0,
+          "totalUnsold": 27.0,
+          "count": 1
+        },
+        "Triplex": {
+          "totalSales": 0.0,
+          "totalUnsold": 0.0,
+          "count": 1
+        },
+        "8BHK": {
+          "totalSales": 0.0,
+          "totalUnsold": 0.0,
+          "count": 1
+        },
+        "Penthouse 5 BHK": {
+          "totalSales": 0.0,
+          "totalUnsold": 1.0,
+          "count": 1
+        }
+      },
+      "unit": "dict",
+      "dimension": "I",
+      "description": "Market-wide flat type distribution",
+      "source": "Flat_Type_Analysis_Data",
+      "isPure": false,
+      "relationships": [
+        {
+          "type": "AGGREGATES",
+          "target": "flatType"
+        }
+      ]
+    },
+    "topPerformers": {
+      "value": {
+        "top_annual_sales": [
+          {
+            "rank": 1,
+            "projectName": "New Kolkata (Sangam)",
+            "projectId": "113845",
+            "value": 0.0
+          },
+          {
+            "rank": 2,
+            "projectName": "Grand City",
+            "projectId": "34211",
+            "value": 0.0
+          },
+          {
+            "rank": 3,
+            "projectName": "Godrej Seven",
+            "projectId": "118934",
+            "value": 0.0
+          },
+          {
+            "rank": 4,
+            "projectName": "F Residences Merlin",
+            "projectId": "141975",
+            "value": 0.0
+          },
+          {
+            "rank": 5,
+            "projectName": "Solaris Shalimar",
+            "projectId": "126302",
+            "value": 0.0
+          },
+          {
+            "rank": 6,
+            "projectName": "Merlin Avana",
+            "projectId": "129725",
+            "value": 0.0
+          },
+          {
+            "rank": 7,
+            "projectName": "DTC Capital City",
+            "projectId": "129785",
+            "value": 0.0
+          },
+          {
+            "rank": 8,
+            "projectName": "Godrej Blue",
+            "projectId": "142129",
+            "value": 0.0
+          },
+          {
+            "rank": 9,
+            "projectName": "Srijan Optima",
+            "projectId": "142063",
+            "value": 0.0
+          },
+          {
+            "rank": 10,
+            "projectName": "Sunrise Aura",
+            "projectId": "128503",
+            "value": 0.0
+          }
+        ],
+        "top_marketable_supply": [
+          {
+            "rank": 1,
+            "projectName": "Grand City",
+            "projectId": "34211",
+            "value": 0.0
+          },
+          {
+            "rank": 2,
+            "projectName": "New Kolkata (Sangam)",
+            "projectId": "113845",
+            "value": 0.0
+          },
+          {
+            "rank": 3,
+            "projectName": "Urban Lakes",
+            "projectId": "125170",
+            "value": 0.0
+          },
+          {
+            "rank": 4,
+            "projectName": "DTC Capital City",
+            "projectId": "129785",
+            "value": 0.0
+          },
+          {
+            "rank": 5,
+            "projectName": "The Royal Ganges",
+            "projectId": "133045",
+            "value": 0.0
+          },
+          {
+            "rank": 6,
+            "projectName": "Utpalaa - The Condoville",
+            "projectId": "144001",
+            "value": 0.0
+          },
+          {
+            "rank": 7,
+            "projectName": "Crown",
+            "projectId": "145843",
+            "value": 0.0
+          },
+          {
+            "rank": 8,
+            "projectName": "Godrej Seven",
+            "projectId": "118934",
+            "value": 0.0
+          },
+          {
+            "rank": 9,
+            "projectName": "Merlin Avana",
+            "projectId": "129725",
+            "value": 0.0
+          },
+          {
+            "rank": 10,
+            "projectName": "Merlin Serenia",
+            "projectId": "131308",
+            "value": 0.0
+          }
+        ],
+        "top_month_inventory": [
+          {
+            "rank": 1,
+            "projectName": "Apni Dharti - Amar Bhuwan",
+            "projectId": "21985",
+            "value": 0.0
+          },
+          {
+            "rank": 2,
+            "projectName": "Green Ville",
+            "projectId": "22124",
+            "value": 0.0
+          },
+          {
+            "rank": 3,
+            "projectName": "Metro City",
+            "projectId": "23362",
+            "value": 0.0
+          },
+          {
+            "rank": 4,
+            "projectName": "Heaven Himangini",
+            "projectId": "20049",
+            "value": 0.0
+          },
+          {
+            "rank": 5,
+            "projectName": "Lords City",
+            "projectId": "23474",
+            "value": 0.0
+          },
+          {
+            "rank": 6,
+            "projectName": "Harbour Greens",
+            "projectId": "24155",
+            "value": 0.0
+          },
+          {
+            "rank": 7,
+            "projectName": "Amaya Residences",
+            "projectId": "31911",
+            "value": 0.0
+          },
+          {
+            "rank": 8,
+            "projectName": "Horizon",
+            "projectId": "34648",
+            "value": 0.0
+          },
+          {
+            "rank": 9,
+            "projectName": "King Town",
+            "projectId": "98911",
+            "value": 0.0
+          },
+          {
+            "rank": 10,
+            "projectName": "Domjur Pride",
+            "projectId": "113834",
+            "value": 0.0
+          }
+        ],
+        "top_sales_velocity": [
+          {
+            "rank": 1,
+            "projectName": "Tepantar",
+            "projectId": "139492",
+            "value": 0.0
+          },
+          {
+            "rank": 2,
+            "projectName": "VIP Plaza",
+            "projectId": "140484",
+            "value": 0.0
+          },
+          {
+            "rank": 3,
+            "projectName": "Sisir Kunja",
+            "projectId": "140492",
+            "value": 0.0
+          },
+          {
+            "rank": 4,
+            "projectName": "Nirmala Breeze",
+            "projectId": "110978",
+            "value": 0.0
+          },
+          {
+            "rank": 5,
+            "projectName": "Printemps Tower",
+            "projectId": "141700",
+            "value": 0.0
+          },
+          {
+            "rank": 6,
+            "projectName": "BKJ Matrika",
+            "projectId": "139235",
+            "value": 0.0
+          },
+          {
+            "rank": 7,
+            "projectName": "TWINKLING STAR",
+            "projectId": "141323",
+            "value": 0.0
+          },
+          {
+            "rank": 8,
+            "projectName": "Andul Forum",
+            "projectId": "139730",
+            "value": 0.0
+          },
+          {
+            "rank": 9,
+            "projectName": "Ganga",
+            "projectId": "140962",
+            "value": 0.0
+          },
+          {
+            "rank": 10,
+            "projectName": "Eco Star",
+            "projectId": "144018",
+            "value": 0.0
+          }
+        ]
+      },
+      "unit": "dict",
+      "dimension": "I",
+      "description": "Top 10 performers across various metrics",
+      "source": "Top_10_Project_Data",
+      "isPure": false,
+      "relationships": [
+        {
+          "type": "RANKS",
+          "target": "project"
+        }
+      ]
+    }
+  },
+  "enrichment_metadata": {
+    "transformationType": "comprehensive_multi_source_enriched",
+    "transformedAt": "2026-02-25T07:06:48.651801",
+    "dimensions": {
+      "U": "Units (count)",
+      "L²": "Area (square feet)",
+      "C": "Currency (Rs Lacs)",
+      "C/L²": "Price per area (Rs/sqft)",
+      "T": "Time (date/months/quarters/years)",
+      "I": "Information (text/categorical)",
+      "L": "Location (geographic)",
+      "U/T": "Velocity (units per time period)"
+    },
+    "enrichmentCategories": {
+      "baseData": "List_of_Comparables_Projects.xlsx (1 file)",
+      "priceTrends": "Price trend time series (28 files)",
+      "salesData": "Annual, quarterly, and construction-stage sales (7 files)",
+      "inventoryStock": "Months inventory, unsold stock, velocity (4 files)",
+      "analysis": "Flat type, ticket size, distance, price range (4 files)",
+      "performanceMetrics": "Top 10 rankings (4 files)",
+      "supplyData": "Possession-wise and quarterly supply (2 files)",
+      "projectDetails": "Flatwise details, wings, catchment (3 files)",
+      "marketSummary": "Quarterly and yearly summaries (2 files)"
+    },
+    "enrichmentFeatures": [
+      "Price trend time series with benchmark comparisons",
+      "Annual and quarterly sales time series",
+      "Construction stage sales breakdown",
+      "Inventory metrics and sales velocity",
+      "Unit mix and flat type distribution",
+      "Price range and size range distribution",
+      "Performance rankings (top 10 lists)",
+      "Wing-wise and flatwise project details",
+      "Possession-wise supply distribution",
+      "Market-level quarterly and annual summaries",
+      "Top performer rankings across metrics",
+      "Comprehensive market analysis"
+    ]
+  }
+}

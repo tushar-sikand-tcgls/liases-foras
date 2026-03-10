@@ -1,0 +1,476 @@
+{
+  "metadata": {
+    "source": "Liases Foras Market Intelligence",
+    "pillar": "Pillar 1: Market Intelligence",
+    "data_type": "Quarterly Sales and Marketable Supply",
+    "layer": "Layer 0 - Raw Dimensions (U, L², T)",
+    "location": {
+      "region": "Chakan",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "country": "India"
+    },
+    "dimensions": {
+      "U": "Units (Sales and Supply)",
+      "L2": "Area in million square feet",
+      "T": "Time (Quarterly)"
+    },
+    "date_range": {
+      "start": "Q2 FY 2014-15",
+      "end": "Q2 FY 2025-26"
+    },
+    "last_updated": "2025-01-28"
+  },
+  "data": [
+    {
+      "quarter": "Q2 14-15",
+      "quarter_id": "Q2_FY14_15",
+      "year": 2014,
+      "quarter_num": 2,
+      "sales_units": 397,
+      "sales_area_mn_sqft": 2.84767,
+      "supply_units": 2528,
+      "supply_area_mn_sqft": 17.61913
+    },
+    {
+      "quarter": "Q3 14-15",
+      "quarter_id": "Q3_FY14_15",
+      "year": 2014,
+      "quarter_num": 3,
+      "sales_units": 540,
+      "sales_area_mn_sqft": 3.59860,
+      "supply_units": 2454,
+      "supply_area_mn_sqft": 17.18556
+    },
+    {
+      "quarter": "Q4 14-15",
+      "quarter_id": "Q4_FY14_15",
+      "year": 2014,
+      "quarter_num": 4,
+      "sales_units": 360,
+      "sales_area_mn_sqft": 2.52782,
+      "supply_units": 2118,
+      "supply_area_mn_sqft": 17.61396
+    },
+    {
+      "quarter": "Q1 15-16",
+      "quarter_id": "Q1_FY15_16",
+      "year": 2015,
+      "quarter_num": 1,
+      "sales_units": 101,
+      "sales_area_mn_sqft": 0.74324,
+      "supply_units": 2102,
+      "supply_area_mn_sqft": 14.51298
+    },
+    {
+      "quarter": "Q2 15-16",
+      "quarter_id": "Q2_FY15_16",
+      "year": 2015,
+      "quarter_num": 2,
+      "sales_units": 283,
+      "sales_area_mn_sqft": 1.91823,
+      "supply_units": 2463,
+      "supply_area_mn_sqft": 16.82575
+    },
+    {
+      "quarter": "Q3 15-16",
+      "quarter_id": "Q3_FY15_16",
+      "year": 2015,
+      "quarter_num": 3,
+      "sales_units": 70,
+      "sales_area_mn_sqft": 0.50403,
+      "supply_units": 2388,
+      "supply_area_mn_sqft": 16.67005
+    },
+    {
+      "quarter": "Q4 15-16",
+      "quarter_id": "Q4_FY15_16",
+      "year": 2015,
+      "quarter_num": 4,
+      "sales_units": 210,
+      "sales_area_mn_sqft": 1.34091,
+      "supply_units": 2386,
+      "supply_area_mn_sqft": 16.55004
+    },
+    {
+      "quarter": "Q1 16-17",
+      "quarter_id": "Q1_FY16_17",
+      "year": 2016,
+      "quarter_num": 1,
+      "sales_units": 286,
+      "sales_area_mn_sqft": 2.02768,
+      "supply_units": 2735,
+      "supply_area_mn_sqft": 18.14652
+    },
+    {
+      "quarter": "Q2 16-17",
+      "quarter_id": "Q2_FY16_17",
+      "year": 2016,
+      "quarter_num": 2,
+      "sales_units": 214,
+      "sales_area_mn_sqft": 1.44320,
+      "supply_units": 2533,
+      "supply_area_mn_sqft": 16.75466
+    },
+    {
+      "quarter": "Q3 16-17",
+      "quarter_id": "Q3_FY16_17",
+      "year": 2016,
+      "quarter_num": 3,
+      "sales_units": 191,
+      "sales_area_mn_sqft": 1.27893,
+      "supply_units": 3809,
+      "supply_area_mn_sqft": 23.10483
+    },
+    {
+      "quarter": "Q4 16-17",
+      "quarter_id": "Q4_FY16_17",
+      "year": 2016,
+      "quarter_num": 4,
+      "sales_units": 205,
+      "sales_area_mn_sqft": 1.36599,
+      "supply_units": 3526,
+      "supply_area_mn_sqft": 21.29297
+    },
+    {
+      "quarter": "Q1 17-18",
+      "quarter_id": "Q1_FY17_18",
+      "year": 2017,
+      "quarter_num": 1,
+      "sales_units": 320,
+      "sales_area_mn_sqft": 1.92895,
+      "supply_units": 3596,
+      "supply_area_mn_sqft": 21.72235
+    },
+    {
+      "quarter": "Q2 17-18",
+      "quarter_id": "Q2_FY17_18",
+      "year": 2017,
+      "quarter_num": 2,
+      "sales_units": 206,
+      "sales_area_mn_sqft": 1.37275,
+      "supply_units": 3214,
+      "supply_area_mn_sqft": 19.27696
+    },
+    {
+      "quarter": "Q3 17-18",
+      "quarter_id": "Q3_FY17_18",
+      "year": 2017,
+      "quarter_num": 3,
+      "sales_units": 332,
+      "sales_area_mn_sqft": 2.21283,
+      "supply_units": 2505,
+      "supply_area_mn_sqft": 16.44096
+    },
+    {
+      "quarter": "Q4 17-18",
+      "quarter_id": "Q4_FY17_18",
+      "year": 2017,
+      "quarter_num": 4,
+      "sales_units": 160,
+      "sales_area_mn_sqft": 1.09148,
+      "supply_units": 2478,
+      "supply_area_mn_sqft": 16.29319
+    },
+    {
+      "quarter": "Q1 18-19",
+      "quarter_id": "Q1_FY18_19",
+      "year": 2018,
+      "quarter_num": 1,
+      "sales_units": 257,
+      "sales_area_mn_sqft": 1.67894,
+      "supply_units": 2830,
+      "supply_area_mn_sqft": 17.55907
+    },
+    {
+      "quarter": "Q2 18-19",
+      "quarter_id": "Q2_FY18_19",
+      "year": 2018,
+      "quarter_num": 2,
+      "sales_units": 115,
+      "sales_area_mn_sqft": 0.68726,
+      "supply_units": 2654,
+      "supply_area_mn_sqft": 16.93739
+    },
+    {
+      "quarter": "Q3 18-19",
+      "quarter_id": "Q3_FY18_19",
+      "year": 2018,
+      "quarter_num": 3,
+      "sales_units": 140,
+      "sales_area_mn_sqft": 0.77789,
+      "supply_units": 2352,
+      "supply_area_mn_sqft": 15.53417
+    },
+    {
+      "quarter": "Q4 18-19",
+      "quarter_id": "Q4_FY18_19",
+      "year": 2018,
+      "quarter_num": 4,
+      "sales_units": 106,
+      "sales_area_mn_sqft": 0.80886,
+      "supply_units": 2517,
+      "supply_area_mn_sqft": 16.18810
+    },
+    {
+      "quarter": "Q1 19-20",
+      "quarter_id": "Q1_FY19_20",
+      "year": 2019,
+      "quarter_num": 1,
+      "sales_units": 255,
+      "sales_area_mn_sqft": 1.76973,
+      "supply_units": 3208,
+      "supply_area_mn_sqft": 21.08893
+    },
+    {
+      "quarter": "Q2 19-20",
+      "quarter_id": "Q2_FY19_20",
+      "year": 2019,
+      "quarter_num": 2,
+      "sales_units": 201,
+      "sales_area_mn_sqft": 1.33817,
+      "supply_units": 2212,
+      "supply_area_mn_sqft": 14.37555
+    },
+    {
+      "quarter": "Q3 19-20",
+      "quarter_id": "Q3_FY19_20",
+      "year": 2019,
+      "quarter_num": 3,
+      "sales_units": 210,
+      "sales_area_mn_sqft": 1.39653,
+      "supply_units": 2331,
+      "supply_area_mn_sqft": 15.06543
+    },
+    {
+      "quarter": "Q4 19-20",
+      "quarter_id": "Q4_FY19_20",
+      "year": 2019,
+      "quarter_num": 4,
+      "sales_units": 146,
+      "sales_area_mn_sqft": 0.87328,
+      "supply_units": 2228,
+      "supply_area_mn_sqft": 14.37818
+    },
+    {
+      "quarter": "Q1 20-21",
+      "quarter_id": "Q1_FY20_21",
+      "year": 2020,
+      "quarter_num": 1,
+      "sales_units": 77,
+      "sales_area_mn_sqft": 0.48311,
+      "supply_units": 2082,
+      "supply_area_mn_sqft": 13.51029
+    },
+    {
+      "quarter": "Q2 20-21",
+      "quarter_id": "Q2_FY20_21",
+      "year": 2020,
+      "quarter_num": 2,
+      "sales_units": 106,
+      "sales_area_mn_sqft": 0.67218,
+      "supply_units": 2324,
+      "supply_area_mn_sqft": 14.74797
+    },
+    {
+      "quarter": "Q3 20-21",
+      "quarter_id": "Q3_FY20_21",
+      "year": 2020,
+      "quarter_num": 3,
+      "sales_units": 156,
+      "sales_area_mn_sqft": 1.02485,
+      "supply_units": 1868,
+      "supply_area_mn_sqft": 11.88986
+    },
+    {
+      "quarter": "Q4 20-21",
+      "quarter_id": "Q4_FY20_21",
+      "year": 2020,
+      "quarter_num": 4,
+      "sales_units": 202,
+      "sales_area_mn_sqft": 1.27183,
+      "supply_units": 1665,
+      "supply_area_mn_sqft": 10.62679
+    },
+    {
+      "quarter": "Q1 21-22",
+      "quarter_id": "Q1_FY21_22",
+      "year": 2021,
+      "quarter_num": 1,
+      "sales_units": 177,
+      "sales_area_mn_sqft": 1.16646,
+      "supply_units": 1913,
+      "supply_area_mn_sqft": 11.80285
+    },
+    {
+      "quarter": "Q2 21-22",
+      "quarter_id": "Q2_FY21_22",
+      "year": 2021,
+      "quarter_num": 2,
+      "sales_units": 175,
+      "sales_area_mn_sqft": 1.27174,
+      "supply_units": 1504,
+      "supply_area_mn_sqft": 9.11079
+    },
+    {
+      "quarter": "Q3 21-22",
+      "quarter_id": "Q3_FY21_22",
+      "year": 2021,
+      "quarter_num": 3,
+      "sales_units": 119,
+      "sales_area_mn_sqft": 0.75067,
+      "supply_units": 1380,
+      "supply_area_mn_sqft": 8.46839
+    },
+    {
+      "quarter": "Q4 21-22",
+      "quarter_id": "Q4_FY21_22",
+      "year": 2021,
+      "quarter_num": 4,
+      "sales_units": 152,
+      "sales_area_mn_sqft": 0.95301,
+      "supply_units": 1753,
+      "supply_area_mn_sqft": 9.70504
+    },
+    {
+      "quarter": "Q1 22-23",
+      "quarter_id": "Q1_FY22_23",
+      "year": 2022,
+      "quarter_num": 1,
+      "sales_units": 141,
+      "sales_area_mn_sqft": 0.91102,
+      "supply_units": 1615,
+      "supply_area_mn_sqft": 9.03674
+    },
+    {
+      "quarter": "Q2 22-23",
+      "quarter_id": "Q2_FY22_23",
+      "year": 2022,
+      "quarter_num": 2,
+      "sales_units": 83,
+      "sales_area_mn_sqft": 0.51684,
+      "supply_units": 1386,
+      "supply_area_mn_sqft": 7.26173
+    },
+    {
+      "quarter": "Q3 22-23",
+      "quarter_id": "Q3_FY22_23",
+      "year": 2022,
+      "quarter_num": 3,
+      "sales_units": 156,
+      "sales_area_mn_sqft": 0.94860,
+      "supply_units": 1287,
+      "supply_area_mn_sqft": 6.64675
+    },
+    {
+      "quarter": "Q4 22-23",
+      "quarter_id": "Q4_FY22_23",
+      "year": 2022,
+      "quarter_num": 4,
+      "sales_units": 62,
+      "sales_area_mn_sqft": 0.36104,
+      "supply_units": 1291,
+      "supply_area_mn_sqft": 6.89464
+    },
+    {
+      "quarter": "Q1 23-24",
+      "quarter_id": "Q1_FY23_24",
+      "year": 2023,
+      "quarter_num": 1,
+      "sales_units": 116,
+      "sales_area_mn_sqft": 0.68614,
+      "supply_units": 1327,
+      "supply_area_mn_sqft": 7.25077
+    },
+    {
+      "quarter": "Q2 23-24",
+      "quarter_id": "Q2_FY23_24",
+      "year": 2023,
+      "quarter_num": 2,
+      "sales_units": 64,
+      "sales_area_mn_sqft": 0.35343,
+      "supply_units": 1422,
+      "supply_area_mn_sqft": 7.59346
+    },
+    {
+      "quarter": "Q3 23-24",
+      "quarter_id": "Q3_FY23_24",
+      "year": 2023,
+      "quarter_num": 3,
+      "sales_units": 122,
+      "sales_area_mn_sqft": 0.62612,
+      "supply_units": 1596,
+      "supply_area_mn_sqft": 8.45636
+    },
+    {
+      "quarter": "Q4 23-24",
+      "quarter_id": "Q4_FY23_24",
+      "year": 2023,
+      "quarter_num": 4,
+      "sales_units": 235,
+      "sales_area_mn_sqft": 1.33568,
+      "supply_units": 1678,
+      "supply_area_mn_sqft": 9.58461
+    },
+    {
+      "quarter": "Q1 24-25",
+      "quarter_id": "Q1_FY24_25",
+      "year": 2024,
+      "quarter_num": 1,
+      "sales_units": 227,
+      "sales_area_mn_sqft": 1.28435,
+      "supply_units": 1741,
+      "supply_area_mn_sqft": 9.62703
+    },
+    {
+      "quarter": "Q2 24-25",
+      "quarter_id": "Q2_FY24_25",
+      "year": 2024,
+      "quarter_num": 2,
+      "sales_units": 163,
+      "sales_area_mn_sqft": 0.85951,
+      "supply_units": 1731,
+      "supply_area_mn_sqft": 9.78799
+    },
+    {
+      "quarter": "Q3 24-25",
+      "quarter_id": "Q3_FY24_25",
+      "year": 2024,
+      "quarter_num": 3,
+      "sales_units": 246,
+      "sales_area_mn_sqft": 1.18828,
+      "supply_units": 1699,
+      "supply_area_mn_sqft": 9.80508
+    },
+    {
+      "quarter": "Q4 24-25",
+      "quarter_id": "Q4_FY24_25",
+      "year": 2024,
+      "quarter_num": 4,
+      "sales_units": 171,
+      "sales_area_mn_sqft": 0.94478,
+      "supply_units": 1723,
+      "supply_area_mn_sqft": 10.32663
+    },
+    {
+      "quarter": "Q1 25-26",
+      "quarter_id": "Q1_FY25_26",
+      "year": 2025,
+      "quarter_num": 1,
+      "sales_units": 317,
+      "sales_area_mn_sqft": 1.79088,
+      "supply_units": 2078,
+      "supply_area_mn_sqft": 12.45385
+    },
+    {
+      "quarter": "Q2 25-26",
+      "quarter_id": "Q2_FY25_26",
+      "year": 2025,
+      "quarter_num": 2,
+      "sales_units": 97,
+      "sales_area_mn_sqft": 0.62198,
+      "supply_units": 1847,
+      "supply_area_mn_sqft": 11.39109
+    }
+  ]
+}

@@ -203,6 +203,9 @@ class PromptRouter:
             }
         }
 
+        # Load enriched Layer 1 patterns dynamically
+        self._load_enriched_patterns()
+
         # Financial keywords for context
         self.financial_keywords = set([
             "investment", "cash flow", "revenue", "cost", "profit",
@@ -220,6 +223,38 @@ class PromptRouter:
             "pune", "mumbai", "bangalore", "delhi", "chakan", "hinjewadi",
             "kharadi", "wakad", "baner", "city", "location", "region"
         ])
+
+    def _load_enriched_patterns(self):
+        """Load enriched Layer 1 patterns from enriched_layers_service"""
+        try:
+            from app.services.enriched_layers_service import get_enriched_layers_service
+
+            enriched_service = get_enriched_layers_service()
+            enriched_patterns = enriched_service.generate_capability_patterns()
+
+            # Merge enriched patterns with existing patterns
+            for capability_name, pattern_config in enriched_patterns.items():
+                if capability_name not in self.capability_patterns:
+                    # Convert layer number to LayerType enum
+                    layer_num = pattern_config.get('layer', 1)
+                    if layer_num == 0:
+                        pattern_config['layer'] = LayerType.LAYER_0
+                    elif layer_num == 1:
+                        pattern_config['layer'] = LayerType.LAYER_1
+                    elif layer_num == 2:
+                        pattern_config['layer'] = LayerType.LAYER_2
+                    elif layer_num == 3:
+                        pattern_config['layer'] = LayerType.LAYER_3
+                    else:
+                        pattern_config['layer'] = LayerType.LAYER_1  # Default
+
+                    self.capability_patterns[capability_name] = pattern_config
+
+            print(f"✓ Loaded {len(enriched_patterns)} enriched Layer 1 patterns")
+
+        except Exception as e:
+            print(f"Warning: Could not load enriched patterns: {e}")
+            # Continue with existing patterns
 
     def analyze_prompt(self, prompt: str) -> RouteDecision:
         """
@@ -305,6 +340,27 @@ class PromptRouter:
             pattern_score = pattern_matches / len(patterns) if patterns else 0
             score += pattern_score * 0.6
             max_score += 0.6
+
+        # Time-query boost: If prompt asks "how long" or "months until/to" and capability is time-related
+        # Boost the score to prioritize time-based metrics
+        time_query_patterns = [
+            r'\bhow\s+long\b',
+            r'\bmonths\s+until\b',
+            r'\bmonths\s+to\b',
+            r'\bmonths.*possession\b',
+            r'\bhow\s+many\s+months\b'
+        ]
+
+        if any(re.search(pattern, prompt) for pattern in time_query_patterns):
+            # Check if this capability is time-related
+            dimension = config.get("dimension", "")
+            enriched_attr = config.get("enriched_attribute", "")
+            attr_lower = enriched_attr.lower() if enriched_attr else ""
+
+            # Boost if dimension is T (Time) or attribute name contains time-related words
+            if dimension == "T" or any(word in attr_lower for word in ['time', 'months', 'years', 'period', 'duration', 'possession']):
+                # Apply 70% boost to score to strongly prioritize time-based queries
+                score *= 1.7
 
         # Normalize score
         return score / max_score if max_score > 0 else 0.0

@@ -47,17 +47,50 @@ class SimpleQueryHandler:
         Handles variations: "calculate", "compute", "provide", "generate", "derive", etc.
 
         Priority:
-        1. Check if query contains a specific project name (override pattern matching)
-        2. Use semantic matcher to find best pattern match
-        3. Route to appropriate handler based on match
+        1. Check if query asks for Layer 1 calculated metric → reject (handled by enriched calculator)
+        2. Check if query contains a specific project name (override pattern matching for Layer 0 only)
+        3. Use semantic matcher to find best pattern match
         4. Return error if no match above threshold
         """
 
-        # PRIORITY CHECK: If query contains a specific project name, route to specific_project handler
+        # CRITICAL CHECK: If query asks for CALCULATED METRICS (Layer 1), reject immediately
+        # These should be handled by enriched_calculator via prompt_router, NOT simple_query_handler
+        query_lower = query.lower()
+
+        # Layer 1 calculated metric keywords (DO NOT handle in simple_query_handler)
+        layer1_keywords = [
+            'absorption rate', 'absorptionrate', 'absorption',
+            'sellout time', 'sellout',
+            'months of inventory', 'moi', 'inventory months',
+            'monthly velocity', 'sales velocity', 'velocity',
+            'unsold units', 'remaining units',  # Requires calculation
+            'sold units',  # Requires calculation
+            'realised psf', 'realized psf',
+            'revenue per unit',
+            'clearance rate',
+            'ticket size',
+            'psf gap',
+            'unsold inventory value',
+            'monthly units sold',
+            'months to sell'
+        ]
+
+        if any(keyword in query_lower for keyword in layer1_keywords):
+            # This is a Layer 1 calculation query - reject so it goes to enriched calculator
+            return QueryResult(
+                status="error",
+                layer=1,
+                dimension="",
+                operation="CALCULATION",
+                result={"error": "This is a calculated metric query. Should be handled by enriched_calculator (prompt_router failed to route)."}
+            )
+
+        # PRIORITY CHECK: If query contains a specific project name, route to specific_project handler (Layer 0 ONLY)
         # This prevents misrouting queries like "Sara City project size" to "average_project_size"
         project_name = self._extract_project_name(query)
         if project_name:
             # Query mentions a specific project - route directly to retrieval (bypass pattern matching)
+            # BUT ONLY for Layer 0 dimensions (area, basic units, etc.) - NOT calculated metrics
             return self._get_specific_project(project_name, query=query)
 
         # Use semantic matching to find best pattern
@@ -698,11 +731,18 @@ class SimpleQueryHandler:
                     primary_dimension = "Dimensionless"
                     primary_dim_label = "sold_percentage"
         elif "project size" in query_lower or "size of" in query_lower:
-            # "Project size" typically means project size in units (U dimension)
-            if project_size_units is not None:
+            # "Project size" means land area (L² dimension), NOT unit count!
+            # Use acres if available, otherwise show the sqft equivalent
+            if project_size_acres is not None:
+                primary_value = project_size_acres
+                primary_unit = "Acres"
+                primary_dimension = "L²"
+                primary_dim_label = "project_size_acres"
+            elif project_size_units is not None:
+                # projectSizeUnits is actually sqft despite the naming!
                 primary_value = project_size_units
-                primary_unit = "Units"
-                primary_dimension = "U"
+                primary_unit = "sqft"
+                primary_dimension = "L²"
                 primary_dim_label = "project_size"
         elif "total units" in query_lower or "how many units" in query_lower or "number of units" in query_lower:
             # Explicitly asking for unit count
@@ -711,6 +751,27 @@ class SimpleQueryHandler:
                 primary_unit = "Units"
                 primary_dimension = "U"
                 primary_dim_label = "total_units"
+        elif "bhk" in query_lower or ("unit" in query_lower and "mix" in query_lower):
+            # BHK Mix query - check if data exists
+            bhk_mix = self.data_service.get_value(project.get('bhkMix'))
+            if bhk_mix:
+                primary_value = bhk_mix
+                primary_unit = "Distribution"
+                primary_dimension = "-"
+                primary_dim_label = "bhk_mix"
+            else:
+                # BHK Mix data not available - return error QueryResult
+                return QueryResult(
+                    status="error",
+                    layer=0,
+                    dimension="-",
+                    operation="RETRIEVAL",
+                    result={
+                        "error": f"BHK Mix data is not available for project '{project_name}'. This data field is not present in the current dataset.",
+                        "project_name": project_name,
+                        "suggestion": "Try queries like: 'Total units of Sara City' or 'Project size of Sara City'"
+                    }
+                )
         else:
             # Default: return project size if available, otherwise total units
             if project_size_units is not None:

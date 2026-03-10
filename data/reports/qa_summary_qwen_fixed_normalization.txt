@@ -1,0 +1,35 @@
+
+================================================================================
+AUTO-HEALING TEST REPORT - Run: qwen_fixed_normalization
+================================================================================
+
+SUMMARY:
+--------
+Total Tests: 121
+Passed: 28 (23.1%)
+Failed: 93 (76.9%)
+  - Inclusion failures: 82
+  - Similarity failures: 11
+
+BY TYPE:
+--------
+Objective:   28/100 passed (28.0%)
+Subjective:  0/19 passed (0.0%)
+Calculated:  0/2 passed (0.0%)
+
+AUTO-FIXES:
+-----------
+Auto-fixed: 0 test cases
+Needs review: 0 test cases
+
+TIMING:
+-------
+Duration: 10.7s
+Started: 2025-12-11 12:13:44
+Completed: 2025-12-11 12:13:54
+
+================================================================================
+
+Do you want another refinement cycle (further auto-fixing and regression run),
+or are you satisfied with the current test outcomes?
+

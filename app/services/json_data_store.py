@@ -16,6 +16,7 @@ import sys
 # Add scripts directory to import dimension_parser
 sys.path.append(str(Path(__file__).parent.parent.parent / "scripts"))
 from dimension_parser import DimensionParser
+from app.utils.fuzzy_matcher import FuzzyMatcher
 
 
 class JSONDataStore:
@@ -27,7 +28,7 @@ class JSONDataStore:
     def __init__(self, data_path: str = None):
         """Initialize data store from JSON file"""
         if data_path is None:
-            data_path = Path(__file__).parent.parent.parent / "data" / "extracted" / "v3_lf_layer1_data_from_pdf.json"
+            data_path = Path(__file__).parent.parent.parent / "data" / "extracted" / "v4_clean_nested_structure.json"
 
         self.data_path = data_path
         self.parser = DimensionParser()
@@ -35,7 +36,8 @@ class JSONDataStore:
 
         # Build indexes for fast lookups
         self.projects_by_id = {}
-        self.projects_by_name = {}
+        self.projects_by_name = {}  # Original name lookup
+        self.projects_by_normalized_name = {}  # Normalized name lookup (handles newlines/spaces)
         self._build_indexes()
 
     def _load_data(self) -> Dict:
@@ -46,13 +48,22 @@ class JSONDataStore:
     def _build_indexes(self):
         """Build lookup indexes for fast queries"""
         for project in self.data.get('page_2_projects', []):
-            project_id = project.get('projectId')
-            project_name = project.get('projectName')
+            # Extract values (handle both nested dict structure and plain values)
+            project_id_obj = project.get('projectId')
+            project_name_obj = project.get('projectName')
+
+            project_id = project_id_obj.get('value') if isinstance(project_id_obj, dict) else project_id_obj
+            project_name = project_name_obj.get('value') if isinstance(project_name_obj, dict) else project_name_obj
 
             if project_id:
                 self.projects_by_id[project_id] = project
             if project_name:
+                # Store by original name
                 self.projects_by_name[project_name] = project
+
+                # Also store by normalized name (replaces newlines with spaces, lowercase, etc.)
+                normalized_name = FuzzyMatcher.normalize(project_name)
+                self.projects_by_normalized_name[normalized_name] = project
 
     def transform_to_nested_structure(self, node_data: Dict) -> Dict:
         """
@@ -118,10 +129,24 @@ class JSONDataStore:
         return nested
 
     def get_project_by_name(self, project_name: str) -> Optional[Dict]:
-        """Get project with nested structure"""
+        """
+        Get project with nested structure
+
+        Tries multiple matching strategies:
+        1. Exact match on original name
+        2. Normalized match (handles newlines, spaces, case)
+        """
+        # Try exact match first
         project = self.projects_by_name.get(project_name)
         if project:
             return self.transform_to_nested_structure(project)
+
+        # Try normalized match (handles "Sara\nAbhiruchi\nTower" matching "Sara Abhiruchi Tower")
+        normalized_query = FuzzyMatcher.normalize(project_name)
+        project = self.projects_by_normalized_name.get(normalized_query)
+        if project:
+            return self.transform_to_nested_structure(project)
+
         return None
 
     def get_project_by_id(self, project_id: int) -> Optional[Dict]:
@@ -292,6 +317,51 @@ class JSONDataStore:
                 }
 
         return comparison
+
+    def find_projects_near(self, reference_project_name: str, radius_km: float) -> List[Dict]:
+        """
+        Find all projects within a specified radius of a reference project using geospatial distance.
+
+        Args:
+            reference_project_name: Name of the reference project
+            radius_km: Maximum distance from reference project (kilometers)
+
+        Returns:
+            List of nearby projects with distance information, sorted by distance (closest first).
+            Each project dict includes all original fields plus 'distance_km' field.
+
+        Example:
+            >>> store = JSONDataStore()
+            >>> nearby = store.find_projects_near("Sara City", 2.0)
+            >>> for proj in nearby:
+            ...     print(f"{proj['projectName']['value']}: {proj['distance_km']:.2f} km")
+
+        Raises:
+            ValueError: If reference project not found or has no coordinates
+        """
+        from app.utils.geospatial import get_project_coordinates, find_projects_within_radius
+
+        # Get coordinates of reference project
+        all_projects = self.data.get('page_2_projects', [])
+        coords = get_project_coordinates(reference_project_name, all_projects)
+
+        if coords is None:
+            raise ValueError(f"Reference project '{reference_project_name}' not found or has no geographic coordinates")
+
+        ref_lat, ref_lon = coords
+
+        # Find projects within radius
+        nearby_projects = find_projects_within_radius(ref_lat, ref_lon, all_projects, radius_km)
+
+        # Transform to nested structure for consistency with other methods
+        # Preserve distance_km field which was added by find_projects_within_radius
+        transformed_projects = []
+        for proj in nearby_projects:
+            transformed = self.transform_to_nested_structure(proj)
+            transformed['distance_km'] = proj['distance_km']  # Preserve distance field
+            transformed_projects.append(transformed)
+
+        return transformed_projects
 
     def get_stats(self) -> Dict:
         """Get database statistics"""

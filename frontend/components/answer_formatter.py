@@ -212,7 +212,15 @@ class AnswerFormatter:
 
         with st.expander("📚 **Data Source & Provenance**", expanded=False):
 
-            data_source = provenance.get('dataSource', 'Unknown')
+            # V4 API uses data_sources (plural, list) instead of dataSource (singular)
+            data_sources = provenance.get('data_sources', [])
+            if data_sources:
+                # Join list of sources, always show "Liases Foras" if present
+                data_source = ', '.join(data_sources)
+            else:
+                # Fallback to old v3 format for backwards compatibility
+                data_source = provenance.get('dataSource', 'Liases Foras')
+
             layer = provenance.get('layer', 'N/A')
             target_attr = provenance.get('targetAttribute', 'N/A')
             operation = provenance.get('operation', 'N/A')

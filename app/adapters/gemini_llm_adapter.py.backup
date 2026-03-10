@@ -1,0 +1,406 @@
+"""
+Gemini LLM Adapter - LLM Implementation
+
+This adapter implements the LLMPort using Google's Gemini AI.
+Reuses existing UltraThink infrastructure for consistency.
+
+Key Features:
+- Intent classification (objective/analytical/financial)
+- Entity extraction (projects, developers, locations)
+- Query planning
+- Answer composition with provenance
+- Multi-turn clarification questions
+"""
+
+import os
+import json
+from typing import List, Dict, Optional, Any
+import google.generativeai as genai
+
+from app.ports.llm_port import LLMPort
+
+
+class GeminiLLMAdapter(LLMPort):
+    """Gemini implementation for LLM-based intelligence"""
+
+    def __init__(self, api_key: Optional[str] = None):
+        """
+        Initialize Gemini LLM adapter
+
+        Args:
+            api_key: Optional Google API key (will use env var if not provided)
+        """
+        self.api_key = api_key or os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
+        if not self.api_key:
+            raise ValueError("Gemini API key not provided. Set GOOGLE_API_KEY or GEMINI_API_KEY environment variable.")
+
+        genai.configure(api_key=self.api_key)
+
+        # Use JSON mode for structured outputs
+        self.model = genai.GenerativeModel(
+            'gemini-2.0-flash-exp',
+            generation_config={"response_mime_type": "application/json"}
+        )
+
+        # Use text mode for natural language generation
+        self.text_model = genai.GenerativeModel('gemini-2.0-flash-exp')
+
+        print(" Gemini LLM adapter initialized (model: gemini-2.0-flash-exp)")
+
+    def classify_intent(
+        self,
+        query: str,
+        conversation_history: Optional[List[Dict]] = None
+    ) -> Dict:
+        """
+        Classify user query intent into one of three categories
+
+        Args:
+            query: User's natural language query
+            conversation_history: Optional conversation context
+
+        Returns:
+            Dict with intent, subcategory, confidence, reasoning
+        """
+        prompt = f"""Classify this real estate query into ONE of three intents:
+
+Query: "{query}"
+
+Intents:
+1. OBJECTIVE - Direct retrieval of specific values
+   Examples: "What is the total units for Sara City?"
+            "Show me the sold % for The Urbana"
+
+2. ANALYTICAL - Comparison, aggregation, or multi-project analysis
+   Examples: "Compare sold % across all Chakan projects"
+            "Which project has the highest absorption rate?"
+
+3. FINANCIAL - Requires financial calculations (IRR, NPV, payback, etc.)
+   Examples: "What is the IRR for Sara City?"
+            "Calculate NPV with 12% discount rate"
+
+Return JSON:
+{{
+  "intent": "objective|analytical|financial",
+  "subcategory": "specific type within intent",
+  "confidence": 0.0-1.0,
+  "reasoning": "brief explanation"
+}}
+"""
+
+        response = self.model.generate_content(prompt)
+        return json.loads(response.text)
+
+    def extract_entities(self, query: str) -> Dict:
+        """
+        Extract entities (projects, developers, locations) from query
+
+        Args:
+            query: User's natural language query
+
+        Returns:
+            Dict with projects, developers, locations, attributes lists
+        """
+        prompt = f"""Extract entities from this real estate query:
+
+Query: "{query}"
+
+Identify:
+- Projects: Any specific project names mentioned
+- Developers: Any developer/builder names
+- Locations: Any city/area names
+- Attributes: Any metrics being asked about (e.g., "sold %", "total units")
+
+Return JSON:
+{{
+  "projects": ["project name 1", ...],
+  "developers": ["developer name 1", ...],
+  "locations": ["location name 1", ...],
+  "attributes": ["attribute name 1", ...]
+}}
+
+If none found for a category, return empty array.
+"""
+
+        response = self.model.generate_content(prompt)
+        return json.loads(response.text)
+
+    def plan_kg_queries(self, context: Dict) -> List[Dict]:
+        """
+        Generate structured KG query plan based on intent and entities
+
+        Args:
+            context: Dict with intent, attributes, projects, locations, query
+
+        Returns:
+            List of query plan dicts
+        """
+        prompt = f"""Generate a Knowledge Graph query plan for this context:
+
+Intent: {context.get('intent')}
+Attributes: {context.get('attributes', [])}
+Projects: {context.get('projects', [])}
+Locations: {context.get('locations', [])}
+Original Query: "{context.get('query', '')}"
+
+Return JSON array of queries:
+[
+  {{
+    "action": "fetch|aggregate|compare",
+    "projects": ["project name"],
+    "attributes": ["attribute name"],
+    "filters": {{}},
+    "aggregation": null|"sum|avg|max|min|count"
+  }}
+]
+
+Examples:
+- Objective query: [{{"action": "fetch", "projects": ["Sara City"], "attributes": ["Total Units"]}}]
+- Analytical query: [{{"action": "aggregate", "attributes": ["Sold %"], "aggregation": "max", "filters": {{"location": "Chakan"}}}}]
+- Comparison query: [{{"action": "compare", "projects": ["Sara City", "The Urbana"], "attributes": ["Sold %"]}}]
+"""
+
+        response = self.model.generate_content(prompt)
+        result = json.loads(response.text)
+
+        # Ensure result is a list
+        if isinstance(result, dict):
+            return [result]
+        return result
+
+    def compose_answer(
+        self,
+        query: str,
+        kg_data: Dict,
+        computation_results: Optional[Dict] = None,
+        attributes_metadata: Optional[List[Dict]] = None,
+        project_metadata: Optional[Dict] = None
+    ) -> str:
+        """
+        Compose natural language answer with proper provenance
+
+        Args:
+            query: Original user query
+            kg_data: Data fetched from KG
+            computation_results: Optional computation results
+            attributes_metadata: Optional attribute metadata from Vector DB
+            project_metadata: Optional project context (developer, location, launch date)
+
+        Returns:
+            Natural language answer with provenance markers
+        """
+        # Build context for LLM
+        context_parts = [
+            f"Original Query: {query}",
+            "",
+            "Data from Knowledge Graph (SOURCE OF TRUTH):",
+            json.dumps(kg_data, indent=2)
+        ]
+
+        if project_metadata:
+            context_parts.extend([
+                "",
+                "Project Metadata (for contextual enrichment):",
+                json.dumps(project_metadata, indent=2)
+            ])
+
+        if computation_results:
+            context_parts.extend([
+                "",
+                "Computation Results:",
+                json.dumps(computation_results, indent=2)
+            ])
+
+        if attributes_metadata:
+            context_parts.extend([
+                "",
+                "Attribute Metadata (for context):",
+                json.dumps(attributes_metadata[:2], indent=2)  # Limit to 2
+            ])
+
+        context = "\n".join(context_parts)
+
+        prompt = f"""Compose a rich, natural, human-like answer for this query.
+
+{context}
+
+CRITICAL REQUIREMENTS:
+1. **Rich Contextual Format**: Structure your answer as:
+   {{Background Context}} {{Requested Answer, Highlighted}} {{Insight or Unique Remark}}
+
+2. **Use HTML <b> Tags**: Highlight the attribute name and the numeric value using <b>tags</b>
+   - Example: The <b>Project Size</b> of Sara City is <b>3018 Units</b>
+
+3. **Include Project Context**: When project metadata is available, weave it naturally into the answer:
+   - Developer name
+   - Location
+   - Launch date
+   - Format: "...of [Project] in [Location] by [Developer], launched in [Launch Date]..."
+
+4. **Add Comparative Insights**: Include contextual remarks like:
+   - "This is the largest project by size in the dataset"
+   - "This is higher/lower than the market average"
+   - "This represents X% of the total supply"
+   - Any other relevant contextual insight based on the data
+
+5. **Natural, Human-like Tone**: Write conversationally, not robotically
+
+EXAMPLE (FOLLOW THIS PATTERN):
+---
+Query: What is the Project Size of Sara City in Units?
+
+Good Answer:
+The <b>Project Size</b> of Sara City in Chakan by Sara Builders & Developers (Sara Group), launched in Nov 2007 is <b>3018 Units</b>. This is the largest project by size in the dataset.
+
+Bad Answer (DO NOT DO THIS):
+Sara City has 3,018 units. [DIRECT - KG]
+---
+
+ANOTHER EXAMPLE:
+---
+Query: What is the Sold (%) - Total Supply of Sara City?
+
+Good Answer:
+The <b>Sold (%)</b> for Sara City in Chakan, developed by Sara Builders & Developers (Sara Group) and launched in Nov 2007, is <b>89%</b>. This indicates strong market acceptance with only 11% inventory remaining.
+
+Bad Answer (DO NOT DO THIS):
+89% sold.
+---
+
+PROVENANCE HANDLING:
+- Only add [DIRECT - KG] or [COMPUTED] markers if specifically requested in the query
+- Otherwise, omit provenance markers for natural readability
+
+Now compose the answer following the GOOD examples above (plain text with HTML <b> tags):
+"""
+
+        response = self.text_model.generate_content(prompt)
+        return response.text
+
+    def ask_clarification(
+        self,
+        missing_parameters: List[str],
+        context: Dict
+    ) -> str:
+        """
+        Generate clarification question when parameters are missing
+
+        Args:
+            missing_parameters: List of parameter names needed
+            context: Current query context
+
+        Returns:
+            Natural language clarification question
+        """
+        prompt = f"""Generate a clarification question for missing parameters.
+
+Missing Parameters: {missing_parameters}
+Context: {json.dumps(context, indent=2)}
+
+Generate a friendly, clear question asking for these parameters.
+Include:
+1. What specific information is needed
+2. Example values if helpful
+3. Option to proceed with estimates if applicable
+
+Example:
+"To calculate IRR for Sara City, I need additional information:
+1. What is your expected holding period (in years)?
+2. What discount rate should I use? (e.g., 12%)
+
+Alternatively, I can estimate these based on market averages. Would you like me to proceed with estimates?"
+
+Now generate the clarification question (plain text):
+"""
+
+        response = self.text_model.generate_content(prompt)
+        return response.text
+
+    def generate_json_response(
+        self,
+        prompt: str,
+        schema: Optional[Dict] = None
+    ) -> Dict:
+        """
+        Generate structured JSON response from LLM
+
+        Args:
+            prompt: Prompt for LLM
+            schema: Optional JSON schema to enforce
+
+        Returns:
+            Parsed JSON dict
+        """
+        response = self.model.generate_content(prompt)
+        return json.loads(response.text)
+
+    def explain_calculation(
+        self,
+        calculation_type: str,
+        inputs: Dict,
+        result: Any
+    ) -> str:
+        """
+        Generate explanation for a calculation
+
+        Args:
+            calculation_type: "IRR", "NPV", etc.
+            inputs: Input parameters used
+            result: Calculated result
+
+        Returns:
+            Natural language explanation
+        """
+        prompt = f"""Explain this financial calculation:
+
+Calculation Type: {calculation_type}
+Inputs: {json.dumps(inputs, indent=2)}
+Result: {result}
+
+Generate a clear explanation that includes:
+1. What the metric means
+2. The inputs used
+3. Interpretation of the result
+4. Industry context/benchmarks if applicable
+
+Example for IRR:
+"The Internal Rate of Return (IRR) is 18.7%.
+
+This represents the annualized rate of return that makes the net present value
+of all cash flows equal to zero.
+
+Cash flows used:
+- Year 0: Rs.100 Cr
+- Year 1: Rs.150 Cr
+- Year 2: Rs.200 Cr
+
+An IRR of 18.7% indicates strong project performance, exceeding typical
+real estate benchmarks of 12-15%."
+
+Now generate the explanation (plain text):
+"""
+
+        response = self.text_model.generate_content(prompt)
+        return response.text
+
+
+# Global singleton instance
+_gemini_llm_adapter = None
+
+
+def get_gemini_llm_adapter(api_key: Optional[str] = None) -> GeminiLLMAdapter:
+    """
+    Get or create global Gemini LLM adapter instance
+
+    Args:
+        api_key: Optional Google API key
+
+    Returns:
+        GeminiLLMAdapter singleton instance
+    """
+    global _gemini_llm_adapter
+
+    if _gemini_llm_adapter is None:
+        _gemini_llm_adapter = GeminiLLMAdapter(api_key=api_key)
+
+    return _gemini_llm_adapter

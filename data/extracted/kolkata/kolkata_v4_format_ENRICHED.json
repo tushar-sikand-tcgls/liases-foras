@@ -1,0 +1,2554 @@
+{
+  "metadata": {
+    "source_file": "Kolkata_R&D_Combined_Final.pdf + LF-Layers_FULLY_ENRICHED_ALL_36.xlsx",
+    "extraction_timestamp": "2025-12-29T11:44:09.439132",
+    "architecture_version": "v4.0.0",
+    "data_layer": "L1",
+    "description": "Kolkata project data in v4 nested format with {value, unit, dimension, relationships}",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "total_projects": 880,
+    "converted_from": "flat_format"
+  },
+  "page_2_projects": [
+    {
+      "projectId": {
+        "value": 10001,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Siddha Galaxia",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Siddha Group",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "location": {
+        "value": "Kolkata",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "micromarketId": {
+        "value": "KOLKATA_0_2KM",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 450,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldUnits": {
+        "value": 382,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldUnits": {
+        "value": 68,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 45,
+        "unit": "count/year",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSaleableArea": {
+        "value": 382500,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldArea": {
+        "value": 57800,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unitSaleableSize": {
+        "value": 850,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 7200,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "currentPricePSF": {
+        "value": 8800,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesValue": {
+        "value": 33.66,
+        "unit": "\u20b9 Crores/year",
+        "dimension": "CF/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchDate": {
+        "value": "Nov 2020",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Dec 2026",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectAgeMonths": {
+        "value": 50,
+        "unit": "months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": true,
+        "unit": "Boolean",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectSize": {
+        "value": 450,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:44:09.439093",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldPercentage": {
+        "value": 84.89,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "unsoldPercentage": {
+        "value": 15.11,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlySalesVelocityPct": {
+        "value": 0.83,
+        "unit": "%/month",
+        "dimension": "T\u207b\u00b9",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "INVERSE_OF"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthsOfInventory": {
+        "value": 18.1,
+        "unit": "Months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "priceGrowthPct": {
+        "value": 22.22,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "unsoldInventoryValueCr": {
+        "value": 50.86,
+        "unit": "Rs Cr",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "annualAbsorptionRatePct": {
+        "value": 66.18,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "annualClearanceRatePct": {
+        "value": 66.18,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "selloutTimeYears": {
+        "value": 1.51,
+        "unit": "Years",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "futureSelloutTimeYears": {
+        "value": 1.51,
+        "unit": "Years",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "selloutEfficiencyPct": {
+        "value": 1.2,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "priceToSizeRatio": {
+        "value": 10.3529,
+        "unit": "Rate",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlyUnitsSold": {
+        "value": 3.75,
+        "unit": "Units/month",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "target": "U",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "T",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlyVelocityUnits": {
+        "value": 3.73,
+        "unit": "Units/month",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "target": "U",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "T",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "realisedPSF": {
+        "value": 8800.0,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "effectiveRealisedPSF": {
+        "value": 8800.0,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "revenuePerUnit": {
+        "value": 7480000.0,
+        "unit": "Rs/Unit",
+        "dimension": "C/U",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "U",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "averageTicketSize": {
+        "value": 7480000,
+        "unit": "Rs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "launchTicketSize": {
+        "value": 6120000,
+        "unit": "Rs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "psfGap": {
+        "value": 1600,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "enrichmentTimestamp": "2025-12-29T15:40:58.964649",
+      "schemaVersion": "v4_nested_enriched_36_attributes"
+    },
+    {
+      "projectId": {
+        "value": 10002,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Merlin Verve",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Merlin Group",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "location": {
+        "value": "Kolkata",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "micromarketId": {
+        "value": "KOLKATA_2_4KM",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 320,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldUnits": {
+        "value": 224,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldUnits": {
+        "value": 96,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 38,
+        "unit": "count/year",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSaleableArea": {
+        "value": 249600,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldArea": {
+        "value": 74880,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unitSaleableSize": {
+        "value": 780,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 6500,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "currentPricePSF": {
+        "value": 7400,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesValue": {
+        "value": 21.87,
+        "unit": "\u20b9 Crores/year",
+        "dimension": "CF/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchDate": {
+        "value": "Mar 2021",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Jun 2027",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectAgeMonths": {
+        "value": 46,
+        "unit": "months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": true,
+        "unit": "Boolean",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectSize": {
+        "value": 320,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:44:09.439107",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldPercentage": {
+        "value": 70.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "unsoldPercentage": {
+        "value": 30.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlySalesVelocityPct": {
+        "value": 0.99,
+        "unit": "%/month",
+        "dimension": "T\u207b\u00b9",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "INVERSE_OF"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthsOfInventory": {
+        "value": 30.3,
+        "unit": "Months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "priceGrowthPct": {
+        "value": 13.85,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "unsoldInventoryValueCr": {
+        "value": 55.41,
+        "unit": "Rs Cr",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "annualAbsorptionRatePct": {
+        "value": 39.58,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "annualClearanceRatePct": {
+        "value": 39.58,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "selloutTimeYears": {
+        "value": 2.53,
+        "unit": "Years",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "futureSelloutTimeYears": {
+        "value": 2.53,
+        "unit": "Years",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "selloutEfficiencyPct": {
+        "value": 1.43,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "priceToSizeRatio": {
+        "value": 9.4872,
+        "unit": "Rate",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlyUnitsSold": {
+        "value": 3.17,
+        "unit": "Units/month",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "target": "U",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "T",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlyVelocityUnits": {
+        "value": 3.17,
+        "unit": "Units/month",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "target": "U",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "T",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "realisedPSF": {
+        "value": 7378.54,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "effectiveRealisedPSF": {
+        "value": 7378.54,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "revenuePerUnit": {
+        "value": 5755263.16,
+        "unit": "Rs/Unit",
+        "dimension": "C/U",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "U",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "averageTicketSize": {
+        "value": 5772000,
+        "unit": "Rs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "launchTicketSize": {
+        "value": 5070000,
+        "unit": "Rs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "psfGap": {
+        "value": 900,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "enrichmentTimestamp": "2025-12-29T15:40:58.964675",
+      "schemaVersion": "v4_nested_enriched_36_attributes"
+    },
+    {
+      "projectId": {
+        "value": 10003,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "PS Panache",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "PS Group",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "location": {
+        "value": "Kolkata",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "micromarketId": {
+        "value": "KOLKATA_4_6KM",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 280,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldUnits": {
+        "value": 196,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldUnits": {
+        "value": 84,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 32,
+        "unit": "count/year",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSaleableArea": {
+        "value": 201600,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldArea": {
+        "value": 60480,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unitSaleableSize": {
+        "value": 720,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 5800,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "currentPricePSF": {
+        "value": 6600,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesValue": {
+        "value": 15.12,
+        "unit": "\u20b9 Crores/year",
+        "dimension": "CF/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchDate": {
+        "value": "Jul 2021",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Sep 2027",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectAgeMonths": {
+        "value": 42,
+        "unit": "months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": true,
+        "unit": "Boolean",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectSize": {
+        "value": 280,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:44:09.439115",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldPercentage": {
+        "value": 70.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "unsoldPercentage": {
+        "value": 30.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlySalesVelocityPct": {
+        "value": 0.95,
+        "unit": "%/month",
+        "dimension": "T\u207b\u00b9",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "INVERSE_OF"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthsOfInventory": {
+        "value": 31.5,
+        "unit": "Months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "priceGrowthPct": {
+        "value": 13.79,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "unsoldInventoryValueCr": {
+        "value": 39.92,
+        "unit": "Rs Cr",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "annualAbsorptionRatePct": {
+        "value": 38.1,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "annualClearanceRatePct": {
+        "value": 38.1,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "selloutTimeYears": {
+        "value": 2.62,
+        "unit": "Years",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "futureSelloutTimeYears": {
+        "value": 2.62,
+        "unit": "Years",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "selloutEfficiencyPct": {
+        "value": 1.37,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "priceToSizeRatio": {
+        "value": 9.1667,
+        "unit": "Rate",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlyUnitsSold": {
+        "value": 2.67,
+        "unit": "Units/month",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "target": "U",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "T",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlyVelocityUnits": {
+        "value": 2.66,
+        "unit": "Units/month",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "target": "U",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "T",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "realisedPSF": {
+        "value": 6562.5,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "effectiveRealisedPSF": {
+        "value": 6562.5,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "revenuePerUnit": {
+        "value": 4725000.0,
+        "unit": "Rs/Unit",
+        "dimension": "C/U",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "U",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "averageTicketSize": {
+        "value": 4752000,
+        "unit": "Rs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "launchTicketSize": {
+        "value": 4176000,
+        "unit": "Rs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "psfGap": {
+        "value": 800,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "enrichmentTimestamp": "2025-12-29T15:40:58.964693",
+      "schemaVersion": "v4_nested_enriched_36_attributes"
+    },
+    {
+      "projectId": {
+        "value": 10004,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Srijan Eternis",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Srijan Realty",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "location": {
+        "value": "Kolkata",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "micromarketId": {
+        "value": "KOLKATA_6_10KM",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 520,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldUnits": {
+        "value": 312,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldUnits": {
+        "value": 208,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 52,
+        "unit": "count/year",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSaleableArea": {
+        "value": 353600,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldArea": {
+        "value": 141440,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unitSaleableSize": {
+        "value": 680,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 5200,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "currentPricePSF": {
+        "value": 5900,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesValue": {
+        "value": 20.13,
+        "unit": "\u20b9 Crores/year",
+        "dimension": "CF/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchDate": {
+        "value": "Jan 2022",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Mar 2028",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectAgeMonths": {
+        "value": 36,
+        "unit": "months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": true,
+        "unit": "Boolean",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectSize": {
+        "value": 520,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:44:09.439121",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldPercentage": {
+        "value": 60.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "unsoldPercentage": {
+        "value": 40.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlySalesVelocityPct": {
+        "value": 0.83,
+        "unit": "%/month",
+        "dimension": "T\u207b\u00b9",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "INVERSE_OF"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthsOfInventory": {
+        "value": 48.0,
+        "unit": "Months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "priceGrowthPct": {
+        "value": 13.46,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "unsoldInventoryValueCr": {
+        "value": 83.45,
+        "unit": "Rs Cr",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "annualAbsorptionRatePct": {
+        "value": 25.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "annualClearanceRatePct": {
+        "value": 25.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "selloutTimeYears": {
+        "value": 4.0,
+        "unit": "Years",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "futureSelloutTimeYears": {
+        "value": 4.0,
+        "unit": "Years",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "selloutEfficiencyPct": {
+        "value": 1.2,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "priceToSizeRatio": {
+        "value": 8.6765,
+        "unit": "Rate",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlyUnitsSold": {
+        "value": 4.33,
+        "unit": "Units/month",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "target": "U",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "T",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlyVelocityUnits": {
+        "value": 4.32,
+        "unit": "Units/month",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "target": "U",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "T",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "realisedPSF": {
+        "value": 5692.87,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "effectiveRealisedPSF": {
+        "value": 5692.87,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "revenuePerUnit": {
+        "value": 3871153.85,
+        "unit": "Rs/Unit",
+        "dimension": "C/U",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "U",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "averageTicketSize": {
+        "value": 4012000,
+        "unit": "Rs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "launchTicketSize": {
+        "value": 3536000,
+        "unit": "Rs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "psfGap": {
+        "value": 700,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "enrichmentTimestamp": "2025-12-29T15:40:58.964712",
+      "schemaVersion": "v4_nested_enriched_36_attributes"
+    },
+    {
+      "projectId": {
+        "value": 10005,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Ambuja Utalika",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Ambuja Neotia",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "location": {
+        "value": "Kolkata",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "micromarketId": {
+        "value": "KOLKATA_10_20KM",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 680,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldUnits": {
+        "value": 408,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldUnits": {
+        "value": 272,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 68,
+        "unit": "count/year",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "totalSaleableArea": {
+        "value": 421600,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unsoldArea": {
+        "value": 168640,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "unitSaleableSize": {
+        "value": 620,
+        "unit": "sqft",
+        "dimension": "L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 4400,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "currentPricePSF": {
+        "value": 4900,
+        "unit": "\u20b9/sqft",
+        "dimension": "CF/L\u00b2",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/L\u00b2"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "annualSalesValue": {
+        "value": 20.64,
+        "unit": "\u20b9 Crores/year",
+        "dimension": "CF/T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "CF/T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "launchDate": {
+        "value": "May 2022",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Jul 2028",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectAgeMonths": {
+        "value": 32,
+        "unit": "months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": true,
+        "unit": "Boolean",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "projectSize": {
+        "value": 680,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:44:09.439130",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "Kolkata_Projects",
+        "isPure": true
+      },
+      "soldPercentage": {
+        "value": 60.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "unsoldPercentage": {
+        "value": 40.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlySalesVelocityPct": {
+        "value": 0.83,
+        "unit": "%/month",
+        "dimension": "T\u207b\u00b9",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "INVERSE_OF"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthsOfInventory": {
+        "value": 48.0,
+        "unit": "Months",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "priceGrowthPct": {
+        "value": 11.36,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "unsoldInventoryValueCr": {
+        "value": 82.63,
+        "unit": "Rs Cr",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "annualAbsorptionRatePct": {
+        "value": 25.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "annualClearanceRatePct": {
+        "value": 25.0,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "selloutTimeYears": {
+        "value": 4.0,
+        "unit": "Years",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "futureSelloutTimeYears": {
+        "value": 4.0,
+        "unit": "Years",
+        "dimension": "T",
+        "relationships": [
+          {
+            "target": "T",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "selloutEfficiencyPct": {
+        "value": 1.2,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "priceToSizeRatio": {
+        "value": 7.9032,
+        "unit": "Rate",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlyUnitsSold": {
+        "value": 5.67,
+        "unit": "Units/month",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "target": "U",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "T",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "monthlyVelocityUnits": {
+        "value": 5.64,
+        "unit": "Units/month",
+        "dimension": "U/T",
+        "relationships": [
+          {
+            "target": "U",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "T",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "realisedPSF": {
+        "value": 4895.64,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "effectiveRealisedPSF": {
+        "value": 4895.64,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "revenuePerUnit": {
+        "value": 3035294.12,
+        "unit": "Rs/Unit",
+        "dimension": "C/U",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "U",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "averageTicketSize": {
+        "value": 3038000,
+        "unit": "Rs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "launchTicketSize": {
+        "value": 2728000,
+        "unit": "Rs",
+        "dimension": "C",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "IS"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "psfGap": {
+        "value": 500,
+        "unit": "Rs/SqFt",
+        "dimension": "C/L\u00b2",
+        "relationships": [
+          {
+            "target": "C",
+            "type": "NUMERATOR"
+          },
+          {
+            "target": "L\u00b2",
+            "type": "DENOMINATOR"
+          }
+        ],
+        "source": "Enriched_Calculation",
+        "isPure": false
+      },
+      "enrichmentTimestamp": "2025-12-29T15:40:58.964731",
+      "schemaVersion": "v4_nested_enriched_36_attributes"
+    }
+  ],
+  "enrichment_metadata": {
+    "enrichment_timestamp": "2025-12-29T15:40:58.964734",
+    "schema_version": "v4_nested_enriched_36_attributes",
+    "total_projects": 5,
+    "attributes_per_project": 36,
+    "l0_attributes": 24,
+    "l1_attributes": 12,
+    "source_excel_schema": "LF-Layers_FULLY_ENRICHED_ALL_36.xlsx"
+  }
+}

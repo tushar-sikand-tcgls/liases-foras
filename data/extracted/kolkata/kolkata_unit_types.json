@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "source_file": "Kolkata_R&D_Combined_Final.pdf (Pages 1-3)",
+    "extraction_timestamp": "2025-01-28T12:00:00Z",
+    "version": "v1.0.0",
+    "description": "Unit type analysis for Kolkata market (10 categories)",
+    "total_unit_types": 10
+  },
+  "data": [
+    {
+      "unit_type_id": "1BHK_KOLKATA",
+      "unit_type": "1BHK",
+      "category": "Residential",
+      "bhk_type": 1,
+      "micromarket_id": "KOLKATA_ALL",
+      "sales_units": 2850,
+      "supply_units": 18600,
+      "avg_size_sqft": 550,
+      "avg_psf": 7200,
+      "avg_ticket_size": 39.6
+    },
+    {
+      "unit_type_id": "2BHK_KOLKATA",
+      "unit_type": "2BHK",
+      "category": "Residential",
+      "bhk_type": 2,
+      "micromarket_id": "KOLKATA_ALL",
+      "sales_units": 4680,
+      "supply_units": 28400,
+      "avg_size_sqft": 850,
+      "avg_psf": 6200,
+      "avg_ticket_size": 52.7
+    },
+    {
+      "unit_type_id": "3BHK_KOLKATA",
+      "unit_type": "3BHK",
+      "category": "Residential",
+      "bhk_type": 3,
+      "micromarket_id": "KOLKATA_ALL",
+      "sales_units": 3240,
+      "supply_units": 21800,
+      "avg_size_sqft": 1150,
+      "avg_psf": 5500,
+      "avg_ticket_size": 63.25
+    },
+    {
+      "unit_type_id": "4BHK_KOLKATA",
+      "unit_type": "4BHK",
+      "category": "Residential",
+      "bhk_type": 4,
+      "micromarket_id": "KOLKATA_ALL",
+      "sales_units": 980,
+      "supply_units": 8200,
+      "avg_size_sqft": 1650,
+      "avg_psf": 5200,
+      "avg_ticket_size": 85.8
+    },
+    {
+      "unit_type_id": "5BHK_KOLKATA",
+      "unit_type": "5BHK+",
+      "category": "Residential",
+      "bhk_type": 5,
+      "micromarket_id": "KOLKATA_ALL",
+      "sales_units": 340,
+      "supply_units": 3400,
+      "avg_size_sqft": 2200,
+      "avg_psf": 5800,
+      "avg_ticket_size": 127.6
+    },
+    {
+      "unit_type_id": "1RK_KOLKATA",
+      "unit_type": "1RK",
+      "category": "Residential",
+      "bhk_type": 0,
+      "micromarket_id": "KOLKATA_ALL",
+      "sales_units": 520,
+      "supply_units": 4800,
+      "avg_size_sqft": 320,
+      "avg_psf": 8500,
+      "avg_ticket_size": 27.2
+    },
+    {
+      "unit_type_id": "STUDIO_KOLKATA",
+      "unit_type": "Studio",
+      "category": "Residential",
+      "bhk_type": 0,
+      "micromarket_id": "KOLKATA_ALL",
+      "sales_units": 680,
+      "supply_units": 5600,
+      "avg_size_sqft": 420,
+      "avg_psf": 7800,
+      "avg_ticket_size": 32.76
+    },
+    {
+      "unit_type_id": "DUPLEX_KOLKATA",
+      "unit_type": "Duplex",
+      "category": "Residential",
+      "bhk_type": 3,
+      "micromarket_id": "KOLKATA_ALL",
+      "sales_units": 240,
+      "supply_units": 1800,
+      "avg_size_sqft": 1850,
+      "avg_psf": 6800,
+      "avg_ticket_size": 125.8
+    },
+    {
+      "unit_type_id": "PENTHOUSE_KOLKATA",
+      "unit_type": "Penthouse",
+      "category": "Residential",
+      "bhk_type": 4,
+      "micromarket_id": "KOLKATA_ALL",
+      "sales_units": 120,
+      "supply_units": 920,
+      "avg_size_sqft": 2800,
+      "avg_psf": 8200,
+      "avg_ticket_size": 229.6
+    },
+    {
+      "unit_type_id": "COMMERCIAL_KOLKATA",
+      "unit_type": "Commercial",
+      "category": "Commercial",
+      "bhk_type": 0,
+      "micromarket_id": "KOLKATA_ALL",
+      "sales_units": 460,
+      "supply_units": 4200,
+      "avg_size_sqft": 650,
+      "avg_psf": 9500,
+      "avg_ticket_size": 61.75
+    }
+  ]
+}

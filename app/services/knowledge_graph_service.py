@@ -7,15 +7,23 @@ Treats the JSON structure as a knowledge graph with:
 - Edges: Dimensional relationships (IS, NUMERATOR, DENOMINATOR, INVERSE_OF)
 """
 from typing import Dict, List, Optional, Set, Tuple
-from app.services.data_service import data_service
+from app.services.data_service import data_service, get_data_service
 
 
 class KnowledgeGraphService:
     """Query service for knowledge graph structure in JSON"""
 
-    def __init__(self):
-        self.data_service = data_service
+    def __init__(self, city: str = "Pune"):
+        self.city = city
+        self.data_service = get_data_service(city)
         self.l0_dimensions = self._initialize_l0_dimensions()
+
+    def set_city(self, city: str):
+        """Switch to a different city's data service"""
+        if city != self.city:
+            print(f"📍 KG Service: Switching from '{self.city}' to '{city}'")
+            self.city = city
+            self.data_service = get_data_service(city)
 
     def _initialize_l0_dimensions(self) -> Dict:
         """
@@ -261,15 +269,19 @@ class KnowledgeGraphService:
 
         Architecture:
         - L0 (Gray): Base dimensions (U, L², T, C)
-        - Projects (Blue): Core metadata nodes
+        - Projects (Yellow): Core metadata nodes
         - L1 Attributes (Green): Numeric values with dimensions
-        - L2 Metrics (Yellow): Calculated financial metrics
+        - L1 Enrichments (Purple): Nested enrichment data (unitMixBreakdown, priceRangeDistribution)
+        - L2 Metrics (Orange): Calculated financial metrics
 
         Args:
             project_name: If provided, focus on this project. Otherwise, show all.
 
         Returns:
-            Graph data with nodes and edges
+            Graph data with nodes and edges including:
+            - nodes: List of node objects with type, label, color, and attributes
+            - edges: List of edge objects with source, target, type, and color
+            - stats: Statistics about node and edge counts by type
         """
         nodes = []
         edges = []
@@ -289,8 +301,8 @@ class KnowledgeGraphService:
                 "type": "L0_Dimension",
                 "layer": 0,
                 "group": 0,
-                "size": 40,
-                "color": "#9E9E9E"
+                "size": 100,  # HUGE - primary centers
+                "color": "#424242"  # Darker gray for better visibility
             })
             node_id_map[dim_key] = node_id
 
@@ -311,8 +323,8 @@ class KnowledgeGraphService:
                 "type": "Project_L1",
                 "layer": 1,
                 "group": 1,
-                "size": 30,
-                "color": "#2196F3",
+                "size": 70,  # Large - secondary centers
+                "color": "#FF6F00",  # Darker orange for better visibility
                 # Add core metadata
                 "projectId": str(proj_id_value),
                 "projectName": self.data_service.get_value(project.get('projectName')),
@@ -350,8 +362,8 @@ class KnowledgeGraphService:
                     "type": "L1_Attribute",
                     "layer": 1,
                     "group": 1,
-                    "size": 15,
-                    "color": "#4CAF50",  # Green for L1
+                    "size": 12,  # Smaller to reduce clutter
+                    "color": "#66BB6A",  # Lighter green for better visibility
                     "value": self.data_service.get_value(attr_data),
                     "unit": self.data_service.get_unit(attr_data),
                     "dimension": dimension
@@ -380,6 +392,79 @@ class KnowledgeGraphService:
                             "color": self._get_relationship_color(rel_type)
                         })
 
+                # Handle nested list enrichments (unitMixBreakdown, priceRangeDistribution)
+                if attr_name in ['unitMixBreakdown', 'priceRangeDistribution']:
+                    enrichment_list = self.data_service.get_value(attr_data)
+
+                    if isinstance(enrichment_list, list):
+                        for idx, enrichment_item in enumerate(enrichment_list):
+                            if not isinstance(enrichment_item, dict):
+                                continue
+
+                            # Create unique ID for enrichment node
+                            enrichment_type = "unit_mix" if attr_name == "unitMixBreakdown" else "price_range"
+                            enrichment_id = f"{proj_id}_{enrichment_type}_{idx}"
+
+                            # Extract label based on enrichment type
+                            if attr_name == "unitMixBreakdown":
+                                flat_type = enrichment_item.get('flatType', {})
+                                label = self.data_service.get_value(flat_type) if isinstance(flat_type, dict) else f"Unit Mix {idx}"
+                            else:  # priceRangeDistribution
+                                price_range = enrichment_item.get('priceRange', {})
+                                label = self.data_service.get_value(price_range) if isinstance(price_range, dict) else f"Price Range {idx}"
+
+                            # Create enrichment node with all nested attributes
+                            enrichment_node = {
+                                "id": enrichment_id,
+                                "label": label,
+                                "type": "L1_Enrichment",
+                                "enrichmentType": enrichment_type,
+                                "layer": 1,
+                                "group": 1,
+                                "size": 8,  # Much smaller to reduce visual clutter
+                                "color": "#BA68C8",  # Lighter purple for less dominance
+                            }
+
+                            # Add all nested attributes to the node
+                            for nested_attr_name, nested_attr_data in enrichment_item.items():
+                                if isinstance(nested_attr_data, dict):
+                                    enrichment_node[nested_attr_name] = {
+                                        "value": self.data_service.get_value(nested_attr_data),
+                                        "unit": self.data_service.get_unit(nested_attr_data),
+                                        "dimension": self.data_service.get_dimension(nested_attr_data)
+                                    }
+
+                            nodes.append(enrichment_node)
+
+                            # Edge from project to enrichment node
+                            edges.append({
+                                "source": proj_id,
+                                "target": enrichment_id,
+                                "type": f"HAS_{enrichment_type.upper()}",
+                                "color": "#E1BEE7"  # Light purple
+                            })
+
+                            # Create edges from enrichment node to relevant L0 dimensions
+                            # Collect all dimensions from nested attributes
+                            enrichment_dimensions = set()
+                            for nested_attr_name, nested_attr_data in enrichment_item.items():
+                                if isinstance(nested_attr_data, dict):
+                                    nested_relationships = self.data_service.get_relationships(nested_attr_data)
+                                    for rel in nested_relationships:
+                                        if rel['type'] == 'IS':
+                                            enrichment_dimensions.add(rel['target'])
+
+                            # Create edges to dimensions
+                            for dim in enrichment_dimensions:
+                                if dim in node_id_map:
+                                    edges.append({
+                                        "source": enrichment_id,
+                                        "target": node_id_map[dim],
+                                        "type": "CONTAINS_DIMENSION",
+                                        "label": "contains",
+                                        "color": "#BA68C8"  # Medium purple
+                                    })
+
             # Add L2 metric nodes (calculated financial metrics)
             l2_metrics = project.get('l2_metrics', {})
             if l2_metrics and isinstance(l2_metrics, dict):
@@ -396,8 +481,8 @@ class KnowledgeGraphService:
                         "type": "L2_Metric",
                         "layer": 2,
                         "group": 2,
-                        "size": 20,
-                        "color": "#FFC107",  # Yellow for L2
+                        "size": 25,  # Larger for better visibility
+                        "color": "#FB8C00",  # Darker orange for better visibility
                         "value": self.data_service.get_value(metric_data),
                         "unit": self.data_service.get_unit(metric_data),
                         "dimension": dimension,
@@ -436,6 +521,9 @@ class KnowledgeGraphService:
                 "l0_dimensions": len(self.l0_dimensions),
                 "l1_projects": len(projects),
                 "l1_attributes": len([n for n in nodes if n.get('type') == 'L1_Attribute']),
+                "l1_enrichments": len([n for n in nodes if n.get('type') == 'L1_Enrichment']),
+                "l1_unit_mix": len([n for n in nodes if n.get('type') == 'L1_Enrichment' and n.get('enrichmentType') == 'unit_mix']),
+                "l1_price_range": len([n for n in nodes if n.get('type') == 'L1_Enrichment' and n.get('enrichmentType') == 'price_range']),
                 "l2_metrics": len([n for n in nodes if n.get('type') == 'L2_Metric'])
             }
         }

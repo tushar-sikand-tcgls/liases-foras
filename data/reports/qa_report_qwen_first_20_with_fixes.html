@@ -1,0 +1,572 @@
+
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
+    .container {
+        background: white;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+    .header {
+        border-bottom: 3px solid #4CAF50;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+    h1 {
+        color: #2c3e50;
+        margin: 0;
+    }
+    .run-id {
+        color: #7f8c8d;
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+    .metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+    }
+    .metric-card {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid #4CAF50;
+    }
+    .metric-card.failed {
+        border-left-color: #f44336;
+    }
+    .metric-value {
+        font-size: 2em;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+    .metric-label {
+        color: #7f8c8d;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .metric-delta {
+        font-size: 0.8em;
+        margin-top: 5px;
+    }
+    .metric-delta.positive {
+        color: #4CAF50;
+    }
+    .metric-delta.negative {
+        color: #f44336;
+    }
+    .section {
+        margin: 30px 0;
+    }
+    h2 {
+        color: #34495e;
+        border-bottom: 2px solid #ecf0f1;
+        padding-bottom: 10px;
+    }
+    .breakdown {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin: 20px 0;
+    }
+    .breakdown-item {
+        background: #ecf0f1;
+        padding: 15px;
+        border-radius: 6px;
+        text-align: center;
+    }
+    .failure-reasons {
+        background: #fff3cd;
+        border: 1px solid #ffc107;
+        border-radius: 6px;
+        padding: 20px;
+        margin: 20px 0;
+    }
+    .failure-reasons h3 {
+        margin-top: 0;
+        color: #856404;
+    }
+    .failure-reasons ul {
+        margin: 10px 0;
+        padding-left: 20px;
+    }
+    details {
+        margin: 20px 0;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    summary {
+        background: #f8f9fa;
+        padding: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        user-select: none;
+    }
+    summary:hover {
+        background: #e9ecef;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+    }
+    th {
+        background: #34495e;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        position: sticky;
+        top: 0;
+    }
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ecf0f1;
+    }
+    tr:hover {
+        background: #f8f9fa;
+    }
+    .status-pass {
+        background: #d4edda;
+        color: #155724;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        font-weight: bold;
+    }
+    .status-fail {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        font-weight: bold;
+    }
+    .status-fail-inclusion {
+        background: #fff3cd;
+        color: #856404;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        font-weight: bold;
+    }
+    .badge {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 0.75em;
+        font-weight: bold;
+    }
+    .badge-autofixed {
+        background: #d1ecf1;
+        color: #0c5460;
+    }
+    .badge-review {
+        background: #fff3cd;
+        color: #856404;
+    }
+    .prompt-cell {
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .cta-box {
+        background: #e3f2fd;
+        border: 2px solid #2196F3;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 30px 0;
+        text-align: center;
+    }
+    .cta-box h3 {
+        margin-top: 0;
+        color: #1976D2;
+    }
+    .footer {
+        text-align: center;
+        color: #7f8c8d;
+        font-size: 0.9em;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #ecf0f1;
+    }
+</style>
+
+
+<div class="container header">
+    <h1>🤖 QA Automation - Auto-Healing Test Report</h1>
+    <div class="run-id">Run ID: qwen_first_20_with_fixes | 2025-12-11 13:36:07</div>
+</div>
+
+
+<div class="container">
+    <h2>Executive Summary</h2>
+    <div class="metrics">
+        <div class="metric-card">
+            <div class="metric-label">Pass Rate</div>
+            <div class="metric-value">0.0%</div>
+            
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Total Tests</div>
+            <div class="metric-value">20</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Passed</div>
+            <div class="metric-value" style="color: #4CAF50;">0</div>
+        </div>
+        <div class="metric-card failed">
+            <div class="metric-label">Failed</div>
+            <div class="metric-value" style="color: #f44336;">20</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Auto-Fixed</div>
+            <div class="metric-value" style="color: #2196F3;">0</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Duration</div>
+            <div class="metric-value" style="font-size: 1.5em;">1744s</div>
+        </div>
+    </div>
+
+    <h3>By Test Type</h3>
+    <div class="breakdown">
+        <div class="breakdown-item">
+            <strong>Objective</strong><br>
+            0/20 passed<br>
+            (0.0%)
+        </div>
+        <div class="breakdown-item">
+            <strong>Subjective</strong><br>
+            0/0 passed<br>
+            (0.0%)
+        </div>
+        <div class="breakdown-item">
+            <strong>Calculated</strong><br>
+            0/0 passed<br>
+            (0.0%)
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <h2>Failure Analysis</h2>
+
+    <div class="breakdown">
+        <div class="breakdown-item">
+            <strong>Inclusion Failures</strong><br>
+            19 tests<br>
+            (95.0%)
+        </div>
+        <div class="breakdown-item">
+            <strong>Similarity Failures</strong><br>
+            1 tests<br>
+            (5.0%)
+        </div>
+        <div class="breakdown-item">
+            <strong>Needs Review</strong><br>
+            0 tests<br>
+            (0.0%)
+        </div>
+    </div>
+
+    <div class="failure-reasons">
+        <h3>Top Failure Patterns</h3>
+        <ul>
+            <li><strong>Missing expected text:</strong> 19 cases - Model response doesn't contain required substring</li>
+            <li><strong>Below similarity threshold:</strong> 1 cases - Response semantically different from reference</li>
+            <li><strong>Auto-fixed:</strong> 0 cases - Automatically corrected prompts/expectations</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="container">
+    <details>
+        <summary>📋 Click to expand detailed test results (20 tests)</summary>
+        <div style="overflow-x: auto; max-height: 600px; overflow-y: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Prompt</th>
+                        <th>Status</th>
+                        <th>Similarity</th>
+                        <th>Expected Answer</th>
+                        <th>Actual Answer</th>
+                        <th>Flags</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td>1</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of Sara City?">What is the Project Size of Sara City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.002</td>
+                <td title="3018 units">3018 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>2</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of Sara City?">What is the Total Supply (Units) of Sara City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.042</td>
+                <td title="1109 units">1109 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>3</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of Sara City?">What is the Sold (%) - Total Supply of Sara City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.076</td>
+                <td title="89% units">89% units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>4</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of Sara City?">What is the Unsold (%) of Sara City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.010</td>
+                <td title="11%">11%</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>5</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of Sara City?">What is the Annual Sales (Units) of Sara City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.079</td>
+                <td title="527 units">527 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>6</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of Sara City?">What is the Annual Sales Value (Rs.Cr.) of Sara City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.083</td>
+                <td title="106.411 Cr">106.411 Cr</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>7</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of Sara City in Units?">What is the Unit Saleable Size (Sq.Ft.) of Sara City in U...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.017</td>
+                <td title="2200 units">2200 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>8</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of Sara City?">What is the Saleable Launch Price (Rs/Psf) of Sara City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.001</td>
+                <td title="3996 INR/ft²">3996 INR/ft²</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>9</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of Sara City?">What is the Saleable Price (Psf) of Sara City?</td>
+                <td><span class="status-fail">FAIL</span></td>
+                <td>0.000</td>
+                <td title="4.69 INR/ft² (in thousands if <10)">4.69 INR/ft² (in thousands if <10)</td>
+                <td title=""></td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>10</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of Sara City?">What is the Monthly Sales Velocity of Sara City?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.076</td>
+                <td title="3.47%">3.47%</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>11</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Project Size of Pradnyesh Shrinivas in Units?">What is the Project Size of Pradnyesh Shrinivas in Units?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.033</td>
+                <td title="278 units">278 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>12</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Total Supply (Units) of Pradnyesh Shrinivas?">What is the Total Supply (Units) of Pradnyesh Shrinivas?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.068</td>
+                <td title="278 units">278 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>13</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Sold (%) - Total Supply of Pradnyesh Shrinivas?">What is the Sold (%) - Total Supply of Pradnyesh Shrinivas?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.094</td>
+                <td title="58%">58%</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>14</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unsold (%) of Pradnyesh Shrinivas?">What is the Unsold (%) of Pradnyesh Shrinivas?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.042</td>
+                <td title="42%">42%</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>15</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales (Units) of Pradnyesh Shrinivas?">What is the Annual Sales (Units) of Pradnyesh Shrinivas?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.110</td>
+                <td title="87 units">87 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>16</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Annual Sales Value (Rs.Cr.) of Pradnyesh Shrinivas?">What is the Annual Sales Value (Rs.Cr.) of Pradnyesh Shri...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.121</td>
+                <td title="24.562 Cr">24.562 Cr</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>17</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Unit Saleable Size (Sq.Ft.) of Pradnyesh Shrinivas in Units?">What is the Unit Saleable Size (Sq.Ft.) of Pradnyesh Shri...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.041</td>
+                <td title="3400 units">3400 units</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>18</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Launch Price (Rs/Psf) of Pradnyesh Shrinivas?">What is the Saleable Launch Price (Rs/Psf) of Pradnyesh S...</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.027</td>
+                <td title="3745 INR/ft²">3745 INR/ft²</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>19</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Saleable Price (Psf) of Pradnyesh Shrinivas?">What is the Saleable Price (Psf) of Pradnyesh Shrinivas?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.014</td>
+                <td title="4.05 INR/ft² (in thousands if <10)">4.05 INR/ft² (in thousands if <10)</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+
+            <tr>
+                <td>20</td>
+                <td>Objective</td>
+                <td class="prompt-cell" title="What is the Monthly Sales Velocity of Pradnyesh Shrinivas?">What is the Monthly Sales Velocity of Pradnyesh Shrinivas?</td>
+                <td><span class="status-fail-inclusion">FAIL_INCLUSION</span></td>
+                <td>0.100</td>
+                <td title="8.91%">8.91%</td>
+                <td title="No result returned">No result returned</td>
+                <td></td>
+            </tr>
+            
+                </tbody>
+            </table>
+        </div>
+    </details>
+</div>
+
+
+<div class="cta-box">
+    <h3>📩 Next Steps</h3>
+    <p>Do you want another refinement cycle (further auto-fixing and regression run),<br>
+    or are you satisfied with the current test outcomes?</p>
+</div>
+
+<div class="footer">
+    Generated by QA Automation - Auto-Healing Testing System<br>
+    2025-12-11 19:35:12 | Built with Hexagonal Architecture + LangGraph
+</div>

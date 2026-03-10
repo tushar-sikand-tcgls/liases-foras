@@ -1,0 +1,35 @@
+
+================================================================================
+AUTO-HEALING TEST REPORT - Run: gemini_all_fixes_final
+================================================================================
+
+SUMMARY:
+--------
+Total Tests: 121
+Passed: 0 (0.0%)
+Failed: 121 (100.0%)
+  - Inclusion failures: 103
+  - Similarity failures: 18
+
+BY TYPE:
+--------
+Objective:   0/100 passed (0.0%)
+Subjective:  0/19 passed (0.0%)
+Calculated:  0/2 passed (0.0%)
+
+AUTO-FIXES:
+-----------
+Auto-fixed: 0 test cases
+Needs review: 0 test cases
+
+TIMING:
+-------
+Duration: 120.5s
+Started: 2025-12-11 13:32:11
+Completed: 2025-12-11 13:34:12
+
+================================================================================
+
+Do you want another refinement cycle (further auto-fixing and regression run),
+or are you satisfied with the current test outcomes?
+

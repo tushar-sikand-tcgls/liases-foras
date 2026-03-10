@@ -1,0 +1,4974 @@
+{
+  "metadata": {
+    "source_file": "/Users/tusharsikand/Documents/Projects/liases-foras/GetMicromarketPdf.pdf",
+    "extraction_timestamp": "2025-12-29T11:27:08.897370",
+    "architecture_version": "v4.0.0",
+    "data_layer": "L1",
+    "description": "Nested {value, unit, dimension} with explicit relationships",
+    "extraction_priority": {
+      "page_2": {
+        "weight": 10,
+        "description": "Top 10 Projects"
+      },
+      "page_5": {
+        "weight": 9,
+        "description": "Unit Type Analysis"
+      },
+      "page_8": {
+        "weight": 8,
+        "description": "Quarterly Market Summary"
+      }
+    }
+  },
+  "page_2_projects": [
+    {
+      "projectId": {
+        "value": 3306,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Sara City",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Sara\nBuilders &\nDevelopers\n(Sara Group)",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "location": {
+        "value": "Chakan",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "priorityWeight": {
+        "value": 10,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:27:09.059392",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 1109,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 527,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeUnits": {
+        "value": 3018,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeAcres": {
+        "value": 7.85,
+        "unit": "acres (calculated)",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2_Calculated_From_FAR",
+        "isPure": true
+      },
+      "unitSaleableSizeSqft": {
+        "value": 411,
+        "unit": "sqft/unit",
+        "dimension": "L²/U",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "L²"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "launchDate": {
+        "value": "Nov 2007",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Dec 2027",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesValueCr": {
+        "value": 106,
+        "unit": "INR Crore",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 2200,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "currentPricePSF": {
+        "value": 3996,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "monthlySalesVelocity": {
+        "value": 3.47,
+        "unit": "%/month",
+        "dimension": "Fraction/T",
+        "relationships": [
+          {
+            "type": "INVERSE_OF",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "soldPct": {
+        "value": 89,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "unsoldPct": {
+        "value": 11,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": "Y",
+        "unit": "Boolean Flag",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "l2_metrics": {
+        "totalRevenueCr": {
+          "value": 182.14,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "totalSupplyUnits × unitSaleableSizeSqft × currentPricePSF / 10^7"
+        },
+        "totalCostCr": {
+          "value": 326.66,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(area × construction_cost_psf) + (acres × land_cost)"
+        },
+        "npvCr": {
+          "value": 465.1,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "Σ(annual_cashflow / (1+discount_rate)^t) - initial_investment"
+        },
+        "irrPct": {
+          "value": 32.33,
+          "unit": "%",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "Rate where NPV = 0"
+        },
+        "paybackPeriodYears": {
+          "value": 3.08,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "total_cost / annual_cashflow"
+        },
+        "profitabilityIndex": {
+          "value": 2.42,
+          "unit": "ratio",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(NPV + initial_investment) / initial_investment"
+        },
+        "roiPct": {
+          "value": -44.24,
+          "unit": "%",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(total_revenue - total_cost) / total_cost × 100"
+        },
+        "absorptionRatePctPerYear": {
+          "value": 443.15,
+          "unit": "%/year",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "sold_pct / project_duration_years × 100"
+        },
+        "projectDurationYears": {
+          "value": 20.08,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(possession_date - launch_date) / 12"
+        }
+      },
+      "l3_insights": {
+        "L1_insights": [
+          {
+            "metric": "soldPct",
+            "value": 89,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "monthlySalesVelocity",
+            "value": 3.47,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "currentPricePSF",
+            "metric_name": "Current Price PSF",
+            "value": 3996,
+            "unit": "INR/sqft",
+            "dimension": "C/L²",
+            "evaluation": "Okay",
+            "description": "₹3000-5000/sqft",
+            "threshold_min": 3000,
+            "threshold_max": 5000,
+            "requires_llm_recommendation": true,
+            "layer": "L1"
+          }
+        ],
+        "L2_insights": [
+          {
+            "metric": "npvCr",
+            "metric_name": "Net Present Value",
+            "value": 465.1,
+            "unit": "INR Crore",
+            "dimension": "C",
+            "evaluation": "Excellent",
+            "description": "> ₹100 Cr NPV",
+            "threshold_min": 100,
+            "threshold_max": 1000000,
+            "requires_llm_recommendation": false,
+            "layer": "L2"
+          },
+          {
+            "metric": "irrPct",
+            "metric_name": "Internal Rate of Return",
+            "value": 32.33,
+            "unit": "%",
+            "dimension": "Fraction/T",
+            "evaluation": "Excellent",
+            "description": ">= 18% IRR",
+            "threshold_min": 18,
+            "threshold_max": 100,
+            "requires_llm_recommendation": false,
+            "layer": "L2"
+          },
+          {
+            "metric": "roiPct",
+            "metric_name": "Return on Investment",
+            "value": -44.24,
+            "unit": "%",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 20% ROI",
+            "threshold_min": -1000,
+            "threshold_max": 20,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "paybackPeriodYears",
+            "metric_name": "Payback Period",
+            "value": 3.08,
+            "unit": "years",
+            "dimension": "T",
+            "evaluation": "Excellent",
+            "description": "<= 5 years",
+            "threshold_min": 0,
+            "threshold_max": 5,
+            "requires_llm_recommendation": false,
+            "layer": "L2"
+          },
+          {
+            "metric": "profitabilityIndex",
+            "metric_name": "Profitability Index",
+            "value": 2.42,
+            "unit": "ratio",
+            "dimension": "Dimensionless",
+            "evaluation": "Excellent",
+            "description": ">= 1.5",
+            "threshold_min": 1.5,
+            "threshold_max": 10,
+            "requires_llm_recommendation": false,
+            "layer": "L2"
+          },
+          {
+            "metric": "absorptionRatePctPerYear",
+            "value": 443.15,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          }
+        ],
+        "summary": {
+          "excellent_count": 4,
+          "okay_count": 1,
+          "bad_count": 1,
+          "total_evaluated": 9,
+          "needs_llm_recommendations": [
+            "currentPricePSF",
+            "roiPct"
+          ],
+          "overall_health": "Excellent"
+        },
+        "layer": "L3",
+        "source": "RuleEngine_NonLLM",
+        "generated_at": "1764497647.2538154"
+      }
+    },
+    {
+      "projectId": {
+        "value": 134282,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Pradnyesh\nShriniwas",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "JJ Mauli\nDevelopers",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "location": {
+        "value": "Chakan",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "priorityWeight": {
+        "value": 10,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:27:09.059552",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 278,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 87,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeUnits": {
+        "value": 278,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeAcres": {
+        "value": 2.69,
+        "unit": "acres (calculated)",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2_Calculated_From_FAR",
+        "isPure": true
+      },
+      "unitSaleableSizeSqft": {
+        "value": 562,
+        "unit": "sqft/unit",
+        "dimension": "L²/U",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "L²"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "launchDate": {
+        "value": "Apr 2023",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "May 2027",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesValueCr": {
+        "value": 24,
+        "unit": "INR Crore",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 3400,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "currentPricePSF": {
+        "value": 3745,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "monthlySalesVelocity": {
+        "value": 8.91,
+        "unit": "%/month",
+        "dimension": "Fraction/T",
+        "relationships": [
+          {
+            "type": "INVERSE_OF",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "soldPct": {
+        "value": 58,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "unsoldPct": {
+        "value": 42,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": "Y",
+        "unit": "Boolean Flag",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "l2_metrics": {
+        "totalRevenueCr": {
+          "value": 58.51,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "totalSupplyUnits × unitSaleableSizeSqft × currentPricePSF / 10^7"
+        },
+        "totalCostCr": {
+          "value": 111.95,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(area × construction_cost_psf) + (acres × land_cost)"
+        },
+        "npvCr": {
+          "value": -39.05,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "Σ(annual_cashflow / (1+discount_rate)^t) - initial_investment"
+        },
+        "irrPct": {
+          "value": -5.88,
+          "unit": "%",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "Rate where NPV = 0"
+        },
+        "paybackPeriodYears": {
+          "value": 4.66,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "total_cost / annual_cashflow"
+        },
+        "profitabilityIndex": {
+          "value": 0.65,
+          "unit": "ratio",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(NPV + initial_investment) / initial_investment"
+        },
+        "roiPct": {
+          "value": -47.73,
+          "unit": "%",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(total_revenue - total_cost) / total_cost × 100"
+        },
+        "absorptionRatePctPerYear": {
+          "value": 1420.41,
+          "unit": "%/year",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "sold_pct / project_duration_years × 100"
+        },
+        "projectDurationYears": {
+          "value": 4.08,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(possession_date - launch_date) / 12"
+        }
+      },
+      "l3_insights": {
+        "L1_insights": [
+          {
+            "metric": "soldPct",
+            "value": 58,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "monthlySalesVelocity",
+            "value": 8.91,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "currentPricePSF",
+            "metric_name": "Current Price PSF",
+            "value": 3745,
+            "unit": "INR/sqft",
+            "dimension": "C/L²",
+            "evaluation": "Okay",
+            "description": "₹3000-5000/sqft",
+            "threshold_min": 3000,
+            "threshold_max": 5000,
+            "requires_llm_recommendation": true,
+            "layer": "L1"
+          }
+        ],
+        "L2_insights": [
+          {
+            "metric": "npvCr",
+            "metric_name": "Net Present Value",
+            "value": -39.05,
+            "unit": "INR Crore",
+            "dimension": "C",
+            "evaluation": "Bad",
+            "description": "Negative NPV",
+            "threshold_min": -1000000,
+            "threshold_max": 0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "irrPct",
+            "metric_name": "Internal Rate of Return",
+            "value": -5.88,
+            "unit": "%",
+            "dimension": "Fraction/T",
+            "evaluation": "Bad",
+            "description": "< 12% IRR",
+            "threshold_min": -100,
+            "threshold_max": 12,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "roiPct",
+            "metric_name": "Return on Investment",
+            "value": -47.73,
+            "unit": "%",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 20% ROI",
+            "threshold_min": -1000,
+            "threshold_max": 20,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "paybackPeriodYears",
+            "metric_name": "Payback Period",
+            "value": 4.66,
+            "unit": "years",
+            "dimension": "T",
+            "evaluation": "Excellent",
+            "description": "<= 5 years",
+            "threshold_min": 0,
+            "threshold_max": 5,
+            "requires_llm_recommendation": false,
+            "layer": "L2"
+          },
+          {
+            "metric": "profitabilityIndex",
+            "metric_name": "Profitability Index",
+            "value": 0.65,
+            "unit": "ratio",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 1.0",
+            "threshold_min": 0,
+            "threshold_max": 1.0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "absorptionRatePctPerYear",
+            "value": 1420.41,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          }
+        ],
+        "summary": {
+          "excellent_count": 1,
+          "okay_count": 1,
+          "bad_count": 4,
+          "total_evaluated": 9,
+          "needs_llm_recommendations": [
+            "currentPricePSF",
+            "npvCr",
+            "irrPct",
+            "roiPct",
+            "profitabilityIndex"
+          ],
+          "overall_health": "Bad"
+        },
+        "layer": "L3",
+        "source": "RuleEngine_NonLLM",
+        "generated_at": "1764497647.2538154"
+      }
+    },
+    {
+      "projectId": {
+        "value": 139616,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Sara Nilaay",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Sara\nBuilders &\nDevelopers\n(Sara Group)",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "location": {
+        "value": "Talegaon",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "priorityWeight": {
+        "value": 10,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:27:09.059573",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 298,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 32,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeUnits": {
+        "value": 298,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeAcres": {
+        "value": 2.03,
+        "unit": "acres (calculated)",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2_Calculated_From_FAR",
+        "isPure": true
+      },
+      "unitSaleableSizeSqft": {
+        "value": 395,
+        "unit": "sqft/unit",
+        "dimension": "L²/U",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "L²"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "launchDate": {
+        "value": "May 2024",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Dec 2028",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesValueCr": {
+        "value": 6,
+        "unit": "INR Crore",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 4285,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "currentPricePSF": {
+        "value": 4569,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "monthlySalesVelocity": {
+        "value": 1.95,
+        "unit": "%/month",
+        "dimension": "Fraction/T",
+        "relationships": [
+          {
+            "type": "INVERSE_OF",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "soldPct": {
+        "value": 31,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "unsoldPct": {
+        "value": 69,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": "Y",
+        "unit": "Boolean Flag",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "l2_metrics": {
+        "totalRevenueCr": {
+          "value": 53.78,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "totalSupplyUnits × unitSaleableSizeSqft × currentPricePSF / 10^7"
+        },
+        "totalCostCr": {
+          "value": 84.44,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(area × construction_cost_psf) + (acres × land_cost)"
+        },
+        "npvCr": {
+          "value": -66.22,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "Σ(annual_cashflow / (1+discount_rate)^t) - initial_investment"
+        },
+        "irrPct": {
+          "value": -36.45,
+          "unit": "%",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "Rate where NPV = 0"
+        },
+        "paybackPeriodYears": {
+          "value": 14.07,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "total_cost / annual_cashflow"
+        },
+        "profitabilityIndex": {
+          "value": 0.22,
+          "unit": "ratio",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(NPV + initial_investment) / initial_investment"
+        },
+        "roiPct": {
+          "value": -36.31,
+          "unit": "%",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(total_revenue - total_cost) / total_cost × 100"
+        },
+        "absorptionRatePctPerYear": {
+          "value": 676.36,
+          "unit": "%/year",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "sold_pct / project_duration_years × 100"
+        },
+        "projectDurationYears": {
+          "value": 4.58,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(possession_date - launch_date) / 12"
+        }
+      },
+      "l3_insights": {
+        "L1_insights": [
+          {
+            "metric": "soldPct",
+            "value": 31,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "monthlySalesVelocity",
+            "value": 1.95,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "currentPricePSF",
+            "metric_name": "Current Price PSF",
+            "value": 4569,
+            "unit": "INR/sqft",
+            "dimension": "C/L²",
+            "evaluation": "Okay",
+            "description": "₹3000-5000/sqft",
+            "threshold_min": 3000,
+            "threshold_max": 5000,
+            "requires_llm_recommendation": true,
+            "layer": "L1"
+          }
+        ],
+        "L2_insights": [
+          {
+            "metric": "npvCr",
+            "metric_name": "Net Present Value",
+            "value": -66.22,
+            "unit": "INR Crore",
+            "dimension": "C",
+            "evaluation": "Bad",
+            "description": "Negative NPV",
+            "threshold_min": -1000000,
+            "threshold_max": 0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "irrPct",
+            "metric_name": "Internal Rate of Return",
+            "value": -36.45,
+            "unit": "%",
+            "dimension": "Fraction/T",
+            "evaluation": "Bad",
+            "description": "< 12% IRR",
+            "threshold_min": -100,
+            "threshold_max": 12,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "roiPct",
+            "metric_name": "Return on Investment",
+            "value": -36.31,
+            "unit": "%",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 20% ROI",
+            "threshold_min": -1000,
+            "threshold_max": 20,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "paybackPeriodYears",
+            "metric_name": "Payback Period",
+            "value": 14.07,
+            "unit": "years",
+            "dimension": "T",
+            "evaluation": "Bad",
+            "description": "> 10 years",
+            "threshold_min": 10,
+            "threshold_max": 100,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "profitabilityIndex",
+            "metric_name": "Profitability Index",
+            "value": 0.22,
+            "unit": "ratio",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 1.0",
+            "threshold_min": 0,
+            "threshold_max": 1.0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "absorptionRatePctPerYear",
+            "value": 676.36,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          }
+        ],
+        "summary": {
+          "excellent_count": 0,
+          "okay_count": 1,
+          "bad_count": 5,
+          "total_evaluated": 9,
+          "needs_llm_recommendations": [
+            "currentPricePSF",
+            "npvCr",
+            "irrPct",
+            "roiPct",
+            "paybackPeriodYears",
+            "profitabilityIndex"
+          ],
+          "overall_health": "Bad"
+        },
+        "layer": "L3",
+        "source": "RuleEngine_NonLLM",
+        "generated_at": "1764497647.2538154"
+      }
+    },
+    {
+      "projectId": {
+        "value": 147800,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Sara\nAbhiruchi\nTower",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Sara\nBuilders &\nDevelopers\n(Sara Group)",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "location": {
+        "value": "Chakan",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "priorityWeight": {
+        "value": 10,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:27:09.059590",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 280,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 32,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeUnits": {
+        "value": 280,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeAcres": {
+        "value": 3.06,
+        "unit": "acres (calculated)",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2_Calculated_From_FAR",
+        "isPure": true
+      },
+      "unitSaleableSizeSqft": {
+        "value": 635,
+        "unit": "sqft/unit",
+        "dimension": "L²/U",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "L²"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "launchDate": {
+        "value": "Aug 2025",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Dec 2028",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesValueCr": {
+        "value": 7,
+        "unit": "INR Crore",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 3189,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "currentPricePSF": {
+        "value": 3189,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "monthlySalesVelocity": {
+        "value": 11.43,
+        "unit": "%/month",
+        "dimension": "Fraction/T",
+        "relationships": [
+          {
+            "type": "INVERSE_OF",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "soldPct": {
+        "value": 11,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "unsoldPct": {
+        "value": 89,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": "Y",
+        "unit": "Boolean Flag",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "l2_metrics": {
+        "totalRevenueCr": {
+          "value": 56.7,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "totalSupplyUnits × unitSaleableSizeSqft × currentPricePSF / 10^7"
+        },
+        "totalCostCr": {
+          "value": 127.36,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(area × construction_cost_psf) + (acres × land_cost)"
+        },
+        "npvCr": {
+          "value": -110.55,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "Σ(annual_cashflow / (1+discount_rate)^t) - initial_investment"
+        },
+        "irrPct": {
+          "value": -55.06,
+          "unit": "%",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "Rate where NPV = 0"
+        },
+        "paybackPeriodYears": {
+          "value": 18.19,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "total_cost / annual_cashflow"
+        },
+        "profitabilityIndex": {
+          "value": 0.13,
+          "unit": "ratio",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(NPV + initial_investment) / initial_investment"
+        },
+        "roiPct": {
+          "value": -55.48,
+          "unit": "%",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(total_revenue - total_cost) / total_cost × 100"
+        },
+        "absorptionRatePctPerYear": {
+          "value": 330.0,
+          "unit": "%/year",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "sold_pct / project_duration_years × 100"
+        },
+        "projectDurationYears": {
+          "value": 3.33,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(possession_date - launch_date) / 12"
+        }
+      },
+      "l3_insights": {
+        "L1_insights": [
+          {
+            "metric": "soldPct",
+            "value": 11,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "monthlySalesVelocity",
+            "value": 11.43,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "currentPricePSF",
+            "metric_name": "Current Price PSF",
+            "value": 3189,
+            "unit": "INR/sqft",
+            "dimension": "C/L²",
+            "evaluation": "Okay",
+            "description": "₹3000-5000/sqft",
+            "threshold_min": 3000,
+            "threshold_max": 5000,
+            "requires_llm_recommendation": true,
+            "layer": "L1"
+          }
+        ],
+        "L2_insights": [
+          {
+            "metric": "npvCr",
+            "metric_name": "Net Present Value",
+            "value": -110.55,
+            "unit": "INR Crore",
+            "dimension": "C",
+            "evaluation": "Bad",
+            "description": "Negative NPV",
+            "threshold_min": -1000000,
+            "threshold_max": 0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "irrPct",
+            "metric_name": "Internal Rate of Return",
+            "value": -55.06,
+            "unit": "%",
+            "dimension": "Fraction/T",
+            "evaluation": "Bad",
+            "description": "< 12% IRR",
+            "threshold_min": -100,
+            "threshold_max": 12,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "roiPct",
+            "metric_name": "Return on Investment",
+            "value": -55.48,
+            "unit": "%",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 20% ROI",
+            "threshold_min": -1000,
+            "threshold_max": 20,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "paybackPeriodYears",
+            "metric_name": "Payback Period",
+            "value": 18.19,
+            "unit": "years",
+            "dimension": "T",
+            "evaluation": "Bad",
+            "description": "> 10 years",
+            "threshold_min": 10,
+            "threshold_max": 100,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "profitabilityIndex",
+            "metric_name": "Profitability Index",
+            "value": 0.13,
+            "unit": "ratio",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 1.0",
+            "threshold_min": 0,
+            "threshold_max": 1.0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "absorptionRatePctPerYear",
+            "value": 330.0,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          }
+        ],
+        "summary": {
+          "excellent_count": 0,
+          "okay_count": 1,
+          "bad_count": 5,
+          "total_evaluated": 9,
+          "needs_llm_recommendations": [
+            "currentPricePSF",
+            "npvCr",
+            "irrPct",
+            "roiPct",
+            "paybackPeriodYears",
+            "profitabilityIndex"
+          ],
+          "overall_health": "Bad"
+        },
+        "layer": "L3",
+        "source": "RuleEngine_NonLLM",
+        "generated_at": "1764497647.2538154"
+      }
+    },
+    {
+      "projectId": {
+        "value": 137562,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "The Urbana",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Intercontinent\nInfrastructure\nLimited",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "location": {
+        "value": "a\nChakan",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "priorityWeight": {
+        "value": 10,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:27:09.059609",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 168,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 29,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeUnits": {
+        "value": 168,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeAcres": {
+        "value": 1.59,
+        "unit": "acres (calculated)",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2_Calculated_From_FAR",
+        "isPure": true
+      },
+      "unitSaleableSizeSqft": {
+        "value": 550,
+        "unit": "sqft/unit",
+        "dimension": "L²/U",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "L²"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "launchDate": {
+        "value": "Oct 2023",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "May 2026",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesValueCr": {
+        "value": 7,
+        "unit": "INR Crore",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 3696,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "currentPricePSF": {
+        "value": 3725,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "monthlySalesVelocity": {
+        "value": 4.2,
+        "unit": "%/month",
+        "dimension": "Fraction/T",
+        "relationships": [
+          {
+            "type": "INVERSE_OF",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "soldPct": {
+        "value": 96,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "unsoldPct": {
+        "value": 4,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": "Y",
+        "unit": "Boolean Flag",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "l2_metrics": {
+        "totalRevenueCr": {
+          "value": 34.42,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "totalSupplyUnits × unitSaleableSizeSqft × currentPricePSF / 10^7"
+        },
+        "totalCostCr": {
+          "value": 66.18,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(area × construction_cost_psf) + (acres × land_cost)"
+        },
+        "npvCr": {
+          "value": -54.35,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "Σ(annual_cashflow / (1+discount_rate)^t) - initial_investment"
+        },
+        "irrPct": {
+          "value": -61.76,
+          "unit": "%",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "Rate where NPV = 0"
+        },
+        "paybackPeriodYears": {
+          "value": 9.45,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "total_cost / annual_cashflow"
+        },
+        "profitabilityIndex": {
+          "value": 0.18,
+          "unit": "ratio",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(NPV + initial_investment) / initial_investment"
+        },
+        "roiPct": {
+          "value": -47.99,
+          "unit": "%",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(total_revenue - total_cost) / total_cost × 100"
+        },
+        "absorptionRatePctPerYear": {
+          "value": 3716.13,
+          "unit": "%/year",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "sold_pct / project_duration_years × 100"
+        },
+        "projectDurationYears": {
+          "value": 2.58,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(possession_date - launch_date) / 12"
+        }
+      },
+      "l3_insights": {
+        "L1_insights": [
+          {
+            "metric": "soldPct",
+            "value": 96,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "monthlySalesVelocity",
+            "value": 4.2,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "currentPricePSF",
+            "metric_name": "Current Price PSF",
+            "value": 3725,
+            "unit": "INR/sqft",
+            "dimension": "C/L²",
+            "evaluation": "Okay",
+            "description": "₹3000-5000/sqft",
+            "threshold_min": 3000,
+            "threshold_max": 5000,
+            "requires_llm_recommendation": true,
+            "layer": "L1"
+          }
+        ],
+        "L2_insights": [
+          {
+            "metric": "npvCr",
+            "metric_name": "Net Present Value",
+            "value": -54.35,
+            "unit": "INR Crore",
+            "dimension": "C",
+            "evaluation": "Bad",
+            "description": "Negative NPV",
+            "threshold_min": -1000000,
+            "threshold_max": 0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "irrPct",
+            "metric_name": "Internal Rate of Return",
+            "value": -61.76,
+            "unit": "%",
+            "dimension": "Fraction/T",
+            "evaluation": "Bad",
+            "description": "< 12% IRR",
+            "threshold_min": -100,
+            "threshold_max": 12,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "roiPct",
+            "metric_name": "Return on Investment",
+            "value": -47.99,
+            "unit": "%",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 20% ROI",
+            "threshold_min": -1000,
+            "threshold_max": 20,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "paybackPeriodYears",
+            "metric_name": "Payback Period",
+            "value": 9.45,
+            "unit": "years",
+            "dimension": "T",
+            "evaluation": "Okay",
+            "description": "5-10 years",
+            "threshold_min": 5,
+            "threshold_max": 10,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "profitabilityIndex",
+            "metric_name": "Profitability Index",
+            "value": 0.18,
+            "unit": "ratio",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 1.0",
+            "threshold_min": 0,
+            "threshold_max": 1.0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "absorptionRatePctPerYear",
+            "value": 3716.13,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          }
+        ],
+        "summary": {
+          "excellent_count": 0,
+          "okay_count": 2,
+          "bad_count": 4,
+          "total_evaluated": 9,
+          "needs_llm_recommendations": [
+            "currentPricePSF",
+            "npvCr",
+            "irrPct",
+            "roiPct",
+            "paybackPeriodYears",
+            "profitabilityIndex"
+          ],
+          "overall_health": "Bad"
+        },
+        "layer": "L3",
+        "source": "RuleEngine_NonLLM",
+        "generated_at": "1764497647.2538154"
+      }
+    },
+    {
+      "projectId": {
+        "value": 141108,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Gulmohar\nCity",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Gurudatta\nBuilders And\nDevelopers",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "location": {
+        "value": "Chakan",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "priorityWeight": {
+        "value": 10,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:27:09.059628",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 150,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 28,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeUnits": {
+        "value": 150,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeAcres": {
+        "value": 1.37,
+        "unit": "acres (calculated)",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2_Calculated_From_FAR",
+        "isPure": true
+      },
+      "unitSaleableSizeSqft": {
+        "value": 531,
+        "unit": "sqft/unit",
+        "dimension": "L²/U",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "L²"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "launchDate": {
+        "value": "Sep 2024",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Dec 2028",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesValueCr": {
+        "value": 8,
+        "unit": "INR Crore",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 4352,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "currentPricePSF": {
+        "value": 4330,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "monthlySalesVelocity": {
+        "value": 2.37,
+        "unit": "%/month",
+        "dimension": "Fraction/T",
+        "relationships": [
+          {
+            "type": "INVERSE_OF",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "soldPct": {
+        "value": 27,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "unsoldPct": {
+        "value": 73,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": "Y",
+        "unit": "Boolean Flag",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "l2_metrics": {
+        "totalRevenueCr": {
+          "value": 34.49,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "totalSupplyUnits × unitSaleableSizeSqft × currentPricePSF / 10^7"
+        },
+        "totalCostCr": {
+          "value": 57.03,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(area × construction_cost_psf) + (acres × land_cost)"
+        },
+        "npvCr": {
+          "value": -32.73,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "Σ(annual_cashflow / (1+discount_rate)^t) - initial_investment"
+        },
+        "irrPct": {
+          "value": -19.68,
+          "unit": "%",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "Rate where NPV = 0"
+        },
+        "paybackPeriodYears": {
+          "value": 7.13,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "total_cost / annual_cashflow"
+        },
+        "profitabilityIndex": {
+          "value": 0.43,
+          "unit": "ratio",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(NPV + initial_investment) / initial_investment"
+        },
+        "roiPct": {
+          "value": -39.53,
+          "unit": "%",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(total_revenue - total_cost) / total_cost × 100"
+        },
+        "absorptionRatePctPerYear": {
+          "value": 635.29,
+          "unit": "%/year",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "sold_pct / project_duration_years × 100"
+        },
+        "projectDurationYears": {
+          "value": 4.25,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(possession_date - launch_date) / 12"
+        }
+      },
+      "l3_insights": {
+        "L1_insights": [
+          {
+            "metric": "soldPct",
+            "value": 27,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "monthlySalesVelocity",
+            "value": 2.37,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "currentPricePSF",
+            "metric_name": "Current Price PSF",
+            "value": 4330,
+            "unit": "INR/sqft",
+            "dimension": "C/L²",
+            "evaluation": "Okay",
+            "description": "₹3000-5000/sqft",
+            "threshold_min": 3000,
+            "threshold_max": 5000,
+            "requires_llm_recommendation": true,
+            "layer": "L1"
+          }
+        ],
+        "L2_insights": [
+          {
+            "metric": "npvCr",
+            "metric_name": "Net Present Value",
+            "value": -32.73,
+            "unit": "INR Crore",
+            "dimension": "C",
+            "evaluation": "Bad",
+            "description": "Negative NPV",
+            "threshold_min": -1000000,
+            "threshold_max": 0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "irrPct",
+            "metric_name": "Internal Rate of Return",
+            "value": -19.68,
+            "unit": "%",
+            "dimension": "Fraction/T",
+            "evaluation": "Bad",
+            "description": "< 12% IRR",
+            "threshold_min": -100,
+            "threshold_max": 12,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "roiPct",
+            "metric_name": "Return on Investment",
+            "value": -39.53,
+            "unit": "%",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 20% ROI",
+            "threshold_min": -1000,
+            "threshold_max": 20,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "paybackPeriodYears",
+            "metric_name": "Payback Period",
+            "value": 7.13,
+            "unit": "years",
+            "dimension": "T",
+            "evaluation": "Okay",
+            "description": "5-10 years",
+            "threshold_min": 5,
+            "threshold_max": 10,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "profitabilityIndex",
+            "metric_name": "Profitability Index",
+            "value": 0.43,
+            "unit": "ratio",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 1.0",
+            "threshold_min": 0,
+            "threshold_max": 1.0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "absorptionRatePctPerYear",
+            "value": 635.29,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          }
+        ],
+        "summary": {
+          "excellent_count": 0,
+          "okay_count": 2,
+          "bad_count": 4,
+          "total_evaluated": 9,
+          "needs_llm_recommendations": [
+            "currentPricePSF",
+            "npvCr",
+            "irrPct",
+            "roiPct",
+            "paybackPeriodYears",
+            "profitabilityIndex"
+          ],
+          "overall_health": "Bad"
+        },
+        "layer": "L3",
+        "source": "RuleEngine_NonLLM",
+        "generated_at": "1764497647.2538154"
+      }
+    },
+    {
+      "projectId": {
+        "value": 138347,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Siddhivinayak\nResidency",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Kate\nBuilders",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "location": {
+        "value": "Chakan",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "priorityWeight": {
+        "value": 10,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:27:09.059644",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 156,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 24,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeUnits": {
+        "value": 156,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeAcres": {
+        "value": 1.54,
+        "unit": "acres (calculated)",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2_Calculated_From_FAR",
+        "isPure": true
+      },
+      "unitSaleableSizeSqft": {
+        "value": 573,
+        "unit": "sqft/unit",
+        "dimension": "L²/U",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "L²"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "launchDate": {
+        "value": "Jan 2024",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Jun 2028",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesValueCr": {
+        "value": 7,
+        "unit": "INR Crore",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 4046,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "currentPricePSF": {
+        "value": 4094,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "monthlySalesVelocity": {
+        "value": 3.21,
+        "unit": "%/month",
+        "dimension": "Fraction/T",
+        "relationships": [
+          {
+            "type": "INVERSE_OF",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "soldPct": {
+        "value": 64,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "unsoldPct": {
+        "value": 36,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": "Y",
+        "unit": "Boolean Flag",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "l2_metrics": {
+        "totalRevenueCr": {
+          "value": 36.6,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "totalSupplyUnits × unitSaleableSizeSqft × currentPricePSF / 10^7"
+        },
+        "totalCostCr": {
+          "value": 64.08,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(area × construction_cost_psf) + (acres × land_cost)"
+        },
+        "npvCr": {
+          "value": -42.82,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "Σ(annual_cashflow / (1+discount_rate)^t) - initial_investment"
+        },
+        "irrPct": {
+          "value": -26.49,
+          "unit": "%",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "Rate where NPV = 0"
+        },
+        "paybackPeriodYears": {
+          "value": 9.15,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "total_cost / annual_cashflow"
+        },
+        "profitabilityIndex": {
+          "value": 0.33,
+          "unit": "ratio",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(NPV + initial_investment) / initial_investment"
+        },
+        "roiPct": {
+          "value": -42.89,
+          "unit": "%",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(total_revenue - total_cost) / total_cost × 100"
+        },
+        "absorptionRatePctPerYear": {
+          "value": 1449.06,
+          "unit": "%/year",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "sold_pct / project_duration_years × 100"
+        },
+        "projectDurationYears": {
+          "value": 4.42,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(possession_date - launch_date) / 12"
+        }
+      },
+      "l3_insights": {
+        "L1_insights": [
+          {
+            "metric": "soldPct",
+            "value": 64,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "monthlySalesVelocity",
+            "value": 3.21,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "currentPricePSF",
+            "metric_name": "Current Price PSF",
+            "value": 4094,
+            "unit": "INR/sqft",
+            "dimension": "C/L²",
+            "evaluation": "Okay",
+            "description": "₹3000-5000/sqft",
+            "threshold_min": 3000,
+            "threshold_max": 5000,
+            "requires_llm_recommendation": true,
+            "layer": "L1"
+          }
+        ],
+        "L2_insights": [
+          {
+            "metric": "npvCr",
+            "metric_name": "Net Present Value",
+            "value": -42.82,
+            "unit": "INR Crore",
+            "dimension": "C",
+            "evaluation": "Bad",
+            "description": "Negative NPV",
+            "threshold_min": -1000000,
+            "threshold_max": 0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "irrPct",
+            "metric_name": "Internal Rate of Return",
+            "value": -26.49,
+            "unit": "%",
+            "dimension": "Fraction/T",
+            "evaluation": "Bad",
+            "description": "< 12% IRR",
+            "threshold_min": -100,
+            "threshold_max": 12,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "roiPct",
+            "metric_name": "Return on Investment",
+            "value": -42.89,
+            "unit": "%",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 20% ROI",
+            "threshold_min": -1000,
+            "threshold_max": 20,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "paybackPeriodYears",
+            "metric_name": "Payback Period",
+            "value": 9.15,
+            "unit": "years",
+            "dimension": "T",
+            "evaluation": "Okay",
+            "description": "5-10 years",
+            "threshold_min": 5,
+            "threshold_max": 10,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "profitabilityIndex",
+            "metric_name": "Profitability Index",
+            "value": 0.33,
+            "unit": "ratio",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 1.0",
+            "threshold_min": 0,
+            "threshold_max": 1.0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "absorptionRatePctPerYear",
+            "value": 1449.06,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          }
+        ],
+        "summary": {
+          "excellent_count": 0,
+          "okay_count": 2,
+          "bad_count": 4,
+          "total_evaluated": 9,
+          "needs_llm_recommendations": [
+            "currentPricePSF",
+            "npvCr",
+            "irrPct",
+            "roiPct",
+            "paybackPeriodYears",
+            "profitabilityIndex"
+          ],
+          "overall_health": "Bad"
+        },
+        "layer": "L3",
+        "source": "RuleEngine_NonLLM",
+        "generated_at": "1764497647.2538154"
+      }
+    },
+    {
+      "projectId": {
+        "value": 137971,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Sarangi\nParadise",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Sai Propking\nReality",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "location": {
+        "value": "Chakan",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "priorityWeight": {
+        "value": 10,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:27:09.059659",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 56,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 19,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeUnits": {
+        "value": 56,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeAcres": {
+        "value": 0.55,
+        "unit": "acres (calculated)",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2_Calculated_From_FAR",
+        "isPure": true
+      },
+      "unitSaleableSizeSqft": {
+        "value": 568,
+        "unit": "sqft/unit",
+        "dimension": "L²/U",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "L²"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "launchDate": {
+        "value": "Jan 2024",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Dec 2025",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesValueCr": {
+        "value": 5,
+        "unit": "INR Crore",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 3884,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "currentPricePSF": {
+        "value": 4000,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "monthlySalesVelocity": {
+        "value": 4.64,
+        "unit": "%/month",
+        "dimension": "Fraction/T",
+        "relationships": [
+          {
+            "type": "INVERSE_OF",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "soldPct": {
+        "value": 93,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "unsoldPct": {
+        "value": 7,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": "Y",
+        "unit": "Boolean Flag",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "l2_metrics": {
+        "totalRevenueCr": {
+          "value": 12.72,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "totalSupplyUnits × unitSaleableSizeSqft × currentPricePSF / 10^7"
+        },
+        "totalCostCr": {
+          "value": 22.86,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(area × construction_cost_psf) + (acres × land_cost)"
+        },
+        "npvCr": {
+          "value": -18.4,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "Σ(annual_cashflow / (1+discount_rate)^t) - initial_investment"
+        },
+        "irrPct": {
+          "value": -78.13,
+          "unit": "%",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "Rate where NPV = 0"
+        },
+        "paybackPeriodYears": {
+          "value": 4.57,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "total_cost / annual_cashflow"
+        },
+        "profitabilityIndex": {
+          "value": 0.2,
+          "unit": "ratio",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(NPV + initial_investment) / initial_investment"
+        },
+        "roiPct": {
+          "value": -44.35,
+          "unit": "%",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(total_revenue - total_cost) / total_cost × 100"
+        },
+        "absorptionRatePctPerYear": {
+          "value": 4852.17,
+          "unit": "%/year",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "sold_pct / project_duration_years × 100"
+        },
+        "projectDurationYears": {
+          "value": 1.92,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(possession_date - launch_date) / 12"
+        }
+      },
+      "l3_insights": {
+        "L1_insights": [
+          {
+            "metric": "soldPct",
+            "value": 93,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "monthlySalesVelocity",
+            "value": 4.64,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "currentPricePSF",
+            "metric_name": "Current Price PSF",
+            "value": 4000,
+            "unit": "INR/sqft",
+            "dimension": "C/L²",
+            "evaluation": "Okay",
+            "description": "₹3000-5000/sqft",
+            "threshold_min": 3000,
+            "threshold_max": 5000,
+            "requires_llm_recommendation": true,
+            "layer": "L1"
+          }
+        ],
+        "L2_insights": [
+          {
+            "metric": "npvCr",
+            "metric_name": "Net Present Value",
+            "value": -18.4,
+            "unit": "INR Crore",
+            "dimension": "C",
+            "evaluation": "Bad",
+            "description": "Negative NPV",
+            "threshold_min": -1000000,
+            "threshold_max": 0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "irrPct",
+            "metric_name": "Internal Rate of Return",
+            "value": -78.13,
+            "unit": "%",
+            "dimension": "Fraction/T",
+            "evaluation": "Bad",
+            "description": "< 12% IRR",
+            "threshold_min": -100,
+            "threshold_max": 12,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "roiPct",
+            "metric_name": "Return on Investment",
+            "value": -44.35,
+            "unit": "%",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 20% ROI",
+            "threshold_min": -1000,
+            "threshold_max": 20,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "paybackPeriodYears",
+            "metric_name": "Payback Period",
+            "value": 4.57,
+            "unit": "years",
+            "dimension": "T",
+            "evaluation": "Excellent",
+            "description": "<= 5 years",
+            "threshold_min": 0,
+            "threshold_max": 5,
+            "requires_llm_recommendation": false,
+            "layer": "L2"
+          },
+          {
+            "metric": "profitabilityIndex",
+            "metric_name": "Profitability Index",
+            "value": 0.2,
+            "unit": "ratio",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 1.0",
+            "threshold_min": 0,
+            "threshold_max": 1.0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "absorptionRatePctPerYear",
+            "value": 4852.17,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          }
+        ],
+        "summary": {
+          "excellent_count": 1,
+          "okay_count": 1,
+          "bad_count": 4,
+          "total_evaluated": 9,
+          "needs_llm_recommendations": [
+            "currentPricePSF",
+            "npvCr",
+            "irrPct",
+            "roiPct",
+            "profitabilityIndex"
+          ],
+          "overall_health": "Bad"
+        },
+        "layer": "L3",
+        "source": "RuleEngine_NonLLM",
+        "generated_at": "1764497647.2538154"
+      }
+    },
+    {
+      "projectId": {
+        "value": 143163,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Kalpavruksh\nHeights",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Swami\nSamarth\nBuildcon",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "location": {
+        "value": "Chakan",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "priorityWeight": {
+        "value": 10,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:27:09.059678",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 48,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 15,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeUnits": {
+        "value": 48,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeAcres": {
+        "value": 0.63,
+        "unit": "acres (calculated)",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2_Calculated_From_FAR",
+        "isPure": true
+      },
+      "unitSaleableSizeSqft": {
+        "value": 762,
+        "unit": "sqft/unit",
+        "dimension": "L²/U",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "L²"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "launchDate": {
+        "value": "Feb 2024",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Dec 2026",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesValueCr": {
+        "value": 4,
+        "unit": "INR Crore",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 2996,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "currentPricePSF": {
+        "value": 2996,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "monthlySalesVelocity": {
+        "value": 2.08,
+        "unit": "%/month",
+        "dimension": "Fraction/T",
+        "relationships": [
+          {
+            "type": "INVERSE_OF",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "soldPct": {
+        "value": 40,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "unsoldPct": {
+        "value": 60,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": "Y",
+        "unit": "Boolean Flag",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "l2_metrics": {
+        "totalRevenueCr": {
+          "value": 10.96,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "totalSupplyUnits × unitSaleableSizeSqft × currentPricePSF / 10^7"
+        },
+        "totalCostCr": {
+          "value": 26.22,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(area × construction_cost_psf) + (acres × land_cost)"
+        },
+        "npvCr": {
+          "value": -19.45,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "Σ(annual_cashflow / (1+discount_rate)^t) - initial_investment"
+        },
+        "irrPct": {
+          "value": -52.57,
+          "unit": "%",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "Rate where NPV = 0"
+        },
+        "paybackPeriodYears": {
+          "value": 6.55,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "total_cost / annual_cashflow"
+        },
+        "profitabilityIndex": {
+          "value": 0.26,
+          "unit": "ratio",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(NPV + initial_investment) / initial_investment"
+        },
+        "roiPct": {
+          "value": -58.2,
+          "unit": "%",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(total_revenue - total_cost) / total_cost × 100"
+        },
+        "absorptionRatePctPerYear": {
+          "value": 1411.76,
+          "unit": "%/year",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "sold_pct / project_duration_years × 100"
+        },
+        "projectDurationYears": {
+          "value": 2.83,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(possession_date - launch_date) / 12"
+        }
+      },
+      "l3_insights": {
+        "L1_insights": [
+          {
+            "metric": "soldPct",
+            "value": 40,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "monthlySalesVelocity",
+            "value": 2.08,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "currentPricePSF",
+            "metric_name": "Current Price PSF",
+            "value": 2996,
+            "unit": "INR/sqft",
+            "dimension": "C/L²",
+            "evaluation": "Bad",
+            "description": "< ₹3000/sqft",
+            "threshold_min": 0,
+            "threshold_max": 3000,
+            "requires_llm_recommendation": true,
+            "layer": "L1"
+          }
+        ],
+        "L2_insights": [
+          {
+            "metric": "npvCr",
+            "metric_name": "Net Present Value",
+            "value": -19.45,
+            "unit": "INR Crore",
+            "dimension": "C",
+            "evaluation": "Bad",
+            "description": "Negative NPV",
+            "threshold_min": -1000000,
+            "threshold_max": 0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "irrPct",
+            "metric_name": "Internal Rate of Return",
+            "value": -52.57,
+            "unit": "%",
+            "dimension": "Fraction/T",
+            "evaluation": "Bad",
+            "description": "< 12% IRR",
+            "threshold_min": -100,
+            "threshold_max": 12,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "roiPct",
+            "metric_name": "Return on Investment",
+            "value": -58.2,
+            "unit": "%",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 20% ROI",
+            "threshold_min": -1000,
+            "threshold_max": 20,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "paybackPeriodYears",
+            "metric_name": "Payback Period",
+            "value": 6.55,
+            "unit": "years",
+            "dimension": "T",
+            "evaluation": "Okay",
+            "description": "5-10 years",
+            "threshold_min": 5,
+            "threshold_max": 10,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "profitabilityIndex",
+            "metric_name": "Profitability Index",
+            "value": 0.26,
+            "unit": "ratio",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 1.0",
+            "threshold_min": 0,
+            "threshold_max": 1.0,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "absorptionRatePctPerYear",
+            "value": 1411.76,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          }
+        ],
+        "summary": {
+          "excellent_count": 0,
+          "okay_count": 1,
+          "bad_count": 5,
+          "total_evaluated": 9,
+          "needs_llm_recommendations": [
+            "currentPricePSF",
+            "npvCr",
+            "irrPct",
+            "roiPct",
+            "paybackPeriodYears",
+            "profitabilityIndex"
+          ],
+          "overall_health": "Bad"
+        },
+        "layer": "L3",
+        "source": "RuleEngine_NonLLM",
+        "generated_at": "1764497647.2538154"
+      }
+    },
+    {
+      "projectId": {
+        "value": 35269,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectName": {
+        "value": "Shubhan\nKaroti",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "developerName": {
+        "value": "Creative\nVentures",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "location": {
+        "value": "Chakan",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "layer": {
+        "value": "L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "nodeType": {
+        "value": "Project_L1",
+        "unit": "Text",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "priorityWeight": {
+        "value": 10,
+        "unit": "Integer",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "extractionTimestamp": {
+        "value": "2025-12-29T11:27:09.059696",
+        "unit": "ISO-8601",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "totalSupplyUnits": {
+        "value": 24,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesUnits": {
+        "value": 11,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeUnits": {
+        "value": 48,
+        "unit": "count",
+        "dimension": "U",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "projectSizeAcres": {
+        "value": 0.16,
+        "unit": "acres (calculated)",
+        "dimension": "L²",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2_Calculated_From_FAR",
+        "isPure": true
+      },
+      "unitSaleableSizeSqft": {
+        "value": 385,
+        "unit": "sqft/unit",
+        "dimension": "L²/U",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "L²"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "U"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "launchDate": {
+        "value": "May 2016",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "possessionDate": {
+        "value": "Mar 2027",
+        "unit": "date",
+        "dimension": "T",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "annualSalesValueCr": {
+        "value": 2,
+        "unit": "INR Crore",
+        "dimension": "C",
+        "relationships": [
+          {
+            "type": "IS",
+            "target": "C"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "launchPricePSF": {
+        "value": 3200,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "currentPricePSF": {
+        "value": 2808,
+        "unit": "INR/sqft",
+        "dimension": "C/L²",
+        "relationships": [
+          {
+            "type": "NUMERATOR",
+            "target": "C"
+          },
+          {
+            "type": "DENOMINATOR",
+            "target": "L²"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "monthlySalesVelocity": {
+        "value": 0.86,
+        "unit": "%/month",
+        "dimension": "Fraction/T",
+        "relationships": [
+          {
+            "type": "INVERSE_OF",
+            "target": "T"
+          }
+        ],
+        "source": "LF_PDF_Page2",
+        "isPure": false
+      },
+      "soldPct": {
+        "value": 96,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "unsoldPct": {
+        "value": 4,
+        "unit": "%",
+        "dimension": "Dimensionless",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "reraRegistered": {
+        "value": "Y",
+        "unit": "Boolean Flag",
+        "dimension": "None",
+        "relationships": [],
+        "source": "LF_PDF_Page2",
+        "isPure": true
+      },
+      "l2_metrics": {
+        "totalRevenueCr": {
+          "value": 2.59,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "totalSupplyUnits × unitSaleableSizeSqft × currentPricePSF / 10^7"
+        },
+        "totalCostCr": {
+          "value": 6.65,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(area × construction_cost_psf) + (acres × land_cost)"
+        },
+        "npvCr": {
+          "value": 4.65,
+          "unit": "INR Crore",
+          "dimension": "C",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "C"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "Σ(annual_cashflow / (1+discount_rate)^t) - initial_investment"
+        },
+        "irrPct": {
+          "value": 27.41,
+          "unit": "%",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "Rate where NPV = 0"
+        },
+        "paybackPeriodYears": {
+          "value": 3.32,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "total_cost / annual_cashflow"
+        },
+        "profitabilityIndex": {
+          "value": 1.7,
+          "unit": "ratio",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(NPV + initial_investment) / initial_investment"
+        },
+        "roiPct": {
+          "value": -60.97,
+          "unit": "%",
+          "dimension": "Dimensionless",
+          "relationships": [],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(total_revenue - total_cost) / total_cost × 100"
+        },
+        "absorptionRatePctPerYear": {
+          "value": 886.15,
+          "unit": "%/year",
+          "dimension": "Fraction/T",
+          "relationships": [
+            {
+              "type": "INVERSE_OF",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": false,
+          "layer": "L2",
+          "calculation": "sold_pct / project_duration_years × 100"
+        },
+        "projectDurationYears": {
+          "value": 10.83,
+          "unit": "years",
+          "dimension": "T",
+          "relationships": [
+            {
+              "type": "IS",
+              "target": "T"
+            }
+          ],
+          "source": "L2_Calculated",
+          "isPure": true,
+          "layer": "L2",
+          "calculation": "(possession_date - launch_date) / 12"
+        }
+      },
+      "l3_insights": {
+        "L1_insights": [
+          {
+            "metric": "soldPct",
+            "value": 96,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          },
+          {
+            "metric": "monthlySalesVelocity",
+            "metric_name": "Monthly Sales Velocity",
+            "value": 0.86,
+            "unit": "fraction/month",
+            "dimension": "Fraction/T",
+            "evaluation": "Excellent",
+            "description": ">= 5% per month",
+            "threshold_min": 0.05,
+            "threshold_max": 1.0,
+            "requires_llm_recommendation": false,
+            "layer": "L1"
+          },
+          {
+            "metric": "currentPricePSF",
+            "metric_name": "Current Price PSF",
+            "value": 2808,
+            "unit": "INR/sqft",
+            "dimension": "C/L²",
+            "evaluation": "Bad",
+            "description": "< ₹3000/sqft",
+            "threshold_min": 0,
+            "threshold_max": 3000,
+            "requires_llm_recommendation": true,
+            "layer": "L1"
+          }
+        ],
+        "L2_insights": [
+          {
+            "metric": "npvCr",
+            "metric_name": "Net Present Value",
+            "value": 4.65,
+            "unit": "INR Crore",
+            "dimension": "C",
+            "evaluation": "Okay",
+            "description": "0 to ₹100 Cr NPV",
+            "threshold_min": 0,
+            "threshold_max": 100,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "irrPct",
+            "metric_name": "Internal Rate of Return",
+            "value": 27.41,
+            "unit": "%",
+            "dimension": "Fraction/T",
+            "evaluation": "Excellent",
+            "description": ">= 18% IRR",
+            "threshold_min": 18,
+            "threshold_max": 100,
+            "requires_llm_recommendation": false,
+            "layer": "L2"
+          },
+          {
+            "metric": "roiPct",
+            "metric_name": "Return on Investment",
+            "value": -60.97,
+            "unit": "%",
+            "dimension": "Dimensionless",
+            "evaluation": "Bad",
+            "description": "< 20% ROI",
+            "threshold_min": -1000,
+            "threshold_max": 20,
+            "requires_llm_recommendation": true,
+            "layer": "L2"
+          },
+          {
+            "metric": "paybackPeriodYears",
+            "metric_name": "Payback Period",
+            "value": 3.32,
+            "unit": "years",
+            "dimension": "T",
+            "evaluation": "Excellent",
+            "description": "<= 5 years",
+            "threshold_min": 0,
+            "threshold_max": 5,
+            "requires_llm_recommendation": false,
+            "layer": "L2"
+          },
+          {
+            "metric": "profitabilityIndex",
+            "metric_name": "Profitability Index",
+            "value": 1.7,
+            "unit": "ratio",
+            "dimension": "Dimensionless",
+            "evaluation": "Excellent",
+            "description": ">= 1.5",
+            "threshold_min": 1.5,
+            "threshold_max": 10,
+            "requires_llm_recommendation": false,
+            "layer": "L2"
+          },
+          {
+            "metric": "absorptionRatePctPerYear",
+            "value": 886.15,
+            "evaluation": "Unknown",
+            "description": "Value outside defined thresholds",
+            "requires_llm_recommendation": false
+          }
+        ],
+        "summary": {
+          "excellent_count": 4,
+          "okay_count": 1,
+          "bad_count": 2,
+          "total_evaluated": 9,
+          "needs_llm_recommendations": [
+            "currentPricePSF",
+            "npvCr",
+            "roiPct"
+          ],
+          "overall_health": "Okay"
+        },
+        "layer": "L3",
+        "source": "RuleEngine_NonLLM",
+        "generated_at": "1764497647.2538154"
+      }
+    }
+  ],
+  "page_5_unit_types": [],
+  "page_8_quarterly_summary": []
+}

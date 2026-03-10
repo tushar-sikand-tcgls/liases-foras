@@ -10,6 +10,9 @@ LOCATION_TREE = {
     "Maharashtra": {
         "Mumbai": ["Andheri", "Bander", "Worli", "Powai"],
         "Pune": ["Baner", "Chakan", "Hinjewadi"]
+    },
+    "West Bengal": {
+        "Kolkata": ["Kolkata"]  # Single unified region
     }
 }
 
@@ -122,7 +125,8 @@ def render_searchable_tree_selector() -> Optional[Tuple[str, str, str, Optional[
         for state, cities in LOCATION_TREE.items():
             with st.expander(f"▸ {state}", expanded=False):
                 for city, regions in cities.items():
-                    st.write(f"**• {city}**")
+                    # Make city names visible with explicit styling
+                    st.markdown(f'<p style="color: #000000; font-weight: 600; margin: 8px 0 4px 0;">• {city}</p>', unsafe_allow_html=True)
 
                     # Regions are now leaf nodes (list of strings)
                     for region in regions:

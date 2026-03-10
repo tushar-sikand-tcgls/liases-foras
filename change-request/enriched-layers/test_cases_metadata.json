@@ -1,0 +1,236 @@
+[
+  {
+    "test_id": "test_L1_1",
+    "attribute": "Unsold Units",
+    "formula": "Unsold = Supply \u00d7 Unsold%",
+    "dimension": "U",
+    "sample_values": "1109 \u00d7 11%",
+    "expected_answer": "122",
+    "description": "Remaining unsold units."
+  },
+  {
+    "test_id": "test_L1_2",
+    "attribute": "Sold Units",
+    "formula": "Sold = Supply \u00d7 Sold%",
+    "dimension": "U",
+    "sample_values": "1109 \u00d7 89%",
+    "expected_answer": "987",
+    "description": "Total sold units."
+  },
+  {
+    "test_id": "test_L1_3",
+    "attribute": "Monthly Units Sold",
+    "formula": "Annual Sales / 12",
+    "dimension": "U/T",
+    "sample_values": "527 / 12",
+    "expected_answer": "43.9",
+    "description": "Average monthly unit absorption derived from annual sales data. Indicates consistent monthly demand "
+  },
+  {
+    "test_id": "test_L1_4",
+    "attribute": "Months of Inventory",
+    "formula": "Unsold / Monthly Units",
+    "dimension": "T",
+    "sample_values": "122 / 43.9",
+    "expected_answer": "2.78",
+    "description": "Time duration required to clear remaining unsold inventory at current absorption pace. Key indicator"
+  },
+  {
+    "test_id": "test_L1_5",
+    "attribute": "Price Growth (%)",
+    "formula": "(Current\u2212Launch)/Launch",
+    "dimension": "-",
+    "sample_values": "(3996\u22122200)/2200",
+    "expected_answer": "81.63%",
+    "description": "Percentage appreciation in unit price from launch to current date. Indicates market value growth and"
+  },
+  {
+    "test_id": "test_L1_6",
+    "attribute": "Realised PSF",
+    "formula": "(Value\u00d71e7)/(Units\u00d7Size)",
+    "dimension": "C/L\u00b2",
+    "sample_values": "106Cr,527 units,411 sqft",
+    "expected_answer": "~4860",
+    "description": "Actual average price per square foot achieved through sales to date. Reflects real market realizatio"
+  },
+  {
+    "test_id": "test_L1_7",
+    "attribute": "Revenue per Unit",
+    "formula": "(Value\u00d71e7)/Units",
+    "dimension": "C/U",
+    "sample_values": "106Cr/527",
+    "expected_answer": "~20.1 lakh",
+    "description": "Average revenue generated per sold unit. Reflects market value and pricing strategy. Used for ROI ca"
+  },
+  {
+    "test_id": "test_L1_8",
+    "attribute": "Monthly Velocity (Units)",
+    "formula": "Velocity%\u00d7Supply",
+    "dimension": "U/T",
+    "sample_values": "3.47%\u00d71109",
+    "expected_answer": "38.5",
+    "description": "Absolute number of units sold monthly calculated from velocity percentage. Converts percentage absor"
+  },
+  {
+    "test_id": "test_L1_9",
+    "attribute": "Unsold Inventory Value",
+    "formula": "Units\u00d7Size\u00d7PSF / 1e7",
+    "dimension": "C",
+    "sample_values": "122\u00d7411\u00d73996",
+    "expected_answer": "20.02 Cr",
+    "description": "Estimated market value of remaining unsold units at current market prices. Represents potential futu"
+  },
+  {
+    "test_id": "test_L1_10",
+    "attribute": "Annual Clearance Rate",
+    "formula": "Annual Sales / Supply",
+    "dimension": "-",
+    "sample_values": "527/1109",
+    "expected_answer": "47.5%",
+    "description": "Percentage of total supply cleared (sold) annually. Indicates market demand intensity and project su"
+  },
+  {
+    "test_id": "test_L1_11",
+    "attribute": "Sellout Time",
+    "formula": "Supply / Annual Sales",
+    "dimension": "T",
+    "sample_values": "1109/527",
+    "expected_answer": "2.1 years",
+    "description": "Projected total time to sell entire supply (both sold + remaining) at current absorption pace. Indic"
+  },
+  {
+    "test_id": "test_L1_12",
+    "attribute": "Sellout Efficiency",
+    "formula": "(AnnualSales\u00d712)/Supply",
+    "dimension": "-",
+    "sample_values": "527\u00d712/1109",
+    "expected_answer": "570%",
+    "description": "Ratio of annual sales rate to total supply expressed as percentage. Indicates how efficiently the pr"
+  },
+  {
+    "test_id": "test_L1_13",
+    "attribute": "Average Ticket Size",
+    "formula": "Size\u00d7CurrentPSF",
+    "dimension": "C/U",
+    "sample_values": "411\u00d73996",
+    "expected_answer": "16.4 lakh",
+    "description": "Average current price per unit at today's market rates. Reflects current buyer investment requiremen"
+  },
+  {
+    "test_id": "test_L1_14",
+    "attribute": "Launch Ticket Size",
+    "formula": "Size\u00d7LaunchPSF",
+    "dimension": "C/U",
+    "sample_values": "411\u00d72200",
+    "expected_answer": "9.04 lakh",
+    "description": "Average unit price at project launch. Historical reference point for price growth analysis. Shows pr"
+  },
+  {
+    "test_id": "test_L1_15",
+    "attribute": "PSF Gap",
+    "formula": "Current\u2212Launch",
+    "dimension": "C/L\u00b2",
+    "sample_values": "3996\u22122200",
+    "expected_answer": "1796",
+    "description": "Price difference per square foot between current and launch pricing. Absolute metric of price apprec"
+  },
+  {
+    "test_id": "test_L1_16",
+    "attribute": "Effective Realised PSF",
+    "formula": "(Value\u00d71e7)/(Units\u00d7Size)",
+    "dimension": "C/L\u00b2",
+    "sample_values": "106Cr,527,411",
+    "expected_answer": "4860",
+    "description": "Actual achieved price per square foot when accounting for all expenses and revenue. Reflects true va"
+  },
+  {
+    "test_id": "test_L1_17",
+    "attribute": "Price-to-Size Ratio",
+    "formula": "CurrentPSF/Size",
+    "dimension": "-",
+    "sample_values": "3996/411",
+    "expected_answer": "9.72",
+    "description": "Price normalized by unit size ratio. Indicates relative affordability per unit area. Used for cross-"
+  },
+  {
+    "test_id": "test_L1_18",
+    "attribute": "Months to Sell Remaining",
+    "formula": "Unsold Units / Monthly Units Sold",
+    "dimension": "T",
+    "sample_values": "3.5, 6.2, 8.1",
+    "expected_answer": "3.5 months, 6.2 months, 8.1 months",
+    "description": "Time required to completely sell remaining unsold inventory at current monthly absorption pace. Deri"
+  },
+  {
+    "test_id": "test_L1_19",
+    "attribute": "Cumulative Possession Progress (%)",
+    "formula": "(RTO Units / Project Size) \u00d7 100",
+    "dimension": "-",
+    "sample_values": "45, 65, 80",
+    "expected_answer": "45%, 65%, 80%",
+    "description": "Percentage of total project units that have completed or are in possession stage. Indicates project "
+  },
+  {
+    "test_id": "test_L1_20",
+    "attribute": "Revenue Concentration (%)",
+    "formula": "Max(Segment Revenue) / Total Revenue \u00d7 100",
+    "dimension": "-",
+    "sample_values": "45, 55, 62",
+    "expected_answer": "45%, 55%, 62%",
+    "description": "Percentage of total revenue concentrated from top-selling segment (1BHK, 2BHK, etc.). Indicates mark"
+  },
+  {
+    "test_id": "test_L1_21",
+    "attribute": "Market Velocity Ratio",
+    "formula": "Project Monthly Velocity / Market Avg Velocity",
+    "dimension": "-",
+    "sample_values": "1.2, 0.85, 1.45",
+    "expected_answer": "1.2x (outperforming), 0.85x (underperforming), 1.45x (strong)",
+    "description": "Ratio of project absorption to location/market average absorption. Indicates competitive positioning"
+  },
+  {
+    "test_id": "test_L1_22",
+    "attribute": "Price Growth Rate (% per Year)",
+    "formula": "(Current PSF - Launch PSF) / (Project Age / 12)",
+    "dimension": "C/L\u00b2/T",
+    "sample_values": "8.5, 12.3, 15.6",
+    "expected_answer": "8.5% per year, 12.3% per year, 15.6% per year",
+    "description": "Annualized rate of price appreciation per square foot. Indicates market strength and investment valu"
+  },
+  {
+    "test_id": "test_L1_23",
+    "attribute": "Inventory Turnover Days",
+    "formula": "365 / (Annual Clearance Rate in %)",
+    "dimension": "T",
+    "sample_values": "480, 560, 640",
+    "expected_answer": "480 days, 560 days, 640 days",
+    "description": "Average number of days inventory remains in stock before sale. Indicates how quickly units move. Low"
+  },
+  {
+    "test_id": "test_L1_24",
+    "attribute": "Margin per Unit (Approx)",
+    "formula": "Revenue per Unit - (Total Project Cost / Project Size)",
+    "dimension": "C/U",
+    "sample_values": "5.5, 8.2, 12.1",
+    "expected_answer": "5.5 lakh, 8.2 lakh, 12.1 lakh (approx)",
+    "description": "Estimated profit per unit sold (Revenue per Unit - Cost per Unit). Indicates project profitability a"
+  },
+  {
+    "test_id": "test_L1_25",
+    "attribute": "Cost Efficiency Ratio",
+    "formula": "Total Revenue / Total Project Cost",
+    "dimension": "-",
+    "sample_values": "1.4, 1.7, 2.1",
+    "expected_answer": "1.4x, 1.7x, 2.1x",
+    "description": "Ratio of revenue to total project cost. Indicates project profitability efficiency. Ratio > 1.5 indi"
+  },
+  {
+    "test_id": "test_L1_26",
+    "attribute": "Remaining Project Timeline (Months)",
+    "formula": "MAX(Months to Sell Remaining, Time to Possession)",
+    "dimension": "T",
+    "sample_values": "24, 36, 48",
+    "expected_answer": "24 months, 36 months, 48 months",
+    "description": "Combined timeline until full project completion (remaining sales time + possession time). Indicates "
+  }
+]
