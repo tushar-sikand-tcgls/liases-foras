@@ -1,0 +1,69 @@
+# AWS-Optimized Multi-stage Dockerfile for Liases Foras Application
+# Optimized for smaller image size and faster builds on AWS
+
+FROM python:3.11-slim as builder
+
+# Set working directory
+WORKDIR /app
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy and install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir --user -r requirements.txt
+
+# Copy frontend requirements
+COPY frontend/requirements.txt ./frontend/requirements.txt
+RUN pip install --no-cache-dir --user -r frontend/requirements.txt
+
+# Production stage
+FROM python:3.11-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install only runtime dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
+
+# Copy installed packages from builder
+COPY --from=builder /root/.local /root/.local
+
+# Make sure scripts in .local are usable
+ENV PATH=/root/.local/bin:$PATH
+
+# Copy application code
+COPY app/ ./app/
+COPY frontend/ ./frontend/
+COPY data/ ./data/
+COPY scripts/ ./scripts/
+
+# Copy environment template
+COPY .env.production.example ./.env.example
+
+# Create necessary directories
+RUN mkdir -p /app/output /app/logs && \
+    chmod -R 755 /app/output /app/logs
+
+# Non-root user for security
+RUN useradd -m -u 1000 appuser && \
+    chown -R appuser:appuser /app
+
+USER appuser
+
+# Expose ports
+EXPOSE 8000 8501
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+    CMD curl -f http://localhost:8000/api/health || exit 1
+
+# Default command
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
