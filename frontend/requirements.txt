@@ -1,0 +1,70 @@
+# Frontend Requirements for Sirrus.AI ATLAS
+# Streamlit-based frontend for Liases Foras × Sirrus.AI Integration
+
+# ============================================================================
+# CORE WEB FRAMEWORK
+# ============================================================================
+# Streamlit: Interactive web application framework
+streamlit==1.30.0
+
+# streamlit-chat: Chat interface components
+streamlit-chat==0.1.1
+
+
+# ============================================================================
+# DATA VISUALIZATION & CHARTING
+# ============================================================================
+# Plotly: Interactive charts and graphs
+plotly>=5.22.0
+
+# Pandas: Data manipulation for tables and charts
+pandas==2.1.4
+
+# NumPy: Numerical computing (required by pandas)
+numpy==1.26.3
+
+
+# ============================================================================
+# HTTP & API COMMUNICATION
+# ============================================================================
+# Requests: HTTP client for backend API calls
+requests>=2.31.0
+
+
+# ============================================================================
+# CONFIGURATION & UTILITIES
+# ============================================================================
+# Python-dotenv: Environment variable management
+python-dotenv==1.0.0
+
+
+# ============================================================================
+# OPTIONAL: WEATHER & LOCATION SERVICES
+# ============================================================================
+# Note: Weather service uses OpenWeather API (requires OPENWEATHER_API_KEY)
+# No additional packages needed - uses requests library
+
+
+# ============================================================================
+# DEVELOPMENT & TESTING (Optional)
+# ============================================================================
+# Uncomment for development and testing
+
+# pytest==7.4.3
+# pytest-cov==4.1.0
+# httpx==0.26.0  # For async API testing
+
+
+# ============================================================================
+# NOTES
+# ============================================================================
+# 1. Backend Dependencies (FastAPI, Neo4j, etc.) are in ../requirements.txt
+# 2. Google Maps API key required: Set GOOGLE_MAPS_API_KEY in .env
+# 3. OpenWeather API key optional: Set OPENWEATHER_API_KEY in .env
+# 4. Backend server must be running on http://localhost:8000
+
+# Installation:
+#   pip install -r requirements.txt
+
+# Run frontend:
+#   streamlit run streamlit_app.py
